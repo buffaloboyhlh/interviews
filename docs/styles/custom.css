@@ -1,7 +1,7 @@
 /* 一级标题（H1） */
 .md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav__link {
-  color: black !important;   /* 暖珊瑚红 */
-  /*font-weight: bold;*/
+  color: #00695c !important;   /* 暖珊瑚红 */
+  font-weight: bold;
 }
 
 /* 二级标题（H2） */
