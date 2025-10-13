@@ -1,0 +1,1276 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Buffalo">
+      
+      
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/interview/">
+      
+      
+        <link rel="prev" href="../../deeplearning/interview/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>NLP - 人工智能面试集合</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../styles/extra.css">
+    
+      <link rel="stylesheet" href="../../styles/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            人工智能面试集合
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NLP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../machine/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../deeplearning/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  NLP
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    人工智能面试集合
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    机器学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deeplearning/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    NLP
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    NLP
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、基础教程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、基础教程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nlp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 一、NLP 是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlp_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 二、NLP 的核心任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 三、文本预处理基础
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#word-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔣 四、词向量（Word Embedding）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 五、语言模型（Language Model）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rnn-lstm-gru" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔂 六、序列模型（RNN / LSTM / GRU）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ 七、Transformer 架构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plm" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧬 八、预训练语言模型（PLM）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlp_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 九、NLP 任务与模型对应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 十、实战示例：中文情感分类（BERT 微调）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 十一、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 十二、优化与微调技巧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 十三、工程与部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 十四、学习路径建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 十五、推荐学习资源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 十六、总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、基础教程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、基础教程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nlp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 一、NLP 是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlp_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 二、NLP 的核心任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 三、文本预处理基础
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#word-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔣 四、词向量（Word Embedding）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 五、语言模型（Language Model）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rnn-lstm-gru" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔂 六、序列模型（RNN / LSTM / GRU）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ 七、Transformer 架构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plm" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧬 八、预训练语言模型（PLM）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlp_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 九、NLP 任务与模型对应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 十、实战示例：中文情感分类（BERT 微调）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 十一、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 十二、优化与微调技巧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 十三、工程与部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 十四、学习路径建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 十五、推荐学习资源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 十六、总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="nlp">NLP (自然语言处理)<a class="headerlink" href="#nlp" title="Permanent link">&para;</a></h1>
+<h2 id="_1">一、基础教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="nlp_1">🌍 一、NLP 是什么？<a class="headerlink" href="#nlp_1" title="Permanent link">&para;</a></h3>
+<p><strong>自然语言处理（Natural Language Processing, NLP）</strong>
+是一门让计算机能够<strong>理解、生成和处理人类语言</strong>的科学。</p>
+<p>它融合了：</p>
+<ul>
+<li>语言学（语法、语义、上下文）</li>
+<li>计算机科学（算法、工程实现）</li>
+<li>机器学习 / 深度学习（模型训练）</li>
+</ul>
+<hr />
+<h3 id="nlp_2">🧩 二、NLP 的核心任务<a class="headerlink" href="#nlp_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>任务</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文本分类</td>
+<td>情感分析、垃圾邮件识别</td>
+<td>“这家餐厅真棒！” → 积极</td>
+</tr>
+<tr>
+<td>序列标注</td>
+<td>命名实体识别（NER）、词性标注</td>
+<td>“张三 在 北京” → 人名 / 地名</td>
+</tr>
+<tr>
+<td>文本匹配</td>
+<td>相似度计算、语义检索</td>
+<td>“天气预报”和“今日气象”相似</td>
+</tr>
+<tr>
+<td>文本生成</td>
+<td>翻译、摘要、对话</td>
+<td>“Translate: 你好 → Hello”</td>
+</tr>
+<tr>
+<td>问答系统</td>
+<td>抽取式 / 生成式 QA</td>
+<td>“中国首都是哪？”→ 北京</td>
+</tr>
+<tr>
+<td>语言建模</td>
+<td>下一词预测</td>
+<td>“我今天很____” → 高兴</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_2">🧠 三、文本预处理基础<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>分词（Tokenization）</strong></p>
+</li>
+<li>
+<p>英文：空格、标点分割</p>
+</li>
+<li>中文：jieba、pkuseg、HanLP</li>
+<li>
+<p>子词（Subword）：BPE、WordPiece、Unigram</p>
+</li>
+<li>
+<p><strong>停用词（Stopwords）</strong>：去掉高频无意义词（如“的”“了”“and”）</p>
+</li>
+<li>
+<p><strong>词形还原（Lemmatization）</strong></p>
+</li>
+<li>
+<p><strong>向量化（Vectorization）</strong>：将文本转为数字表示</p>
+</li>
+<li>
+<p>One-hot encoding</p>
+</li>
+<li>Bag-of-Words (BoW)</li>
+<li>TF-IDF</li>
+<li>Word Embedding (Word2Vec, GloVe)</li>
+</ol>
+<hr />
+<h3 id="word-embedding">🔣 四、词向量（Word Embedding）<a class="headerlink" href="#word-embedding" title="Permanent link">&para;</a></h3>
+<p><strong>目标</strong>：将每个词映射为稠密向量，使相似词语向量接近。
+$$
+\text{Embedding}: \text{Word} \to \mathbb{R}^d
+$$</p>
+<h5 id="1-word2vec">1️⃣ Word2Vec<a class="headerlink" href="#1-word2vec" title="Permanent link">&para;</a></h5>
+<ul>
+<li>模型结构：Skip-gram / CBOW</li>
+<li>Skip-gram 目标函数：
+  $$
+  \max_\theta \sum_{t=1}^T \sum_{-c \le j \le c, j\neq 0} \log P(w_{t+j} \mid w_t)
+  $$</li>
+</ul>
+<p>其中：
+$$
+P(w_O \mid w_I) = \frac{\exp(v_{w_O}^\top v_{w_I})}{\sum_{w}\exp(v_w^\top v_{w_I})}
+$$</p>
+<h5 id="2-glove">2️⃣ GloVe<a class="headerlink" href="#2-glove" title="Permanent link">&para;</a></h5>
+<ul>
+<li>基于词共现矩阵 <span class="arithmatex">\(X_{ij}\)</span> 的对数回归：
+  $$
+  J = \sum_{i,j=1}^{V} f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}<em>j - \log X</em>{ij})^2
+  $$</li>
+</ul>
+<hr />
+<h3 id="language-model">🔁 五、语言模型（Language Model）<a class="headerlink" href="#language-model" title="Permanent link">&para;</a></h3>
+<p>预测一个句子中词语的概率分布：</p>
+<div class="arithmatex">\[
+P(w_1, w_2, ..., w_T) = \prod_{t=1}^{T} P(w_t \mid w_1, ..., w_{t-1})
+\]</div>
+<h5 id="1-n-gram">1️⃣ N-gram 模型<a class="headerlink" href="#1-n-gram" title="Permanent link">&para;</a></h5>
+<p>近似假设：
+$$
+P(w_t \mid w_1,...,w_{t-1}) \approx P(w_t \mid w_{t-n+1},...,w_{t-1})
+$$</p>
+<h5 id="2">2️⃣ 神经语言模型<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
+<p>用神经网络（RNN / Transformer）代替概率表：
+$$
+h_t = f(W_{xh}x_t + W_{hh}h_{t-1})
+$$
+$$
+P(w_t \mid h_t) = \text{softmax}(Wh_t)
+$$</p>
+<hr />
+<h3 id="rnn-lstm-gru">🔂 六、序列模型（RNN / LSTM / GRU）<a class="headerlink" href="#rnn-lstm-gru" title="Permanent link">&para;</a></h3>
+<h4 id="1-rnn">1️⃣ RNN<a class="headerlink" href="#1-rnn" title="Permanent link">&para;</a></h4>
+<p>递归结构：
+$$
+h_t = \tanh(W_{xh}x_t + W_{hh}h_{t-1})
+$$
+但存在梯度消失/爆炸问题。</p>
+<h4 id="2-lstm">2️⃣ LSTM（长短期记忆网络）<a class="headerlink" href="#2-lstm" title="Permanent link">&para;</a></h4>
+<p>通过“门控机制”保留长期依赖：
+$$
+f_t = \sigma(W_f[x_t,h_{t-1}]+b_f)
+$$
+$$
+i_t = \sigma(W_i[x_t,h_{t-1}]+b_i)
+$$
+$$
+o_t = \sigma(W_o[x_t,h_{t-1}]+b_o)
+$$
+$$
+c_t = f_t<em>c_{t-1}+i_t</em>\tanh(W_c[x_t,h_{t-1}]+b_c)
+$$
+$$
+h_t = o_t*\tanh(c_t)
+$$</p>
+<hr />
+<h3 id="transformer">⚡ 七、Transformer 架构<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h3>
+<p>Transformer 取代 RNN，成为 NLP 的核心模型。</p>
+<h4 id="self-attention">Self-Attention 公式：<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+\]</div>
+<p>每个词向量与序列中其他词交互，捕获全局依赖。</p>
+<p><strong>优势：</strong></p>
+<ul>
+<li>并行计算</li>
+<li>长程依赖捕捉能力强</li>
+<li>更易扩展（预训练大模型）</li>
+</ul>
+<hr />
+<h3 id="plm">🧬 八、预训练语言模型（PLM）<a class="headerlink" href="#plm" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>架构</th>
+<th>目标任务</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BERT</strong></td>
+<td>Encoder</td>
+<td>掩码语言模型 (MLM)</td>
+<td>分类、NER、QA</td>
+</tr>
+<tr>
+<td><strong>GPT</strong></td>
+<td>Decoder</td>
+<td>自回归生成</td>
+<td>对话、写作</td>
+</tr>
+<tr>
+<td><strong>T5 / BART</strong></td>
+<td>Encoder–Decoder</td>
+<td>文本到文本</td>
+<td>翻译、摘要、问答</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="nlp_3">🧰 九、NLP 任务与模型对应<a class="headerlink" href="#nlp_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>输入输出</th>
+<th>模型</th>
+<th>损失函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文本分类</td>
+<td>文本 → 类别</td>
+<td>BERT + Linear</td>
+<td>CrossEntropy</td>
+</tr>
+<tr>
+<td>序列标注</td>
+<td>文本 → 标签序列</td>
+<td>BERT + CRF</td>
+<td>NLL</td>
+</tr>
+<tr>
+<td>机器翻译</td>
+<td>句子 → 句子</td>
+<td>Transformer</td>
+<td>CrossEntropy</td>
+</tr>
+<tr>
+<td>摘要生成</td>
+<td>文本 → 摘要</td>
+<td>BART / T5</td>
+<td>NLL</td>
+</tr>
+<tr>
+<td>QA 问答</td>
+<td>文本 → 答案</td>
+<td>BERT / T5</td>
+<td>Span / CrossEntropy</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bert">🧪 十、实战示例：中文情感分类（BERT 微调）<a class="headerlink" href="#bert" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModelForSequenceClassification</span><span class="p">,</span> <span class="n">Trainer</span><span class="p">,</span> <span class="n">TrainingArguments</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;bert-base-chinese&quot;</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">num_labels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 加载数据</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="n">data_files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="s2">&quot;train.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;test.csv&quot;</span><span class="p">})</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;max_length&quot;</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;./output&quot;</span><span class="p">,</span>
+    <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">evaluation_strategy</span><span class="o">=</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">2e-5</span>
+<span class="p">)</span>
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span>
+                  <span class="n">train_dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">],</span>
+                  <span class="n">eval_dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">])</span>
+
+<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h3 id="_3">📊 十一、评估指标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>任务类型</th>
+<th>指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分类</td>
+<td>Accuracy, Precision, Recall, F1</td>
+</tr>
+<tr>
+<td>序列标注</td>
+<td>Token-level / Entity-level F1</td>
+</tr>
+<tr>
+<td>生成</td>
+<td>BLEU, ROUGE</td>
+</tr>
+<tr>
+<td>语言模型</td>
+<td>Perplexity</td>
+</tr>
+<tr>
+<td>检索</td>
+<td>MRR, Recall@k, NDCG@k</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_4">⚙️ 十二、优化与微调技巧<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习率：<span class="arithmatex">\(1e^{-5} \sim 5e^{-5}\)</span></li>
+<li>warmup + linear decay 调度</li>
+<li>Dropout、权重衰减防止过拟合</li>
+<li>冻结底层，先训练上层</li>
+<li>小样本：使用 <strong>LoRA / PEFT / Prompt-tuning</strong></li>
+</ul>
+<hr />
+<h3 id="_5">🧠 十三、工程与部署<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>推理优化：FP16 / 量化 / ONNX / TensorRT</li>
+<li>服务化：FastAPI + TorchServe</li>
+<li>检索增强（RAG）：LLM + 向量数据库（FAISS / Chroma）</li>
+<li>模型监控：延迟、准确率漂移、日志分析</li>
+</ul>
+<hr />
+<h3 id="_6">🧭 十四、学习路径建议<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>学习目标</th>
+<th>推荐实践</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ NLP 基础</td>
+<td>理解词袋、TF-IDF、Word2Vec</td>
+<td>做文本分类</td>
+</tr>
+<tr>
+<td>2️⃣ 序列模型</td>
+<td>掌握 RNN / LSTM</td>
+<td>做情感分析、NER</td>
+</tr>
+<tr>
+<td>3️⃣ Transformer</td>
+<td>理解 Self-Attention</td>
+<td>实现机器翻译</td>
+</tr>
+<tr>
+<td>4️⃣ 预训练模型</td>
+<td>使用 BERT / GPT</td>
+<td>做 QA、摘要</td>
+</tr>
+<tr>
+<td>5️⃣ 工程实践</td>
+<td>模型优化与部署</td>
+<td>FastAPI + ONNX</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_7">📚 十五、推荐学习资源<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>书籍：</p>
+</li>
+<li>
+<p>《Speech and Language Processing》—— Jurafsky &amp; Martin</p>
+</li>
+<li>《Deep Learning for NLP》—— Yoav Goldberg</li>
+<li>
+<p>《自然语言处理综论》—— 周明</p>
+</li>
+<li>
+<p>开源课程：</p>
+</li>
+<li>
+<p>CS224N（Stanford NLP）</p>
+</li>
+<li>Hugging Face Transformers 官方教程</li>
+</ul>
+<hr />
+<h3 id="_8">✅ 十六、总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>关键词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文本表示</td>
+<td>Tokenization, Embedding</td>
+</tr>
+<tr>
+<td>序列建模</td>
+<td>RNN, LSTM, Attention</td>
+</tr>
+<tr>
+<td>现代架构</td>
+<td>Transformer, BERT, GPT</td>
+</tr>
+<tr>
+<td>任务映射</td>
+<td>分类 / 生成 / QA</td>
+</tr>
+<tr>
+<td>优化与部署</td>
+<td>微调、蒸馏、ONNX</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>如果你想进一步学习，我可以为你生成一个分阶段系统课程：</p>
+<blockquote>
+<p>📘「从零开始学 NLP」系列
+第 1 章：文本表示与词向量
+第 2 章：RNN/LSTM 序列模型
+第 3 章：Transformer 与 Self-Attention
+第 4 章：BERT / GPT 原理与微调
+第 5 章：NLP 实战与部署</p>
+</blockquote>
+<p>是否希望我帮你制定这个 <strong>系统化 NLP 学习路线表（附练习任务和代码）</strong>？</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../styles/javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../styles/javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>
