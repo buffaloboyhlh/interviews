@@ -23,7 +23,6 @@ theme:
         icon: material/brightness-4
         name: 切换至日间模式
   features:
-    - navigation.section
     - navigation.expand
     - navigation.tabs
     - navigation.sections
@@ -59,9 +58,9 @@ markdown_extensions:
       toc_depth: 2-3
 
 nav:
-
-  - 机器学习:
-      - 机器学习面试: machine/interview.md
+  - 机器学习: machine/interview.md
+  - 深度学习: deeplearning/interview.md
+  - NLP: nlp/interview.md
 
 
 
