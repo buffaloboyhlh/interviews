@@ -3398,10 +3398,13 @@ $$
 ##### 模型与定义
 
 设 $C$ 类，logits 向量为 $\mathbf{z}=(z_1,\dots,z_C)$，Softmax 输出：
+
 $$
 \hat{p}*c = \frac{e^{z_c}}{\sum*{j=1}^C e^{z_j}}.
 $$
+
 若真实标签为 one-hot $\mathbf{y}$，交叉熵为：
+
 $$
 L_{\text{CE}}(\mathbf{y},\hat{\mathbf{p}}) = -\sum_{c=1}^C y_c \log \hat{p}_c.
 $$
