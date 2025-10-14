@@ -640,7 +640,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_97" class="md-nav__link">
+  <a href="#_83" class="md-nav__link">
     <span class="md-ellipsis">
       六、回归
     </span>
@@ -673,7 +673,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_118" class="md-nav__link">
+  <a href="#_104" class="md-nav__link">
     <span class="md-ellipsis">
       七、特征工程
     </span>
@@ -706,7 +706,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_130" class="md-nav__link">
+  <a href="#_116" class="md-nav__link">
     <span class="md-ellipsis">
       八、决策树
     </span>
@@ -778,7 +778,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_131" class="md-nav__link">
+  <a href="#_117" class="md-nav__link">
     <span class="md-ellipsis">
       十一、集成学习
     </span>
@@ -802,7 +802,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_132" class="md-nav__link">
+  <a href="#_118" class="md-nav__link">
     <span class="md-ellipsis">
       十二、无监督学习
     </span>
@@ -835,7 +835,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_133" class="md-nav__link">
+  <a href="#_119" class="md-nav__link">
     <span class="md-ellipsis">
       十三、 概率模型
     </span>
@@ -859,7 +859,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_135" class="md-nav__link">
+  <a href="#_121" class="md-nav__link">
     <span class="md-ellipsis">
       十四、其他问题
     </span>
@@ -1208,7 +1208,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_97" class="md-nav__link">
+  <a href="#_83" class="md-nav__link">
     <span class="md-ellipsis">
       六、回归
     </span>
@@ -1241,7 +1241,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_118" class="md-nav__link">
+  <a href="#_104" class="md-nav__link">
     <span class="md-ellipsis">
       七、特征工程
     </span>
@@ -1274,7 +1274,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_130" class="md-nav__link">
+  <a href="#_116" class="md-nav__link">
     <span class="md-ellipsis">
       八、决策树
     </span>
@@ -1346,7 +1346,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_131" class="md-nav__link">
+  <a href="#_117" class="md-nav__link">
     <span class="md-ellipsis">
       十一、集成学习
     </span>
@@ -1370,7 +1370,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_132" class="md-nav__link">
+  <a href="#_118" class="md-nav__link">
     <span class="md-ellipsis">
       十二、无监督学习
     </span>
@@ -1403,7 +1403,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_133" class="md-nav__link">
+  <a href="#_119" class="md-nav__link">
     <span class="md-ellipsis">
       十三、 概率模型
     </span>
@@ -1427,7 +1427,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_135" class="md-nav__link">
+  <a href="#_121" class="md-nav__link">
     <span class="md-ellipsis">
       十四、其他问题
     </span>
@@ -5398,225 +5398,207 @@ CV_{k} = \frac{1}{k} \sum_{i=1}^{k} M(\text{model trained on } D \setminus D_i, 
 </code></pre></div>
 <h3 id="45">4.5 贝叶斯优化<a class="headerlink" href="#45" title="Permanent link">&para;</a></h3>
 <h2 id="_66">五、分类<a class="headerlink" href="#_66" title="Permanent link">&para;</a></h2>
+<p>分类问题的目标是：
+学习一个模型 <span class="arithmatex">\(f(x)\)</span> 来预测样本属于类别 <span class="arithmatex">\(y\)</span> 的概率。</p>
+<p>常见类型：</p>
+<ul>
+<li><strong>二分类</strong>：<span class="arithmatex">\(y \in {0,1}\)</span></li>
+<li><strong>多分类</strong>：<span class="arithmatex">\(y \in {1,2,...,K}\)</span></li>
+</ul>
+<p>我们定义一个损失函数 <span class="arithmatex">\(L(y, \hat{y})\)</span> 衡量预测 <span class="arithmatex">\(\hat{y}\)</span> 与真实标签 <span class="arithmatex">\(y\)</span> 之间的差距。
+学习目标是最小化期望损失：</p>
+<div class="arithmatex">\[
+\min_\theta ; \mathbb{E}*{(x,y)} [L(y, f*\theta(x))]
+\]</div>
 <h3 id="51">5.1 损失函数<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>损失</th>
-<th>公式（单样本）</th>
-<th>梯度（对 logits ）</th>
-<th>适用</th>
+<th>类型</th>
+<th>损失函数</th>
+<th>常用于算法</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>0–1</td>
-<td>indicator</td>
-<td>—</td>
-<td>理论评价</td>
+<td>0-1 损失</td>
+<td>理论评估</td>
+<td>理论最优分类器</td>
 </tr>
 <tr>
-<td>BCE</td>
-<td><span class="arithmatex">\(-[y\log\hat{p}+(1-y)\log(1-\hat{p})]\)</span></td>
-<td><span class="arithmatex">\(\hat{p}-y\)</span>（若 <span class="arithmatex">\(\hat{p}=\sigma(z)\)</span>）</td>
-<td>二分类</td>
+<td>对数损失 / 交叉熵</td>
+<td>Logistic 回归、神经网络</td>
+<td>概率模型</td>
 </tr>
 <tr>
-<td>Cross-Entropy</td>
-<td><span class="arithmatex">\(-\sum y_c\log\hat{p}_c\)</span></td>
-<td><span class="arithmatex">\(\hat{p}-y\)</span>（对 logits）</td>
+<td>Hinge 损失</td>
+<td>支持向量机（SVM）</td>
+<td>间隔最大化</td>
+</tr>
+<tr>
+<td>指数损失</td>
+<td>Adaboost</td>
+<td>集成方法</td>
+</tr>
+<tr>
+<td>Softmax + CrossEntropy</td>
 <td>多分类</td>
+<td>神经网络、多类逻辑回归</td>
 </tr>
 <tr>
-<td>Hinge</td>
-<td><span class="arithmatex">\(\max(0,1-y f(x))\)</span></td>
-<td>次梯度 <span class="arithmatex">\(-y x\)</span>（若 <span class="arithmatex">\(yf&lt;1\)</span>）</td>
-<td>SVM/间隔</td>
-</tr>
-<tr>
-<td>Focal</td>
-<td><span class="arithmatex">\(-(1-\hat{p})^\gamma y\log\hat{p}+\dots\)</span></td>
-<td>复杂（含 <span class="arithmatex">\((1-\hat{p})^\gamma\)</span> 项）</td>
-<td>类不平衡</td>
-</tr>
-<tr>
-<td>KL</td>
-<td><span class="arithmatex">\(\sum P\log\frac P Q\)</span></td>
-<td>与交叉熵相关</td>
-<td>分布匹配、蒸馏</td>
+<td>Focal Loss</td>
+<td>目标检测（不平衡样本）</td>
+<td>深度学习</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>训练样本 <span class="arithmatex">\(i\)</span> 的真实标签记为 <span class="arithmatex">\(y^{(i)}\)</span>。二分类常用 <span class="arithmatex">\(y\in{0,1}\)</span> 或 <span class="arithmatex">\(y\in{-1,1}\)</span>；多分类用 one-hot 向量 <span class="arithmatex">\(\mathbf{y}\in{0,1}^C\)</span>。</li>
-<li>
-<p>模型输出常有两种形式：</p>
-<ul>
-<li>概率形式 <span class="arithmatex">\(\hat{p}\)</span>（例如经过 Sigmoid/Softmax 后的概率）；</li>
-<li>Logit（未经过归一化的实数向量）记为 <span class="arithmatex">\(z\)</span>。</li>
-</ul>
-</li>
-<li>
-<p>损失函数 <span class="arithmatex">\(L(\cdot)\)</span> 是单样本损失；训练目标通常最小化平均损失 <span class="arithmatex">\(\frac{1}{m}\sum_i L^{(i)}\)</span>。</p>
-</li>
-</ul>
-<h4 id="01">0–1 损失（理论基准）<a class="headerlink" href="#01" title="Permanent link">&para;</a></h4>
-<p><strong>定义（二分类）</strong>：</p>
+<h4 id="1_11">1️⃣ 二分类损失函数详解<a class="headerlink" href="#1_11" title="Permanent link">&para;</a></h4>
+<h5 id="1-0-1">(1) <strong>0-1 损失</strong><a class="headerlink" href="#1-0-1" title="Permanent link">&para;</a></h5>
+<p><strong>定义：</strong></p>
 <div class="arithmatex">\[
-L_{0\text{-}1}(y,\hat{y}) = \begin{cases}0,&amp;y=\hat{y},\\1,&amp;y\neq\hat{y}.\end{cases}
-\]</div>
-<p><strong>含义</strong>：预测正确不惩罚，错误惩罚 1。</p>
-<p><strong>性质</strong>：最直观，但<strong>不可导且非凸</strong>，无法用于基于梯度的优化。</p>
-<p><strong>示例</strong>：若 <span class="arithmatex">\(y=1\)</span>，模型预测 <span class="arithmatex">\(\hat{y}=0\)</span>，损失为 1；若 <span class="arithmatex">\(\hat{y}=1\)</span>，损失为 0。</p>
-<blockquote>
-<p>结论：0–1 损失用于评价（比如最终准确率），但优化时用可导近似（如交叉熵、hinge）。</p>
-</blockquote>
-<h4 id="log-loss-binary-cross-entropy">对数损失 / 二分类交叉熵（Log Loss / Binary Cross-Entropy）<a class="headerlink" href="#log-loss-binary-cross-entropy" title="Permanent link">&para;</a></h4>
-<h5 id="_67">定义（概率输出）<a class="headerlink" href="#_67" title="Permanent link">&para;</a></h5>
-<p>模型给出正类概率 <span class="arithmatex">\(\hat{p}=P(y=1\mid x)\)</span>，单样本损失：</p>
-<div class="arithmatex">\[
-L_{\text{BCE}}(y,\hat{p}) = -\big[y\log\hat{p} + (1-y)\log(1-\hat{p})\big].
-\]</div>
-<h5 id="_68">含义（从极大似然导出）<a class="headerlink" href="#_68" title="Permanent link">&para;</a></h5>
-<p>若假设 <span class="arithmatex">\(P(y\mid x)=\hat{p}^{y}(1-\hat{p})^{1-y}\)</span>，MLE 等价于最大化对数似然：</p>
-<div class="arithmatex">\[
-\ell(\theta)=\sum_i y^{(i)}\log\hat{p}^{(i)} + (1-y^{(i)})\log(1-\hat{p}^{(i)}),
-\]</div>
-<p>最小化负对数似然即上式 <span class="arithmatex">\(L_{\text{BCE}}\)</span>。</p>
-<h5 id="_69">梯度（用于参数更新）<a class="headerlink" href="#_69" title="Permanent link">&para;</a></h5>
-<p>若 <span class="arithmatex">\(\hat{p}=\sigma(z)\)</span>，且 <span class="arithmatex">\(z=\theta^\top x\)</span>，则</p>
-<div class="arithmatex">\[
-\frac{\partial L}{\partial z} = \hat{p}-y.
-\]</div>
-<p><strong>推导要点</strong>：<span class="arithmatex">\(\frac{d}{dz}\sigma(z)=\sigma(z)(1-\sigma(z))\)</span>，代入并化简得上式 —— 这也是二分类交叉熵好用的原因：梯度形式非常简洁。</p>
-<h5 id="_70">数值例子（逐步算）<a class="headerlink" href="#_70" title="Permanent link">&para;</a></h5>
-<ul>
-<li>设 <span class="arithmatex">\(y=1\)</span>，模型预测概率 <span class="arithmatex">\(\hat{p}=0.8\)</span>。
-  损失：
-  $$
-  L = -[1\cdot\log 0.8 + 0\cdot\log(0.2)] = -\log 0.8.
-  $$
-  计算（逐位）<span class="arithmatex">\(\log 0.8 \approx -0.22314355\)</span>，所以 <span class="arithmatex">\(L \approx 0.2231\)</span>。</li>
-<li>梯度 w.r.t. logit <span class="arithmatex">\(z\)</span>：若 <span class="arithmatex">\(\hat{p}=0.8\)</span>，则 <span class="arithmatex">\(\partial L/\partial z = 0.8 - 1 = -0.2\)</span>。</li>
-</ul>
-<h5 id="_71">特点与适用场景<a class="headerlink" href="#_71" title="Permanent link">&para;</a></h5>
-<ul>
-<li>优点：概率解释、凸（对线性模型），适合二分类与神经网络（二分类用 Sigmoid + BCE）。</li>
-<li>缺点：对不平衡数据敏感（多数类压制），常配合 class-weight 或 Focal Loss。</li>
-</ul>
-<h4 id="softmax-cross-entropy">多分类交叉熵（Softmax + Cross-Entropy）<a class="headerlink" href="#softmax-cross-entropy" title="Permanent link">&para;</a></h4>
-<h5 id="_72">模型与定义<a class="headerlink" href="#_72" title="Permanent link">&para;</a></h5>
-<p>设 <span class="arithmatex">\(C\)</span> 类，logits 向量为 <span class="arithmatex">\(\mathbf{z}=(z_1,\dots,z_C)\)</span>，Softmax 输出：</p>
-<div class="arithmatex">\[
-\hat{p}*c = \frac{e^{z_c}}{\sum*{j=1}^C e^{z_j}}.
-\]</div>
-<p>若真实标签为 one-hot <span class="arithmatex">\(\mathbf{y}\)</span>，交叉熵为：</p>
-<div class="arithmatex">\[
-L_{\text{CE}}(\mathbf{y},\hat{\mathbf{p}}) = -\sum_{c=1}^C y_c \log \hat{p}_c.
-\]</div>
-<h5 id="mle">来源（MLE）<a class="headerlink" href="#mle" title="Permanent link">&para;</a></h5>
-<p>同样来自多分类的对数似然最大化。</p>
-<h5 id="logits">梯度（对 logits 的简洁形式）<a class="headerlink" href="#logits" title="Permanent link">&para;</a></h5>
-<p>对于样本真实类 <span class="arithmatex">\(t\)</span>，对 <span class="arithmatex">\(z_k\)</span> 的导数：
-$$
-\frac{\partial L}{\partial z_k} = \hat{p}_k - y_k.
-$$
-<strong>解释</strong>：如果 <span class="arithmatex">\(k\)</span> 为真实类（<span class="arithmatex">\(y_k=1\)</span>），梯度为 <span class="arithmatex">\(\hat{p}_k-1\)</span>；否则为 <span class="arithmatex">\(\hat{p}_k-0\)</span>。这是交叉熵 + softmax 的重要优势：直接得到 <span class="arithmatex">\(p-y\)</span> 的形式，数值稳定且计算高效。</p>
-<h5 id="_73">数值例子<a class="headerlink" href="#_73" title="Permanent link">&para;</a></h5>
-<ul>
-<li>三类问题，logits <span class="arithmatex">\(\mathbf{z}=(2.0, 0.5, 0.3)\)</span>。
-  先计算 Softmax 分母：
-  <span class="arithmatex">\(<span class="arithmatex">\(S = e^{2.0}+e^{0.5}+e^{0.3}\approx 7.3891 + 1.6487 + 1.3499 = 10.3877.\)</span>\)</span>
-  所以概率：
-  <span class="arithmatex">\(<span class="arithmatex">\(\hat{p}_1=7.3891/10.3877 \approx 0.711, \quad \hat{p}_2\approx 0.159,\quad \hat{p}_3\approx 0.130.\)</span>\)</span>
-  若真实类 <span class="arithmatex">\(t=1\)</span>（one-hot <span class="arithmatex">\((1,0,0)\)</span>），交叉熵：
-  <span class="arithmatex">\(<span class="arithmatex">\(L = -\log(0.711) \approx 0.341.\)</span>\)</span>
-  梯度对 <span class="arithmatex">\(z_1\)</span>：<span class="arithmatex">\(\hat{p}_1 - 1 \approx -0.289\)</span>；对 <span class="arithmatex">\(z_2\)</span>：<span class="arithmatex">\(0.159 - 0 = 0.159\)</span>，对 <span class="arithmatex">\(z_3\)</span>：<span class="arithmatex">\(0.130\)</span>。</li>
-</ul>
-<h5 id="_74">特点<a class="headerlink" href="#_74" title="Permanent link">&para;</a></h5>
-<ul>
-<li>与 Softmax 结合时数值和梯度形式简洁（<span class="arithmatex">\(p-y\)</span>），适用于多分类神经网络。</li>
-</ul>
-<h4 id="hinge-svm">Hinge 损失（用于 SVM，基于间隔）<a class="headerlink" href="#hinge-svm" title="Permanent link">&para;</a></h4>
-<h5 id="yin-11">定义（二分类，<span class="arithmatex">\(y\in{-1,1}\)</span>）<a class="headerlink" href="#yin-11" title="Permanent link">&para;</a></h5>
-<p>$$
-L_{\text{hinge}}(y,f(x)) = \max(0,,1 - y,f(x)),
-$$
-其中 <span class="arithmatex">\(f(x)\)</span> 通常是线性决策函数 <span class="arithmatex">\(f(x)=\theta^\top x\)</span>（logit 风格）。</p>
-<h5 id="_75">含义（间隔最大化）<a class="headerlink" href="#_75" title="Permanent link">&para;</a></h5>
-<ul>
-<li>若 <span class="arithmatex">\(y f(x) \ge 1\)</span>（被正确分类且到决策边界有至少 1 的“安全边距”）→ 损失为 0。</li>
-<li>若 <span class="arithmatex">\(y f(x) &lt; 1\)</span> → 损失线性增加，推动模型把样本推到间隔之外。</li>
-</ul>
-<h5 id="subgradient">次梯度（Subgradient）<a class="headerlink" href="#subgradient" title="Permanent link">&para;</a></h5>
-<p>Hinge 在 <span class="arithmatex">\(1-yf(x)=0\)</span> 不可导，但次梯度为：
-$$
-\partial L = \begin{cases}
-{0}, &amp; y f(x) &gt; 1,\
-{-y x}, &amp; y f(x) &lt; 1,\
-\text{any } \lambda\in[-y x,0], &amp; y f(x) =1.
+L(y, \hat{y}) =
+\begin{cases}
+0, &amp; \text{if } y = \hat{y} \\
+1, &amp; \text{if } y \neq \hat{y}
 \end{cases}
-$$
-通常在实现中遇到 <span class="arithmatex">\(&lt;1\)</span> 时用 <span class="arithmatex">\(-y x\)</span> 更新。</p>
-<h5 id="_76">数值例子<a class="headerlink" href="#_76" title="Permanent link">&para;</a></h5>
+\]</div>
+<p><strong>特点：</strong></p>
 <ul>
-<li>设 <span class="arithmatex">\(y=1, f(x)=0.2\)</span>，则 <span class="arithmatex">\(1 - y f(x) = 0.8&gt;0\)</span>，损失 <span class="arithmatex">\(=0.8\)</span>。</li>
-<li>若 <span class="arithmatex">\(f(x)=2\)</span>，<span class="arithmatex">\(1 - 2 = -1 \le 0\)</span>，损失 <span class="arithmatex">\(=0\)</span>。</li>
+<li>反映分类准确率</li>
+<li>不可导、不连续，不能直接用于优化</li>
 </ul>
-<h5 id="_77">特点与适用<a class="headerlink" href="#_77" title="Permanent link">&para;</a></h5>
+<p><strong>用途：</strong></p>
 <ul>
-<li>优点：鼓励大间隔（更好的泛化），对边界附近样本敏感。</li>
-<li>与 SVM 的正则化（如加入 <span class="arithmatex">\(\frac{\lambda}{2}|\theta|^2\)</span>）共同使用，形成标准的 SVM 优化目标。</li>
-<li>Hinge 不是概率性损失（没有概率输出），但可通过 Platt scaling 做概率校准。</li>
+<li>理论分析（例如 Bayes 最优分类器）</li>
 </ul>
-<h4 id="hingesquared-hinge">平方 Hinge（Squared Hinge）<a class="headerlink" href="#hingesquared-hinge" title="Permanent link">&para;</a></h4>
-<p>有些实现使用平方版以便更平滑：
-$$
-L_{\text{squared-hinge}} = \max(0,,1 - y f(x))^2.
-$$
-对易犯错的点惩罚更重，不可导点替代为普通导数（在 <span class="arithmatex">\(&gt;0\)</span> 区域）更平滑。</p>
-<h4 id="focal-loss">Focal Loss（面向困难样本、解决类别不平衡）<a class="headerlink" href="#focal-loss" title="Permanent link">&para;</a></h4>
-<p>用于二分类或多分类（目标检测领域常用）。</p>
-<h5 id="yin01">二分类形式（<span class="arithmatex">\(y\in{0,1}\)</span>）<a class="headerlink" href="#yin01" title="Permanent link">&para;</a></h5>
-<p>定义（以正类为例）：
-$$
-L_{\text{focal}}(y,\hat{p}) = -\alpha (1-\hat{p})^\gamma y\log\hat{p} - (1-\alpha)\hat{p}^\gamma (1-y)\log(1-\hat{p})
-$$
-常见参数：<span class="arithmatex">\(\gamma\ge0\)</span>（聚焦参数），<span class="arithmatex">\(\alpha\in[0,1]\)</span>（类别平衡因子）。</p>
-<h5 id="_78">含义<a class="headerlink" href="#_78" title="Permanent link">&para;</a></h5>
+<hr />
+<h5 id="2_9">(2) <strong>对数损失 / 交叉熵损失</strong><a class="headerlink" href="#2_9" title="Permanent link">&para;</a></h5>
+<p><strong>核心思想：</strong>
+用预测概率逼近真实分布，最小化它们的差异（即交叉熵）。</p>
+<p>假设输出为概率 <span class="arithmatex">\(\hat{p} = P(y=1|x)\)</span>，真实标签 <span class="arithmatex">\(y \in {0,1}\)</span>。</p>
+<p><strong>公式：</strong></p>
+<div class="arithmatex">\[
+L(y, \hat{p}) = -[y \log(\hat{p}) + (1 - y)\log(1 - \hat{p})]
+\]</div>
+<p><strong>解释：</strong></p>
 <ul>
-<li>当样本被正确且置信度高（<span class="arithmatex">\(\hat{p}\approx1\)</span>），<span class="arithmatex">\((1-\hat{p})^\gamma\)</span> 很小，损失被削弱（对易样本降权）。</li>
-<li>对难样本（<span class="arithmatex">\(\hat{p}\)</span> 低）给予更高权重，促使模型关注难样本。</li>
+<li>当预测接近真实标签时，损失趋近于 0；</li>
+<li>当预测错误且置信度高时，损失巨大（惩罚更强）。</li>
 </ul>
-<h5 id="_79">数值例子<a class="headerlink" href="#_79" title="Permanent link">&para;</a></h5>
+<p><strong>图像理解：</strong>
+交叉熵曲线比平方误差陡峭，优化效果更好。</p>
+<p><strong>代码示例：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">log_loss</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">log_loss</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>适用场景：</strong></p>
 <ul>
-<li>设正类 <span class="arithmatex">\(y=1\)</span>，<span class="arithmatex">\(\hat{p}=0.9\)</span>，<span class="arithmatex">\(\alpha=0.25,\gamma=2\)</span>：
-  $$
-  L = -0.25(1-0.9)^2\log 0.9 = -0.25(0.01)\cdot(-0.1053605) \approx 0.0002634.
-  $$</li>
-<li>若 <span class="arithmatex">\(\hat{p}=0.2\)</span>（难样本）：
-  $$
-  L = -0.25(0.8)^2\log 0.2 = -0.25(0.64)\cdot(-1.6094) \approx 0.2575.
-  $$
-  可以看到难样本损失明显更大。</li>
+<li>逻辑回归（Logistic Regression）</li>
+<li>神经网络分类层（Softmax + CrossEntropy）</li>
 </ul>
-<h5 id="_80">适用场景<a class="headerlink" href="#_80" title="Permanent link">&para;</a></h5>
+<hr />
+<h5 id="3-hinge">(3) <strong>Hinge 损失（合页损失）</strong><a class="headerlink" href="#3-hinge" title="Permanent link">&para;</a></h5>
+<p>用于支持向量机（SVM）等<strong>最大间隔分类</strong>。</p>
+<p>假设标签 <span class="arithmatex">\(y \in {-1, +1}\)</span>，预测值为 <span class="arithmatex">\(f(x)\)</span>。</p>
+<p><strong>公式：</strong></p>
+<div class="arithmatex">\[
+L(y, f(x)) = \max(0, 1 - y \cdot f(x))
+\]</div>
+<p><strong>解释：</strong></p>
 <ul>
-<li>类别极不平衡时（如目标检测中正负样本比例巨大），Focal Loss 能有效提升少数类性能。</li>
+<li>若 <span class="arithmatex">\(y \cdot f(x) \ge 1\)</span>，说明分类正确且有足够间隔 → 损失为 0；</li>
+<li>否则，损失与距离成线性增加。</li>
 </ul>
-<h4 id="kl-kullbackleibler-divergence">KL 散度（Kullback–Leibler divergence）<a class="headerlink" href="#kl-kullbackleibler-divergence" title="Permanent link">&para;</a></h4>
-<p>用于衡量<strong>两个概率分布</strong> <span class="arithmatex">\(P\)</span>（真分布）与 <span class="arithmatex">\(Q\)</span>（预测分布）之间的差异：
+<p><strong>几何意义：</strong>
+希望点离分界面“更远”，从而提升鲁棒性。</p>
+<p><strong>代码示例：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.svm</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">hinge_loss</span>
+
+<span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">pred_decision</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hinge_loss</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">pred_decision</span><span class="p">))</span>
+</code></pre></div>
+<hr />
+<h5 id="4-exponential-loss">(4) <strong>指数损失（Exponential Loss）</strong><a class="headerlink" href="#4-exponential-loss" title="Permanent link">&para;</a></h5>
+<p>用于 Adaboost 算法。</p>
+<p><strong>公式：</strong></p>
+<div class="arithmatex">\[
+L(y, f(x)) = e^{-y f(x)}
+\]</div>
+<p><strong>解释：</strong></p>
+<ul>
+<li>错误分类（<span class="arithmatex">\(y f(x) &lt; 0\)</span>）时惩罚呈指数增长；</li>
+<li>对异常值敏感。</li>
+</ul>
+<p><strong>应用：</strong></p>
+<ul>
+<li>Boosting 系列算法的理论基础</li>
+</ul>
+<hr />
+<h4 id="2_10">2️⃣ 多分类损失函数<a class="headerlink" href="#2_10" title="Permanent link">&para;</a></h4>
+<h5 id="1-softmax-cross-entropy">(1) <strong>Softmax + Cross-Entropy</strong><a class="headerlink" href="#1-softmax-cross-entropy" title="Permanent link">&para;</a></h5>
+<p>这是多分类最常见的损失。</p>
+<p><strong>Softmax 层：</strong>
+将模型输出 <span class="arithmatex">\(z_i\)</span> 映射为概率：</p>
+<div class="arithmatex">\[
+\hat{p_i} = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}}
+\]</div>
+<p><strong>Cross-Entropy：</strong>
 $$
-D_{\mathrm{KL}}(P\Vert Q) = \sum_i P(i)\log\frac{P(i)}{Q(i)}.
-$$
-与交叉熵关系：
-$$
-H(P,Q) = H(P) + D_{\mathrm{KL}}(P\Vert Q),
-$$
-其中 <span class="arithmatex">\(H(P)=-\sum_i P(i)\log P(i)\)</span> 是熵。若 <span class="arithmatex">\(P\)</span> 固定，最小化交叉熵等价于最小化 KL 散度。</p>
-<p><strong>用途</strong>：序列模型的教师强制（teacher forcing）、知识蒸馏（distillation）中常用（让学生分布 <span class="arithmatex">\(Q\)</span> 接近老师分布 <span class="arithmatex">\(P\)</span>）。</p>
+L = - \sum_{i=1}^K y_i \log(\hat{p_i})
+$$</p>
+<p>其中 <span class="arithmatex">\(y_i\)</span> 是独热编码（one-hot）形式。
+若真实类别为 <span class="arithmatex">\(c\)</span>：</p>
+<div class="arithmatex">\[
+L = -\log(\hat{p_c})
+\]</div>
+<p><strong>解释：</strong>
+预测真实类别的概率越大，损失越小。</p>
+<p><strong>代码示例：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+
+<span class="n">y_true</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># 类别索引</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>  <span class="c1"># logits</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+</code></pre></div>
+<hr />
+<h5 id="2-hinge">(2) <strong>多类 Hinge 损失</strong><a class="headerlink" href="#2-hinge" title="Permanent link">&para;</a></h5>
+<p><strong>公式：</strong></p>
+<div class="arithmatex">\[
+L = \sum_{i \ne y} \max(0, f_i - f_y + \Delta)
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(f_i\)</span> 为类别 <span class="arithmatex">\(i\)</span> 的得分</li>
+<li><span class="arithmatex">\(\Delta\)</span> 为间隔（通常取 1）</li>
+</ul>
+<p><strong>用途：</strong></p>
+<ul>
+<li>多类支持向量机（Multi-class SVM）</li>
+</ul>
+<h4 id="3-weighted-loss">3️⃣ 带权损失（Weighted Loss）<a class="headerlink" href="#3-weighted-loss" title="Permanent link">&para;</a></h4>
+<p>在样本类别不平衡时（例如欺诈检测、医学诊断），
+给不同类别不同权重：</p>
+<div class="arithmatex">\[
+L = -[w_1 y \log(\hat{p}) + w_0 (1-y)\log(1-\hat{p})]
+\]</div>
+<p>或多分类版本：</p>
+<div class="arithmatex">\[
+L = -\sum_{i=1}^K w_i y_i \log(\hat{p_i})
+\]</div>
+<p><strong>深度学习扩展：</strong>
+Focal Loss（用于目标检测）：</p>
+<div class="arithmatex">\[
+L = - (1 - \hat{p_t})^\gamma \log(\hat{p_t})
+\]</div>
+<p>其中 <span class="arithmatex">\(\gamma &gt; 0\)</span> 控制困难样本的关注度。</p>
 <h3 id="52">5.2 评估指标<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
-<h4 id="_81">🧭 一、分类任务中的四种结果类型（混淆矩阵基础）<a class="headerlink" href="#_81" title="Permanent link">&para;</a></h4>
+<h4 id="_67">🧭 一、分类任务中的四种结果类型（混淆矩阵基础）<a class="headerlink" href="#_67" title="Permanent link">&para;</a></h4>
 <p>在二分类问题中（正类 Positive / 负类 Negative），每个样本预测结果可分为四类：</p>
 <table>
 <thead>
@@ -5647,18 +5629,18 @@ FN &amp; TN
 \end{bmatrix}
 \]</div>
 <h4 id="accuracy">🧮 二、准确率（Accuracy）<a class="headerlink" href="#accuracy" title="Permanent link">&para;</a></h4>
-<h5 id="_82">定义：<a class="headerlink" href="#_82" title="Permanent link">&para;</a></h5>
+<h5 id="_68">定义：<a class="headerlink" href="#_68" title="Permanent link">&para;</a></h5>
 <div class="arithmatex">\[
 \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
 \]</div>
-<h5 id="_83">含义：<a class="headerlink" href="#_83" title="Permanent link">&para;</a></h5>
+<h5 id="_69">含义：<a class="headerlink" href="#_69" title="Permanent link">&para;</a></h5>
 <p>预测正确的样本占总样本比例。</p>
-<h5 id="_84">示例：<a class="headerlink" href="#_84" title="Permanent link">&para;</a></h5>
+<h5 id="_70">示例：<a class="headerlink" href="#_70" title="Permanent link">&para;</a></h5>
 <p>若模型预测 100 个样本，其中正确 90 个，则：
 $$
 \text{Accuracy} = \frac{90}{100} = 0.9
 $$</p>
-<h5 id="_85">优缺点：<a class="headerlink" href="#_85" title="Permanent link">&para;</a></h5>
+<h5 id="_71">优缺点：<a class="headerlink" href="#_71" title="Permanent link">&para;</a></h5>
 <ul>
 <li>✅ 简单直观。</li>
 <li>❌ 当样本严重不平衡时（例如 99% 为负类），准确率会<strong>掩盖错误</strong>。例如模型全预测为负类，准确率仍可达 99%。</li>
@@ -5686,7 +5668,7 @@ $$</p>
 <p>高召回率 → 模型“敏感”，尽可能找出所有正样本。</p>
 </blockquote>
 <hr />
-<h5 id="_86">数值示例：<a class="headerlink" href="#_86" title="Permanent link">&para;</a></h5>
+<h5 id="_72">数值示例：<a class="headerlink" href="#_72" title="Permanent link">&para;</a></h5>
 <table>
 <thead>
 <tr>
@@ -5721,7 +5703,7 @@ $$</p>
 <div class="arithmatex">\[
 F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
 \]</div>
-<h5 id="_87">示例：<a class="headerlink" href="#_87" title="Permanent link">&para;</a></h5>
+<h5 id="_73">示例：<a class="headerlink" href="#_73" title="Permanent link">&para;</a></h5>
 <div class="arithmatex">\[
 \text{Precision}=0.8889,\quad \text{Recall}=0.8
 \]</div>
@@ -5729,7 +5711,7 @@ F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \te
 <div class="arithmatex">\[
 F_1 = 2 \times \frac{0.8889\times 0.8}{0.8889+0.8} = 0.842
 \]</div>
-<h5 id="_88">特点：<a class="headerlink" href="#_88" title="Permanent link">&para;</a></h5>
+<h5 id="_74">特点：<a class="headerlink" href="#_74" title="Permanent link">&para;</a></h5>
 <ul>
 <li>F1 高 → 模型同时兼顾高 Precision 和 Recall；</li>
 <li>常用于<strong>不平衡分类问题</strong>；</li>
@@ -5780,9 +5762,10 @@ $$</p>
 <h5 id="3_6">3️⃣ 直观解释：<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h5>
 <p>AUC = “随机抽取一对（正样本、负样本），模型判断正样本得分更高的概率”。</p>
 <h4 id="pr-precisionrecall">🧱 八、PR 曲线（Precision–Recall 曲线）<a class="headerlink" href="#pr-precisionrecall" title="Permanent link">&para;</a></h4>
+<p><img alt="pr曲线.png" src="../../imgs/machine/pr%E6%9B%B2%E7%BA%BF.png" /></p>
 <p>横轴为 Recall，纵轴为 Precision，曲线反映阈值变化下的取舍。</p>
 <p>在类别极不平衡的情况下，<strong>PR 曲线更有意义</strong>（相比 ROC 曲线）。</p>
-<h4 id="_89">🧾 九、宏平均与微平均（多分类指标）<a class="headerlink" href="#_89" title="Permanent link">&para;</a></h4>
+<h4 id="_75">🧾 九、宏平均与微平均（多分类指标）<a class="headerlink" href="#_75" title="Permanent link">&para;</a></h4>
 <p>当分类任务是多类别（如 3 类、5 类）时，Precision、Recall、F1 有多种求法：</p>
 <ul>
 <li>
@@ -5803,7 +5786,7 @@ $$</p>
 </li>
 </ul>
 <h4 id="cohens-kappa">🧩 十、Cohen’s Kappa 系数（一致性度量）<a class="headerlink" href="#cohens-kappa" title="Permanent link">&para;</a></h4>
-<h5 id="_90">定义：<a class="headerlink" href="#_90" title="Permanent link">&para;</a></h5>
+<h5 id="_76">定义：<a class="headerlink" href="#_76" title="Permanent link">&para;</a></h5>
 <p>$$
 \kappa = \frac{p_o - p_e}{1 - p_e}
 $$
@@ -5821,7 +5804,7 @@ $$
 <li><span class="arithmatex">\(\kappa=0\)</span>：随机一致</li>
 <li><span class="arithmatex">\(\kappa&lt;0\)</span>：比随机还差</li>
 </ul>
-<h4 id="_91">🧮 十一、示例汇总（数值计算）<a class="headerlink" href="#_91" title="Permanent link">&para;</a></h4>
+<h4 id="_77">🧮 十一、示例汇总（数值计算）<a class="headerlink" href="#_77" title="Permanent link">&para;</a></h4>
 <p>假设：</p>
 <table>
 <thead>
@@ -5933,8 +5916,8 @@ $$
 $$
 f_\theta(x) = \arg\max_{k} P(y=k \mid x; \theta)
 $$</p>
-<h4 id="_92">⚙️ 二、模型结构与原理<a class="headerlink" href="#_92" title="Permanent link">&para;</a></h4>
-<h5 id="1_11">1️⃣ 线性模型<a class="headerlink" href="#1_11" title="Permanent link">&para;</a></h5>
+<h4 id="_78">⚙️ 二、模型结构与原理<a class="headerlink" href="#_78" title="Permanent link">&para;</a></h4>
+<h5 id="1_12">1️⃣ 线性模型<a class="headerlink" href="#1_12" title="Permanent link">&para;</a></h5>
 <p>最基本形式（如逻辑回归的多分类扩展）：
 $$
 z_k = w_k^\top x + b_k, \quad k = 1, 2, \dots, K
@@ -5958,7 +5941,7 @@ $$</p>
 <h4 id="cross-entropy-loss">🧮 三、损失函数（Cross-Entropy Loss）<a class="headerlink" href="#cross-entropy-loss" title="Permanent link">&para;</a></h4>
 <p>我们使用<strong>交叉熵损失函数（Cross-Entropy Loss）</strong>，它是极大似然估计的负对数形式。</p>
 <hr />
-<h5 id="1_12">1️⃣ 极大似然推导：<a class="headerlink" href="#1_12" title="Permanent link">&para;</a></h5>
+<h5 id="1_13">1️⃣ 极大似然推导：<a class="headerlink" href="#1_13" title="Permanent link">&para;</a></h5>
 <p>给定样本 <span class="arithmatex">\((x^{(i)}, y^{(i)})\)</span>，其概率为：
 $$
 P(y^{(i)} \mid x^{(i)}; \theta) = \prod_{k=1}^K p_k^{\mathbf{1}(y^{(i)}=k)}
@@ -5978,7 +5961,7 @@ J(\theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K y_k^{(i)} \log p_k^{(i)}
 $$</p>
 <p>这就是<strong>交叉熵损失（Cross-Entropy Loss）</strong>。</p>
 <hr />
-<h5 id="2_9">2️⃣ 损失函数解释：<a class="headerlink" href="#2_9" title="Permanent link">&para;</a></h5>
+<h5 id="2_11">2️⃣ 损失函数解释：<a class="headerlink" href="#2_11" title="Permanent link">&para;</a></h5>
 <ul>
 <li><span class="arithmatex">\(y_k^{(i)}\)</span> 是 one-hot 编码（例如类别 3 → <span class="arithmatex">\([0, 0, 1, 0, 0]\)</span>）；</li>
 <li>只在真实类别对应项上起作用。</li>
@@ -5992,7 +5975,7 @@ $$
 $$
 L = -\log(0.7) = 0.357
 $$</p>
-<h4 id="_93">📈 四、梯度推导（重要！）<a class="headerlink" href="#_93" title="Permanent link">&para;</a></h4>
+<h4 id="_79">📈 四、梯度推导（重要！）<a class="headerlink" href="#_79" title="Permanent link">&para;</a></h4>
 <p>Softmax 的输出：
 $$
 p_k = \frac{e^{z_k}}{\sum_{j} e^{z_j}}
@@ -6029,7 +6012,7 @@ $$</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
 </code></pre></div>
-<h4 id="_94">常见算法（用于多分类）<a class="headerlink" href="#_94" title="Permanent link">&para;</a></h4>
+<h4 id="_80">常见算法（用于多分类）<a class="headerlink" href="#_80" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -6096,7 +6079,7 @@ $$</p>
 </ul>
 </li>
 </ul>
-<h4 id="_95">二、数学定义<a class="headerlink" href="#_95" title="Permanent link">&para;</a></h4>
+<h4 id="_81">二、数学定义<a class="headerlink" href="#_81" title="Permanent link">&para;</a></h4>
 <p>假设：</p>
 <ul>
 <li>样本特征为 <span class="arithmatex">\(x_i \in \mathbb{R}^d\)</span></li>
@@ -6120,7 +6103,7 @@ y_{ik} =
 \hat{\mathbf{y}}*i = [\hat{y}*{i1}, \hat{y}*{i2}, \dots, \hat{y}*{iK}]
 \]</div>
 <p>其中 <span class="arithmatex">\(\hat{y}_{ik} \in [0,1]\)</span> 表示属于标签 <span class="arithmatex">\(k\)</span> 的概率。</p>
-<h4 id="_96">三、常见建模方法<a class="headerlink" href="#_96" title="Permanent link">&para;</a></h4>
+<h4 id="_82">三、常见建模方法<a class="headerlink" href="#_82" title="Permanent link">&para;</a></h4>
 <h5 id="1-binary-relevancebr">1. <strong>Binary Relevance（BR）</strong><a class="headerlink" href="#1-binary-relevancebr" title="Permanent link">&para;</a></h5>
 <p>最常见、最简单的方式：
 把多标签问题拆成 <strong>K 个独立的二分类问题</strong>。</p>
@@ -6234,9 +6217,9 @@ $$</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Micro-F1:&quot;</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;micro&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Macro-F1:&quot;</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;macro&#39;</span><span class="p">))</span>
 </code></pre></div>
-<h2 id="_97">六、回归<a class="headerlink" href="#_97" title="Permanent link">&para;</a></h2>
+<h2 id="_83">六、回归<a class="headerlink" href="#_83" title="Permanent link">&para;</a></h2>
 <h3 id="61">6.1 损失函数<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
-<h4 id="1_13">1. 总体背景与符号约定<a class="headerlink" href="#1_13" title="Permanent link">&para;</a></h4>
+<h4 id="1_14">1. 总体背景与符号约定<a class="headerlink" href="#1_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>训练样本 <span class="arithmatex">\({(x^{(i)}, y^{(i)})}_{i=1}^{m}\)</span>。</li>
 <li>模型预测为 <span class="arithmatex">\(\hat{y}^{(i)} = f_\theta(x^{(i)})\)</span>，参数为 <span class="arithmatex">\(\theta\)</span>。</li>
@@ -6247,7 +6230,7 @@ $$</p>
 </ul>
 <p>我们关心的常见回归损失：MSE、MAE、Huber、Log-cosh、Quantile Loss（分位数损失）、Poisson/NLL 等。</p>
 <h4 id="2-mse-mean-squared-error">2. 均方误差（MSE / Mean Squared Error）<a class="headerlink" href="#2-mse-mean-squared-error" title="Permanent link">&para;</a></h4>
-<h5 id="_98">定义<a class="headerlink" href="#_98" title="Permanent link">&para;</a></h5>
+<h5 id="_84">定义<a class="headerlink" href="#_84" title="Permanent link">&para;</a></h5>
 <div class="arithmatex">\[
 L_{\text{MSE}}(y,\hat{y}) = (y - \hat{y})^2.
 \]</div>
@@ -6255,7 +6238,7 @@ L_{\text{MSE}}(y,\hat{y}) = (y - \hat{y})^2.
 <div class="arithmatex">\[
 J_{\text{MSE}}(\theta)=\frac{1}{m}\sum_{i=1}^m (y^{(i)} - \hat{y}^{(i)})^2.
 \]</div>
-<h5 id="_99">含义<a class="headerlink" href="#_99" title="Permanent link">&para;</a></h5>
+<h5 id="_85">含义<a class="headerlink" href="#_85" title="Permanent link">&para;</a></h5>
 <p>对预测误差平方惩罚，较大误差被放大（对离群点敏感）。MSE 等价于假设误差服从均值为 0、方差为常数的高斯噪声，使用极大似然可导出 MSE。</p>
 <h5 id="haty">梯度（对单样本的预测 <span class="arithmatex">\(\hat{y}\)</span>）<a class="headerlink" href="#haty" title="Permanent link">&para;</a></h5>
 <p>对 <span class="arithmatex">\(\hat{y}\)</span>：
@@ -6266,7 +6249,7 @@ $$
 $$
 \nabla_\theta L_{\text{MSE}} = -2 (y - \hat{y}) \nabla_\theta \hat{y}.
 $$</p>
-<h5 id="_100">数值例子（逐位算）<a class="headerlink" href="#_100" title="Permanent link">&para;</a></h5>
+<h5 id="_86">数值例子（逐位算）<a class="headerlink" href="#_86" title="Permanent link">&para;</a></h5>
 <p>取单样本 <span class="arithmatex">\(y=3.0,\ \hat{y}=2.2\)</span>：</p>
 <ul>
 <li>误差 <span class="arithmatex">\(e = y - \hat{y} = 3.0 - 2.2 = 0.8\)</span>。</li>
@@ -6274,14 +6257,14 @@ $$</p>
 <li>梯度 w.r.t. <span class="arithmatex">\(\hat{y}\)</span>：<span class="arithmatex">\(\partial L/\partial \hat{y} = -2 \times 0.8 = -1.6\)</span>。</li>
 </ul>
 <p>（注意：数值计算都逐位计算，确保准确。）</p>
-<h5 id="_101">优缺点<a class="headerlink" href="#_101" title="Permanent link">&para;</a></h5>
+<h5 id="_87">优缺点<a class="headerlink" href="#_87" title="Permanent link">&para;</a></h5>
 <ul>
 <li>优点：解析简单、可导、常用。</li>
 <li>缺点：对大误差（离群点）敏感。</li>
 </ul>
 <hr />
 <h4 id="3-mae-mean-absolute-error">3. 平均绝对误差（MAE / Mean Absolute Error）<a class="headerlink" href="#3-mae-mean-absolute-error" title="Permanent link">&para;</a></h4>
-<h5 id="_102">定义<a class="headerlink" href="#_102" title="Permanent link">&para;</a></h5>
+<h5 id="_88">定义<a class="headerlink" href="#_88" title="Permanent link">&para;</a></h5>
 <div class="arithmatex">\[
 L_{\text{MAE}}(y,\hat{y}) = |y - \hat{y}|.
 \]</div>
@@ -6289,9 +6272,9 @@ L_{\text{MAE}}(y,\hat{y}) = |y - \hat{y}|.
 <div class="arithmatex">\[
 J_{\text{MAE}}(\theta)=\frac{1}{m}\sum_{i=1}^m |y^{(i)} - \hat{y}^{(i)}|.
 \]</div>
-<h5 id="_103">含义<a class="headerlink" href="#_103" title="Permanent link">&para;</a></h5>
+<h5 id="_89">含义<a class="headerlink" href="#_89" title="Permanent link">&para;</a></h5>
 <p>对误差按绝对值惩罚，鲁棒性比 MSE 更强（对离群点不那么敏感）。等价于假设误差服从拉普拉斯分布。</p>
-<h5 id="_104">梯度（对单样本）<a class="headerlink" href="#_104" title="Permanent link">&para;</a></h5>
+<h5 id="_90">梯度（对单样本）<a class="headerlink" href="#_90" title="Permanent link">&para;</a></h5>
 <p>对 <span class="arithmatex">\(\hat{y}\)</span> 的次导/符号函数（<span class="arithmatex">\(y\neq\hat{y}\)</span>）：
 $$
 \frac{\partial L_{\text{MAE}}}{\partial \hat{y}} =
@@ -6301,14 +6284,14 @@ $$
 \end{cases}
 $$
 在 <span class="arithmatex">\(\hat{y}=y\)</span> 处不可导，用次梯度 <span class="arithmatex">\(\in[-1,1]\)</span>。</p>
-<h5 id="_105">数值例子<a class="headerlink" href="#_105" title="Permanent link">&para;</a></h5>
+<h5 id="_91">数值例子<a class="headerlink" href="#_91" title="Permanent link">&para;</a></h5>
 <p><span class="arithmatex">\(y=3.0,\ \hat{y}=2.2\)</span>：</p>
 <ul>
 <li>误差 <span class="arithmatex">\(e=0.8\)</span>；</li>
 <li>MAE <span class="arithmatex">\(=|0.8|=0.8\)</span>；</li>
 <li>梯度对 <span class="arithmatex">\(\hat{y}\)</span>：因为 <span class="arithmatex">\(\hat{y}&lt;y\)</span>，<span class="arithmatex">\(\partial L/\partial \hat{y} = -1\)</span>。</li>
 </ul>
-<h5 id="_106">优缺点<a class="headerlink" href="#_106" title="Permanent link">&para;</a></h5>
+<h5 id="_92">优缺点<a class="headerlink" href="#_92" title="Permanent link">&para;</a></h5>
 <ul>
 <li>优点：对离群点更鲁棒。</li>
 <li>缺点：不可导点导致用梯度法时收敛行为不如 MSE 平滑；在很多框架中用次梯度处理即可。</li>
@@ -6324,7 +6307,7 @@ L_{\text{Huber}}(y,\hat{y}) =
 \delta\big(|y-\hat{y}| - \tfrac{1}{2}\delta\big), &amp; \text{if } |y-\hat{y}|&gt;\delta.
 \end{cases}
 $$</p>
-<h5 id="_107">含义<a class="headerlink" href="#_107" title="Permanent link">&para;</a></h5>
+<h5 id="_93">含义<a class="headerlink" href="#_93" title="Permanent link">&para;</a></h5>
 <p>在小误差区域使用二次（MSE），在大误差（离群点）区域使用线性（MAE）惩罚，因此兼顾平滑性与鲁棒性。<span class="arithmatex">\(\delta\)</span> 控制从二次到线性的切换点。</p>
 <h5 id="haty_1">梯度（对 <span class="arithmatex">\(\hat{y}\)</span>）<a class="headerlink" href="#haty_1" title="Permanent link">&para;</a></h5>
 <div class="arithmatex">\[
@@ -6351,24 +6334,24 @@ $$</p>
 </li>
 <li>梯度 <span class="arithmatex">\(=-1\cdot \mathrm{sign}(8) = -1\)</span>（即对 <span class="arithmatex">\(\hat{y}\)</span> 为 -1）。</li>
 </ul>
-<h5 id="_108">优缺点<a class="headerlink" href="#_108" title="Permanent link">&para;</a></h5>
+<h5 id="_94">优缺点<a class="headerlink" href="#_94" title="Permanent link">&para;</a></h5>
 <ul>
 <li>优点：平滑且鲁棒，常用在回归和 RL（奖励）中。</li>
 <li>缺点：需选择超参 <span class="arithmatex">\(\delta\)</span>。</li>
 </ul>
 <hr />
 <h4 id="5-log-cosh">5. Log-cosh 损失<a class="headerlink" href="#5-log-cosh" title="Permanent link">&para;</a></h4>
-<h5 id="_109">定义<a class="headerlink" href="#_109" title="Permanent link">&para;</a></h5>
+<h5 id="_95">定义<a class="headerlink" href="#_95" title="Permanent link">&para;</a></h5>
 <div class="arithmatex">\[
 L_{\text{log-cosh}}(y,\hat{y}) = \log\big(\cosh(y - \hat{y})\big).
 \]</div>
-<h5 id="_110">含义<a class="headerlink" href="#_110" title="Permanent link">&para;</a></h5>
+<h5 id="_96">含义<a class="headerlink" href="#_96" title="Permanent link">&para;</a></h5>
 <p>对小误差近似 <span class="arithmatex">\(\tfrac{1}{2}(y-\hat{y})^2\)</span>，对大误差近似 <span class="arithmatex">\(|y-\hat{y}| - \log 2\)</span>，因此行为介于 MSE 与 MAE 之间且平滑可导。</p>
-<h5 id="_111">梯度<a class="headerlink" href="#_111" title="Permanent link">&para;</a></h5>
+<h5 id="_97">梯度<a class="headerlink" href="#_97" title="Permanent link">&para;</a></h5>
 <div class="arithmatex">\[
 \frac{\partial L_{\text{log-cosh}}}{\partial \hat{y}} = -\tanh(y - \hat{y}).
 \]</div>
-<h5 id="_112">数值例子<a class="headerlink" href="#_112" title="Permanent link">&para;</a></h5>
+<h5 id="_98">数值例子<a class="headerlink" href="#_98" title="Permanent link">&para;</a></h5>
 <p><span class="arithmatex">\(y=3.0,\ \hat{y}=2.2\)</span>，误差 <span class="arithmatex">\(0.8\)</span>：</p>
 <ul>
 <li><span class="arithmatex">\(\cosh(0.8) = \tfrac{e^{0.8}+e^{-0.8}}{2}\approx \tfrac{2.22554+0.44933}{2}=1.337435\)</span>（逐位计算：<span class="arithmatex">\(e^{0.8}\approx2.2255409, e^{-0.8}\approx0.449329\)</span>，和约 <span class="arithmatex">\(2.67487\)</span>, 除以 2 得 <span class="arithmatex">\(1.337435\)</span>）。</li>
@@ -6387,7 +6370,7 @@ L_{\tau}(y,\hat{y}) =
 (1-\tau)(\hat{y} - y), &amp; \text{if } y &lt; \hat{y}.
 \end{cases}
 \]</div>
-<h5 id="_113">含义<a class="headerlink" href="#_113" title="Permanent link">&para;</a></h5>
+<h5 id="_99">含义<a class="headerlink" href="#_99" title="Permanent link">&para;</a></h5>
 <p>用于学习条件分位数（例如中位数 <span class="arithmatex">\(\tau=0.5\)</span> 对应 MAE 的中位数解）。在预测不对称风险（对过高或过低误差惩罚不同）时非常有用。</p>
 <h5 id="tau09">数值例子（<span class="arithmatex">\(\tau=0.9\)</span>）<a class="headerlink" href="#tau09" title="Permanent link">&para;</a></h5>
 <p><span class="arithmatex">\(y=10,\ \hat{y}=8\)</span>：<span class="arithmatex">\(y\ge\hat{y}\)</span>，损失 <span class="arithmatex">\(=0.9*(10-8)=0.9*2=1.8\)</span>。</p>
@@ -6484,7 +6467,7 @@ $$
 <li>在深度网络训练中，使用 <code>BCEWithLogitsLoss</code>、<code>CrossEntropyLoss</code> 等内置稳定实现，避免手写数值不稳。</li>
 </ul>
 <h3 id="62">6.2 评估指标<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
-<h4 id="_114">🌟 一、常见的回归评估指标概览<a class="headerlink" href="#_114" title="Permanent link">&para;</a></h4>
+<h4 id="_100">🌟 一、常见的回归评估指标概览<a class="headerlink" href="#_100" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -6540,7 +6523,7 @@ $$
 </tbody>
 </table>
 <hr />
-<h4 id="_115">🧮 二、各指标数学原理与解释<a class="headerlink" href="#_115" title="Permanent link">&para;</a></h4>
+<h4 id="_101">🧮 二、各指标数学原理与解释<a class="headerlink" href="#_101" title="Permanent link">&para;</a></h4>
 <hr />
 <h5 id="1-mae">1️⃣ 平均绝对误差（MAE）<a class="headerlink" href="#1-mae" title="Permanent link">&para;</a></h5>
 <div class="arithmatex">\[
@@ -6654,7 +6637,7 @@ R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (
 <li>若模型与均值预测无差别，则 <span class="arithmatex">\(R^2 = 0\)</span>。</li>
 </ul>
 <hr />
-<h4 id="_116">💡 三、各指标对比总结<a class="headerlink" href="#_116" title="Permanent link">&para;</a></h4>
+<h4 id="_102">💡 三、各指标对比总结<a class="headerlink" href="#_102" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -6729,16 +6712,16 @@ RMSE = 1.000
 R² = 0.875
 </code></pre></div>
 <hr />
-<h4 id="_117">📘 五、总结<a class="headerlink" href="#_117" title="Permanent link">&para;</a></h4>
+<h4 id="_103">📘 五、总结<a class="headerlink" href="#_103" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>MAE</strong>：平均误差（稳健、直观）</li>
 <li><strong>MSE / RMSE</strong>：平方惩罚（偏重大误差，训练常用）</li>
 <li><strong>MAPE</strong>：百分比误差（适合比例型问题）</li>
 <li><strong><span class="arithmatex">\(R^2\)</span></strong>：解释方差比例（拟合优度指标）</li>
 </ul>
-<h2 id="_118">七、特征工程<a class="headerlink" href="#_118" title="Permanent link">&para;</a></h2>
+<h2 id="_104">七、特征工程<a class="headerlink" href="#_104" title="Permanent link">&para;</a></h2>
 <h3 id="71">7.1 特征选择<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
-<h4 id="_119">一、什么是特征选择<a class="headerlink" href="#_119" title="Permanent link">&para;</a></h4>
+<h4 id="_105">一、什么是特征选择<a class="headerlink" href="#_105" title="Permanent link">&para;</a></h4>
 <p>特征选择是指在 <strong>原始特征集合中选择对模型最有用的子集</strong>，删除冗余或无关特征，从而提高模型性能、减少过拟合、降低计算复杂度和提高模型可解释性。</p>
 <p>假设：</p>
 <ul>
@@ -6747,7 +6730,7 @@ R² = 0.875
 <li>特征选择的目标是找到子集 <span class="arithmatex">\(S \subseteq {1,2,\dots,d}\)</span>，使得 <span class="arithmatex">\(X_S\)</span> 对预测 <span class="arithmatex">\(y\)</span> 有最大贡献。</li>
 </ul>
 <hr />
-<h4 id="_120">二、特征选择的三大类别<a class="headerlink" href="#_120" title="Permanent link">&para;</a></h4>
+<h4 id="_106">二、特征选择的三大类别<a class="headerlink" href="#_106" title="Permanent link">&para;</a></h4>
 <h5 id="1-filter">1️⃣ Filter（过滤法）<a class="headerlink" href="#1-filter" title="Permanent link">&para;</a></h5>
 <ul>
 <li><strong>原理</strong>：独立于模型，基于 <strong>特征与标签的统计关系</strong> 进行排序和筛选。</li>
@@ -6764,10 +6747,12 @@ R² = 0.875
 </ul>
 <h6 id="2-correlation">(2) 相关系数（Correlation）<a class="headerlink" href="#2-correlation" title="Permanent link">&para;</a></h6>
 <ul>
-<li><strong>Pearson 相关系数</strong>（连续特征）：
-  $$
-  \rho_{x_j,y} = \frac{Cov(x_j,y)}{\sigma_{x_j}\sigma_y} = \frac{\sum_i (x_{ij}-\bar{x}<em>j)(y_i-\bar{y})}{\sqrt{\sum_i (x</em>{ij}-\bar{x}_j)^2}\sqrt{\sum_i (y_i-\bar{y})^2}}
-  $$</li>
+<li><strong>Pearson 相关系数</strong>（连续特征）：</li>
+</ul>
+<div class="arithmatex">\[
+  \rho_{x_j,y} = \frac{Cov(x_j,y)}{\sigma_{x_j}\sigma_y} = \frac{\sum_i (x_{ij}-\bar{x}*j)(y_i-\bar{y})}{\sqrt{\sum_i (x*{ij}-\bar{x}_j)^2}\sqrt{\sum_i (y_i-\bar{y})^2}}
+\]</div>
+<ul>
 <li>高相关（绝对值大）保留，低相关剔除。</li>
 <li>对分类可用 <strong>卡方检验</strong>：
   $$
@@ -6784,26 +6769,30 @@ R² = 0.875
 <li><strong>原理</strong>：使用模型性能作为评价指标，搜索特征子集。</li>
 <li>
 <p><strong>特点</strong>：</p>
+<ul>
+<li>耗时较 Filter 方法高，但通常效果更好。</li>
+</ul>
 </li>
 <li>
-<p>耗时较 Filter 方法高，但通常效果更好。</p>
+<p><strong>方法</strong>：</p>
 </li>
-<li><strong>方法</strong>：</li>
 </ul>
 <h6 id="1-rfe-recursive-feature-elimination">(1) 递归特征消除（RFE, Recursive Feature Elimination）<a class="headerlink" href="#1-rfe-recursive-feature-elimination" title="Permanent link">&para;</a></h6>
 <ul>
 <li>
 <p>过程：</p>
-</li>
-<li>
-<p>训练模型（如线性回归或SVM）</p>
-</li>
+<ol>
+<li>训练模型（如线性回归或SVM）</li>
 <li>根据特征重要性（权重 <span class="arithmatex">\(w_j\)</span> 或特征系数）删除最不重要的特征</li>
 <li>重复迭代直到达到期望特征数量</li>
-<li>公式（线性模型重要性示例）：
+</ol>
+</li>
+<li>
+<p>公式（线性模型重要性示例）：
   $$
   w_j = | \theta_j |
-  $$</li>
+  $$</p>
+</li>
 </ul>
 <h6 id="2-stepwise-selection">(2) 前向/后向/逐步选择（Stepwise Selection）<a class="headerlink" href="#2-stepwise-selection" title="Permanent link">&para;</a></h6>
 <ul>
@@ -6825,7 +6814,7 @@ R² = 0.875
   $$</li>
 <li>当 <span class="arithmatex">\(\lambda\)</span> 足够大时，会将部分 <span class="arithmatex">\(\theta_j\)</span> 收缩为 0 → 对应特征被剔除。</li>
 </ul>
-<h6 id="2_10">(2) 树模型特征重要性<a class="headerlink" href="#2_10" title="Permanent link">&para;</a></h6>
+<h6 id="2_12">(2) 树模型特征重要性<a class="headerlink" href="#2_12" title="Permanent link">&para;</a></h6>
 <ul>
 <li>决策树、随机森林、XGBoost 等可输出每个特征的 <strong>Gini importance</strong> 或 <strong>Gain</strong>。</li>
 <li>对分类问题：
@@ -6835,7 +6824,7 @@ R² = 0.875
 <li><span class="arithmatex">\(\Delta i(t)\)</span> 为节点 <span class="arithmatex">\(t\)</span> 在分裂时不纯度下降（Gini 或 Entropy）</li>
 </ul>
 <hr />
-<h4 id="_121">三、特征选择的数学目标<a class="headerlink" href="#_121" title="Permanent link">&para;</a></h4>
+<h4 id="_107">三、特征选择的数学目标<a class="headerlink" href="#_107" title="Permanent link">&para;</a></h4>
 <p>特征选择本质是<strong>优化子集 <span class="arithmatex">\(S\)</span></strong>：</p>
 <div class="arithmatex">\[
 S^* = \arg\max_{S\subseteq{1,\dots,d}} Score(S)
@@ -6849,32 +6838,32 @@ S^* = \arg\max_{S\subseteq{1,\dots,d}} Score(S)
 <p>特征选择问题是<strong>NP-hard</strong>（组合优化），实际用启发式算法（RFE、贪心、正则化）近似求解。</p>
 </blockquote>
 <hr />
-<h4 id="_122">四、特征选择的注意事项<a class="headerlink" href="#_122" title="Permanent link">&para;</a></h4>
+<h4 id="_108">四、特征选择的注意事项<a class="headerlink" href="#_108" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>避免数据泄漏</strong>：在交叉验证/测试集上做特征选择会导致数据泄漏，应仅在训练集上选择特征。</li>
 <li><strong>多重共线性</strong>：高相关特征可能导致模型不稳定，可剔除冗余特征或做 PCA 降维。</li>
 <li>
 <p><strong>类别特征编码</strong>：</p>
-</li>
-<li>
-<p>One-hot 编码后特征数量增加，需结合正则化或树模型进行筛选。</p>
+<ul>
+<li>One-hot 编码后特征数量增加，需结合正则化或树模型进行筛选。</li>
+</ul>
 </li>
 <li>
 <p><strong>特征选择与标准化</strong>：</p>
-</li>
-<li>
-<p>对 L1/L2 正则化模型需要先对特征归一化。</p>
+<ul>
+<li>对 L1/L2 正则化模型需要先对特征归一化。</li>
+</ul>
 </li>
 <li>
 <p><strong>特征重要性解释</strong>：</p>
-</li>
-<li>
-<p>Filter 方法简单可解释，但忽略特征间交互。</p>
-</li>
+<ul>
+<li>Filter 方法简单可解释，但忽略特征间交互。</li>
 <li>Wrapper/Embedded 方法考虑特征交互，但复杂度高。</li>
+</ul>
+</li>
 </ol>
 <hr />
-<h4 id="_123">五、特征选择示例代码<a class="headerlink" href="#_123" title="Permanent link">&para;</a></h4>
+<h4 id="_109">五、特征选择示例代码<a class="headerlink" href="#_109" title="Permanent link">&para;</a></h4>
 <h5 id="1-filter_1">1️⃣ Filter 方法（方差 &amp; 相关系数）<a class="headerlink" href="#1-filter_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">VarianceThreshold</span><span class="p">,</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">f_classif</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -6914,7 +6903,7 @@ S^* = \arg\max_{S\subseteq{1,\dots,d}} Score(S)
 <span class="n">importances</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">feature_importances_</span>
 </code></pre></div>
 <hr />
-<h4 id="_124">六、总结<a class="headerlink" href="#_124" title="Permanent link">&para;</a></h4>
+<h4 id="_110">六、总结<a class="headerlink" href="#_110" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -6949,7 +6938,7 @@ S^* = \arg\max_{S\subseteq{1,\dots,d}} Score(S)
 <p>特征选择本质是 <strong>降低噪声、减少过拟合、提升模型可解释性</strong>，实际操作时常与正则化、PCA、模型调参结合使用。</p>
 </blockquote>
 <h3 id="72">7.2 特征提取<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
-<h4 id="_125">一、什么是特征提取<a class="headerlink" href="#_125" title="Permanent link">&para;</a></h4>
+<h4 id="_111">一、什么是特征提取<a class="headerlink" href="#_111" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>特征选择（Feature Selection）</strong>：从原有特征中选择对模型有用的特征。</li>
 <li><strong>特征提取（Feature Extraction）</strong>：通过<strong>变换原始特征</strong>生成新的特征，以更有效地表示数据。</li>
@@ -6972,7 +6961,7 @@ S^* = \arg\max_{S\subseteq{1,\dots,d}} Score(S)
 <li>特征提取生成新的特征矩阵 <span class="arithmatex">\(Z \in \mathbb{R}^{n \times k}\)</span>，通常 <span class="arithmatex">\(k&lt;d\)</span>。</li>
 </ul>
 <hr />
-<h4 id="_126">二、特征提取的核心原理<a class="headerlink" href="#_126" title="Permanent link">&para;</a></h4>
+<h4 id="_112">二、特征提取的核心原理<a class="headerlink" href="#_112" title="Permanent link">&para;</a></h4>
 <p>特征提取通常通过<strong>数学变换或映射</strong>将原始特征空间映射到一个新的特征空间：</p>
 <div class="arithmatex">\[
 Z = f(X)
@@ -6983,7 +6972,7 @@ Z = f(X)
 </ul>
 <p>特征提取常与 <strong>降维（Dimensionality Reduction）</strong> 密切相关。</p>
 <hr />
-<h4 id="_127">三、常见线性特征提取方法<a class="headerlink" href="#_127" title="Permanent link">&para;</a></h4>
+<h4 id="_113">三、常见线性特征提取方法<a class="headerlink" href="#_113" title="Permanent link">&para;</a></h4>
 <h5 id="1-pca-principal-component-analysis">1️⃣ 主成分分析（PCA, Principal Component Analysis）<a class="headerlink" href="#1-pca-principal-component-analysis" title="Permanent link">&para;</a></h5>
 <ul>
 <li><strong>目标</strong>：找到能最大化数据方差的正交方向</li>
@@ -7053,7 +7042,7 @@ Z = f(X)
   $$</li>
 </ul>
 <hr />
-<h4 id="_128">四、常见非线性特征提取方法<a class="headerlink" href="#_128" title="Permanent link">&para;</a></h4>
+<h4 id="_114">四、常见非线性特征提取方法<a class="headerlink" href="#_114" title="Permanent link">&para;</a></h4>
 <h5 id="1-kernel-pca">1️⃣ 核主成分分析（Kernel PCA）<a class="headerlink" href="#1-kernel-pca" title="Permanent link">&para;</a></h5>
 <ul>
 <li><strong>思想</strong>：对原始数据做非线性映射 <span class="arithmatex">\(\phi: X \rightarrow \mathcal{F}\)</span>，再做 PCA</li>
@@ -7194,7 +7183,7 @@ Z = f(X)
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;低维特征:&quot;</span><span class="p">,</span> <span class="n">Z_new</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (100,3)</span>
 </code></pre></div>
 <hr />
-<h4 id="_129">七、特征提取注意事项<a class="headerlink" href="#_129" title="Permanent link">&para;</a></h4>
+<h4 id="_115">七、特征提取注意事项<a class="headerlink" href="#_115" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p><strong>标准化/归一化</strong>：</p>
@@ -7227,8 +7216,9 @@ Z = f(X)
 </ul>
 </li>
 </ol>
-<h2 id="_130">八、决策树<a class="headerlink" href="#_130" title="Permanent link">&para;</a></h2>
+<h2 id="_116">八、决策树<a class="headerlink" href="#_116" title="Permanent link">&para;</a></h2>
 <h3 id="81">8.1 教程<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<p><img alt="决策树.png" src="../../imgs/machine/%E5%86%B3%E7%AD%96%E6%A0%91.png" /></p>
 <ul>
 <li>
 <p><strong>定义</strong>：决策树是一种 <strong>树形结构模型</strong>，用于分类或回归任务。</p>
@@ -7252,9 +7242,9 @@ Z = f(X)
 <li>可处理多类别、多特征</li>
 <li>易解释，可可视化</li>
 </ul>
-<h4 id="1_14">1️⃣ 原理<a class="headerlink" href="#1_14" title="Permanent link">&para;</a></h4>
+<h4 id="1_15">1️⃣ 原理<a class="headerlink" href="#1_15" title="Permanent link">&para;</a></h4>
 <p>决策树核心问题：<strong>如何选择最优特征和最优切分点？</strong></p>
-<h5 id="1_15">1️⃣ 分类问题<a class="headerlink" href="#1_15" title="Permanent link">&para;</a></h5>
+<h5 id="1_16">1️⃣ 分类问题<a class="headerlink" href="#1_16" title="Permanent link">&para;</a></h5>
 <ul>
 <li>常用指标：<strong>信息增益（ID3）、信息增益率（C4.5）、基尼指数（CART）</strong></li>
 </ul>
@@ -7301,7 +7291,7 @@ IG(D,A) = H(D) - H(D|A)
 <li>选择使 Gini_A(D) 最小的特征和切分点</li>
 </ul>
 <hr />
-<h5 id="2_11">2️⃣ 回归问题<a class="headerlink" href="#2_11" title="Permanent link">&para;</a></h5>
+<h5 id="2_13">2️⃣ 回归问题<a class="headerlink" href="#2_13" title="Permanent link">&para;</a></h5>
 <ul>
 <li>常用损失函数：<strong>均方误差（MSE）</strong>
   $$
@@ -7313,7 +7303,7 @@ IG(D,A) = H(D) - H(D|A)
   $$</li>
 <li>选择使 <span class="arithmatex">\(\Delta MSE\)</span> 最大的特征和切分点</li>
 </ul>
-<h4 id="2_12">2️⃣ 损失函数<a class="headerlink" href="#2_12" title="Permanent link">&para;</a></h4>
+<h4 id="2_14">2️⃣ 损失函数<a class="headerlink" href="#2_14" title="Permanent link">&para;</a></h4>
 <h4 id="3-cart">3️⃣ 决策树数学推导过程（以CART分类树为例）<a class="headerlink" href="#3-cart" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
@@ -7365,7 +7355,7 @@ IG(D,A) = H(D) - H(D|A)
 </li>
 </ul>
 <h4 id="5_4">5️⃣ 实现代码<a class="headerlink" href="#5_4" title="Permanent link">&para;</a></h4>
-<h5 id="1_16">1️⃣ 分类树<a class="headerlink" href="#1_16" title="Permanent link">&para;</a></h5>
+<h5 id="1_17">1️⃣ 分类树<a class="headerlink" href="#1_17" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
 
@@ -7376,7 +7366,7 @@ IG(D,A) = H(D) - H(D|A)
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy:&quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
 </code></pre></div>
-<h5 id="2_13">2️⃣ 回归树<a class="headerlink" href="#2_13" title="Permanent link">&para;</a></h5>
+<h5 id="2_15">2️⃣ 回归树<a class="headerlink" href="#2_15" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_squared_error</span>
 
@@ -7467,7 +7457,7 @@ IG(D,A) = H(D) - H(D|A)
 <h2 id="knn">九、KNN<a class="headerlink" href="#knn" title="Permanent link">&para;</a></h2>
 <h3 id="91-knn">9.1 KNN教程<a class="headerlink" href="#91-knn" title="Permanent link">&para;</a></h3>
 <p><img alt="KNN.png" src="../../imgs/machine/KNN.png" /></p>
-<h4 id="1_17">1️⃣ 原理<a class="headerlink" href="#1_17" title="Permanent link">&para;</a></h4>
+<h4 id="1_18">1️⃣ 原理<a class="headerlink" href="#1_18" title="Permanent link">&para;</a></h4>
 <p>KNN 是一种<strong>基于实例的监督学习算法</strong>，既可以做分类（Classification），也可以做回归（Regression）。
 核心思想：</p>
 <ul>
@@ -7514,7 +7504,7 @@ IG(D,A) = H(D) - H(D|A)
    $$</p>
 </li>
 </ol>
-<h4 id="2_14">2️⃣ 损失函数<a class="headerlink" href="#2_14" title="Permanent link">&para;</a></h4>
+<h4 id="2_16">2️⃣ 损失函数<a class="headerlink" href="#2_16" title="Permanent link">&para;</a></h4>
 <p>KNN 本质是<strong>非参数、懒惰学习（lazy learning）</strong>，没有显式的参数拟合，所以 <strong>没有训练损失函数</strong>，但是可以用以下方式描述预测误差：</p>
 <h5 id="21_2">2.1 分类损失<a class="headerlink" href="#21_2" title="Permanent link">&para;</a></h5>
 <p>对于一个测试样本 <span class="arithmatex">\(x\)</span>，预测类别 <span class="arithmatex">\(\hat{y}\)</span> 与真实类别 <span class="arithmatex">\(y\)</span> 的损失通常用<strong>0-1 损失</strong>：
@@ -7694,7 +7684,7 @@ $$</p>
 <h2 id="svm">十、SVM<a class="headerlink" href="#svm" title="Permanent link">&para;</a></h2>
 <h3 id="101-svm">10.1 SVM教程<a class="headerlink" href="#101-svm" title="Permanent link">&para;</a></h3>
 <p><img alt="SVM.png" src="../../imgs/machine/SVM.png" /></p>
-<h4 id="1_18">1️⃣ 原理<a class="headerlink" href="#1_18" title="Permanent link">&para;</a></h4>
+<h4 id="1_19">1️⃣ 原理<a class="headerlink" href="#1_19" title="Permanent link">&para;</a></h4>
 <p>SVM 是一种<strong>监督学习算法</strong>，用于分类和回归（分类最常用）。核心思想是：</p>
 <ol>
 <li><strong>分类问题</strong>：在特征空间中寻找一个<strong>最优超平面（Hyperplane）</strong>，将不同类别的样本分开。</li>
@@ -7715,7 +7705,7 @@ $$</p>
   f(\mathbf{x}) = \text{sign}(\mathbf{w}\cdot \mathbf{x} + b)
   $$</li>
 </ul>
-<h4 id="2_15">2️⃣ 损失函数<a class="headerlink" href="#2_15" title="Permanent link">&para;</a></h4>
+<h4 id="2_17">2️⃣ 损失函数<a class="headerlink" href="#2_17" title="Permanent link">&para;</a></h4>
 <h5 id="21-svm">2.1 线性可分 SVM<a class="headerlink" href="#21-svm" title="Permanent link">&para;</a></h5>
 <ul>
 <li>最大化间隔 <span class="arithmatex">\(\gamma = \frac{2}{|\mathbf{w}|}\)</span></li>
@@ -7905,9 +7895,9 @@ f(\mathbf{x}) = \text{sign}\left(\sum_{i \in SV} \alpha_i y_i K(\mathbf{x}_i, \m
 </tr>
 </tbody>
 </table>
-<h2 id="_131">十一、集成学习<a class="headerlink" href="#_131" title="Permanent link">&para;</a></h2>
+<h2 id="_117">十一、集成学习<a class="headerlink" href="#_117" title="Permanent link">&para;</a></h2>
 <h3 id="111">11.1 教程<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
-<h4 id="1_19">1️⃣ 原理<a class="headerlink" href="#1_19" title="Permanent link">&para;</a></h4>
+<h4 id="1_20">1️⃣ 原理<a class="headerlink" href="#1_20" title="Permanent link">&para;</a></h4>
 <p><strong>集成学习</strong>是一类将多个模型组合在一起以提高整体性能的算法思想，其核心理念是：</p>
 <blockquote>
 <p>“多个弱学习器结合，可以形成一个强学习器。”</p>
@@ -7973,7 +7963,7 @@ $$</p>
 <li><span class="arithmatex">\(h_m\)</span>：第 <span class="arithmatex">\(m\)</span> 个基模型</li>
 <li><span class="arithmatex">\(g\)</span>：元学习器（如逻辑回归、线性回归）</li>
 </ul>
-<h4 id="2_16">2️⃣ 损失函数<a class="headerlink" href="#2_16" title="Permanent link">&para;</a></h4>
+<h4 id="2_18">2️⃣ 损失函数<a class="headerlink" href="#2_18" title="Permanent link">&para;</a></h4>
 <p>集成学习的损失函数取决于基模型和任务类型：</p>
 <h5 id="21_3">2.1 分类<a class="headerlink" href="#21_3" title="Permanent link">&para;</a></h5>
 <ul>
@@ -8128,9 +8118,9 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h2 id="_132">十二、无监督学习<a class="headerlink" href="#_132" title="Permanent link">&para;</a></h2>
+<h2 id="_118">十二、无监督学习<a class="headerlink" href="#_118" title="Permanent link">&para;</a></h2>
 <h3 id="121">12.1 聚类<a class="headerlink" href="#121" title="Permanent link">&para;</a></h3>
-<h4 id="1_20">1️⃣ 原理<a class="headerlink" href="#1_20" title="Permanent link">&para;</a></h4>
+<h4 id="1_21">1️⃣ 原理<a class="headerlink" href="#1_21" title="Permanent link">&para;</a></h4>
 <p>聚类算法通过某种相似度或距离度量，将数据集划分为若干簇（Cluster）。</p>
 <p>常见聚类方法：</p>
 <table>
@@ -8169,7 +8159,7 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h4 id="2_17">2️⃣ 损失函数<a class="headerlink" href="#2_17" title="Permanent link">&para;</a></h4>
+<h4 id="2_19">2️⃣ 损失函数<a class="headerlink" href="#2_19" title="Permanent link">&para;</a></h4>
 <h5 id="21-k-means">2.1 K-Means<a class="headerlink" href="#21-k-means" title="Permanent link">&para;</a></h5>
 <ul>
 <li>目标是最小化簇内平方误差（WCSS, within-cluster sum of squares）：
@@ -8347,7 +8337,7 @@ $$</p>
 </tbody>
 </table>
 <h3 id="122">12.2 降维<a class="headerlink" href="#122" title="Permanent link">&para;</a></h3>
-<h4 id="1_21">1️⃣ 原理<a class="headerlink" href="#1_21" title="Permanent link">&para;</a></h4>
+<h4 id="1_22">1️⃣ 原理<a class="headerlink" href="#1_22" title="Permanent link">&para;</a></h4>
 <p><strong>降维</strong>指将高维数据映射到低维空间，同时尽量保留原始数据的主要特征信息。
 目的包括：</p>
 <ul>
@@ -8378,7 +8368,7 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h4 id="2_18">2️⃣ 损失函数<a class="headerlink" href="#2_18" title="Permanent link">&para;</a></h4>
+<h4 id="2_20">2️⃣ 损失函数<a class="headerlink" href="#2_20" title="Permanent link">&para;</a></h4>
 <h5 id="21-pca">2.1 PCA<a class="headerlink" href="#21-pca" title="Permanent link">&para;</a></h5>
 <ul>
 <li>目标是保留方差最大：
@@ -8555,9 +8545,9 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h2 id="_133">十三、 概率模型<a class="headerlink" href="#_133" title="Permanent link">&para;</a></h2>
+<h2 id="_119">十三、 概率模型<a class="headerlink" href="#_119" title="Permanent link">&para;</a></h2>
 <h3 id="131">13.1 朴素贝叶斯<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
-<h4 id="1_22">1️⃣ 原理<a class="headerlink" href="#1_22" title="Permanent link">&para;</a></h4>
+<h4 id="1_23">1️⃣ 原理<a class="headerlink" href="#1_23" title="Permanent link">&para;</a></h4>
 <p>朴素贝叶斯是一种<strong>基于概率的分类方法</strong>，核心思想是：</p>
 <ol>
 <li>
@@ -8586,13 +8576,13 @@ $$</p>
    $$</p>
 </li>
 </ol>
-<h5 id="_134">特点<a class="headerlink" href="#_134" title="Permanent link">&para;</a></h5>
+<h5 id="_120">特点<a class="headerlink" href="#_120" title="Permanent link">&para;</a></h5>
 <ul>
 <li>非常简单高效</li>
 <li>适用于文本分类、垃圾邮件识别、情感分析等</li>
 <li>对小样本也能工作良好</li>
 </ul>
-<h4 id="2_19">2️⃣ 损失函数<a class="headerlink" href="#2_19" title="Permanent link">&para;</a></h4>
+<h4 id="2_21">2️⃣ 损失函数<a class="headerlink" href="#2_21" title="Permanent link">&para;</a></h4>
 <p>朴素贝叶斯通常是概率模型，训练时<strong>不显式优化传统损失函数</strong>，但可视为最大化<strong>似然函数（MLE, Maximum Likelihood Estimation）</strong>：</p>
 <div class="arithmatex">\[
 \mathcal{L}(\theta) = \prod_{i=1}^{N} P(y_i) \prod_{j=1}^{n} P(x_{ij} | y_i)
@@ -8736,7 +8726,7 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h2 id="_135">十四、其他问题<a class="headerlink" href="#_135" title="Permanent link">&para;</a></h2>
+<h2 id="_121">十四、其他问题<a class="headerlink" href="#_121" title="Permanent link">&para;</a></h2>
 
 
 
