@@ -7379,7 +7379,17 @@ Z = f(X)
 <h2 id="_116">八、决策树<a class="headerlink" href="#_116" title="Permanent link">&para;</a></h2>
 <h3 id="81">8.1 教程<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
 <p><img alt="决策树.png" src="../../imgs/machine/%E5%86%B3%E7%AD%96%E6%A0%91.png" /></p>
+<p>在决策树中，我们希望选择 <strong>最优特征</strong> 来进行划分，让每次划分后的子集“越纯越好”。</p>
 <ul>
+<li><strong>纯</strong>的意思：子集中的样本尽可能属于同一类别。</li>
+</ul>
+<p>不同算法衡量“纯度”的方法不同：</p>
+<ul>
+<li><strong>ID3 → 信息增益</strong></li>
+<li><strong>C4.5 → 信息增益率</strong></li>
+<li>
+<p><strong>CART → 基尼指数</strong></p>
+</li>
 <li>
 <p><strong>定义</strong>：决策树是一种 <strong>树形结构模型</strong>，用于分类或回归任务。</p>
 <ul>

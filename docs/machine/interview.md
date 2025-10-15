@@ -5194,7 +5194,10 @@ print("低维特征:", Z_new.shape)  # (100,3)
   $$
   H(D) = - \sum_{k=1}^K p_k \log_2 p_k
   $$
-* $p_k$：第 $k$ 类样本比例
+
+  * $D$：数据集
+  * $k$：类别数
+  * $p_i$：类别 $i$ 的概率
 
 ###### (2) 条件熵（Conditional Entropy）
 
