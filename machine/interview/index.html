@@ -7433,15 +7433,18 @@ Z = f(X)
 <li><span class="arithmatex">\(p_i\)</span>：类别 <span class="arithmatex">\(i\)</span> 的概率</li>
 </ul>
 <h6 id="2-conditional-entropy">(2) 条件熵（Conditional Entropy）<a class="headerlink" href="#2-conditional-entropy" title="Permanent link">&para;</a></h6>
+<p>在已知某个特征 <span class="arithmatex">\(A\)</span> 的情况下，类别的不确定性</p>
 <ul>
 <li>按特征 <span class="arithmatex">\(A\)</span> 划分：
   $$
-  H(D|A) = \sum_{v \in \text{Values}(A)} \frac{|D_v|}{|D|} H(D_v)
+  H(D|A) = \sum_{v \in \text{values}(A)} \frac{|D_v|}{|D|} H(D_v)
   $$</li>
+<li><span class="arithmatex">\(D_v\)</span>：在特征 <span class="arithmatex">\(A\)</span> 取值 <span class="arithmatex">\(v\)</span> 的子集</li>
 </ul>
 <h6 id="3-information-gain">(3) 信息增益（Information Gain）<a class="headerlink" href="#3-information-gain" title="Permanent link">&para;</a></h6>
+<p>划分前后的熵减少量</p>
 <div class="arithmatex">\[
-IG(D,A) = H(D) - H(D|A)
+Gain(D,A) = H(D) - H(D|A)
 \]</div>
 <ul>
 <li>选择信息增益最大的特征进行划分（ID3算法）</li>
