@@ -7428,35 +7428,35 @@ Z = f(X)
 <h6 id="1_16">1. 概念<a class="headerlink" href="#1_16" title="Permanent link">&para;</a></h6>
 <p>信息增益来源于信息论。它衡量的是 <strong>使用某特征划分数据前后，信息的不确定性减少了多少</strong>。</p>
 <ul>
-<li>
-<p><strong>熵（Entropy）</strong>：表示数据集的不确定性
-  [
+<li><strong>熵（Entropy）</strong>：表示数据集的不确定性</li>
+</ul>
+<div class="arithmatex">\[
   H(D) = - \sum_{i=1}^k p_i \log_2 p_i
-  ]</p>
-</li>
-<li>
-<p><span class="arithmatex">\(D\)</span>：数据集</p>
-</li>
+\]</div>
+<ul>
+<li><span class="arithmatex">\(D\)</span>：数据集</li>
 <li><span class="arithmatex">\(k\)</span>：类别数</li>
 <li>
 <p><span class="arithmatex">\(p_i\)</span>：类别 <span class="arithmatex">\(i\)</span> 的概率</p>
 </li>
 <li>
-<p><strong>条件熵（Conditional Entropy）</strong>：在已知某个特征 <span class="arithmatex">\(A\)</span> 的情况下，类别的不确定性
-  [
-  H(D|A) = \sum_{v \in \text{values}(A)} \frac{|D_v|}{|D|} H(D_v)
-  ]</p>
+<p><strong>条件熵（Conditional Entropy）</strong>：在已知某个特征 <span class="arithmatex">\(A\)</span> 的情况下，类别的不确定性</p>
 </li>
+</ul>
+<div class="arithmatex">\[
+  H(D|A) = \sum_{v \in \text{values}(A)} \frac{|D_v|}{|D|} H(D_v)
+\]</div>
+<ul>
 <li>
 <p><span class="arithmatex">\(D_v\)</span>：在特征 <span class="arithmatex">\(A\)</span> 取值 <span class="arithmatex">\(v\)</span> 的子集</p>
 </li>
 <li>
-<p><strong>信息增益（Information Gain）</strong>：划分前后的熵减少量
-  [
-  Gain(D,A) = H(D) - H(D|A)
-  ]</p>
+<p><strong>信息增益（Information Gain）</strong>：划分前后的熵减少量</p>
 </li>
 </ul>
+<div class="arithmatex">\[
+  Gain(D,A) = H(D) - H(D|A)
+\]</div>
 <h6 id="2_13">2. 直观解释<a class="headerlink" href="#2_13" title="Permanent link">&para;</a></h6>
 <ul>
 <li>熵越大 → 数据越混乱</li>
@@ -7467,18 +7467,18 @@ Z = f(X)
 <p>假设数据集 <span class="arithmatex">\(D\)</span> 有 10 个样本，分为两类：<code>Yes</code> 6 个，<code>No</code> 4 个。</p>
 <ul>
 <li>总熵：
-  [
+$$
   H(D) = - \frac{6}{10}\log_2 \frac{6}{10} - \frac{4}{10}\log_2 \frac{4}{10} \approx 0.971
-  ]</li>
+$$</li>
 </ul>
 <p>假设一个特征 <span class="arithmatex">\(A\)</span> 有两个取值 <code>a1</code> 和 <code>a2</code>，对应子集熵分别为 0.0 和 1.0，子集比例为 0.4 和 0.6：</p>
-<p>[
+<div class="arithmatex">\[
 H(D|A) = 0.4 \cdot 0 + 0.6 \cdot 1 = 0.6
-]</p>
+\]</div>
 <p>信息增益：
-[
+$$
 Gain(D,A) = 0.971 - 0.6 = 0.371
-]</p>
+$$</p>
 <hr />
 <h5 id="c45-information-gain-ratio"><strong>三、C4.5 与信息增益率（Information Gain Ratio）</strong><a class="headerlink" href="#c45-information-gain-ratio" title="Permanent link">&para;</a></h5>
 <h6 id="1_17">1. 问题<a class="headerlink" href="#1_17" title="Permanent link">&para;</a></h6>
@@ -7488,15 +7488,15 @@ Gain(D,A) = 0.971 - 0.6 = 0.371
 </ul>
 <h6 id="2_14">2. 解决方案<a class="headerlink" href="#2_14" title="Permanent link">&para;</a></h6>
 <p>C4.5 使用 <strong>信息增益率</strong> 来修正：
-[
+$$
 GainRatio(D,A) = \frac{Gain(D,A)}{SplitInfo(D,A)}
-]</p>
+$$</p>
 <ul>
 <li>
 <p><strong>分裂信息（SplitInfo）</strong>：
-  [
+$$
   SplitInfo(D,A) = - \sum_{v \in values(A)} \frac{|D_v|}{|D|} \log_2 \frac{|D_v|}{|D|}
-  ]</p>
+$$</p>
 </li>
 <li>
 <p>核心思想：<strong>用信息增益除以特征自身的划分“杂乱度”</strong>，降低取值多的特征偏好。</p>
@@ -7512,18 +7512,18 @@ GainRatio(D,A) = \frac{Gain(D,A)}{SplitInfo(D,A)}
 <p>CART (Classification and Regression Tree) 用 <strong>基尼指数</strong> 来衡量纯度。</p>
 <h6 id="1_18">1. 概念<a class="headerlink" href="#1_18" title="Permanent link">&para;</a></h6>
 <p>基尼指数表示 <strong>从数据集中随机抽取两个样本，它们属于不同类别的概率</strong>：</p>
-<p>[
+<div class="arithmatex">\[
 Gini(D) = 1 - \sum_{i=1}^{k} p_i^2
-]</p>
+\]</div>
 <ul>
 <li><span class="arithmatex">\(p_i\)</span>：类别 <span class="arithmatex">\(i\)</span> 的概率</li>
 <li>值越小 → 数据越纯</li>
 </ul>
 <h6 id="2_15">2. 划分后的基尼指数<a class="headerlink" href="#2_15" title="Permanent link">&para;</a></h6>
 <p>假设用特征 <span class="arithmatex">\(A\)</span> 划分数据集：
-[
+$$
 Gini_{split}(D,A) = \sum_{v \in values(A)} \frac{|D_v|}{|D|} Gini(D_v)
-]</p>
+$$</p>
 <ul>
 <li>选择 <strong>基尼指数最小的特征进行划分</strong></li>
 <li>CART 生成 <strong>二叉树</strong>（每次分成两个子集）</li>
@@ -7535,9 +7535,9 @@ Gini_{split}(D,A) = \sum_{v \in values(A)} \frac{|D_v|}{|D|} Gini(D_v)
 </ul>
 <h6 id="4_8">4. 示例<a class="headerlink" href="#4_8" title="Permanent link">&para;</a></h6>
 <p>假设一个子集有 10 个样本，其中 6 个 <code>Yes</code>，4 个 <code>No</code>：
-[
+$$
 Gini(D) = 1 - (0.6^2 + 0.4^2) = 1 - (0.36 + 0.16) = 0.48
-]</p>
+$$</p>
 <hr />
 <h5 id="_117"><strong>五、总结对比表</strong><a class="headerlink" href="#_117" title="Permanent link">&para;</a></h5>
 <table>
