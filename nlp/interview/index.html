@@ -847,13 +847,11 @@
 <ol>
 <li>
 <p><strong>分词（Tokenization）</strong></p>
-</li>
-<li>
-<p>英文：空格、标点分割</p>
-</li>
+<ul>
+<li>英文：空格、标点分割</li>
 <li>中文：jieba、pkuseg、HanLP</li>
-<li>
-<p>子词（Subword）：BPE、WordPiece、Unigram</p>
+<li>子词（Subword）：BPE、WordPiece、Unigram</li>
+</ul>
 </li>
 <li>
 <p><strong>停用词（Stopwords）</strong>：去掉高频无意义词（如“的”“了”“and”）</p>
@@ -863,39 +861,39 @@
 </li>
 <li>
 <p><strong>向量化（Vectorization）</strong>：将文本转为数字表示</p>
-</li>
-<li>
-<p>One-hot encoding</p>
-</li>
+<ul>
+<li>One-hot encoding</li>
 <li>Bag-of-Words (BoW)</li>
 <li>TF-IDF</li>
 <li>Word Embedding (Word2Vec, GloVe)</li>
+</ul>
+</li>
 </ol>
 <hr />
 <h3 id="word-embedding">🔣 四、词向量（Word Embedding）<a class="headerlink" href="#word-embedding" title="Permanent link">&para;</a></h3>
-<p><strong>目标</strong>：将每个词映射为稠密向量，使相似词语向量接近。
-$$
+<p><strong>目标</strong>：将每个词映射为稠密向量，使相似词语向量接近。</p>
+<div class="arithmatex">\[
 \text{Embedding}: \text{Word} \to \mathbb{R}^d
-$$</p>
+\]</div>
 <h5 id="1-word2vec">1️⃣ Word2Vec<a class="headerlink" href="#1-word2vec" title="Permanent link">&para;</a></h5>
 <ul>
 <li>模型结构：Skip-gram / CBOW</li>
-<li>Skip-gram 目标函数：
-  $$
-  \max_\theta \sum_{t=1}^T \sum_{-c \le j \le c, j\neq 0} \log P(w_{t+j} \mid w_t)
-  $$</li>
+<li>Skip-gram 目标函数：</li>
 </ul>
+<p>$$
+  \max_\theta \sum_{t=1}^T \sum_{-c \le j \le c, j\neq 0} \log P(w_{t+j} \mid w_t)
+  $$</p>
 <p>其中：
 $$
 P(w_O \mid w_I) = \frac{\exp(v_{w_O}^\top v_{w_I})}{\sum_{w}\exp(v_w^\top v_{w_I})}
 $$</p>
 <h5 id="2-glove">2️⃣ GloVe<a class="headerlink" href="#2-glove" title="Permanent link">&para;</a></h5>
 <ul>
-<li>基于词共现矩阵 <span class="arithmatex">\(X_{ij}\)</span> 的对数回归：
-  $$
-  J = \sum_{i,j=1}^{V} f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}<em>j - \log X</em>{ij})^2
-  $$</li>
+<li>基于词共现矩阵 <span class="arithmatex">\(X_{ij}\)</span> 的对数回归：</li>
 </ul>
+<div class="arithmatex">\[
+  J = \sum_{i,j=1}^{V} f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}*j - \log X*{ij})^2
+\]</div>
 <hr />
 <h3 id="language-model">🔁 五、语言模型（Language Model）<a class="headerlink" href="#language-model" title="Permanent link">&para;</a></h3>
 <p>预测一个句子中词语的概率分布：</p>
@@ -924,22 +922,22 @@ h_t = \tanh(W_{xh}x_t + W_{hh}h_{t-1})
 $$
 但存在梯度消失/爆炸问题。</p>
 <h4 id="2-lstm">2️⃣ LSTM（长短期记忆网络）<a class="headerlink" href="#2-lstm" title="Permanent link">&para;</a></h4>
-<p>通过“门控机制”保留长期依赖：
-$$
+<p>通过“门控机制”保留长期依赖：</p>
+<div class="arithmatex">\[
 f_t = \sigma(W_f[x_t,h_{t-1}]+b_f)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 i_t = \sigma(W_i[x_t,h_{t-1}]+b_i)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 o_t = \sigma(W_o[x_t,h_{t-1}]+b_o)
-$$
-$$
-c_t = f_t<em>c_{t-1}+i_t</em>\tanh(W_c[x_t,h_{t-1}]+b_c)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
+c_t = f_t*c_{t-1}+i_t*\tanh(W_c[x_t,h_{t-1}]+b_c)
+\]</div>
+<div class="arithmatex">\[
 h_t = o_t*\tanh(c_t)
-$$</p>
+\]</div>
 <hr />
 <h3 id="transformer">⚡ 七、Transformer 架构<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h3>
 <p>Transformer 取代 RNN，成为 NLP 的核心模型。</p>
