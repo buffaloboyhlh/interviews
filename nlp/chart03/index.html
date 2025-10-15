@@ -10,9 +10,13 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/interview/">
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/chart03/">
       
       
+        <link rel="prev" href="../chart02/">
+      
+      
+        <link rel="next" href="../chart04/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>NLP (自然语言处理) - 人工智能面试集合</title>
+        <title>第 3 章：Transformer 与 Self-Attention - 人工智能面试集合</title>
       
     
     
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#31" class="md-skip">
           跳转至
         </a>
       
@@ -112,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NLP (自然语言处理)
+              第 3 章：Transformer 与 Self-Attention
             
           </span>
         </div>
@@ -259,10 +263,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../chart01/" class="md-tabs__link">
           
   
@@ -370,8 +376,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -389,21 +397,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -416,7 +425,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             从零开始学NLP
@@ -473,10 +482,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chart03/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第 3 章：Transformer 与 Self-Attention
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -487,6 +516,171 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 学习目标
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Transformer 概览
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Transformer 概览">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 架构组成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Self-Attention 原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Self-Attention 原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 输入与输出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 Self-Attention 计算公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 Self-Attention 举例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Multi-Head Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-positional-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 位置编码（Positional Encoding）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-feed-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 前馈全连接网络（Feed-Forward）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 残差连接与层归一化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-transformer-python-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8 Transformer Python 示例（PyTorch）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.9 Transformer 优势
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.10 Transformer 直观理解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.11 本章小结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -570,154 +764,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#31" class="md-nav__link">
     <span class="md-ellipsis">
-      一、基础教程
+      3.1 学习目标
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="一、基础教程">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Transformer 概览
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Transformer 概览">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nlp_1" class="md-nav__link">
+  <a href="#321" class="md-nav__link">
     <span class="md-ellipsis">
-      🌍 一、NLP 是什么？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nlp_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 二、NLP 的核心任务
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 三、文本预处理基础
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#word-embedding" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔣 四、词向量（Word Embedding）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#language-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 五、语言模型（Language Model）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rnn-lstm-gru" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔂 六、序列模型（RNN / LSTM / GRU）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚡ 七、Transformer 架构
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#plm" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧬 八、预训练语言模型（PLM）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nlp_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 九、NLP 任务与模型对应
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 十、实战示例：中文情感分类（BERT 微调）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊 十一、评估指标
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ 十二、优化与微调技巧
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 十三、工程与部署
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧭 十四、学习路径建议
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 十五、推荐学习资源
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ 十六、总结
+      3.2.1 架构组成
     </span>
   </a>
   
@@ -725,6 +793,120 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Self-Attention 原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Self-Attention 原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 输入与输出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 Self-Attention 计算公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 Self-Attention 举例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Multi-Head Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-positional-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 位置编码（Positional Encoding）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-feed-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 前馈全连接网络（Feed-Forward）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 残差连接与层归一化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-transformer-python-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8 Transformer Python 示例（PyTorch）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.9 Transformer 优势
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.10 Transformer 直观理解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.11 本章小结
+    </span>
+  </a>
   
 </li>
       
@@ -747,424 +929,236 @@
   
 
 
-<h1 id="nlp">NLP (自然语言处理)<a class="headerlink" href="#nlp" title="Permanent link">&para;</a></h1>
-<h2 id="_1">一、基础教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="nlp_1">🌍 一、NLP 是什么？<a class="headerlink" href="#nlp_1" title="Permanent link">&para;</a></h3>
-<p><strong>自然语言处理（Natural Language Processing, NLP）</strong>
-是一门让计算机能够<strong>理解、生成和处理人类语言</strong>的科学。</p>
-<p>它融合了：</p>
-<ul>
-<li>语言学（语法、语义、上下文）</li>
-<li>计算机科学（算法、工程实现）</li>
-<li>机器学习 / 深度学习（模型训练）</li>
-</ul>
+<h1 id="3-transformer-self-attention">第 3 章 — Transformer 与 Self-Attention<a class="headerlink" href="#3-transformer-self-attention" title="Permanent link">&para;</a></h1>
+<p>Transformer 是现代 NLP 的核心架构，广泛应用于 BERT、GPT 等模型。它的最大特点是<strong>彻底摆脱了 RNN/LSTM 的顺序计算</strong>，通过 <strong>Self-Attention</strong> 同时处理整个序列，实现高效并行和全局上下文建模。</p>
 <hr />
-<h3 id="nlp_2">🧩 二、NLP 的核心任务<a class="headerlink" href="#nlp_2" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>类别</th>
-<th>任务</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本分类</td>
-<td>情感分析、垃圾邮件识别</td>
-<td>“这家餐厅真棒！” → 积极</td>
-</tr>
-<tr>
-<td>序列标注</td>
-<td>命名实体识别（NER）、词性标注</td>
-<td>“张三 在 北京” → 人名 / 地名</td>
-</tr>
-<tr>
-<td>文本匹配</td>
-<td>相似度计算、语义检索</td>
-<td>“天气预报”和“今日气象”相似</td>
-</tr>
-<tr>
-<td>文本生成</td>
-<td>翻译、摘要、对话</td>
-<td>“Translate: 你好 → Hello”</td>
-</tr>
-<tr>
-<td>问答系统</td>
-<td>抽取式 / 生成式 QA</td>
-<td>“中国首都是哪？”→ 北京</td>
-</tr>
-<tr>
-<td>语言建模</td>
-<td>下一词预测</td>
-<td>“我今天很____” → 高兴</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="_2">🧠 三、文本预处理基础<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="31">3.1 学习目标<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
+<p>完成本章后，你将能够：</p>
 <ol>
-<li>
-<p><strong>分词（Tokenization）</strong></p>
-<ul>
-<li>英文：空格、标点分割</li>
-<li>中文：jieba、pkuseg、HanLP</li>
-<li>子词（Subword）：BPE、WordPiece、Unigram</li>
-</ul>
-</li>
-<li>
-<p><strong>停用词（Stopwords）</strong>：去掉高频无意义词（如“的”“了”“and”）</p>
-</li>
-<li>
-<p><strong>词形还原（Lemmatization）</strong></p>
-</li>
-<li>
-<p><strong>向量化（Vectorization）</strong>：将文本转为数字表示</p>
-<ul>
-<li>One-hot encoding</li>
-<li>Bag-of-Words (BoW)</li>
-<li>TF-IDF</li>
-<li>Word Embedding (Word2Vec, GloVe)</li>
-</ul>
-</li>
+<li>理解 Transformer 的整体架构（Encoder 与 Decoder）</li>
+<li>掌握 Self-Attention 的原理、公式与直观理解</li>
+<li>理解 Multi-Head Attention 和位置编码</li>
+<li>用 PyTorch 实现基本的 Self-Attention 和 Transformer</li>
+<li>理解 Transformer 相较于 RNN 的优势</li>
 </ol>
 <hr />
-<h3 id="word-embedding">🔣 四、词向量（Word Embedding）<a class="headerlink" href="#word-embedding" title="Permanent link">&para;</a></h3>
-<p><strong>目标</strong>：将每个词映射为稠密向量，使相似词语向量接近。</p>
-<div class="arithmatex">\[
-\text{Embedding}: \text{Word} \to \mathbb{R}^d
-\]</div>
-<h5 id="1-word2vec">1️⃣ Word2Vec<a class="headerlink" href="#1-word2vec" title="Permanent link">&para;</a></h5>
+<h2 id="32-transformer">3.2 Transformer 概览<a class="headerlink" href="#32-transformer" title="Permanent link">&para;</a></h2>
+<h3 id="321">3.2.1 架构组成<a class="headerlink" href="#321" title="Permanent link">&para;</a></h3>
+<p>Transformer 由 <strong>Encoder</strong> 和 <strong>Decoder</strong> 两部分组成：</p>
 <ul>
-<li>模型结构：Skip-gram / CBOW</li>
-<li>Skip-gram 目标函数：</li>
+<li><strong>Encoder</strong>：处理输入序列，生成上下文表示</li>
+<li><strong>Decoder</strong>：接收 Encoder 输出，生成目标序列</li>
 </ul>
-<p>$$
-  \max_\theta \sum_{t=1}^T \sum_{-c \le j \le c, j\neq 0} \log P(w_{t+j} \mid w_t)
-  $$</p>
-<p>其中：
-$$
-P(w_O \mid w_I) = \frac{\exp(v_{w_O}^\top v_{w_I})}{\sum_{w}\exp(v_w^\top v_{w_I})}
-$$</p>
-<h5 id="2-glove">2️⃣ GloVe<a class="headerlink" href="#2-glove" title="Permanent link">&para;</a></h5>
-<ul>
-<li>基于词共现矩阵 <span class="arithmatex">\(X_{ij}\)</span> 的对数回归：</li>
-</ul>
-<div class="arithmatex">\[
-  J = \sum_{i,j=1}^{V} f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}*j - \log X*{ij})^2
-\]</div>
-<hr />
-<h3 id="language-model">🔁 五、语言模型（Language Model）<a class="headerlink" href="#language-model" title="Permanent link">&para;</a></h3>
-<p>预测一个句子中词语的概率分布：</p>
-<div class="arithmatex">\[
-P(w_1, w_2, ..., w_T) = \prod_{t=1}^{T} P(w_t \mid w_1, ..., w_{t-1})
-\]</div>
-<h5 id="1-n-gram">1️⃣ N-gram 模型<a class="headerlink" href="#1-n-gram" title="Permanent link">&para;</a></h5>
-<p>近似假设：
-$$
-P(w_t \mid w_1,...,w_{t-1}) \approx P(w_t \mid w_{t-n+1},...,w_{t-1})
-$$</p>
-<h5 id="2">2️⃣ 神经语言模型<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
-<p>用神经网络（RNN / Transformer）代替概率表：
-$$
-h_t = f(W_{xh}x_t + W_{hh}h_{t-1})
-$$
-$$
-P(w_t \mid h_t) = \text{softmax}(Wh_t)
-$$</p>
-<hr />
-<h3 id="rnn-lstm-gru">🔂 六、序列模型（RNN / LSTM / GRU）<a class="headerlink" href="#rnn-lstm-gru" title="Permanent link">&para;</a></h3>
-<h4 id="1-rnn">1️⃣ RNN<a class="headerlink" href="#1-rnn" title="Permanent link">&para;</a></h4>
-<p>递归结构：
-$$
-h_t = \tanh(W_{xh}x_t + W_{hh}h_{t-1})
-$$
-但存在梯度消失/爆炸问题。</p>
-<h4 id="2-lstm">2️⃣ LSTM（长短期记忆网络）<a class="headerlink" href="#2-lstm" title="Permanent link">&para;</a></h4>
-<p>通过“门控机制”保留长期依赖：</p>
-<div class="arithmatex">\[
-f_t = \sigma(W_f[x_t,h_{t-1}]+b_f)
-\]</div>
-<div class="arithmatex">\[
-i_t = \sigma(W_i[x_t,h_{t-1}]+b_i)
-\]</div>
-<div class="arithmatex">\[
-o_t = \sigma(W_o[x_t,h_{t-1}]+b_o)
-\]</div>
-<div class="arithmatex">\[
-c_t = f_t*c_{t-1}+i_t*\tanh(W_c[x_t,h_{t-1}]+b_c)
-\]</div>
-<div class="arithmatex">\[
-h_t = o_t*\tanh(c_t)
-\]</div>
-<hr />
-<h3 id="transformer">⚡ 七、Transformer 架构<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h3>
-<p>Transformer 取代 RNN，成为 NLP 的核心模型。</p>
-<h4 id="self-attention">Self-Attention 公式：<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">\[
-\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
-\]</div>
-<p>每个词向量与序列中其他词交互，捕获全局依赖。</p>
-<p><strong>优势：</strong></p>
-<ul>
-<li>并行计算</li>
-<li>长程依赖捕捉能力强</li>
-<li>更易扩展（预训练大模型）</li>
-</ul>
-<hr />
-<h3 id="plm">🧬 八、预训练语言模型（PLM）<a class="headerlink" href="#plm" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>模型</th>
-<th>架构</th>
-<th>目标任务</th>
-<th>应用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>BERT</strong></td>
-<td>Encoder</td>
-<td>掩码语言模型 (MLM)</td>
-<td>分类、NER、QA</td>
-</tr>
-<tr>
-<td><strong>GPT</strong></td>
-<td>Decoder</td>
-<td>自回归生成</td>
-<td>对话、写作</td>
-</tr>
-<tr>
-<td><strong>T5 / BART</strong></td>
-<td>Encoder–Decoder</td>
-<td>文本到文本</td>
-<td>翻译、摘要、问答</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="nlp_3">🧰 九、NLP 任务与模型对应<a class="headerlink" href="#nlp_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>任务</th>
-<th>输入输出</th>
-<th>模型</th>
-<th>损失函数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本分类</td>
-<td>文本 → 类别</td>
-<td>BERT + Linear</td>
-<td>CrossEntropy</td>
-</tr>
-<tr>
-<td>序列标注</td>
-<td>文本 → 标签序列</td>
-<td>BERT + CRF</td>
-<td>NLL</td>
-</tr>
-<tr>
-<td>机器翻译</td>
-<td>句子 → 句子</td>
-<td>Transformer</td>
-<td>CrossEntropy</td>
-</tr>
-<tr>
-<td>摘要生成</td>
-<td>文本 → 摘要</td>
-<td>BART / T5</td>
-<td>NLL</td>
-</tr>
-<tr>
-<td>QA 问答</td>
-<td>文本 → 答案</td>
-<td>BERT / T5</td>
-<td>Span / CrossEntropy</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="bert">🧪 十、实战示例：中文情感分类（BERT 微调）<a class="headerlink" href="#bert" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModelForSequenceClassification</span><span class="p">,</span> <span class="n">Trainer</span><span class="p">,</span> <span class="n">TrainingArguments</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
-
-<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;bert-base-chinese&quot;</span>
-<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">num_labels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># 加载数据</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="n">data_files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="s2">&quot;train.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;test.csv&quot;</span><span class="p">})</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;max_length&quot;</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">args</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span>
-    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;./output&quot;</span><span class="p">,</span>
-    <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
-    <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">evaluation_strategy</span><span class="o">=</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span>
-    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">2e-5</span>
-<span class="p">)</span>
-
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span>
-                  <span class="n">train_dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">],</span>
-                  <span class="n">eval_dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">])</span>
-
-<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-</code></pre></div>
-<hr />
-<h3 id="_3">📊 十一、评估指标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>任务类型</th>
-<th>指标</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>分类</td>
-<td>Accuracy, Precision, Recall, F1</td>
-</tr>
-<tr>
-<td>序列标注</td>
-<td>Token-level / Entity-level F1</td>
-</tr>
-<tr>
-<td>生成</td>
-<td>BLEU, ROUGE</td>
-</tr>
-<tr>
-<td>语言模型</td>
-<td>Perplexity</td>
-</tr>
-<tr>
-<td>检索</td>
-<td>MRR, Recall@k, NDCG@k</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="_4">⚙️ 十二、优化与微调技巧<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
-<li>学习率：<span class="arithmatex">\(1e^{-5} \sim 5e^{-5}\)</span></li>
-<li>warmup + linear decay 调度</li>
-<li>Dropout、权重衰减防止过拟合</li>
-<li>冻结底层，先训练上层</li>
-<li>小样本：使用 <strong>LoRA / PEFT / Prompt-tuning</strong></li>
-</ul>
-<hr />
-<h3 id="_5">🧠 十三、工程与部署<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ul>
-<li>推理优化：FP16 / 量化 / ONNX / TensorRT</li>
-<li>服务化：FastAPI + TorchServe</li>
-<li>检索增强（RAG）：LLM + 向量数据库（FAISS / Chroma）</li>
-<li>模型监控：延迟、准确率漂移、日志分析</li>
-</ul>
-<hr />
-<h3 id="_6">🧭 十四、学习路径建议<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>阶段</th>
-<th>学习目标</th>
-<th>推荐实践</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1️⃣ NLP 基础</td>
-<td>理解词袋、TF-IDF、Word2Vec</td>
-<td>做文本分类</td>
-</tr>
-<tr>
-<td>2️⃣ 序列模型</td>
-<td>掌握 RNN / LSTM</td>
-<td>做情感分析、NER</td>
-</tr>
-<tr>
-<td>3️⃣ Transformer</td>
-<td>理解 Self-Attention</td>
-<td>实现机器翻译</td>
-</tr>
-<tr>
-<td>4️⃣ 预训练模型</td>
-<td>使用 BERT / GPT</td>
-<td>做 QA、摘要</td>
-</tr>
-<tr>
-<td>5️⃣ 工程实践</td>
-<td>模型优化与部署</td>
-<td>FastAPI + ONNX</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="_7">📚 十五、推荐学习资源<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>书籍：</p>
-</li>
-<li>
-<p>《Speech and Language Processing》—— Jurafsky &amp; Martin</p>
-</li>
-<li>《Deep Learning for NLP》—— Yoav Goldberg</li>
-<li>
-<p>《自然语言处理综论》—— 周明</p>
-</li>
-<li>
-<p>开源课程：</p>
-</li>
-<li>
-<p>CS224N（Stanford NLP）</p>
-</li>
-<li>Hugging Face Transformers 官方教程</li>
-</ul>
-<hr />
-<h3 id="_8">✅ 十六、总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>模块</th>
-<th>关键词</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本表示</td>
-<td>Tokenization, Embedding</td>
-</tr>
-<tr>
-<td>序列建模</td>
-<td>RNN, LSTM, Attention</td>
-</tr>
-<tr>
-<td>现代架构</td>
-<td>Transformer, BERT, GPT</td>
-</tr>
-<tr>
-<td>任务映射</td>
-<td>分类 / 生成 / QA</td>
-</tr>
-<tr>
-<td>优化与部署</td>
-<td>微调、蒸馏、ONNX</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p>如果你想进一步学习，我可以为你生成一个分阶段系统课程：</p>
+<p><strong>Encoder 核心模块</strong>：</p>
+<ol>
+<li>Multi-Head Self-Attention</li>
+<li>前馈全连接网络（Feed-Forward Network）</li>
+<li>残差连接 + 层归一化</li>
+</ol>
+<p><strong>Decoder 核心模块</strong>：</p>
+<ol>
+<li>Masked Multi-Head Self-Attention（避免看到未来信息）</li>
+<li>Encoder-Decoder Attention（将输入序列信息与当前生成序列对齐）</li>
+<li>前馈全连接网络 + 残差连接</li>
+</ol>
 <blockquote>
-<p>📘「从零开始学 NLP」系列
-第 1 章：文本表示与词向量
-第 2 章：RNN/LSTM 序列模型
-第 3 章：Transformer 与 Self-Attention
-第 4 章：BERT / GPT 原理与微调
-第 5 章：NLP 实战与部署</p>
+<p>Encoder-Decoder 架构常用于机器翻译，单独 Encoder（如 BERT）用于理解任务，单独 Decoder（如 GPT）用于生成任务。</p>
 </blockquote>
-<p>是否希望我帮你制定这个 <strong>系统化 NLP 学习路线表（附练习任务和代码）</strong>？</p>
+<hr />
+<h2 id="33-self-attention">3.3 Self-Attention 原理<a class="headerlink" href="#33-self-attention" title="Permanent link">&para;</a></h2>
+<p>Self-Attention 是 Transformer 的核心，它让每个词可以<strong>关注序列中所有其他词</strong>，从而捕获全局上下文。</p>
+<h3 id="331">3.3.1 输入与输出<a class="headerlink" href="#331" title="Permanent link">&para;</a></h3>
+<ul>
+<li>输入序列：<span class="arithmatex">\(X = [x_1, x_2, ..., x_n]\)</span>，每个 <span class="arithmatex">\(x_i\)</span> 是词向量</li>
+<li>输出序列：<span class="arithmatex">\(Z = [z_1, z_2, ..., z_n]\)</span>，每个 <span class="arithmatex">\(z_i\)</span> 是上下文向量</li>
+</ul>
+<blockquote>
+<p>直观理解：Self-Attention 就像每个词都在问“在理解我自己的意义时，其他词的重要性是多少”，然后根据权重整合信息。</p>
+</blockquote>
+<hr />
+<h3 id="332-self-attention">3.3.2 Self-Attention 计算公式<a class="headerlink" href="#332-self-attention" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>生成 Query、Key、Value 向量</strong>：</li>
+</ol>
+<div class="arithmatex">\[
+Q = X W^Q, \quad K = X W^K, \quad V = X W^V
+\]</div>
+<ul>
+<li><span class="arithmatex">\(W^Q, W^K, W^V\)</span>：可学习的权重矩阵</li>
+<li><span class="arithmatex">\(Q\)</span>：Query（提问）</li>
+<li><span class="arithmatex">\(K\)</span>：Key（回答的关键）</li>
+<li>
+<p><span class="arithmatex">\(V\)</span>：Value（实际信息）</p>
+</li>
+<li>
+<p><strong>计算注意力分数</strong>：</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+\text{Attention}(Q,K,V) = \text{softmax}\Big(\frac{Q K^\top}{\sqrt{d_k}}\Big) V
+\]</div>
+<ul>
+<li><span class="arithmatex">\(d_k\)</span>：Key 向量维度，用 <span class="arithmatex">\(\sqrt{d_k}\)</span> 缩放避免分数过大</li>
+<li><span class="arithmatex">\(Q K^\top\)</span>：衡量 Query 与每个 Key 的相似度</li>
+<li>softmax：将相似度转换为权重</li>
+</ul>
+<blockquote>
+<p>直观理解：每个词对序列中所有词的“关注程度”被量化，得到加权信息。</p>
+</blockquote>
+<hr />
+<h3 id="333-self-attention">3.3.3 Self-Attention 举例<a class="headerlink" href="#333-self-attention" title="Permanent link">&para;</a></h3>
+<p>句子：<strong>"The cat sat on the mat"</strong></p>
+<ul>
+<li>Query: "cat"</li>
+<li>Key/Value: 所有词</li>
+<li>
+<p>Attention 权重可能显示：</p>
+</li>
+<li>
+<p>"sat": 0.4</p>
+</li>
+<li>"mat": 0.3</li>
+<li>"The": 0.05</li>
+</ul>
+<blockquote>
+<p>说明“cat”会更关注与其语义相关的词，“sat”和“mat”的权重较高。</p>
+</blockquote>
+<hr />
+<h2 id="34-multi-head-attention">3.4 Multi-Head Attention<a class="headerlink" href="#34-multi-head-attention" title="Permanent link">&para;</a></h2>
+<p>单个注意力头可能捕捉的信息有限，<strong>Multi-Head Attention</strong> 用多个注意力头捕捉不同语义关系：</p>
+<div class="arithmatex">\[
+\text{MultiHead}(Q,K,V) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O
+\]</div>
+<ul>
+<li>每个 head 有独立的 <span class="arithmatex">\(W^Q, W^K, W^V\)</span></li>
+<li>可以在不同子空间关注不同信息</li>
+<li>最后通过 <span class="arithmatex">\(W^O\)</span> 整合多头信息</li>
+</ul>
+<blockquote>
+<p>类比：一群专家分别关注序列的不同角度，然后汇总意见。</p>
+</blockquote>
+<hr />
+<h2 id="35-positional-encoding">3.5 位置编码（Positional Encoding）<a class="headerlink" href="#35-positional-encoding" title="Permanent link">&para;</a></h2>
+<p>Transformer 不像 RNN 那样自然感知顺序，因此需要显式位置编码：</p>
+<div class="arithmatex">\[
+PE_{(pos,2i)} = \sin\Big(\frac{pos}{10000^{2i/d_\text{model}}}\Big), \quad
+PE_{(pos,2i+1)} = \cos\Big(\frac{pos}{10000^{2i/d_\text{model}}}\Big)
+\]</div>
+<ul>
+<li><span class="arithmatex">\(pos\)</span>：词在序列的位置</li>
+<li><span class="arithmatex">\(i\)</span>：向量维度索引</li>
+</ul>
+<blockquote>
+<p>直观理解：正弦/余弦波不同频率编码位置，使模型区分顺序，同时允许插值预测。</p>
+</blockquote>
+<hr />
+<h2 id="36-feed-forward">3.6 前馈全连接网络（Feed-Forward）<a class="headerlink" href="#36-feed-forward" title="Permanent link">&para;</a></h2>
+<p>每个 Encoder/Decoder 层还包含一个前馈网络：</p>
+<div class="arithmatex">\[
+\text{FFN}(x) = \text{ReLU}(x W_1 + b_1) W_2 + b_2
+\]</div>
+<ul>
+<li>独立处理每个位置</li>
+<li>增加非线性表达能力</li>
+<li>配合残差连接和 LayerNorm</li>
+</ul>
+<hr />
+<h2 id="37">3.7 残差连接与层归一化<a class="headerlink" href="#37" title="Permanent link">&para;</a></h2>
+<p>每一层使用残差连接和 Layer Normalization：</p>
+<div class="arithmatex">\[
+\text{Output} = \text{LayerNorm}(x + \text{Sublayer}(x))
+\]</div>
+<ul>
+<li>防止梯度消失</li>
+<li>加快训练收敛</li>
+<li>保持信息流通顺畅</li>
+</ul>
+<hr />
+<h2 id="38-transformer-python-pytorch">3.8 Transformer Python 示例（PyTorch）<a class="headerlink" href="#38-transformer-python-pytorch" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+
+<span class="c1"># 输入：batch_size=2, seq_len=5, embedding_dim=512</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">512</span><span class="p">)</span>
+
+<span class="c1"># Multi-Head Attention</span>
+<span class="n">mha</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MultiheadAttention</span><span class="p">(</span><span class="n">embed_dim</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">num_heads</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">out</span><span class="p">,</span> <span class="n">attn_weights</span> <span class="o">=</span> <span class="n">mha</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;输出形状:&quot;</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>        <span class="c1"># (2,5,512)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;注意力权重形状:&quot;</span><span class="p">,</span> <span class="n">attn_weights</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2,8,5,5)</span>
+</code></pre></div>
+<blockquote>
+<p>注意力权重可以可视化，观察每个词关注序列中哪些词。</p>
+</blockquote>
+<hr />
+<h2 id="39-transformer">3.9 Transformer 优势<a class="headerlink" href="#39-transformer" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>RNN</th>
+<th>Transformer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>并行计算</td>
+<td>否，必须顺序处理</td>
+<td>是，全序列并行</td>
+</tr>
+<tr>
+<td>长距离依赖</td>
+<td>难捕捉</td>
+<td>易捕捉，全局注意力</td>
+</tr>
+<tr>
+<td>训练速度</td>
+<td>慢</td>
+<td>快</td>
+</tr>
+<tr>
+<td>表达能力</td>
+<td>有限</td>
+<td>强，多头注意力捕捉复杂语义</td>
+</tr>
+<tr>
+<td>适用任务</td>
+<td>小规模序列</td>
+<td>大规模预训练 &amp; 生成</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="310-transformer">3.10 Transformer 直观理解<a class="headerlink" href="#310-transformer" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Self-Attention：每个词“看”整个序列，找出相关信息</li>
+<li>Multi-Head Attention：多个“专家”，捕捉不同语义</li>
+<li>前馈网络 + 残差连接：处理复杂非线性关系，同时保证信息流</li>
+<li>位置编码：告诉模型词的顺序</li>
+</ul>
+<blockquote>
+<p>Transformer 的并行处理和全局注意力让模型能够快速理解长文本语义。</p>
+</blockquote>
+<hr />
+<h2 id="311">3.11 本章小结<a class="headerlink" href="#311" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Transformer 彻底改变了 NLP 序列处理方式</li>
+<li>Self-Attention 是核心思想，实现全局上下文建模</li>
+<li>Multi-Head Attention 提升了语义捕捉能力</li>
+<li>位置编码解决序列顺序问题</li>
+<li>PyTorch 提供高效实现，可直接实验和可视化</li>
+</ol>
+<hr />
+<p>我可以帮你生成 <strong>第 3 章完整 Jupyter Notebook</strong>，包含：</p>
+<ul>
+<li>Self-Attention 可视化</li>
+<li>Multi-Head Attention 示例</li>
+<li>位置编码可视化</li>
+<li>简单 Transformer 前向传播实验</li>
+</ul>
+<p>这样你可以直接运行实验，更直观理解 Transformer 工作原理。</p>
+<p>你希望我生成这个 notebook 吗？</p>
 
 
 
