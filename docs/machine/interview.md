@@ -5192,7 +5192,7 @@ print("低维特征:", Z_new.shape)  # (100,3)
 
 * 衡量系统的不确定性：
   $$
-  H(D) = - \sum_{k=1}^K p_k \log_2 p_k
+  H(D) = - \sum_{i=1}^k p_i \log_2 p_i
   $$
 
   * $D$：数据集
