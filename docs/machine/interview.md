@@ -5201,15 +5201,20 @@ print("低维特征:", Z_new.shape)  # (100,3)
 
 ###### (2) 条件熵（Conditional Entropy）
 
+在已知某个特征 $A$ 的情况下，类别的不确定性
+
 * 按特征 $A$ 划分：
   $$
-  H(D|A) = \sum_{v \in \text{Values}(A)} \frac{|D_v|}{|D|} H(D_v)
+  H(D|A) = \sum_{v \in \text{values}(A)} \frac{|D_v|}{|D|} H(D_v)
   $$
+* $D_v$：在特征 $A$ 取值 $v$ 的子集
 
 ###### (3) 信息增益（Information Gain）
 
+划分前后的熵减少量
+
 $$
-IG(D,A) = H(D) - H(D|A)
+Gain(D,A) = H(D) - H(D|A)
 $$
 
 * 选择信息增益最大的特征进行划分（ID3算法）
