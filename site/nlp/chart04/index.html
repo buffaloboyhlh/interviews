@@ -10,9 +10,13 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/interview/">
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/chart04/">
       
       
+        <link rel="prev" href="../chart03/">
+      
+      
+        <link rel="next" href="../chart05/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>NLP (自然语言处理) - 人工智能面试集合</title>
+        <title>第 4 章：BERT / GPT 原理与微调 - 人工智能面试集合</title>
       
     
     
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#41" class="md-skip">
           跳转至
         </a>
       
@@ -112,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NLP (自然语言处理)
+              第 4 章：BERT / GPT 原理与微调
             
           </span>
         </div>
@@ -259,10 +263,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../chart01/" class="md-tabs__link">
           
   
@@ -370,8 +376,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -389,21 +397,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -416,7 +425,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             从零开始学NLP
@@ -496,10 +505,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chart04/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第 4 章：BERT / GPT 原理与微调
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -510,6 +539,135 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 学习目标
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 BERT 概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 BERT 概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-masked-language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.1 Masked Language Model 示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 GPT 概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-bert-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 BERT 与 GPT 的差异
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-bert-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 BERT / GPT 的微调
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.1 微调原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452-bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.2 文本分类微调（BERT 示例）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#453-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.3 文本生成微调（GPT 示例）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-bert-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 BERT / GPT 的核心原理总结
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 本章小结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -570,154 +728,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#41" class="md-nav__link">
     <span class="md-ellipsis">
-      一、基础教程
+      4.1 学习目标
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="一、基础教程">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 BERT 概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 BERT 概念">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nlp_1" class="md-nav__link">
+  <a href="#421-masked-language-model" class="md-nav__link">
     <span class="md-ellipsis">
-      🌍 一、NLP 是什么？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nlp_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 二、NLP 的核心任务
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 三、文本预处理基础
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#word-embedding" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔣 四、词向量（Word Embedding）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#language-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 五、语言模型（Language Model）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rnn-lstm-gru" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔂 六、序列模型（RNN / LSTM / GRU）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚡ 七、Transformer 架构
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#plm" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧬 八、预训练语言模型（PLM）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nlp_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 九、NLP 任务与模型对应
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 十、实战示例：中文情感分类（BERT 微调）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊 十一、评估指标
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ 十二、优化与微调技巧
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 十三、工程与部署
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧭 十四、学习路径建议
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 十五、推荐学习资源
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ 十六、总结
+      4.2.1 Masked Language Model 示例
     </span>
   </a>
   
@@ -725,6 +757,84 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 GPT 概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-bert-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 BERT 与 GPT 的差异
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-bert-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 BERT / GPT 的微调
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.1 微调原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452-bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.2 文本分类微调（BERT 示例）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#453-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.3 文本生成微调（GPT 示例）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-bert-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 BERT / GPT 的核心原理总结
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 本章小结
+    </span>
+  </a>
   
 </li>
       
@@ -747,424 +857,183 @@
   
 
 
-<h1 id="nlp">NLP (自然语言处理)<a class="headerlink" href="#nlp" title="Permanent link">&para;</a></h1>
-<h2 id="_1">一、基础教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="nlp_1">🌍 一、NLP 是什么？<a class="headerlink" href="#nlp_1" title="Permanent link">&para;</a></h3>
-<p><strong>自然语言处理（Natural Language Processing, NLP）</strong>
-是一门让计算机能够<strong>理解、生成和处理人类语言</strong>的科学。</p>
-<p>它融合了：</p>
+<h1 id="4-bert-gpt">第 4 章 : BERT / GPT 原理与微调<a class="headerlink" href="#4-bert-gpt" title="Permanent link">&para;</a></h1>
+<p>BERT 与 GPT 是现代 NLP 中最经典的预训练语言模型。它们都基于 Transformer，但在任务设计、训练方式和应用场景上有明显区别。本章将详细讲解它们的原理，并演示如何微调它们进行下游任务。</p>
+<hr />
+<h2 id="41">4.1 学习目标<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
+<p>完成本章后，你将能够：</p>
+<ol>
+<li>理解 BERT 和 GPT 的基本原理与差异</li>
+<li>掌握预训练任务：Masked Language Model (BERT) 与 Autoregressive LM (GPT)</li>
+<li>理解 Transformer 在 BERT/GPT 中的作用</li>
+<li>学会在 Python 中加载预训练模型并进行微调</li>
+<li>理解如何将预训练模型应用于文本分类、文本生成等任务</li>
+</ol>
+<hr />
+<h2 id="42-bert">4.2 BERT 概念<a class="headerlink" href="#42-bert" title="Permanent link">&para;</a></h2>
+<p>BERT（Bidirectional Encoder Representations from Transformers）是<strong>双向 Transformer Encoder</strong>：</p>
 <ul>
-<li>语言学（语法、语义、上下文）</li>
-<li>计算机科学（算法、工程实现）</li>
-<li>机器学习 / 深度学习（模型训练）</li>
+<li><strong>双向</strong>：同时考虑上下文的左侧和右侧信息</li>
+<li>
+<p><strong>预训练任务</strong>：</p>
+<ol>
+<li><strong>Masked Language Model (MLM)</strong>：随机遮盖一些词，预测被遮盖的词
+     $$
+     P(x_{\text{masked}} | x_{\text{context}})
+     $$</li>
+<li><strong>Next Sentence Prediction (NSP)</strong>：预测句子 B 是否紧跟句子 A</li>
+</ol>
+</li>
+<li>
+<p><strong>应用</strong>：文本分类、问答、命名实体识别等理解任务</p>
+</li>
+</ul>
+<blockquote>
+<p>BERT 是 Encoder-only 结构，不用于文本生成。</p>
+</blockquote>
+<hr />
+<h3 id="421-masked-language-model">4.2.1 Masked Language Model 示例<a class="headerlink" href="#421-masked-language-model" title="Permanent link">&para;</a></h3>
+<p>句子：<strong>"The cat sat on the mat"</strong></p>
+<ul>
+<li>随机遮盖词："The cat [MASK] on the mat"</li>
+<li>BERT 学习预测 <code>[MASK]</code> 对应的词 <code>"sat"</code></li>
 </ul>
 <hr />
-<h3 id="nlp_2">🧩 二、NLP 的核心任务<a class="headerlink" href="#nlp_2" title="Permanent link">&para;</a></h3>
+<h2 id="43-gpt">4.3 GPT 概念<a class="headerlink" href="#43-gpt" title="Permanent link">&para;</a></h2>
+<p>GPT（Generative Pre-trained Transformer）是<strong>单向 Transformer Decoder</strong>：</p>
+<ul>
+<li><strong>单向</strong>：从左到右生成文本</li>
+<li><strong>预训练任务</strong>：Autoregressive Language Model (自回归语言模型)
+  $$
+  P(x_t | x_1, x_2, ..., x_{t-1})
+  $$</li>
+<li><strong>应用</strong>：文本生成、对话生成、代码生成等任务</li>
+</ul>
+<blockquote>
+<p>GPT 是 Decoder-only 结构，适合生成任务。</p>
+</blockquote>
+<hr />
+<h2 id="44-bert-gpt">4.4 BERT 与 GPT 的差异<a class="headerlink" href="#44-bert-gpt" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>类别</th>
-<th>任务</th>
-<th>示例</th>
+<th>特性</th>
+<th>BERT</th>
+<th>GPT</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>文本分类</td>
-<td>情感分析、垃圾邮件识别</td>
-<td>“这家餐厅真棒！” → 积极</td>
+<td>Transformer 部分</td>
+<td>Encoder</td>
+<td>Decoder</td>
 </tr>
 <tr>
-<td>序列标注</td>
-<td>命名实体识别（NER）、词性标注</td>
-<td>“张三 在 北京” → 人名 / 地名</td>
+<td>上下文方向</td>
+<td>双向</td>
+<td>单向</td>
 </tr>
 <tr>
-<td>文本匹配</td>
-<td>相似度计算、语义检索</td>
-<td>“天气预报”和“今日气象”相似</td>
+<td>预训练任务</td>
+<td>MLM + NSP</td>
+<td>Autoregressive LM</td>
 </tr>
 <tr>
-<td>文本生成</td>
-<td>翻译、摘要、对话</td>
-<td>“Translate: 你好 → Hello”</td>
+<td>适用任务</td>
+<td>理解任务</td>
+<td>生成任务</td>
 </tr>
 <tr>
-<td>问答系统</td>
-<td>抽取式 / 生成式 QA</td>
-<td>“中国首都是哪？”→ 北京</td>
-</tr>
-<tr>
-<td>语言建模</td>
-<td>下一词预测</td>
-<td>“我今天很____” → 高兴</td>
+<td>典型应用</td>
+<td>文本分类、问答</td>
+<td>文本生成、对话、代码生成</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h3 id="_2">🧠 三、文本预处理基础<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="45-bert-gpt">4.5 BERT / GPT 的微调<a class="headerlink" href="#45-bert-gpt" title="Permanent link">&para;</a></h2>
+<h3 id="451">4.5.1 微调原理<a class="headerlink" href="#451" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>预训练</strong>：在大规模语料上学习通用语言表示</li>
+<li><strong>微调</strong>：在下游任务上训练少量参数，使模型适应特定任务</li>
+</ul>
+<blockquote>
+<p>微调通常比从零训练效果好，且数据需求更少。</p>
+</blockquote>
+<hr />
+<h3 id="452-bert">4.5.2 文本分类微调（BERT 示例）<a class="headerlink" href="#452-bert" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">BertTokenizer</span><span class="p">,</span> <span class="n">BertForSequenceClassification</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trainer</span><span class="p">,</span> <span class="n">TrainingArguments</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+
+<span class="c1"># 加载预训练模型和分词器</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">BertTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;bert-base-uncased&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">BertForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;bert-base-uncased&#39;</span><span class="p">,</span> <span class="n">num_labels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 示例文本</span>
+<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I love NLP&quot;</span><span class="p">,</span> <span class="s2">&quot;I hate bugs&quot;</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># 编码</span>
+<span class="n">encodings</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">TensorDataset</span><span class="p">(</span><span class="n">encodings</span><span class="p">[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">],</span> <span class="n">encodings</span><span class="p">[</span><span class="s1">&#39;attention_mask&#39;</span><span class="p">],</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="c1"># Trainer 简单训练示例</span>
+<span class="n">training_args</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;./results&#39;</span><span class="p">,</span> <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">training_args</span><span class="p">,</span> <span class="n">train_dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h3 id="453-gpt">4.5.3 文本生成微调（GPT 示例）<a class="headerlink" href="#453-gpt" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">GPT2Tokenizer</span><span class="p">,</span> <span class="n">GPT2LMHeadModel</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">GPT2Tokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;gpt2&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">GPT2LMHeadModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;gpt2&#39;</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Once upon a time&quot;</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span>
+
+<span class="c1"># 生成文本</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</code></pre></div>
+<hr />
+<h2 id="46-bert-gpt">4.6 BERT / GPT 的核心原理总结<a class="headerlink" href="#46-bert-gpt" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><strong>分词（Tokenization）</strong></p>
+<p><strong>Transformer</strong> 是底层架构</p>
 <ul>
-<li>英文：空格、标点分割</li>
-<li>中文：jieba、pkuseg、HanLP</li>
-<li>子词（Subword）：BPE、WordPiece、Unigram</li>
+<li>BERT 用 Encoder</li>
+<li>GPT 用 Decoder</li>
 </ul>
 </li>
 <li>
-<p><strong>停用词（Stopwords）</strong>：去掉高频无意义词（如“的”“了”“and”）</p>
-</li>
-<li>
-<p><strong>词形还原（Lemmatization）</strong></p>
-</li>
-<li>
-<p><strong>向量化（Vectorization）</strong>：将文本转为数字表示</p>
+<p><strong>预训练任务</strong>学习语言知识</p>
 <ul>
-<li>One-hot encoding</li>
-<li>Bag-of-Words (BoW)</li>
-<li>TF-IDF</li>
-<li>Word Embedding (Word2Vec, GloVe)</li>
+<li>BERT：Masked LM + NSP</li>
+<li>GPT：自回归 LM</li>
+</ul>
+</li>
+<li>
+<p><strong>微调</strong>在下游任务上少量训练即可获得高性能</p>
+</li>
+<li>
+<p><strong>应用广泛</strong>：</p>
+<ul>
+<li>BERT：分类、问答、命名实体识别</li>
+<li>GPT：文本生成、对话、代码生成</li>
 </ul>
 </li>
 </ol>
 <hr />
-<h3 id="word-embedding">🔣 四、词向量（Word Embedding）<a class="headerlink" href="#word-embedding" title="Permanent link">&para;</a></h3>
-<p><strong>目标</strong>：将每个词映射为稠密向量，使相似词语向量接近。</p>
-<div class="arithmatex">\[
-\text{Embedding}: \text{Word} \to \mathbb{R}^d
-\]</div>
-<h5 id="1-word2vec">1️⃣ Word2Vec<a class="headerlink" href="#1-word2vec" title="Permanent link">&para;</a></h5>
+<h2 id="47">4.7 本章小结<a class="headerlink" href="#47" title="Permanent link">&para;</a></h2>
 <ul>
-<li>模型结构：Skip-gram / CBOW</li>
-<li>Skip-gram 目标函数：</li>
-</ul>
-<p>$$
-  \max_\theta \sum_{t=1}^T \sum_{-c \le j \le c, j\neq 0} \log P(w_{t+j} \mid w_t)
-  $$</p>
-<p>其中：
-$$
-P(w_O \mid w_I) = \frac{\exp(v_{w_O}^\top v_{w_I})}{\sum_{w}\exp(v_w^\top v_{w_I})}
-$$</p>
-<h5 id="2-glove">2️⃣ GloVe<a class="headerlink" href="#2-glove" title="Permanent link">&para;</a></h5>
-<ul>
-<li>基于词共现矩阵 <span class="arithmatex">\(X_{ij}\)</span> 的对数回归：</li>
-</ul>
-<div class="arithmatex">\[
-  J = \sum_{i,j=1}^{V} f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}*j - \log X*{ij})^2
-\]</div>
-<hr />
-<h3 id="language-model">🔁 五、语言模型（Language Model）<a class="headerlink" href="#language-model" title="Permanent link">&para;</a></h3>
-<p>预测一个句子中词语的概率分布：</p>
-<div class="arithmatex">\[
-P(w_1, w_2, ..., w_T) = \prod_{t=1}^{T} P(w_t \mid w_1, ..., w_{t-1})
-\]</div>
-<h5 id="1-n-gram">1️⃣ N-gram 模型<a class="headerlink" href="#1-n-gram" title="Permanent link">&para;</a></h5>
-<p>近似假设：
-$$
-P(w_t \mid w_1,...,w_{t-1}) \approx P(w_t \mid w_{t-n+1},...,w_{t-1})
-$$</p>
-<h5 id="2">2️⃣ 神经语言模型<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
-<p>用神经网络（RNN / Transformer）代替概率表：
-$$
-h_t = f(W_{xh}x_t + W_{hh}h_{t-1})
-$$
-$$
-P(w_t \mid h_t) = \text{softmax}(Wh_t)
-$$</p>
-<hr />
-<h3 id="rnn-lstm-gru">🔂 六、序列模型（RNN / LSTM / GRU）<a class="headerlink" href="#rnn-lstm-gru" title="Permanent link">&para;</a></h3>
-<h4 id="1-rnn">1️⃣ RNN<a class="headerlink" href="#1-rnn" title="Permanent link">&para;</a></h4>
-<p>递归结构：
-$$
-h_t = \tanh(W_{xh}x_t + W_{hh}h_{t-1})
-$$
-但存在梯度消失/爆炸问题。</p>
-<h4 id="2-lstm">2️⃣ LSTM（长短期记忆网络）<a class="headerlink" href="#2-lstm" title="Permanent link">&para;</a></h4>
-<p>通过“门控机制”保留长期依赖：</p>
-<div class="arithmatex">\[
-f_t = \sigma(W_f[x_t,h_{t-1}]+b_f)
-\]</div>
-<div class="arithmatex">\[
-i_t = \sigma(W_i[x_t,h_{t-1}]+b_i)
-\]</div>
-<div class="arithmatex">\[
-o_t = \sigma(W_o[x_t,h_{t-1}]+b_o)
-\]</div>
-<div class="arithmatex">\[
-c_t = f_t*c_{t-1}+i_t*\tanh(W_c[x_t,h_{t-1}]+b_c)
-\]</div>
-<div class="arithmatex">\[
-h_t = o_t*\tanh(c_t)
-\]</div>
-<hr />
-<h3 id="transformer">⚡ 七、Transformer 架构<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h3>
-<p>Transformer 取代 RNN，成为 NLP 的核心模型。</p>
-<h4 id="self-attention">Self-Attention 公式：<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">\[
-\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
-\]</div>
-<p>每个词向量与序列中其他词交互，捕获全局依赖。</p>
-<p><strong>优势：</strong></p>
-<ul>
-<li>并行计算</li>
-<li>长程依赖捕捉能力强</li>
-<li>更易扩展（预训练大模型）</li>
+<li>BERT 强调语言理解，利用双向上下文</li>
+<li>GPT 强调文本生成，利用左到右预测</li>
+<li>预训练 + 微调是现代 NLP 的主流方法</li>
+<li>PyTorch + Transformers 库提供便捷工具，快速微调和应用</li>
 </ul>
 <hr />
-<h3 id="plm">🧬 八、预训练语言模型（PLM）<a class="headerlink" href="#plm" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>模型</th>
-<th>架构</th>
-<th>目标任务</th>
-<th>应用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>BERT</strong></td>
-<td>Encoder</td>
-<td>掩码语言模型 (MLM)</td>
-<td>分类、NER、QA</td>
-</tr>
-<tr>
-<td><strong>GPT</strong></td>
-<td>Decoder</td>
-<td>自回归生成</td>
-<td>对话、写作</td>
-</tr>
-<tr>
-<td><strong>T5 / BART</strong></td>
-<td>Encoder–Decoder</td>
-<td>文本到文本</td>
-<td>翻译、摘要、问答</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="nlp_3">🧰 九、NLP 任务与模型对应<a class="headerlink" href="#nlp_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>任务</th>
-<th>输入输出</th>
-<th>模型</th>
-<th>损失函数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本分类</td>
-<td>文本 → 类别</td>
-<td>BERT + Linear</td>
-<td>CrossEntropy</td>
-</tr>
-<tr>
-<td>序列标注</td>
-<td>文本 → 标签序列</td>
-<td>BERT + CRF</td>
-<td>NLL</td>
-</tr>
-<tr>
-<td>机器翻译</td>
-<td>句子 → 句子</td>
-<td>Transformer</td>
-<td>CrossEntropy</td>
-</tr>
-<tr>
-<td>摘要生成</td>
-<td>文本 → 摘要</td>
-<td>BART / T5</td>
-<td>NLL</td>
-</tr>
-<tr>
-<td>QA 问答</td>
-<td>文本 → 答案</td>
-<td>BERT / T5</td>
-<td>Span / CrossEntropy</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="bert">🧪 十、实战示例：中文情感分类（BERT 微调）<a class="headerlink" href="#bert" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModelForSequenceClassification</span><span class="p">,</span> <span class="n">Trainer</span><span class="p">,</span> <span class="n">TrainingArguments</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
-
-<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;bert-base-chinese&quot;</span>
-<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">num_labels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># 加载数据</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="n">data_files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="s2">&quot;train.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;test.csv&quot;</span><span class="p">})</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;max_length&quot;</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">args</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span>
-    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;./output&quot;</span><span class="p">,</span>
-    <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
-    <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">evaluation_strategy</span><span class="o">=</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span>
-    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">2e-5</span>
-<span class="p">)</span>
-
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span>
-                  <span class="n">train_dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">],</span>
-                  <span class="n">eval_dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">])</span>
-
-<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-</code></pre></div>
-<hr />
-<h3 id="_3">📊 十一、评估指标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>任务类型</th>
-<th>指标</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>分类</td>
-<td>Accuracy, Precision, Recall, F1</td>
-</tr>
-<tr>
-<td>序列标注</td>
-<td>Token-level / Entity-level F1</td>
-</tr>
-<tr>
-<td>生成</td>
-<td>BLEU, ROUGE</td>
-</tr>
-<tr>
-<td>语言模型</td>
-<td>Perplexity</td>
-</tr>
-<tr>
-<td>检索</td>
-<td>MRR, Recall@k, NDCG@k</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="_4">⚙️ 十二、优化与微调技巧<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
-<li>学习率：<span class="arithmatex">\(1e^{-5} \sim 5e^{-5}\)</span></li>
-<li>warmup + linear decay 调度</li>
-<li>Dropout、权重衰减防止过拟合</li>
-<li>冻结底层，先训练上层</li>
-<li>小样本：使用 <strong>LoRA / PEFT / Prompt-tuning</strong></li>
-</ul>
-<hr />
-<h3 id="_5">🧠 十三、工程与部署<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ul>
-<li>推理优化：FP16 / 量化 / ONNX / TensorRT</li>
-<li>服务化：FastAPI + TorchServe</li>
-<li>检索增强（RAG）：LLM + 向量数据库（FAISS / Chroma）</li>
-<li>模型监控：延迟、准确率漂移、日志分析</li>
-</ul>
-<hr />
-<h3 id="_6">🧭 十四、学习路径建议<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>阶段</th>
-<th>学习目标</th>
-<th>推荐实践</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1️⃣ NLP 基础</td>
-<td>理解词袋、TF-IDF、Word2Vec</td>
-<td>做文本分类</td>
-</tr>
-<tr>
-<td>2️⃣ 序列模型</td>
-<td>掌握 RNN / LSTM</td>
-<td>做情感分析、NER</td>
-</tr>
-<tr>
-<td>3️⃣ Transformer</td>
-<td>理解 Self-Attention</td>
-<td>实现机器翻译</td>
-</tr>
-<tr>
-<td>4️⃣ 预训练模型</td>
-<td>使用 BERT / GPT</td>
-<td>做 QA、摘要</td>
-</tr>
-<tr>
-<td>5️⃣ 工程实践</td>
-<td>模型优化与部署</td>
-<td>FastAPI + ONNX</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="_7">📚 十五、推荐学习资源<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>书籍：</p>
-</li>
-<li>
-<p>《Speech and Language Processing》—— Jurafsky &amp; Martin</p>
-</li>
-<li>《Deep Learning for NLP》—— Yoav Goldberg</li>
-<li>
-<p>《自然语言处理综论》—— 周明</p>
-</li>
-<li>
-<p>开源课程：</p>
-</li>
-<li>
-<p>CS224N（Stanford NLP）</p>
-</li>
-<li>Hugging Face Transformers 官方教程</li>
-</ul>
-<hr />
-<h3 id="_8">✅ 十六、总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>模块</th>
-<th>关键词</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本表示</td>
-<td>Tokenization, Embedding</td>
-</tr>
-<tr>
-<td>序列建模</td>
-<td>RNN, LSTM, Attention</td>
-</tr>
-<tr>
-<td>现代架构</td>
-<td>Transformer, BERT, GPT</td>
-</tr>
-<tr>
-<td>任务映射</td>
-<td>分类 / 生成 / QA</td>
-</tr>
-<tr>
-<td>优化与部署</td>
-<td>微调、蒸馏、ONNX</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p>如果你想进一步学习，我可以为你生成一个分阶段系统课程：</p>
-<blockquote>
-<p>📘「从零开始学 NLP」系列
-第 1 章：文本表示与词向量
-第 2 章：RNN/LSTM 序列模型
-第 3 章：Transformer 与 Self-Attention
-第 4 章：BERT / GPT 原理与微调
-第 5 章：NLP 实战与部署</p>
-</blockquote>
-<p>是否希望我帮你制定这个 <strong>系统化 NLP 学习路线表（附练习任务和代码）</strong>？</p>
 
 
 
