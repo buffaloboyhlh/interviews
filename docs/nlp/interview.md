@@ -32,9 +32,9 @@
 
 1. **分词（Tokenization）**
 
-   * 英文：空格、标点分割
-   * 中文：jieba、pkuseg、HanLP
-   * 子词（Subword）：BPE、WordPiece、Unigram
+     * 英文：空格、标点分割
+     * 中文：jieba、pkuseg、HanLP
+     * 子词（Subword）：BPE、WordPiece、Unigram
 
 2. **停用词（Stopwords）**：去掉高频无意义词（如“的”“了”“and”）
 
@@ -42,16 +42,17 @@
 
 4. **向量化（Vectorization）**：将文本转为数字表示
 
-   * One-hot encoding
-   * Bag-of-Words (BoW)
-   * TF-IDF
-   * Word Embedding (Word2Vec, GloVe)
+     * One-hot encoding
+     * Bag-of-Words (BoW)
+     * TF-IDF
+     * Word Embedding (Word2Vec, GloVe)
 
 ---
 
 ### 🔣 四、词向量（Word Embedding）
 
 **目标**：将每个词映射为稠密向量，使相似词语向量接近。
+
 $$
 \text{Embedding}: \text{Word} \to \mathbb{R}^d
 $$
@@ -60,6 +61,7 @@ $$
 
 * 模型结构：Skip-gram / CBOW
 * Skip-gram 目标函数：
+
   $$
   \max_\theta \sum_{t=1}^T \sum_{-c \le j \le c, j\neq 0} \log P(w_{t+j} \mid w_t)
   $$
@@ -72,9 +74,10 @@ $$
 ##### 2️⃣ GloVe
 
 * 基于词共现矩阵 $X_{ij}$ 的对数回归：
-  $$
+
+$$
   J = \sum_{i,j=1}^{V} f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}*j - \log X*{ij})^2
-  $$
+$$
 
 ---
 
@@ -118,18 +121,23 @@ $$
 #### 2️⃣ LSTM（长短期记忆网络）
 
 通过“门控机制”保留长期依赖：
+
 $$
 f_t = \sigma(W_f[x_t,h_{t-1}]+b_f)
 $$
+
 $$
 i_t = \sigma(W_i[x_t,h_{t-1}]+b_i)
 $$
+
 $$
 o_t = \sigma(W_o[x_t,h_{t-1}]+b_o)
 $$
+
 $$
 c_t = f_t*c_{t-1}+i_t*\tanh(W_c[x_t,h_{t-1}]+b_c)
 $$
+
 $$
 h_t = o_t*\tanh(c_t)
 $$
