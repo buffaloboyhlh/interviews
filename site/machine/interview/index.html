@@ -781,7 +781,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_117" class="md-nav__link">
+  <a href="#_118" class="md-nav__link">
     <span class="md-ellipsis">
       十一、集成学习
     </span>
@@ -805,7 +805,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_118" class="md-nav__link">
+  <a href="#_119" class="md-nav__link">
     <span class="md-ellipsis">
       十二、无监督学习
     </span>
@@ -838,7 +838,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_119" class="md-nav__link">
+  <a href="#_120" class="md-nav__link">
     <span class="md-ellipsis">
       十三、 概率模型
     </span>
@@ -862,7 +862,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_121" class="md-nav__link">
+  <a href="#_122" class="md-nav__link">
     <span class="md-ellipsis">
       十四、其他问题
     </span>
@@ -1506,7 +1506,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_117" class="md-nav__link">
+  <a href="#_118" class="md-nav__link">
     <span class="md-ellipsis">
       十一、集成学习
     </span>
@@ -1530,7 +1530,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_118" class="md-nav__link">
+  <a href="#_119" class="md-nav__link">
     <span class="md-ellipsis">
       十二、无监督学习
     </span>
@@ -1563,7 +1563,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_119" class="md-nav__link">
+  <a href="#_120" class="md-nav__link">
     <span class="md-ellipsis">
       十三、 概率模型
     </span>
@@ -1587,7 +1587,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_121" class="md-nav__link">
+  <a href="#_122" class="md-nav__link">
     <span class="md-ellipsis">
       十四、其他问题
     </span>
@@ -7412,65 +7412,173 @@ Z = f(X)
 <li>可处理多类别、多特征</li>
 <li>易解释，可可视化</li>
 </ul>
-<h4 id="1_15">1️⃣ 原理<a class="headerlink" href="#1_15" title="Permanent link">&para;</a></h4>
-<p>决策树核心问题：<strong>如何选择最优特征和最优切分点？</strong></p>
-<h5 id="1_16">1️⃣ 分类问题<a class="headerlink" href="#1_16" title="Permanent link">&para;</a></h5>
+<h4 id="1_15">1️⃣ 分类问题<a class="headerlink" href="#1_15" title="Permanent link">&para;</a></h4>
+<p>在决策树中，我们希望选择 <strong>最优特征</strong> 来进行划分，让每次划分后的子集“越纯越好”。</p>
 <ul>
-<li>常用指标：<strong>信息增益（ID3）、信息增益率（C4.5）、基尼指数（CART）</strong></li>
+<li><strong>纯</strong>的意思：子集中的样本尽可能属于同一类别。</li>
 </ul>
-<h6 id="1-entropy">(1) 信息熵（Entropy）<a class="headerlink" href="#1-entropy" title="Permanent link">&para;</a></h6>
+<p>不同算法衡量“纯度”的方法不同：</p>
+<ul>
+<li><strong>ID3 → 信息增益</strong></li>
+<li><strong>C4.5 → 信息增益率</strong></li>
+<li><strong>CART → 基尼指数</strong></li>
+</ul>
+<hr />
+<h5 id="id3-information-gain"><strong>二、ID3 与信息增益（Information Gain）</strong><a class="headerlink" href="#id3-information-gain" title="Permanent link">&para;</a></h5>
+<h6 id="1_16">1. 概念<a class="headerlink" href="#1_16" title="Permanent link">&para;</a></h6>
+<p>信息增益来源于信息论。它衡量的是 <strong>使用某特征划分数据前后，信息的不确定性减少了多少</strong>。</p>
 <ul>
 <li>
-<p>衡量系统的不确定性：
-  $$
+<p><strong>熵（Entropy）</strong>：表示数据集的不确定性
+  [
   H(D) = - \sum_{i=1}^k p_i \log_2 p_i
-  $$</p>
+  ]</p>
 </li>
 <li>
 <p><span class="arithmatex">\(D\)</span>：数据集</p>
 </li>
 <li><span class="arithmatex">\(k\)</span>：类别数</li>
-<li><span class="arithmatex">\(p_i\)</span>：类别 <span class="arithmatex">\(i\)</span> 的概率</li>
-</ul>
-<h6 id="2-conditional-entropy">(2) 条件熵（Conditional Entropy）<a class="headerlink" href="#2-conditional-entropy" title="Permanent link">&para;</a></h6>
-<p>在已知某个特征 <span class="arithmatex">\(A\)</span> 的情况下，类别的不确定性</p>
-<ul>
-<li>按特征 <span class="arithmatex">\(A\)</span> 划分：
-  $$
+<li>
+<p><span class="arithmatex">\(p_i\)</span>：类别 <span class="arithmatex">\(i\)</span> 的概率</p>
+</li>
+<li>
+<p><strong>条件熵（Conditional Entropy）</strong>：在已知某个特征 <span class="arithmatex">\(A\)</span> 的情况下，类别的不确定性
+  [
   H(D|A) = \sum_{v \in \text{values}(A)} \frac{|D_v|}{|D|} H(D_v)
-  $$</li>
-<li><span class="arithmatex">\(D_v\)</span>：在特征 <span class="arithmatex">\(A\)</span> 取值 <span class="arithmatex">\(v\)</span> 的子集</li>
+  ]</p>
+</li>
+<li>
+<p><span class="arithmatex">\(D_v\)</span>：在特征 <span class="arithmatex">\(A\)</span> 取值 <span class="arithmatex">\(v\)</span> 的子集</p>
+</li>
+<li>
+<p><strong>信息增益（Information Gain）</strong>：划分前后的熵减少量
+  [
+  Gain(D,A) = H(D) - H(D|A)
+  ]</p>
+</li>
 </ul>
-<h6 id="3-information-gain">(3) 信息增益（Information Gain）<a class="headerlink" href="#3-information-gain" title="Permanent link">&para;</a></h6>
-<p>划分前后的熵减少量</p>
-<div class="arithmatex">\[
-Gain(D,A) = H(D) - H(D|A)
-\]</div>
+<h6 id="2_13">2. 直观解释<a class="headerlink" href="#2_13" title="Permanent link">&para;</a></h6>
 <ul>
-<li>选择信息增益最大的特征进行划分（ID3算法）</li>
+<li>熵越大 → 数据越混乱</li>
+<li>划分后熵越小 → 数据越纯 → 信息增益越大</li>
+<li>ID3选择 <strong>信息增益最大的特征</strong> 作为划分节点</li>
 </ul>
-<h6 id="4-c45">(4) 信息增益率（C4.5）<a class="headerlink" href="#4-c45" title="Permanent link">&para;</a></h6>
+<h6 id="3_7">3. 示例<a class="headerlink" href="#3_7" title="Permanent link">&para;</a></h6>
+<p>假设数据集 <span class="arithmatex">\(D\)</span> 有 10 个样本，分为两类：<code>Yes</code> 6 个，<code>No</code> 4 个。</p>
 <ul>
-<li>信息增益偏向取值多的特征，C4.5 修正：
-  $$
-  GainRatio(D,A) = \frac{IG(D,A)}{H_A(D)}
-  $$</li>
-<li><span class="arithmatex">\(H_A(D)\)</span>：特征 <span class="arithmatex">\(A\)</span> 的固有信息</li>
+<li>总熵：
+  [
+  H(D) = - \frac{6}{10}\log_2 \frac{6}{10} - \frac{4}{10}\log_2 \frac{4}{10} \approx 0.971
+  ]</li>
 </ul>
-<h6 id="5-cart">(5) 基尼指数（CART）<a class="headerlink" href="#5-cart" title="Permanent link">&para;</a></h6>
+<p>假设一个特征 <span class="arithmatex">\(A\)</span> 有两个取值 <code>a1</code> 和 <code>a2</code>，对应子集熵分别为 0.0 和 1.0，子集比例为 0.4 和 0.6：</p>
+<p>[
+H(D|A) = 0.4 \cdot 0 + 0.6 \cdot 1 = 0.6
+]</p>
+<p>信息增益：
+[
+Gain(D,A) = 0.971 - 0.6 = 0.371
+]</p>
+<hr />
+<h5 id="c45-information-gain-ratio"><strong>三、C4.5 与信息增益率（Information Gain Ratio）</strong><a class="headerlink" href="#c45-information-gain-ratio" title="Permanent link">&para;</a></h5>
+<h6 id="1_17">1. 问题<a class="headerlink" href="#1_17" title="Permanent link">&para;</a></h6>
+<p>ID3 的信息增益有偏向性：</p>
 <ul>
-<li>衡量不纯度（Impurity）：
-  $$
-  Gini(D) = 1 - \sum_{k=1}^K p_k^2
-  $$</li>
-<li>对划分 <span class="arithmatex">\(D\)</span> 按特征 <span class="arithmatex">\(A\)</span>：
-  $$
-  Gini_A(D) = \sum_{v \in \text{Values}(A)} \frac{|D_v|}{|D|} Gini(D_v)
-  $$</li>
-<li>选择使 Gini_A(D) 最小的特征和切分点</li>
+<li>倾向选择取值 <strong>较多的特征</strong>（如身份证号、日期等），即使这些特征对分类没太大用处。</li>
+</ul>
+<h6 id="2_14">2. 解决方案<a class="headerlink" href="#2_14" title="Permanent link">&para;</a></h6>
+<p>C4.5 使用 <strong>信息增益率</strong> 来修正：
+[
+GainRatio(D,A) = \frac{Gain(D,A)}{SplitInfo(D,A)}
+]</p>
+<ul>
+<li>
+<p><strong>分裂信息（SplitInfo）</strong>：
+  [
+  SplitInfo(D,A) = - \sum_{v \in values(A)} \frac{|D_v|}{|D|} \log_2 \frac{|D_v|}{|D|}
+  ]</p>
+</li>
+<li>
+<p>核心思想：<strong>用信息增益除以特征自身的划分“杂乱度”</strong>，降低取值多的特征偏好。</p>
+</li>
+</ul>
+<h6 id="3_8">3. 直观理解<a class="headerlink" href="#3_8" title="Permanent link">&para;</a></h6>
+<ul>
+<li>特征值越多，SplitInfo 越大 → GainRatio 越小 → 减少偏向</li>
+<li>C4.5 选择 <strong>信息增益率最大的特征</strong> 进行划分</li>
 </ul>
 <hr />
-<h5 id="2_13">2️⃣ 回归问题<a class="headerlink" href="#2_13" title="Permanent link">&para;</a></h5>
+<h5 id="cart-gini-index"><strong>四、CART 与基尼指数（Gini Index）</strong><a class="headerlink" href="#cart-gini-index" title="Permanent link">&para;</a></h5>
+<p>CART (Classification and Regression Tree) 用 <strong>基尼指数</strong> 来衡量纯度。</p>
+<h6 id="1_18">1. 概念<a class="headerlink" href="#1_18" title="Permanent link">&para;</a></h6>
+<p>基尼指数表示 <strong>从数据集中随机抽取两个样本，它们属于不同类别的概率</strong>：</p>
+<p>[
+Gini(D) = 1 - \sum_{i=1}^{k} p_i^2
+]</p>
+<ul>
+<li><span class="arithmatex">\(p_i\)</span>：类别 <span class="arithmatex">\(i\)</span> 的概率</li>
+<li>值越小 → 数据越纯</li>
+</ul>
+<h6 id="2_15">2. 划分后的基尼指数<a class="headerlink" href="#2_15" title="Permanent link">&para;</a></h6>
+<p>假设用特征 <span class="arithmatex">\(A\)</span> 划分数据集：
+[
+Gini_{split}(D,A) = \sum_{v \in values(A)} \frac{|D_v|}{|D|} Gini(D_v)
+]</p>
+<ul>
+<li>选择 <strong>基尼指数最小的特征进行划分</strong></li>
+<li>CART 生成 <strong>二叉树</strong>（每次分成两个子集）</li>
+</ul>
+<h6 id="3_9">3. 直观理解<a class="headerlink" href="#3_9" title="Permanent link">&para;</a></h6>
+<ul>
+<li>与信息增益不同：基尼指数关注 <strong>样本“混合度”</strong></li>
+<li>越纯 → 基尼指数越低 → 更优划分</li>
+</ul>
+<h6 id="4_8">4. 示例<a class="headerlink" href="#4_8" title="Permanent link">&para;</a></h6>
+<p>假设一个子集有 10 个样本，其中 6 个 <code>Yes</code>，4 个 <code>No</code>：
+[
+Gini(D) = 1 - (0.6^2 + 0.4^2) = 1 - (0.36 + 0.16) = 0.48
+]</p>
+<hr />
+<h5 id="_117"><strong>五、总结对比表</strong><a class="headerlink" href="#_117" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>特征选择指标</th>
+<th>倾向</th>
+<th>划分类型</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID3</td>
+<td>信息增益 Gain</td>
+<td>偏向取值多的特征</td>
+<td>多叉</td>
+<td>简单，概念直观</td>
+<td>对多值特征有偏向性</td>
+</tr>
+<tr>
+<td>C4.5</td>
+<td>信息增益率 GainRatio</td>
+<td>修正 ID3 偏向</td>
+<td>多叉</td>
+<td>处理多值特征更合理</td>
+<td>需要计算分裂信息，略复杂</td>
+</tr>
+<tr>
+<td>CART</td>
+<td>基尼指数 Gini</td>
+<td>偏向纯度大子集</td>
+<td>二叉</td>
+<td>计算简单，生成二叉树</td>
+<td>对类别比例敏感</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2_16">2️⃣ 回归问题<a class="headerlink" href="#2_16" title="Permanent link">&para;</a></h5>
 <ul>
 <li>常用损失函数：<strong>均方误差（MSE）</strong>
   $$
@@ -7482,7 +7590,7 @@ Gain(D,A) = H(D) - H(D|A)
   $$</li>
 <li>选择使 <span class="arithmatex">\(\Delta MSE\)</span> 最大的特征和切分点</li>
 </ul>
-<h4 id="2_14">2️⃣ 损失函数<a class="headerlink" href="#2_14" title="Permanent link">&para;</a></h4>
+<h4 id="2_17">2️⃣ 损失函数<a class="headerlink" href="#2_17" title="Permanent link">&para;</a></h4>
 <h4 id="3-cart">3️⃣ 决策树数学推导过程（以CART分类树为例）<a class="headerlink" href="#3-cart" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
@@ -7513,7 +7621,7 @@ Gain(D,A) = H(D) - H(D|A)
 </ul>
 </li>
 </ol>
-<h4 id="4_8">4️⃣ 评估指标<a class="headerlink" href="#4_8" title="Permanent link">&para;</a></h4>
+<h4 id="4_9">4️⃣ 评估指标<a class="headerlink" href="#4_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>分类树</strong>：</p>
@@ -7534,7 +7642,7 @@ Gain(D,A) = H(D) - H(D|A)
 </li>
 </ul>
 <h4 id="5_4">5️⃣ 实现代码<a class="headerlink" href="#5_4" title="Permanent link">&para;</a></h4>
-<h5 id="1_17">1️⃣ 分类树<a class="headerlink" href="#1_17" title="Permanent link">&para;</a></h5>
+<h5 id="1_19">1️⃣ 分类树<a class="headerlink" href="#1_19" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
 
@@ -7545,7 +7653,7 @@ Gain(D,A) = H(D) - H(D|A)
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy:&quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
 </code></pre></div>
-<h5 id="2_15">2️⃣ 回归树<a class="headerlink" href="#2_15" title="Permanent link">&para;</a></h5>
+<h5 id="2_18">2️⃣ 回归树<a class="headerlink" href="#2_18" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_squared_error</span>
 
@@ -7556,7 +7664,7 @@ Gain(D,A) = H(D) - H(D|A)
 <span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MSE:&quot;</span><span class="p">,</span> <span class="n">mse</span><span class="p">)</span>
 </code></pre></div>
-<h5 id="3_7">3️⃣ 可视化<a class="headerlink" href="#3_7" title="Permanent link">&para;</a></h5>
+<h5 id="3_10">3️⃣ 可视化<a class="headerlink" href="#3_10" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">export_text</span><span class="p">,</span> <span class="n">plot_tree</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
@@ -7636,7 +7744,7 @@ Gain(D,A) = H(D) - H(D|A)
 <h2 id="knn">九、KNN<a class="headerlink" href="#knn" title="Permanent link">&para;</a></h2>
 <h3 id="91-knn">9.1 KNN教程<a class="headerlink" href="#91-knn" title="Permanent link">&para;</a></h3>
 <p><img alt="KNN.png" src="../../imgs/machine/KNN.png" /></p>
-<h4 id="1_18">1️⃣ 原理<a class="headerlink" href="#1_18" title="Permanent link">&para;</a></h4>
+<h4 id="1_20">1️⃣ 原理<a class="headerlink" href="#1_20" title="Permanent link">&para;</a></h4>
 <p>KNN 是一种<strong>基于实例的监督学习算法</strong>，既可以做分类（Classification），也可以做回归（Regression）。
 核心思想：</p>
 <ul>
@@ -7683,7 +7791,7 @@ Gain(D,A) = H(D) - H(D|A)
    $$</p>
 </li>
 </ol>
-<h4 id="2_16">2️⃣ 损失函数<a class="headerlink" href="#2_16" title="Permanent link">&para;</a></h4>
+<h4 id="2_19">2️⃣ 损失函数<a class="headerlink" href="#2_19" title="Permanent link">&para;</a></h4>
 <p>KNN 本质是<strong>非参数、懒惰学习（lazy learning）</strong>，没有显式的参数拟合，所以 <strong>没有训练损失函数</strong>，但是可以用以下方式描述预测误差：</p>
 <h5 id="21_2">2.1 分类损失<a class="headerlink" href="#21_2" title="Permanent link">&para;</a></h5>
 <p>对于一个测试样本 <span class="arithmatex">\(x\)</span>，预测类别 <span class="arithmatex">\(\hat{y}\)</span> 与真实类别 <span class="arithmatex">\(y\)</span> 的损失通常用<strong>0-1 损失</strong>：
@@ -7706,7 +7814,7 @@ $$</p>
   L(y, \hat{y}) = |y - \hat{y}|
   $$</li>
 </ul>
-<h4 id="3_8">3️⃣ 数学推导过程<a class="headerlink" href="#3_8" title="Permanent link">&para;</a></h4>
+<h4 id="3_11">3️⃣ 数学推导过程<a class="headerlink" href="#3_11" title="Permanent link">&para;</a></h4>
 <h5 id="31_1">3.1 分类<a class="headerlink" href="#31_1" title="Permanent link">&para;</a></h5>
 <p>假设找到 <span class="arithmatex">\(K\)</span> 个最近邻样本集合 <span class="arithmatex">\(N_K(x)\)</span>，每个邻居 <span class="arithmatex">\(x_i\)</span> 的类别为 <span class="arithmatex">\(y_i\)</span>：</p>
 <div class="arithmatex">\[
@@ -7730,7 +7838,7 @@ $$
 $$
 \hat{y} = \frac{\sum_{x_i \in N_K(x)} w_i y_i}{\sum_{x_i \in N_K(x)} w_i}
 $$</p>
-<h4 id="4_9">4️⃣ 评估指标<a class="headerlink" href="#4_9" title="Permanent link">&para;</a></h4>
+<h4 id="4_10">4️⃣ 评估指标<a class="headerlink" href="#4_10" title="Permanent link">&para;</a></h4>
 <h5 id="41_1">4.1 分类<a class="headerlink" href="#41_1" title="Permanent link">&para;</a></h5>
 <ul>
 <li><strong>准确率（Accuracy）</strong>：
@@ -7863,7 +7971,7 @@ $$</p>
 <h2 id="svm">十、SVM<a class="headerlink" href="#svm" title="Permanent link">&para;</a></h2>
 <h3 id="101-svm">10.1 SVM教程<a class="headerlink" href="#101-svm" title="Permanent link">&para;</a></h3>
 <p><img alt="SVM.png" src="../../imgs/machine/SVM.png" /></p>
-<h4 id="1_19">1️⃣ 原理<a class="headerlink" href="#1_19" title="Permanent link">&para;</a></h4>
+<h4 id="1_21">1️⃣ 原理<a class="headerlink" href="#1_21" title="Permanent link">&para;</a></h4>
 <p>SVM 是一种<strong>监督学习算法</strong>，用于分类和回归（分类最常用）。核心思想是：</p>
 <ol>
 <li><strong>分类问题</strong>：在特征空间中寻找一个<strong>最优超平面（Hyperplane）</strong>，将不同类别的样本分开。</li>
@@ -7884,7 +7992,7 @@ $$</p>
   f(\mathbf{x}) = \text{sign}(\mathbf{w}\cdot \mathbf{x} + b)
   $$</li>
 </ul>
-<h4 id="2_17">2️⃣ 损失函数<a class="headerlink" href="#2_17" title="Permanent link">&para;</a></h4>
+<h4 id="2_20">2️⃣ 损失函数<a class="headerlink" href="#2_20" title="Permanent link">&para;</a></h4>
 <h5 id="21-svm">2.1 线性可分 SVM<a class="headerlink" href="#21-svm" title="Permanent link">&para;</a></h5>
 <ul>
 <li>最大化间隔 <span class="arithmatex">\(\gamma = \frac{2}{|\mathbf{w}|}\)</span></li>
@@ -7920,7 +8028,7 @@ $$</p>
   \min_{\mathbf{w},b} \frac{1}{2} |\mathbf{w}|^2 + C \sum_{i=1}^n \max(0, 1 - y_i (\mathbf{w}\cdot \mathbf{x}_i + b))
   $$</li>
 </ul>
-<h4 id="3_9">3️⃣ 数学推导过程<a class="headerlink" href="#3_9" title="Permanent link">&para;</a></h4>
+<h4 id="3_12">3️⃣ 数学推导过程<a class="headerlink" href="#3_12" title="Permanent link">&para;</a></h4>
 <h5 id="31-primal-problem">3.1 原始问题（Primal Problem）<a class="headerlink" href="#31-primal-problem" title="Permanent link">&para;</a></h5>
 <div class="arithmatex">\[
 \min_{\mathbf{w},b,\xi} \frac{1}{2}|\mathbf{w}|^2 + C \sum_{i=1}^n \xi_i
@@ -7959,7 +8067,7 @@ f(\mathbf{x}) = \text{sign}\left(\sum_{i \in SV} \alpha_i y_i K(\mathbf{x}_i, \m
 <li>RBF（高斯核）：<span class="arithmatex">\(K(\mathbf{x}_i,\mathbf{x}_j) = \exp(-\gamma |\mathbf{x}_i-\mathbf{x}_j|^2)\)</span></li>
 <li>Sigmoid 核：<span class="arithmatex">\(K(\mathbf{x}_i,\mathbf{x}_j) = \tanh(\kappa \mathbf{x}_i \cdot \mathbf{x}_j + \theta)\)</span></li>
 </ol>
-<h4 id="4_10">4️⃣ 评估指标<a class="headerlink" href="#4_10" title="Permanent link">&para;</a></h4>
+<h4 id="4_11">4️⃣ 评估指标<a class="headerlink" href="#4_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>分类准确率（Accuracy）</strong></li>
 <li><strong>精确率、召回率、F1-score</strong></li>
@@ -8074,9 +8182,9 @@ f(\mathbf{x}) = \text{sign}\left(\sum_{i \in SV} \alpha_i y_i K(\mathbf{x}_i, \m
 </tr>
 </tbody>
 </table>
-<h2 id="_117">十一、集成学习<a class="headerlink" href="#_117" title="Permanent link">&para;</a></h2>
+<h2 id="_118">十一、集成学习<a class="headerlink" href="#_118" title="Permanent link">&para;</a></h2>
 <h3 id="111">11.1 教程<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
-<h4 id="1_20">1️⃣ 原理<a class="headerlink" href="#1_20" title="Permanent link">&para;</a></h4>
+<h4 id="1_22">1️⃣ 原理<a class="headerlink" href="#1_22" title="Permanent link">&para;</a></h4>
 <p><strong>集成学习</strong>是一类将多个模型组合在一起以提高整体性能的算法思想，其核心理念是：</p>
 <blockquote>
 <p>“多个弱学习器结合，可以形成一个强学习器。”</p>
@@ -8142,7 +8250,7 @@ $$</p>
 <li><span class="arithmatex">\(h_m\)</span>：第 <span class="arithmatex">\(m\)</span> 个基模型</li>
 <li><span class="arithmatex">\(g\)</span>：元学习器（如逻辑回归、线性回归）</li>
 </ul>
-<h4 id="2_18">2️⃣ 损失函数<a class="headerlink" href="#2_18" title="Permanent link">&para;</a></h4>
+<h4 id="2_21">2️⃣ 损失函数<a class="headerlink" href="#2_21" title="Permanent link">&para;</a></h4>
 <p>集成学习的损失函数取决于基模型和任务类型：</p>
 <h5 id="21_3">2.1 分类<a class="headerlink" href="#21_3" title="Permanent link">&para;</a></h5>
 <ul>
@@ -8166,7 +8274,7 @@ $$</p>
   L(y, \hat{y}) = |y - \hat{y}|
   $$</li>
 </ul>
-<h4 id="3_10">3️⃣ 数学推导过程<a class="headerlink" href="#3_10" title="Permanent link">&para;</a></h4>
+<h4 id="3_13">3️⃣ 数学推导过程<a class="headerlink" href="#3_13" title="Permanent link">&para;</a></h4>
 <h5 id="31-bagging">3.1 Bagging 方差减少公式<a class="headerlink" href="#31-bagging" title="Permanent link">&para;</a></h5>
 <p>假设基模型方差为 <span class="arithmatex">\(\sigma^2\)</span>，相关性为 <span class="arithmatex">\(\rho\)</span>：
 $$
@@ -8193,7 +8301,7 @@ $$</p>
    w_i \leftarrow w_i \cdot \exp(-\alpha_m y_i h_m(x_i))
    $$</li>
 </ol>
-<h4 id="4_11">4️⃣ 评估指标<a class="headerlink" href="#4_11" title="Permanent link">&para;</a></h4>
+<h4 id="4_12">4️⃣ 评估指标<a class="headerlink" href="#4_12" title="Permanent link">&para;</a></h4>
 <h5 id="41_2">4.1 分类<a class="headerlink" href="#41_2" title="Permanent link">&para;</a></h5>
 <ul>
 <li><strong>Accuracy、Precision、Recall、F1-score</strong></li>
@@ -8297,9 +8405,9 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h2 id="_118">十二、无监督学习<a class="headerlink" href="#_118" title="Permanent link">&para;</a></h2>
+<h2 id="_119">十二、无监督学习<a class="headerlink" href="#_119" title="Permanent link">&para;</a></h2>
 <h3 id="121">12.1 聚类<a class="headerlink" href="#121" title="Permanent link">&para;</a></h3>
-<h4 id="1_21">1️⃣ 原理<a class="headerlink" href="#1_21" title="Permanent link">&para;</a></h4>
+<h4 id="1_23">1️⃣ 原理<a class="headerlink" href="#1_23" title="Permanent link">&para;</a></h4>
 <p>聚类算法通过某种相似度或距离度量，将数据集划分为若干簇（Cluster）。</p>
 <p>常见聚类方法：</p>
 <table>
@@ -8338,7 +8446,7 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h4 id="2_19">2️⃣ 损失函数<a class="headerlink" href="#2_19" title="Permanent link">&para;</a></h4>
+<h4 id="2_22">2️⃣ 损失函数<a class="headerlink" href="#2_22" title="Permanent link">&para;</a></h4>
 <h5 id="21-k-means">2.1 K-Means<a class="headerlink" href="#21-k-means" title="Permanent link">&para;</a></h5>
 <ul>
 <li>目标是最小化簇内平方误差（WCSS, within-cluster sum of squares）：
@@ -8367,7 +8475,7 @@ $$</p>
 </ul>
 </li>
 </ul>
-<h4 id="3_11">3️⃣ 数学推导过程<a class="headerlink" href="#3_11" title="Permanent link">&para;</a></h4>
+<h4 id="3_14">3️⃣ 数学推导过程<a class="headerlink" href="#3_14" title="Permanent link">&para;</a></h4>
 <ol>
 <li>初始化 <span class="arithmatex">\(K\)</span> 个质心 <span class="arithmatex">\(\mu_k\)</span></li>
 <li><strong>分配步骤（Assignment）</strong>：
@@ -8395,7 +8503,7 @@ $$</p>
   \pi_k = \frac{\sum_i \gamma_{ik}}{n}
   $$</li>
 </ul>
-<h4 id="4_12">4️⃣ 评估指标<a class="headerlink" href="#4_12" title="Permanent link">&para;</a></h4>
+<h4 id="4_13">4️⃣ 评估指标<a class="headerlink" href="#4_13" title="Permanent link">&para;</a></h4>
 <h5 id="41_3">4.1 内部指标（无需真实标签）<a class="headerlink" href="#41_3" title="Permanent link">&para;</a></h5>
 <ul>
 <li><strong>簇内平方和（WCSS）</strong></li>
@@ -8516,7 +8624,7 @@ $$</p>
 </tbody>
 </table>
 <h3 id="122">12.2 降维<a class="headerlink" href="#122" title="Permanent link">&para;</a></h3>
-<h4 id="1_22">1️⃣ 原理<a class="headerlink" href="#1_22" title="Permanent link">&para;</a></h4>
+<h4 id="1_24">1️⃣ 原理<a class="headerlink" href="#1_24" title="Permanent link">&para;</a></h4>
 <p><strong>降维</strong>指将高维数据映射到低维空间，同时尽量保留原始数据的主要特征信息。
 目的包括：</p>
 <ul>
@@ -8547,7 +8655,7 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h4 id="2_20">2️⃣ 损失函数<a class="headerlink" href="#2_20" title="Permanent link">&para;</a></h4>
+<h4 id="2_23">2️⃣ 损失函数<a class="headerlink" href="#2_23" title="Permanent link">&para;</a></h4>
 <h5 id="21-pca">2.1 PCA<a class="headerlink" href="#21-pca" title="Permanent link">&para;</a></h5>
 <ul>
 <li>目标是保留方差最大：
@@ -8582,7 +8690,7 @@ $$</p>
 <p>UMAP：最小化图的交叉熵损失，保持局部邻域结构。</p>
 </li>
 </ul>
-<h4 id="3_12">3️⃣ 数学推导过程<a class="headerlink" href="#3_12" title="Permanent link">&para;</a></h4>
+<h4 id="3_15">3️⃣ 数学推导过程<a class="headerlink" href="#3_15" title="Permanent link">&para;</a></h4>
 <h5 id="31-pca">3.1 PCA<a class="headerlink" href="#31-pca" title="Permanent link">&para;</a></h5>
 <ol>
 <li>数据中心化：
@@ -8621,7 +8729,7 @@ $$</p>
    Z = X W
    $$</li>
 </ol>
-<h4 id="4_13">4️⃣ 评估指标<a class="headerlink" href="#4_13" title="Permanent link">&para;</a></h4>
+<h4 id="4_14">4️⃣ 评估指标<a class="headerlink" href="#4_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>保留方差（Explained Variance）</strong>（PCA）：
   $$
@@ -8724,9 +8832,9 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h2 id="_119">十三、 概率模型<a class="headerlink" href="#_119" title="Permanent link">&para;</a></h2>
+<h2 id="_120">十三、 概率模型<a class="headerlink" href="#_120" title="Permanent link">&para;</a></h2>
 <h3 id="131">13.1 朴素贝叶斯<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
-<h4 id="1_23">1️⃣ 原理<a class="headerlink" href="#1_23" title="Permanent link">&para;</a></h4>
+<h4 id="1_25">1️⃣ 原理<a class="headerlink" href="#1_25" title="Permanent link">&para;</a></h4>
 <p>朴素贝叶斯是一种<strong>基于概率的分类方法</strong>，核心思想是：</p>
 <ol>
 <li>
@@ -8755,13 +8863,13 @@ $$</p>
    $$</p>
 </li>
 </ol>
-<h5 id="_120">特点<a class="headerlink" href="#_120" title="Permanent link">&para;</a></h5>
+<h5 id="_121">特点<a class="headerlink" href="#_121" title="Permanent link">&para;</a></h5>
 <ul>
 <li>非常简单高效</li>
 <li>适用于文本分类、垃圾邮件识别、情感分析等</li>
 <li>对小样本也能工作良好</li>
 </ul>
-<h4 id="2_21">2️⃣ 损失函数<a class="headerlink" href="#2_21" title="Permanent link">&para;</a></h4>
+<h4 id="2_24">2️⃣ 损失函数<a class="headerlink" href="#2_24" title="Permanent link">&para;</a></h4>
 <p>朴素贝叶斯通常是概率模型，训练时<strong>不显式优化传统损失函数</strong>，但可视为最大化<strong>似然函数（MLE, Maximum Likelihood Estimation）</strong>：</p>
 <div class="arithmatex">\[
 \mathcal{L}(\theta) = \prod_{i=1}^{N} P(y_i) \prod_{j=1}^{n} P(x_{ij} | y_i)
@@ -8773,7 +8881,7 @@ $$</p>
   $$</li>
 </ul>
 <p>训练目标：<strong>最大化对数似然</strong>，得到 <span class="arithmatex">\(P(y)\)</span> 和 <span class="arithmatex">\(P(x_i|y)\)</span>。</p>
-<h4 id="3_13">3️⃣ 数学推导过程<a class="headerlink" href="#3_13" title="Permanent link">&para;</a></h4>
+<h4 id="3_16">3️⃣ 数学推导过程<a class="headerlink" href="#3_16" title="Permanent link">&para;</a></h4>
 <h5 id="31_2">3.1 分类公式<a class="headerlink" href="#31_2" title="Permanent link">&para;</a></h5>
 <ol>
 <li>
@@ -8807,7 +8915,7 @@ $$</p>
    $$</p>
 </li>
 </ol>
-<h4 id="4_14">4️⃣ 评估指标<a class="headerlink" href="#4_14" title="Permanent link">&para;</a></h4>
+<h4 id="4_15">4️⃣ 评估指标<a class="headerlink" href="#4_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>分类准确率（Accuracy）</strong>：
   $$
@@ -8905,7 +9013,7 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h2 id="_121">十四、其他问题<a class="headerlink" href="#_121" title="Permanent link">&para;</a></h2>
+<h2 id="_122">十四、其他问题<a class="headerlink" href="#_122" title="Permanent link">&para;</a></h2>
 
 
 
