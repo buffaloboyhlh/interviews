@@ -42,7 +42,6 @@ extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
 
 extra_javascript:
-  - styles/javascripts/config.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js
   - styles/javascripts/katex.js
@@ -60,7 +59,12 @@ markdown_extensions:
 nav:
   - 机器学习: machine/interview.md
   - 深度学习: deeplearning/interview.md
-  - NLP: nlp/interview.md
+  - 从零开始学NLP:
+      - 第 1 章：文本表示与词向量: nlp/chart01.md
+      - 第 2 章：RNN/LSTM 序列模型: nlp/chart02.md
+      - 第 3 章：Transformer 与 Self-Attention: nlp/chart03.md
+      - 第 4 章：BERT / GPT 原理与微调: nlp/chart04.md
+      - 第 5 章：NLP 实战与部署: nlp/chart05.md
 
 
 
