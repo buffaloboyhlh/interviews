@@ -66,6 +66,7 @@ nav:
       - 第 4 章：BERT / GPT 原理与微调: nlp/chart04.md
       - 第 5 章：NLP 实战与部署: nlp/chart05.md
       - nltk库: nlp/nltk.md
+      - peft库: nlp/peft.md
 
 
 
