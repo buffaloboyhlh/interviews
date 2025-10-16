@@ -10,13 +10,11 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/chart03/">
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/peft/">
       
       
-        <link rel="prev" href="../chart02/">
+        <link rel="prev" href="../nltk/">
       
-      
-        <link rel="next" href="../chart04/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +22,7 @@
     
     
       
-        <title>第 3 章：Transformer 与 Self-Attention - 人工智能面试集合</title>
+        <title>peft库 - 人工智能面试集合</title>
       
     
     
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#31" class="md-skip">
+        <a href="#peft" class="md-skip">
           跳转至
         </a>
       
@@ -116,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第 3 章：Transformer 与 Self-Attention
+              peft库
             
           </span>
         </div>
@@ -486,30 +484,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    第 3 章：Transformer 与 Self-Attention
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../chart03/" class="md-nav__link">
         
   
   
@@ -520,171 +498,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 学习目标
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#32-transformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 Transformer 概览
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.2 Transformer 概览">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#321" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2.1 架构组成
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#33-self-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 Self-Attention 原理
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.3 Self-Attention 原理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#331" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.1 输入与输出
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#332-self-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.2 Self-Attention 计算公式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#333-self-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.3 Self-Attention 举例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#34-multi-head-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 Multi-Head Attention
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#35-positional-encoding" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.5 位置编码（Positional Encoding）
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#36-feed-forward" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6 前馈全连接网络（Feed-Forward）
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#37" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.7 残差连接与层归一化
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#38-transformer-python-pytorch" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.8 Transformer Python 示例（PyTorch）
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#39-transformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.9 Transformer 优势
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#310-transformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.10 Transformer 直观理解
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#311" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.11 本章小结
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -763,10 +576,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../peft/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    peft库
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -777,6 +610,138 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#peft" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、PEFT 是什么？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peft_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、PEFT 的安装与环境准备
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peft_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、PEFT 的主要方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、LoRA 实战：微调一个 BERT 分类模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、LoRA 实战：微调一个 BERT 分类模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 加载模型与数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 初始化基础模型（冻结参数）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lora" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 应用 LoRA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 训练与保存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-peft" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 加载 PEFT 模型继续使用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peft_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、PEFT 的高级技巧
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peft_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      六、为什么 PEFT 如此重要？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      七、学习延伸方向
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -814,28 +779,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
+  <a href="#peft" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1 学习目标
+      一、PEFT 是什么？
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#32-transformer" class="md-nav__link">
+  <a href="#peft_1" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 Transformer 概览
+      二、PEFT 的安装与环境准备
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3.2 Transformer 概览">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peft_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、PEFT 的主要方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、LoRA 实战：微调一个 BERT 分类模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、LoRA 实战：微调一个 BERT 分类模型">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#321" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2.1 架构组成
+      1. 加载模型与数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 初始化基础模型（冻结参数）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lora" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 应用 LoRA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 训练与保存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-peft" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 加载 PEFT 模型继续使用
     </span>
   </a>
   
@@ -847,114 +866,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#33-self-attention" class="md-nav__link">
+  <a href="#peft_3" class="md-nav__link">
     <span class="md-ellipsis">
-      3.3 Self-Attention 原理
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.3 Self-Attention 原理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#331" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.1 输入与输出
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#332-self-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.2 Self-Attention 计算公式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#333-self-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.3 Self-Attention 举例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#34-multi-head-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 Multi-Head Attention
+      五、PEFT 的高级技巧
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#35-positional-encoding" class="md-nav__link">
+  <a href="#peft_4" class="md-nav__link">
     <span class="md-ellipsis">
-      3.5 位置编码（Positional Encoding）
+      六、为什么 PEFT 如此重要？
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#36-feed-forward" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      3.6 前馈全连接网络（Feed-Forward）
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#37" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.7 残差连接与层归一化
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#38-transformer-python-pytorch" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.8 Transformer Python 示例（PyTorch）
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#39-transformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.9 Transformer 优势
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#310-transformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.10 Transformer 直观理解
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#311" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.11 本章小结
+      七、学习延伸方向
     </span>
   </a>
   
@@ -979,236 +911,185 @@
   
 
 
-<h1 id="3-transformer-self-attention">第 3 章 — Transformer 与 Self-Attention<a class="headerlink" href="#3-transformer-self-attention" title="Permanent link">&para;</a></h1>
-<p>Transformer 是现代 NLP 的核心架构，广泛应用于 BERT、GPT 等模型。它的最大特点是<strong>彻底摆脱了 RNN/LSTM 的顺序计算</strong>，通过 <strong>Self-Attention</strong> 同时处理整个序列，实现高效并行和全局上下文建模。</p>
-<hr />
-<h2 id="31">3.1 学习目标<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
-<p>完成本章后，你将能够：</p>
-<ol>
-<li>理解 Transformer 的整体架构（Encoder 与 Decoder）</li>
-<li>掌握 Self-Attention 的原理、公式与直观理解</li>
-<li>理解 Multi-Head Attention 和位置编码</li>
-<li>用 PyTorch 实现基本的 Self-Attention 和 Transformer</li>
-<li>理解 Transformer 相较于 RNN 的优势</li>
-</ol>
-<hr />
-<h2 id="32-transformer">3.2 Transformer 概览<a class="headerlink" href="#32-transformer" title="Permanent link">&para;</a></h2>
-<h3 id="321">3.2.1 架构组成<a class="headerlink" href="#321" title="Permanent link">&para;</a></h3>
-<p>Transformer 由 <strong>Encoder</strong> 和 <strong>Decoder</strong> 两部分组成：</p>
-<ul>
-<li><strong>Encoder</strong>：处理输入序列，生成上下文表示</li>
-<li><strong>Decoder</strong>：接收 Encoder 输出，生成目标序列</li>
-</ul>
-<p><strong>Encoder 核心模块</strong>：</p>
-<ol>
-<li>Multi-Head Self-Attention</li>
-<li>前馈全连接网络（Feed-Forward Network）</li>
-<li>残差连接 + 层归一化</li>
-</ol>
-<p><strong>Decoder 核心模块</strong>：</p>
-<ol>
-<li>Masked Multi-Head Self-Attention（避免看到未来信息）</li>
-<li>Encoder-Decoder Attention（将输入序列信息与当前生成序列对齐）</li>
-<li>前馈全连接网络 + 残差连接</li>
-</ol>
-<blockquote>
-<p>Encoder-Decoder 架构常用于机器翻译，单独 Encoder（如 BERT）用于理解任务，单独 Decoder（如 GPT）用于生成任务。</p>
-</blockquote>
-<hr />
-<h2 id="33-self-attention">3.3 Self-Attention 原理<a class="headerlink" href="#33-self-attention" title="Permanent link">&para;</a></h2>
-<p>Self-Attention 是 Transformer 的核心，它让每个词可以<strong>关注序列中所有其他词</strong>，从而捕获全局上下文。</p>
-<h3 id="331">3.3.1 输入与输出<a class="headerlink" href="#331" title="Permanent link">&para;</a></h3>
-<ul>
-<li>输入序列：<span class="arithmatex">\(X = [x_1, x_2, ..., x_n]\)</span>，每个 <span class="arithmatex">\(x_i\)</span> 是词向量</li>
-<li>输出序列：<span class="arithmatex">\(Z = [z_1, z_2, ..., z_n]\)</span>，每个 <span class="arithmatex">\(z_i\)</span> 是上下文向量</li>
-</ul>
-<blockquote>
-<p>直观理解：Self-Attention 就像每个词都在问“在理解我自己的意义时，其他词的重要性是多少”，然后根据权重整合信息。</p>
-</blockquote>
-<hr />
-<h3 id="332-self-attention">3.3.2 Self-Attention 计算公式<a class="headerlink" href="#332-self-attention" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>生成 Query、Key、Value 向量</strong>：</li>
-</ol>
-<div class="arithmatex">\[
-Q = X W^Q, \quad K = X W^K, \quad V = X W^V
-\]</div>
-<ul>
-<li><span class="arithmatex">\(W^Q, W^K, W^V\)</span>：可学习的权重矩阵</li>
-<li><span class="arithmatex">\(Q\)</span>：Query（提问）</li>
-<li><span class="arithmatex">\(K\)</span>：Key（回答的关键）</li>
-<li>
-<p><span class="arithmatex">\(V\)</span>：Value（实际信息）</p>
-</li>
-<li>
-<p><strong>计算注意力分数</strong>：</p>
-</li>
-</ul>
-<div class="arithmatex">\[
-\text{Attention}(Q,K,V) = \text{softmax}\Big(\frac{Q K^\top}{\sqrt{d_k}}\Big) V
-\]</div>
-<ul>
-<li><span class="arithmatex">\(d_k\)</span>：Key 向量维度，用 <span class="arithmatex">\(\sqrt{d_k}\)</span> 缩放避免分数过大</li>
-<li><span class="arithmatex">\(Q K^\top\)</span>：衡量 Query 与每个 Key 的相似度</li>
-<li>softmax：将相似度转换为权重</li>
-</ul>
-<blockquote>
-<p>直观理解：每个词对序列中所有词的“关注程度”被量化，得到加权信息。</p>
-</blockquote>
-<hr />
-<h3 id="333-self-attention">3.3.3 Self-Attention 举例<a class="headerlink" href="#333-self-attention" title="Permanent link">&para;</a></h3>
-<p>句子：<strong>"The cat sat on the mat"</strong></p>
-<ul>
-<li>Query: "cat"</li>
-<li>Key/Value: 所有词</li>
-<li>
-<p>Attention 权重可能显示：</p>
-</li>
-<li>
-<p>"sat": 0.4</p>
-</li>
-<li>"mat": 0.3</li>
-<li>"The": 0.05</li>
-</ul>
-<blockquote>
-<p>说明“cat”会更关注与其语义相关的词，“sat”和“mat”的权重较高。</p>
-</blockquote>
-<hr />
-<h2 id="34-multi-head-attention">3.4 Multi-Head Attention<a class="headerlink" href="#34-multi-head-attention" title="Permanent link">&para;</a></h2>
-<p>单个注意力头可能捕捉的信息有限，<strong>Multi-Head Attention</strong> 用多个注意力头捕捉不同语义关系：</p>
-<div class="arithmatex">\[
-\text{MultiHead}(Q,K,V) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O
-\]</div>
-<ul>
-<li>每个 head 有独立的 <span class="arithmatex">\(W^Q, W^K, W^V\)</span></li>
-<li>可以在不同子空间关注不同信息</li>
-<li>最后通过 <span class="arithmatex">\(W^O\)</span> 整合多头信息</li>
-</ul>
-<blockquote>
-<p>类比：一群专家分别关注序列的不同角度，然后汇总意见。</p>
-</blockquote>
-<hr />
-<h2 id="35-positional-encoding">3.5 位置编码（Positional Encoding）<a class="headerlink" href="#35-positional-encoding" title="Permanent link">&para;</a></h2>
-<p>Transformer 不像 RNN 那样自然感知顺序，因此需要显式位置编码：</p>
-<div class="arithmatex">\[
-PE_{(pos,2i)} = \sin\Big(\frac{pos}{10000^{2i/d_\text{model}}}\Big), \quad
-PE_{(pos,2i+1)} = \cos\Big(\frac{pos}{10000^{2i/d_\text{model}}}\Big)
-\]</div>
-<ul>
-<li><span class="arithmatex">\(pos\)</span>：词在序列的位置</li>
-<li><span class="arithmatex">\(i\)</span>：向量维度索引</li>
-</ul>
-<blockquote>
-<p>直观理解：正弦/余弦波不同频率编码位置，使模型区分顺序，同时允许插值预测。</p>
-</blockquote>
-<hr />
-<h2 id="36-feed-forward">3.6 前馈全连接网络（Feed-Forward）<a class="headerlink" href="#36-feed-forward" title="Permanent link">&para;</a></h2>
-<p>每个 Encoder/Decoder 层还包含一个前馈网络：</p>
-<div class="arithmatex">\[
-\text{FFN}(x) = \text{ReLU}(x W_1 + b_1) W_2 + b_2
-\]</div>
-<ul>
-<li>独立处理每个位置</li>
-<li>增加非线性表达能力</li>
-<li>配合残差连接和 LayerNorm</li>
-</ul>
-<hr />
-<h2 id="37">3.7 残差连接与层归一化<a class="headerlink" href="#37" title="Permanent link">&para;</a></h2>
-<p>每一层使用残差连接和 Layer Normalization：</p>
-<div class="arithmatex">\[
-\text{Output} = \text{LayerNorm}(x + \text{Sublayer}(x))
-\]</div>
-<ul>
-<li>防止梯度消失</li>
-<li>加快训练收敛</li>
-<li>保持信息流通顺畅</li>
-</ul>
-<hr />
-<h2 id="38-transformer-python-pytorch">3.8 Transformer Python 示例（PyTorch）<a class="headerlink" href="#38-transformer-python-pytorch" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+  <h1>peft库</h1>
 
-<span class="c1"># 输入：batch_size=2, seq_len=5, embedding_dim=512</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">512</span><span class="p">)</span>
-
-<span class="c1"># Multi-Head Attention</span>
-<span class="n">mha</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MultiheadAttention</span><span class="p">(</span><span class="n">embed_dim</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">num_heads</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">out</span><span class="p">,</span> <span class="n">attn_weights</span> <span class="o">=</span> <span class="n">mha</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;输出形状:&quot;</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>        <span class="c1"># (2,5,512)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;注意力权重形状:&quot;</span><span class="p">,</span> <span class="n">attn_weights</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2,8,5,5)</span>
+<p>好的，我们来系统讲解一下 <strong>PEFT（Parameter-Efficient Fine-Tuning）库</strong>。这是一个在大模型（如 GPT、BERT、LLaMA 等）微调中极具价值的工具——它让你不用“搬起整座山”，只改动几个“关键螺丝”，就能高效地定制模型。下面是从<strong>入门到进阶</strong>的详细教程。</p>
+<hr />
+<h2 id="peft">一、PEFT 是什么？<a class="headerlink" href="#peft" title="Permanent link">&para;</a></h2>
+<p><strong>PEFT（Parameter-Efficient Fine-Tuning）</strong> 是 Hugging Face 推出的一个库，用来在 <strong>不微调整个模型参数</strong> 的情况下，<strong>只更新一小部分参数</strong> 来适配新任务。</p>
+<p>传统微调（Full Fine-tuning）的问题是：</p>
+<ul>
+<li>模型太大（如几十亿参数）；</li>
+<li>显存消耗巨大；</li>
+<li>每个任务都要保存整套模型。</li>
+</ul>
+<p>而 PEFT 的理念是：</p>
+<blockquote>
+<p>“冻结大部分参数，只训练少量新增参数模块。”</p>
+</blockquote>
+<p>这样显存更省、训练更快、迁移更方便。</p>
+<hr />
+<h2 id="peft_1">二、PEFT 的安装与环境准备<a class="headerlink" href="#peft_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>peft<span class="w"> </span>transformers<span class="w"> </span>accelerate<span class="w"> </span>datasets
 </code></pre></div>
-<blockquote>
-<p>注意力权重可以可视化，观察每个词关注序列中哪些词。</p>
-</blockquote>
+<p>建议配合 <code>transformers</code> 一起使用，因为 PEFT 模块直接与 Hugging Face 的模型架构集成。</p>
 <hr />
-<h2 id="39-transformer">3.9 Transformer 优势<a class="headerlink" href="#39-transformer" title="Permanent link">&para;</a></h2>
+<h2 id="peft_2">三、PEFT 的主要方法<a class="headerlink" href="#peft_2" title="Permanent link">&para;</a></h2>
+<p>PEFT 提供了几种主流的参数高效微调策略：</p>
 <table>
 <thead>
 <tr>
-<th>特性</th>
-<th>RNN</th>
-<th>Transformer</th>
+<th>方法</th>
+<th>核心思想</th>
+<th>优点</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>并行计算</td>
-<td>否，必须顺序处理</td>
-<td>是，全序列并行</td>
+<td><strong>LoRA (Low-Rank Adaptation)</strong></td>
+<td>给线性层增加低秩矩阵</td>
+<td>最常用，训练快，节省显存</td>
 </tr>
 <tr>
-<td>长距离依赖</td>
-<td>难捕捉</td>
-<td>易捕捉，全局注意力</td>
+<td><strong>Prefix Tuning</strong></td>
+<td>在输入序列前加可训练前缀向量</td>
+<td>适合语言建模类任务</td>
 </tr>
 <tr>
-<td>训练速度</td>
-<td>慢</td>
-<td>快</td>
+<td><strong>Prompt Tuning</strong></td>
+<td>类似 Prefix，但可用于更广泛任务</td>
+<td>小参数量，可快速迁移</td>
 </tr>
 <tr>
-<td>表达能力</td>
-<td>有限</td>
-<td>强，多头注意力捕捉复杂语义</td>
+<td><strong>IA³</strong></td>
+<td>学习标量系数调整激活值</td>
+<td>参数极少，性能不错</td>
 </tr>
 <tr>
-<td>适用任务</td>
-<td>小规模序列</td>
-<td>大规模预训练 &amp; 生成</td>
+<td><strong>Adapters</strong></td>
+<td>在层间插入小型适配层</td>
+<td>可模块化加载多个任务</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="310-transformer">3.10 Transformer 直观理解<a class="headerlink" href="#310-transformer" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Self-Attention：每个词“看”整个序列，找出相关信息</li>
-<li>Multi-Head Attention：多个“专家”，捕捉不同语义</li>
-<li>前馈网络 + 残差连接：处理复杂非线性关系，同时保证信息流</li>
-<li>位置编码：告诉模型词的顺序</li>
-</ul>
-<blockquote>
-<p>Transformer 的并行处理和全局注意力让模型能够快速理解长文本语义。</p>
-</blockquote>
+<h2 id="lora-bert">四、LoRA 实战：微调一个 BERT 分类模型<a class="headerlink" href="#lora-bert" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 加载模型与数据<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForSequenceClassification</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;bert-base-uncased&quot;</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;imdb&quot;</span><span class="p">)</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">preprocess</span><span class="p">(</span><span class="n">example</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;max_length&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
+
+<span class="n">encoded</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">preprocess</span><span class="p">,</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
 <hr />
-<h2 id="311">3.11 本章小结<a class="headerlink" href="#311" title="Permanent link">&para;</a></h2>
+<h3 id="2">2. 初始化基础模型（冻结参数）<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">num_labels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># 冻结所有参数</span>
+</code></pre></div>
+<hr />
+<h3 id="3-lora">3. 应用 LoRA<a class="headerlink" href="#3-lora" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">peft</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoraConfig</span><span class="p">,</span> <span class="n">get_peft_model</span>
+
+<span class="c1"># LoRA配置</span>
+<span class="n">lora_config</span> <span class="o">=</span> <span class="n">LoraConfig</span><span class="p">(</span>
+    <span class="n">r</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>                         <span class="c1"># 低秩维度</span>
+    <span class="n">lora_alpha</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>               <span class="c1"># 缩放因子</span>
+    <span class="n">target_modules</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">],</span>  <span class="c1"># 应用于注意力层</span>
+    <span class="n">lora_dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">bias</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="n">task_type</span><span class="o">=</span><span class="s2">&quot;SEQ_CLS&quot;</span>          <span class="c1"># 序列分类任务</span>
+<span class="p">)</span>
+
+<span class="n">peft_model</span> <span class="o">=</span> <span class="n">get_peft_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">lora_config</span><span class="p">)</span>
+<span class="n">peft_model</span><span class="o">.</span><span class="n">print_trainable_parameters</span><span class="p">()</span>
+</code></pre></div>
+<p>输出类似：</p>
+<div class="highlight"><pre><span></span><code>trainable params: 590,000 || all params: 110,000,000 || trainable%: 0.5%
+</code></pre></div>
+<p>这意味着只训练了 <strong>0.5% 的参数</strong>！</p>
+<hr />
+<h3 id="4">4. 训练与保存<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrainingArguments</span><span class="p">,</span> <span class="n">Trainer</span>
+
+<span class="n">training_args</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;./lora-bert-imdb&quot;</span><span class="p">,</span>
+    <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">2e-4</span><span class="p">,</span>
+    <span class="n">logging_steps</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">save_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">peft_model</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">=</span><span class="n">training_args</span><span class="p">,</span>
+    <span class="n">train_dataset</span><span class="o">=</span><span class="n">encoded</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">)),</span>
+    <span class="n">eval_dataset</span><span class="o">=</span><span class="n">encoded</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)),</span>
+<span class="p">)</span>
+<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+
+<span class="n">peft_model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="s2">&quot;./lora-bert-imdb&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>训练速度极快，显存压力显著减轻。</p>
+<hr />
+<h3 id="5-peft">5. 加载 PEFT 模型继续使用<a class="headerlink" href="#5-peft" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">peft</span><span class="w"> </span><span class="kn">import</span> <span class="n">PeftModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForSequenceClassification</span>
+
+<span class="n">base_model</span> <span class="o">=</span> <span class="n">AutoModelForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">num_labels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">PeftModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">base_model</span><span class="p">,</span> <span class="s2">&quot;./lora-bert-imdb&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>现在可以像普通模型一样进行推理：</p>
+<div class="highlight"><pre><span></span><code><span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="s2">&quot;This movie was fantastic!&quot;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span><span class="o">.</span><span class="n">logits</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Positive&quot;</span> <span class="k">if</span> <span class="n">pred</span> <span class="k">else</span> <span class="s2">&quot;Negative&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="peft_3">五、PEFT 的高级技巧<a class="headerlink" href="#peft_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Transformer 彻底改变了 NLP 序列处理方式</li>
-<li>Self-Attention 是核心思想，实现全局上下文建模</li>
-<li>Multi-Head Attention 提升了语义捕捉能力</li>
-<li>位置编码解决序列顺序问题</li>
-<li>PyTorch 提供高效实现，可直接实验和可视化</li>
+<li><strong>合并权重以导出完整模型：</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">peft_model</span><span class="o">.</span><span class="n">merge_and_unload</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="s2">&quot;merged_model&quot;</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li><strong>多任务 LoRA 适配：</strong>
+   你可以在不同任务上训练多个 LoRA adapter，然后动态加载不同 adapter。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">model</span><span class="o">.</span><span class="n">load_adapter</span><span class="p">(</span><span class="s2">&quot;adapter_path&quot;</span><span class="p">,</span> <span class="n">adapter_name</span><span class="o">=</span><span class="s2">&quot;sentiment&quot;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">set_adapter</span><span class="p">(</span><span class="s2">&quot;sentiment&quot;</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li><strong>与量化（bitsandbytes）结合：</strong>
+   在大模型（如 LLaMA、GPT-J）上，可以结合 <code>bitsandbytes</code> 量化 + LoRA 微调。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">BitsAndBytesConfig</span>
+
+<span class="n">quant_config</span> <span class="o">=</span> <span class="n">BitsAndBytesConfig</span><span class="p">(</span><span class="n">load_in_8bit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">quantization_config</span><span class="o">=</span><span class="n">quant_config</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="peft_4">六、为什么 PEFT 如此重要？<a class="headerlink" href="#peft_4" title="Permanent link">&para;</a></h2>
+<p>PEFT 是通往 <strong>“个性化 AI”</strong> 的关键路径。
+在算力受限的环境下，它让研究者和开发者能在笔记本电脑或单卡 GPU 上快速定制出专用模型。</p>
+<p>在业界，如 <strong>LLaMA-LoRA、Alpaca、Baichuan-Finetune</strong> 等模型，几乎都采用了 PEFT 的 LoRA 策略。</p>
+<hr />
+<h2 id="_1">七、学习延伸方向<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>阅读论文：<a href="https://arxiv.org/abs/2106.09685">LoRA: Low-Rank Adaptation of Large Language Models (Hu et al., 2021)</a></li>
+<li>深入了解多适配策略：<strong>Adapters, Prefix, Prompt, IA³</strong></li>
+<li>尝试在 <strong>LLM 指令微调（Instruction Tuning）</strong> 任务上使用 PEFT。</li>
 </ol>
 <hr />
-<p>我可以帮你生成 <strong>第 3 章完整 Jupyter Notebook</strong>，包含：</p>
-<ul>
-<li>Self-Attention 可视化</li>
-<li>Multi-Head Attention 示例</li>
-<li>位置编码可视化</li>
-<li>简单 Transformer 前向传播实验</li>
-</ul>
-<p>这样你可以直接运行实验，更直观理解 Transformer 工作原理。</p>
-<p>你希望我生成这个 notebook 吗？</p>
+<p>想更深入吗？我可以帮你写一个从 <strong>零实现 LoRA 微调 LLaMA 或 ChatGLM 的完整 notebook 教程</strong>（含推理接口）。
+是否希望我继续这个方向？</p>
 
 
 
