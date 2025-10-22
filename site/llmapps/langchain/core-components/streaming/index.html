@@ -1,0 +1,2572 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Buffalo">
+      
+      
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langchain/core-components/streaming/">
+      
+      
+        <link rel="prev" href="../short-term%20memory/">
+      
+      
+        <link rel="next" href="../middleware/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>流（Streaming） - 人工智能面试集合</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../styles/extra.css">
+    
+      <link rel="stylesheet" href="../../../../styles/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            人工智能面试集合
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              流（Streaming）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../machine/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../deeplearning/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../nlp/chart01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  从零开始学NLP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  大模型应用开发
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    人工智能面试集合
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../machine/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    机器学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deeplearning/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    从零开始学NLP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            从零开始学NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 1 章：文本表示与词向量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 2 章：RNN/LSTM 序列模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 3 章：Transformer 与 Self-Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 4 章：BERT / GPT 原理与微调
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 5 章：NLP 实战与部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/nltk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    nltk库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/peft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    peft库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型应用开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            大模型应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain核心组件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain核心组件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    智能体（Agents）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型（Models）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消息（Messages）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    工具（Tools）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../short-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    短期记忆（Short-term memory）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    流（Streaming）
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    流（Streaming）
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      流式传输的优势
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建基础 Agent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      流式传输模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流式传输模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-agent-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 代理进度流 (Agent Progress)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-llm-token-llm-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. LLM Token 流 (LLM Tokens)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-custom-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 自定义更新流 (Custom Updates)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 多模式流式传输
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      实际应用场景
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实际应用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景1：实时聊天应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景2：进度监控仪表板
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景3：实时数据流处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 错误处理和重试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 性能优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 选择合适的流式传输模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 处理流式传输错误
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      故障排除
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="故障排除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题及解决方案
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    中间件（Middleware）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structured-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    结构化输出（Structured output）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain进阶用法
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain进阶用法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-usage/Guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guardrails
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-usage/Runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Runtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-usage/context-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context-engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-usage/MCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Context Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-usage/Human-in-the-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Human-in-the-loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-usage/Multi-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-usage/Retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieval
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-usage/Long-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Long-term memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangGraph
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            LangGraph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/Local%20server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thinking in LangGraph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/workflows%2Bagents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflows+agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      流式传输的优势
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建基础 Agent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      流式传输模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流式传输模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-agent-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 代理进度流 (Agent Progress)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-llm-token-llm-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. LLM Token 流 (LLM Tokens)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-custom-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 自定义更新流 (Custom Updates)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 多模式流式传输
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      实际应用场景
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实际应用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景1：实时聊天应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景2：进度监控仪表板
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景3：实时数据流处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 错误处理和重试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 性能优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 选择合适的流式传输模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 处理流式传输错误
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      故障排除
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="故障排除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题及解决方案
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="langchain">LangChain 流式传输<a class="headerlink" href="#langchain" title="Permanent link">&para;</a></h1>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>LangChain 的流式传输系统可以实时展示更新，这对于构建响应迅速的 LLM 应用至关重要。通过逐步显示输出（即使在完整响应准备好之前），流式传输显著改善了用户体验，特别是在处理 LLM 的延迟时。</p>
+<h3 id="_2">流式传输的优势<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>实时反馈</strong>：用户可以看到处理进度</li>
+<li><strong>降低感知延迟</strong>：即使总时间相同，用户体验更好</li>
+<li><strong>调试友好</strong>：可以观察每个步骤的执行情况</li>
+<li><strong>灵活控制</strong>：支持多种流式传输模式</li>
+</ul>
+<h2 id="_3">基础设置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="agent">创建基础 Agent<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain.agents import create_agent
+
+# 创建一个简单的工具函数
+def get_weather(city: str) -&gt; str:
+    &quot;&quot;&quot;获取指定城市的天气&quot;&quot;&quot;
+    return f&quot;{city}的天气是晴朗的，25°C&quot;
+
+# 创建 Agent
+agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[get_weather],
+)
+</code></pre>
+<h2 id="_4">流式传输模式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1-agent-progress">1. 代理进度流 (Agent Progress)<a class="headerlink" href="#1-agent-progress" title="Permanent link">&para;</a></h3>
+<p>使用 <code>stream_mode="updates"</code> 来流式传输代理的每个步骤进度。</p>
+<pre><code class="language-python">def stream_agent_progress():
+    &quot;&quot;&quot;流式传输代理执行进度&quot;&quot;&quot;
+    print(&quot;=== 代理进度流式传输 ===&quot;)
+
+    for chunk in agent.stream(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;北京和上海的天气怎么样？&quot;}]},
+        stream_mode=&quot;updates&quot;,  # 关键参数
+    ):
+        for step, data in chunk.items():
+            print(f&quot;步骤: {step}&quot;)
+            if 'messages' in data and data['messages']:
+                last_message = data['messages'][-1]
+                print(f&quot;内容: {last_message.content}&quot;)
+                if hasattr(last_message, 'tool_calls') and last_message.tool_calls:
+                    print(f&quot;工具调用: {last_message.tool_calls}&quot;)
+            print(&quot;-&quot; * 50)
+
+# 调用示例
+stream_agent_progress()
+</code></pre>
+<p><strong>输出示例：</strong></p>
+<pre><code>步骤: model
+内容: 
+工具调用: [{'name': 'get_weather', 'args': {'city': '北京'}, 'id': 'call_123'}]
+--------------------------------------------------
+步骤: tools
+内容: 北京的天气是晴朗的，25°C
+--------------------------------------------------
+步骤: model
+内容: 北京天气晴朗，25°C。接下来查询上海天气...
+工具调用: [{'name': 'get_weather', 'args': {'city': '上海'}, 'id': 'call_456'}]
+--------------------------------------------------
+步骤: tools
+内容: 上海的天气是晴朗的，25°C
+--------------------------------------------------
+步骤: model
+内容: 北京和上海都是晴朗天气，25°C。
+--------------------------------------------------
+</code></pre>
+<h3 id="2-llm-token-llm-tokens">2. LLM Token 流 (LLM Tokens)<a class="headerlink" href="#2-llm-token-llm-tokens" title="Permanent link">&para;</a></h3>
+<p>使用 <code>stream_mode="messages"</code> 来流式传输 LLM 生成的每个 token。</p>
+<pre><code class="language-python">def stream_llm_tokens():
+    &quot;&quot;&quot;流式传输 LLM 生成的 tokens&quot;&quot;&quot;
+    print(&quot;=== LLM Token 流式传输 ===&quot;)
+
+    for token, metadata in agent.stream(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;上海的天气如何？&quot;}]},
+        stream_mode=&quot;messages&quot;,  # 关键参数
+    ):
+        node_name = metadata.get('langgraph_node', 'unknown')
+
+        if hasattr(token, 'content_blocks') and token.content_blocks:
+            for block in token.content_blocks:
+                if block.get('type') == 'text' and block.get('text'):
+                    print(f&quot;[{node_name}] {block['text']}&quot;, end='', flush=True)
+                elif block.get('type') == 'tool_call_chunk':
+                    print(f&quot;\n[工具调用] {block.get('name', '')} {block.get('args', '')}&quot;)
+
+    print()  # 最终换行
+
+# 调用示例
+stream_llm_tokens()
+</code></pre>
+<p><strong>输出示例：</strong></p>
+<pre><code>[model] 让我
+[model] 来查询
+[model] 一下
+[model] 上海
+[model] 的天气
+[model] ...
+[工具调用] get_weather {&quot;city&quot;:&quot;上海&quot;}
+[tools] 上海的天气是晴朗的，25°C
+[model] 上海
+[model] 的天气
+[model] 是晴朗的
+[model] ，25°C
+[model] 。
+</code></pre>
+<h3 id="3-custom-updates">3. 自定义更新流 (Custom Updates)<a class="headerlink" href="#3-custom-updates" title="Permanent link">&para;</a></h3>
+<p>在工具中使用 <code>get_stream_writer()</code> 来发送自定义的流式更新。</p>
+<pre><code class="language-python">from langgraph.config import get_stream_writer
+
+def create_custom_streaming_tool():
+    &quot;&quot;&quot;创建支持自定义流式传输的工具&quot;&quot;&quot;
+
+    def search_products(query: str, max_results: int = 5) -&gt; str:
+        &quot;&quot;&quot;搜索产品信息&quot;&quot;&quot;
+        writer = get_stream_writer()
+
+        # 发送自定义进度更新
+        writer(f&quot;🔍 开始搜索: {query}&quot;)
+        writer(f&quot;📊 最大结果数: {max_results}&quot;)
+
+        # 模拟搜索过程
+        writer(&quot;⏳ 连接数据库...&quot;)
+        # 模拟数据库查询
+        writer(&quot;✅ 数据库连接成功&quot;)
+
+        writer(&quot;🔎 执行搜索查询...&quot;)
+        # 模拟搜索逻辑
+        import time
+        time.sleep(0.5)
+
+        writer(f&quot;📦 找到 3 个相关产品&quot;)
+
+        # 返回最终结果
+        return f&quot;搜索 '{query}' 找到 3 个产品: 产品A, 产品B, 产品C&quot;
+
+    return search_products
+
+def stream_custom_updates():
+    &quot;&quot;&quot;流式传输自定义更新&quot;&quot;&quot;
+    print(&quot;=== 自定义更新流式传输 ===&quot;)
+
+    search_tool = create_custom_streaming_tool()
+    custom_agent = create_agent(
+        model=&quot;openai:gpt-4o&quot;,
+        tools=[search_tool],
+    )
+
+    for chunk in custom_agent.stream(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;搜索笔记本电脑&quot;}]},
+        stream_mode=&quot;custom&quot;  # 关键参数
+    ):
+        print(f&quot;自定义更新: {chunk}&quot;)
+
+# 调用示例
+stream_custom_updates()
+</code></pre>
+<p><strong>输出示例：</strong></p>
+<pre><code>自定义更新: 🔍 开始搜索: 笔记本电脑
+自定义更新: 📊 最大结果数: 5
+自定义更新: ⏳ 连接数据库...
+自定义更新: ✅ 数据库连接成功
+自定义更新: 🔎 执行搜索查询...
+自定义更新: 📦 找到 3 个相关产品
+</code></pre>
+<h3 id="4">4. 多模式流式传输<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>可以同时使用多种流式传输模式。</p>
+<pre><code class="language-python">def stream_multiple_modes():
+    &quot;&quot;&quot;同时使用多种流式传输模式&quot;&quot;&quot;
+    print(&quot;=== 多模式流式传输 ===&quot;)
+
+    # 创建支持自定义流的工具
+    def advanced_weather_tool(city: str) -&gt; str:
+        &quot;&quot;&quot;高级天气查询工具&quot;&quot;&quot;
+        writer = get_stream_writer()
+        writer(f&quot;🌤️  开始查询 {city} 的天气&quot;)
+        writer(&quot;📡 连接气象API...&quot;)
+        writer(&quot;🔍 获取实时数据...&quot;)
+        return f&quot;{city}的天气：晴朗，25°C，湿度60%&quot;
+
+    multi_agent = create_agent(
+        model=&quot;openai:gpt-4o&quot;,
+        tools=[advanced_weather_tool],
+    )
+
+    for stream_mode, chunk in multi_agent.stream(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;查询杭州的天气&quot;}]},
+        stream_mode=[&quot;updates&quot;, &quot;custom&quot;, &quot;messages&quot;]  # 多种模式
+    ):
+        print(f&quot;模式: {stream_mode}&quot;)
+        print(f&quot;内容: {chunk}&quot;)
+        print(&quot;-&quot; * 30)
+
+# 调用示例
+stream_multiple_modes()
+</code></pre>
+<h2 id="_5">实际应用场景<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1">场景1：实时聊天应用<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import asyncio
+from langchain.agents import create_agent
+
+class StreamingChatApp:
+    &quot;&quot;&quot;支持流式传输的聊天应用&quot;&quot;&quot;
+
+    def __init__(self):
+        self.agent = create_agent(
+            model=&quot;openai:gpt-4o&quot;,
+            tools=[self.get_weather, self.search_web],
+        )
+
+    def get_weather(self, city: str) -&gt; str:
+        &quot;&quot;&quot;获取天气信息&quot;&quot;&quot;
+        writer = get_stream_writer()
+        writer(f&quot;查询{city}的天气...&quot;)
+        # 模拟API调用
+        return f&quot;{city}: 25°C, 晴朗&quot;
+
+    def search_web(self, query: str) -&gt; str:
+        &quot;&quot;&quot;网页搜索&quot;&quot;&quot;
+        writer = get_stream_writer()
+        writer(f&quot;搜索: {query}&quot;)
+        writer(&quot;正在获取最新信息...&quot;)
+        return f&quot;关于'{query}'的搜索结果...&quot;
+
+    async def chat_stream(self, message: str):
+        &quot;&quot;&quot;流式聊天&quot;&quot;&quot;
+        print(f&quot;用户: {message}&quot;)
+        print(&quot;助手: &quot;, end=&quot;&quot;, flush=True)
+
+        full_response = &quot;&quot;
+        for token, metadata in self.agent.stream(
+            {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: message}]},
+            stream_mode=&quot;messages&quot;,
+        ):
+            if hasattr(token, 'content_blocks'):
+                for block in token.content_blocks:
+                    if block.get('type') == 'text' and block.get('text'):
+                        text = block['text']
+                        print(text, end='', flush=True)
+                        full_response += text
+
+        print()  # 换行
+        return full_response
+
+# 使用示例
+async def demo_chat():
+    app = StreamingChatApp()
+    await app.chat_stream(&quot;今天杭州天气怎么样？然后搜索AI最新发展&quot;)
+</code></pre>
+<h3 id="2">场景2：进度监控仪表板<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from typing import Dict, Any
+import json
+
+class ProgressMonitor:
+    &quot;&quot;&quot;进度监控器&quot;&quot;&quot;
+
+    def __init__(self):
+        self.progress_data = {
+            'total_steps': 0,
+            'completed_steps': 0,
+            'current_step': '',
+            'details': []
+        }
+
+    def update_progress(self, step: str, details: str = &quot;&quot;):
+        &quot;&quot;&quot;更新进度&quot;&quot;&quot;
+        self.progress_data['current_step'] = step
+        self.progress_data['details'].append({
+            'step': step,
+            'details': details,
+            'timestamp': str(datetime.now())
+        })
+        self.progress_data['completed_steps'] += 1
+
+        # 发送到前端（模拟）
+        print(f&quot;进度更新: {json.dumps(self.progress_data, ensure_ascii=False)}&quot;)
+
+def create_monitored_tools(monitor: ProgressMonitor):
+    &quot;&quot;&quot;创建被监控的工具&quot;&quot;&quot;
+
+    def research_topic(topic: str) -&gt; str:
+        &quot;&quot;&quot;研究主题&quot;&quot;&quot;
+        writer = get_stream_writer()
+
+        monitor.update_progress('research', f&quot;开始研究: {topic}&quot;)
+        writer(f&quot;🔬 研究主题: {topic}&quot;)
+
+        # 模拟研究步骤
+        steps = [
+            &quot;收集相关资料&quot;,
+            &quot;分析关键信息&quot;, 
+            &quot;整理研究结果&quot;,
+            &quot;生成总结报告&quot;
+        ]
+
+        for step in steps:
+            monitor.update_progress('research', step)
+            writer(f&quot;✅ {step}&quot;)
+            import time
+            time.sleep(0.3)
+
+        return f&quot;关于{topic}的研究完成&quot;
+
+    return research_topic
+
+def monitored_agent_demo():
+    &quot;&quot;&quot;被监控的Agent演示&quot;&quot;&quot;
+    monitor = ProgressMonitor()
+    research_tool = create_monitored_tools(monitor)
+
+    agent = create_agent(
+        model=&quot;openai:gpt-4o&quot;,
+        tools=[research_tool],
+    )
+
+    print(&quot;开始监控Agent执行...&quot;)
+    for stream_mode, chunk in agent.stream(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;研究人工智能在医疗领域的应用&quot;}]},
+        stream_mode=[&quot;updates&quot;, &quot;custom&quot;]
+    ):
+        if stream_mode == &quot;custom&quot;:
+            print(f&quot;自定义事件: {chunk}&quot;)
+
+# 调用示例
+monitored_agent_demo()
+</code></pre>
+<h3 id="3">场景3：实时数据流处理<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import time
+from datetime import datetime
+
+class RealTimeDataProcessor:
+    &quot;&quot;&quot;实时数据处理器&quot;&quot;&quot;
+
+    def __init__(self):
+        self.agent = create_agent(
+            model=&quot;openai:gpt-4o&quot;,
+            tools=[self.process_data_stream],
+        )
+        self.data_buffer = []
+
+    def process_data_stream(self, data_type: str, count: int = 10) -&gt; str:
+        &quot;&quot;&quot;处理数据流&quot;&quot;&quot;
+        writer = get_stream_writer()
+
+        writer(f&quot;开始处理 {data_type} 数据流...&quot;)
+        writer(f&quot;预计处理 {count} 条数据&quot;)
+
+        # 模拟数据流处理
+        for i in range(count):
+            # 模拟数据处理
+            processed_item = f&quot;{data_type}_item_{i+1}&quot;
+            self.data_buffer.append(processed_item)
+
+            # 发送进度更新
+            progress = (i + 1) / count * 100
+            writer(f&quot;📊 进度: {progress:.1f}% - 已处理: {processed_item}&quot;)
+
+            # 模拟处理时间
+            time.sleep(0.1)
+
+        writer(&quot;✅ 数据流处理完成&quot;)
+        return f&quot;成功处理 {count} 条{data_type}数据&quot;
+
+    def start_processing(self, data_type: str):
+        &quot;&quot;&quot;开始处理&quot;&quot;&quot;
+        print(f&quot;开始实时处理 {data_type} 数据...&quot;)
+
+        for stream_mode, chunk in self.agent.stream(
+            {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: f&quot;处理{data_type}数据流&quot;}]},
+            stream_mode=[&quot;custom&quot;, &quot;updates&quot;]
+        ):
+            if stream_mode == &quot;custom&quot;:
+                print(f&quot;{datetime.now().strftime('%H:%M:%S')} - {chunk}&quot;)
+
+# 使用示例
+processor = RealTimeDataProcessor()
+processor.start_processing(&quot;传感器&quot;)
+</code></pre>
+<h2 id="_6">高级功能<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 错误处理和重试<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">def create_robust_streaming_tool():
+    &quot;&quot;&quot;创建健壮的流式传输工具&quot;&quot;&quot;
+
+    def robust_operation(operation: str) -&gt; str:
+        &quot;&quot;&quot;健壮的操作&quot;&quot;&quot;
+        writer = get_stream_writer()
+
+        try:
+            writer(f&quot;🟡 开始执行: {operation}&quot;)
+
+            # 模拟可能失败的操作
+            if &quot;fail&quot; in operation:
+                raise Exception(&quot;模拟操作失败&quot;)
+
+            writer(&quot;🟢 操作执行中...&quot;)
+            time.sleep(1)
+            writer(&quot;✅ 操作完成&quot;)
+
+            return f&quot;操作 '{operation}' 成功完成&quot;
+
+        except Exception as e:
+            writer(f&quot;🔴 操作失败: {str(e)}&quot;)
+            writer(&quot;🔄 尝试重试...&quot;)
+            # 这里可以添加重试逻辑
+            return f&quot;操作 '{operation}' 失败: {str(e)}&quot;
+
+    return robust_operation
+
+def error_handling_demo():
+    &quot;&quot;&quot;错误处理演示&quot;&quot;&quot;
+    robust_tool = create_robust_streaming_tool()
+    agent = create_agent(
+        model=&quot;openai:gpt-4o&quot;,
+        tools=[robust_tool],
+    )
+
+    print(&quot;测试正常操作:&quot;)
+    for chunk in agent.stream(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;执行正常操作&quot;}]},
+        stream_mode=&quot;custom&quot;
+    ):
+        print(chunk)
+
+    print(&quot;\n测试失败操作:&quot;)
+    for chunk in agent.stream(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;执行失败操作&quot;}]},
+        stream_mode=&quot;custom&quot;
+    ):
+        print(chunk)
+</code></pre>
+<h3 id="2_1">2. 性能优化<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">class OptimizedStreaming:
+    &quot;&quot;&quot;优化流式传输性能&quot;&quot;&quot;
+
+    def __init__(self):
+        self.batch_size = 5
+        self.message_buffer = []
+
+    def batch_process_tool(self, items: list) -&gt; str:
+        &quot;&quot;&quot;批量处理工具&quot;&quot;&quot;
+        writer = get_stream_writer()
+
+        writer(f&quot;🔄 开始批量处理 {len(items)} 个项目&quot;)
+
+        for i, item in enumerate(items):
+            # 处理每个项目
+            writer(f&quot;处理项目 {i+1}/{len(items)}: {item}&quot;)
+
+            # 模拟处理
+            time.sleep(0.1)
+
+            # 每处理完一批发送更新
+            if (i + 1) % self.batch_size == 0:
+                writer(f&quot;📦 已完成 {i+1} 个项目&quot;)
+
+        writer(&quot;✅ 批量处理完成&quot;)
+        return f&quot;成功处理 {len(items)} 个项目&quot;
+
+    def optimized_stream_demo(self):
+        &quot;&quot;&quot;优化流式传输演示&quot;&quot;&quot;
+        agent = create_agent(
+            model=&quot;openai:gpt-4o&quot;,
+            tools=[self.batch_process_tool],
+        )
+
+        items = [f&quot;item_{i}&quot; for i in range(1, 16)]
+
+        for chunk in agent.stream(
+            {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: f&quot;批量处理这些项目: {items}&quot;}]},
+            stream_mode=&quot;custom&quot;
+        ):
+            print(chunk)
+</code></pre>
+<h2 id="_7">最佳实践<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 选择合适的流式传输模式<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">def choose_stream_mode(use_case: str):
+    &quot;&quot;&quot;根据使用场景选择合适的流式传输模式&quot;&quot;&quot;
+    mode_recommendations = {
+        &quot;chat_application&quot;: &quot;messages&quot;,  # 聊天应用：需要实时显示文字
+        &quot;progress_tracking&quot;: [&quot;updates&quot;, &quot;custom&quot;],  # 进度跟踪：需要步骤和自定义更新
+        &quot;debugging&quot;: &quot;updates&quot;,  # 调试：需要看到每个步骤
+        &quot;data_processing&quot;: [&quot;custom&quot;, &quot;messages&quot;],  # 数据处理：需要进度和结果
+        &quot;real_time_monitoring&quot;: [&quot;updates&quot;, &quot;custom&quot;, &quot;messages&quot;]  # 实时监控：全部信息
+    }
+
+    return mode_recommendations.get(use_case, &quot;updates&quot;)
+
+# 使用示例
+chat_mode = choose_stream_mode(&quot;chat_application&quot;)
+debug_mode = choose_stream_mode(&quot;debugging&quot;)
+</code></pre>
+<h3 id="2_2">2. 处理流式传输错误<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">def safe_stream_invoke(agent, input_data, stream_mode=&quot;updates&quot;, max_retries=3):
+    &quot;&quot;&quot;安全的流式调用&quot;&quot;&quot;
+    for attempt in range(max_retries):
+        try:
+            for chunk in agent.stream(input_data, stream_mode=stream_mode):
+                yield chunk
+            break  # 成功完成，退出重试循环
+        except Exception as e:
+            print(f&quot;流式传输错误 (尝试 {attempt + 1}/{max_retries}): {e}&quot;)
+            if attempt == max_retries - 1:
+                raise  # 最后一次尝试仍然失败，抛出异常
+            time.sleep(1)  # 等待后重试
+
+# 使用示例
+for chunk in safe_stream_invoke(
+    agent,
+    {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;查询天气&quot;}]},
+    stream_mode=&quot;messages&quot;
+):
+    print(chunk)
+</code></pre>
+<h2 id="_8">故障排除<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="_9">常见问题及解决方案<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>流式传输不工作</strong></li>
+<li>检查模型是否支持流式传输</li>
+<li>确认 <code>stream_mode</code> 参数设置正确</li>
+<li>
+<p>验证网络连接</p>
+</li>
+<li>
+<p><strong>自定义更新不显示</strong></p>
+</li>
+<li>确保在工具中正确使用 <code>get_stream_writer()</code></li>
+<li>检查 <code>stream_mode</code> 包含 "custom"</li>
+<li>
+<p>确认在 LangGraph 执行上下文中调用</p>
+</li>
+<li>
+<p><strong>性能问题</strong></p>
+</li>
+<li>减少不必要的流式更新</li>
+<li>使用合适的批处理大小</li>
+<li>考虑禁用某些流式模式</li>
+</ol>
+<h2 id="_10">总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>LangChain 的流式传输系统提供了强大的实时更新能力：</p>
+<ul>
+<li><strong>多种模式</strong>：代理进度、LLM tokens、自定义更新</li>
+<li><strong>灵活组合</strong>：可以同时使用多种流式模式</li>
+<li><strong>实际应用</strong>：适用于聊天、监控、数据处理等场景</li>
+<li><strong>健壮性</strong>：包含错误处理和性能优化</li>
+</ul>
+<p>通过合理使用流式传输，可以显著提升应用的响应性和用户体验。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+      
+        <script src="../../../../styles/javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>

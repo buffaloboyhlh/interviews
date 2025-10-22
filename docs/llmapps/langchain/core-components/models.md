@@ -389,15 +389,14 @@ if reasoning_blocks:
 
 ```python
 # 使用 Ollama 运行本地模型
-from langchain_community.chat_models import ChatOllama
+from langchain_ollama import ChatOllama
 
-local_model = ChatOllama(
-    model="llama2",  # 或其它本地模型
-    temperature=0.7,
-    num_predict=1000
+model = ChatOllama(
+    model="qwen3:1.7b",
+    temperature=0.8
 )
 
-response = local_model.invoke("用中文解释机器学习")
+response = model.invoke("用中文解释机器学习")
 print("本地模型回复:", response.content)
 ```
 
