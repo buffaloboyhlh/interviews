@@ -31,10 +31,12 @@ theme:
     - content.tabs.link
     - content.code.annotate
     - math
+    - diagrams
   language: zh
 
 plugins:
   - search
+  - macros
 
 extra_css:
   - styles/extra.css
@@ -44,12 +46,13 @@ extra_css:
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js
+  - https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js
   - styles/javascripts/katex.js
 
 markdown_extensions:
   - admonition
-  - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.arithmatex:
       generic: true
   - toc:
@@ -67,6 +70,34 @@ nav:
       - 第 5 章：NLP 实战与部署: nlp/chart05.md
       - nltk库: nlp/nltk.md
       - peft库: nlp/peft.md
+
+  - 大模型应用开发:
+      - LangChain核心组件:
+          - 智能体（Agents）: llmapps/langchain/core-components/agents.md
+          - 模型（Models）: llmapps/langchain/core-components/models.md
+          - 消息（Messages）: llmapps/langchain/core-components/messages.md
+          - 工具（Tools）: llmapps/langchain/core-components/tools.md
+          - 短期记忆（Short-term memory）: llmapps/langchain/core-components/short-term memory.md
+          - 流（Streaming）: llmapps/langchain/core-components/streaming.md
+          - 中间件（Middleware）: llmapps/langchain/core-components/middleware.md
+          - 结构化输出（Structured output）: llmapps/langchain/core-components/structured-output.md
+      - LangChain进阶用法:
+          - Guardrails: llmapps/langchain/advanced-usage/Guardrails.md
+          - Runtime: llmapps/langchain/advanced-usage/Runtime.md
+          - Context-engineering: llmapps/langchain/advanced-usage/context-engineering.md
+          - Model Context Protocol: llmapps/langchain/advanced-usage/MCP.md
+          - Human-in-the-loop: llmapps/langchain/advanced-usage/Human-in-the-loop.md
+          - Multi-agent: llmapps/langchain/advanced-usage/Multi-agent.md
+          - Retrieval: llmapps/langchain/advanced-usage/Retrieval.md
+          - Long-term memory: llmapps/langchain/advanced-usage/Long-term memory.md
+
+      - LangGraph:
+          - 概述: llmapps/langgraph/overview.md
+          - 快速入门: llmapps/langgraph/quickstart.md
+          - Local server: llmapps/langgraph/Local server.md
+          - Thinking in LangGraph: llmapps/langgraph/thinking in Langgraph.md
+          - Workflows+agents: llmapps/langgraph/workflows+agents.md
+
 
 
 
