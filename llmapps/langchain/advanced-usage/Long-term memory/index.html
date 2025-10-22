@@ -1,0 +1,2468 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Buffalo">
+      
+      
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langchain/advanced-usage/Long-term%20memory/">
+      
+      
+        <link rel="prev" href="../Retrieval/">
+      
+      
+        <link rel="next" href="../../../langgraph/overview/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Long-term memory - 人工智能面试集合</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../styles/extra.css">
+    
+      <link rel="stylesheet" href="../../../../styles/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            人工智能面试集合
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Long-term memory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../machine/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../deeplearning/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../nlp/chart01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  从零开始学NLP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../core-components/agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  大模型应用开发
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    人工智能面试集合
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../machine/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    机器学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deeplearning/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    从零开始学NLP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            从零开始学NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 1 章：文本表示与词向量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 2 章：RNN/LSTM 序列模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 3 章：Transformer 与 Self-Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 4 章：BERT / GPT 原理与微调
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 5 章：NLP 实战与部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/nltk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    nltk库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/peft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    peft库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型应用开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            大模型应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain核心组件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain核心组件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    智能体（Agents）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型（Models）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消息（Messages）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    工具（Tools）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/short-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    短期记忆（Short-term memory）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    流（Streaming）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    中间件（Middleware）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/structured-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    结构化输出（Structured output）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain进阶用法
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain进阶用法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guardrails
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Runtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context-engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Context Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Human-in-the-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Human-in-the-loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Multi-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieval
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Long-term memory
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Long-term memory
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础存储操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      在工具中读取长期记忆
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="在工具中读取长期记忆">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级记忆读取示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      在工具中写入长期记忆
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="在工具中写入长期记忆">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级记忆写入示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      完整的长期记忆系统
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      生产环境建议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生产环境建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 使用持久化存储
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 记忆清理策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 记忆备份和恢复
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangGraph
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            LangGraph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/Local%20server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thinking in LangGraph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/workflows%2Bagents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflows+agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础存储操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      在工具中读取长期记忆
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="在工具中读取长期记忆">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级记忆读取示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      在工具中写入长期记忆
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="在工具中写入长期记忆">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级记忆写入示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      完整的长期记忆系统
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      生产环境建议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生产环境建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 使用持久化存储
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 记忆清理策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 记忆备份和恢复
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="langchain">LangChain 长期记忆使用教程<a class="headerlink" href="#langchain" title="Permanent link">&para;</a></h1>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>LangChain 智能体使用 <a href="/oss/python/langgraph/persistence#memory-store">LangGraph 持久化</a> 来实现长期记忆。这是一个更高级的主题，需要了解 LangGraph 才能使用。</p>
+<h2 id="_2">内存存储<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>LangGraph 将长期记忆作为 JSON 文档存储在 <a href="/oss/python/langgraph/persistence#memory-store">store</a> 中。</p>
+<p>每个记忆都在自定义的 <code>namespace</code>（类似于文件夹）和不同的 <code>key</code>（如文件名）下组织。命名空间通常包括用户或组织 ID 或其他标签，以便更容易地组织信息。</p>
+<p>这种结构支持记忆的分层组织。然后通过内容过滤器支持跨命名空间的搜索。</p>
+<h3 id="_3">基础存储操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langgraph.store.memory import InMemoryStore
+
+def embed(texts: list[str]) -&gt; list[list[float]]:
+    # 替换为实际的嵌入函数或 LangChain 嵌入对象
+    return [[1.0, 2.0] * len(texts)]
+
+# InMemoryStore 将数据保存到内存字典中。在生产环境中使用数据库支持的存储。
+store = InMemoryStore(index={&quot;embed&quot;: embed, &quot;dims&quot;: 2})
+user_id = &quot;my-user&quot;
+application_context = &quot;chitchat&quot;
+namespace = (user_id, application_context)
+
+# 存储记忆
+store.put(
+    namespace,
+    &quot;a-memory&quot;,
+    {
+        &quot;rules&quot;: [
+            &quot;用户喜欢简短、直接的语言&quot;,
+            &quot;用户只说英语和Python&quot;,
+        ],
+        &quot;my-key&quot;: &quot;my-value&quot;,
+    },
+)
+
+# 通过 ID 获取&quot;记忆&quot;
+item = store.get(namespace, &quot;a-memory&quot;)
+
+# 在此命名空间内搜索&quot;记忆&quot;，基于内容等价性过滤，按向量相似度排序
+items = store.search(
+    namespace, filter={&quot;my-key&quot;: &quot;my-value&quot;}, query=&quot;语言偏好&quot;
+)
+</code></pre>
+<p>有关内存存储的更多信息，请参阅 <a href="/oss/python/langgraph/persistence#memory-store">持久化</a> 指南。</p>
+<h2 id="_4">在工具中读取长期记忆<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">from dataclasses import dataclass
+from langchain.agents import create_agent
+from langchain.tools import tool, ToolRuntime
+from langgraph.store.memory import InMemoryStore
+
+@dataclass
+class Context:
+    user_id: str
+
+# InMemoryStore 将数据保存到内存字典中。在生产环境中使用数据库支持的存储。
+store = InMemoryStore()
+
+# 使用 put 方法将示例数据写入存储
+store.put(
+    (&quot;users&quot;,),  # 用于将相关数据分组在一起的命名空间（用户数据的用户命名空间）
+    &quot;user_123&quot;,  # 命名空间内的键（用户 ID 作为键）
+    {
+        &quot;name&quot;: &quot;张三&quot;,
+        &quot;language&quot;: &quot;中文&quot;,
+        &quot;preferences&quot;: {
+            &quot;theme&quot;: &quot;dark&quot;,
+            &quot;notifications&quot;: True
+        }
+    }  # 为给定用户存储的数据
+)
+
+@tool
+def get_user_info(runtime: ToolRuntime[Context]) -&gt; str:
+    &quot;&quot;&quot;查找用户信息。&quot;&quot;&quot;
+    # 访问存储 - 与提供给 `create_agent` 的存储相同
+    store = runtime.store
+    user_id = runtime.context.user_id
+    # 从存储中检索数据 - 返回带有值和元数据的 StoreValue 对象
+    user_info = store.get((&quot;users&quot;,), user_id)
+    return str(user_info.value) if user_info else &quot;未知用户&quot;
+
+agent = create_agent(
+    model=&quot;anthropic:claude-sonnet-4-5&quot;,
+    tools=[get_user_info],
+    # 将存储传递给智能体 - 使智能体在运行工具时能够访问存储
+    store=store,
+    context_schema=Context
+)
+
+# 运行智能体
+agent.invoke(
+    {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;查找用户信息&quot;}]},
+    context=Context(user_id=&quot;user_123&quot;)
+)
+</code></pre>
+<h3 id="_5">高级记忆读取示例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from dataclasses import dataclass
+from typing import List, Dict, Any
+from langchain.agents import create_agent
+from langchain.tools import tool, ToolRuntime
+from langgraph.store.memory import InMemoryStore
+
+@dataclass
+class Context:
+    user_id: str
+    session_id: str
+
+store = InMemoryStore()
+
+# 初始化一些示例记忆数据
+def initialize_sample_data():
+    # 用户偏好
+    store.put((&quot;users&quot;, &quot;preferences&quot;), &quot;user_123&quot;, {
+        &quot;language&quot;: &quot;zh-CN&quot;,
+        &quot;timezone&quot;: &quot;Asia/Shanghai&quot;,
+        &quot;communication_style&quot;: &quot;concise&quot;,
+        &quot;topics_of_interest&quot;: [&quot;AI&quot;, &quot;编程&quot;, &quot;科技&quot;]
+    })
+
+    # 对话历史摘要
+    store.put((&quot;users&quot;, &quot;conversations&quot;), &quot;user_123&quot;, {
+        &quot;recent_topics&quot;: [&quot;Python编程&quot;, &quot;机器学习&quot;, &quot;LangChain使用&quot;],
+        &quot;preferred_detail_level&quot;: &quot;detailed&quot;,
+        &quot;conversation_count&quot;: 15
+    })
+
+    # 用户技能和知识
+    store.put((&quot;users&quot;, &quot;skills&quot;), &quot;user_123&quot;, {
+        &quot;programming_languages&quot;: [&quot;Python&quot;, &quot;JavaScript&quot;],
+        &quot;frameworks&quot;: [&quot;Django&quot;, &quot;React&quot;],
+        &quot;experience_level&quot;: &quot;intermediate&quot;
+    })
+
+@tool
+def get_user_preferences(runtime: ToolRuntime[Context]) -&gt; str:
+    &quot;&quot;&quot;获取用户偏好设置。&quot;&quot;&quot;
+    store = runtime.store
+    user_id = runtime.context.user_id
+
+    preferences = store.get((&quot;users&quot;, &quot;preferences&quot;), user_id)
+    if not preferences:
+        return &quot;未找到用户偏好设置&quot;
+
+    pref_data = preferences.value
+    return f&quot;&quot;&quot;
+用户偏好:
+- 语言: {pref_data.get('language', '未设置')}
+- 时区: {pref_data.get('timezone', '未设置')}
+- 沟通风格: {pref_data.get('communication_style', '未设置')}
+- 感兴趣的话题: {', '.join(pref_data.get('topics_of_interest', []))}
+&quot;&quot;&quot;
+
+@tool
+def get_conversation_context(runtime: ToolRuntime[Context]) -&gt; str:
+    &quot;&quot;&quot;获取对话上下文和历史。&quot;&quot;&quot;
+    store = runtime.store
+    user_id = runtime.context.user_id
+
+    conv_data = store.get((&quot;users&quot;, &quot;conversations&quot;), user_id)
+    if not conv_data:
+        return &quot;未找到对话历史&quot;
+
+    data = conv_data.value
+    return f&quot;&quot;&quot;
+对话上下文:
+- 最近话题: {', '.join(data.get('recent_topics', []))}
+- 偏好详细程度: {data.get('preferred_detail_level', '未设置')}
+- 对话次数: {data.get('conversation_count', 0)}
+&quot;&quot;&quot;
+
+@tool
+def search_user_memories(runtime: ToolRuntime[Context], query: str) -&gt; str:
+    &quot;&quot;&quot;基于查询搜索用户记忆。&quot;&quot;&quot;
+    store = runtime.store
+    user_id = runtime.context.user_id
+
+    # 在所有用户相关的命名空间中搜索
+    namespaces = [(&quot;users&quot;, &quot;preferences&quot;), (&quot;users&quot;, &quot;conversations&quot;), (&quot;users&quot;, &quot;skills&quot;)]
+    results = []
+
+    for namespace in namespaces:
+        items = store.search(namespace, query=query)
+        for item in items:
+            results.append(f&quot;命名空间 {namespace}: {item.value}&quot;)
+
+    if not results:
+        return f&quot;未找到与 '{query}' 相关的记忆&quot;
+
+    return &quot;搜索结果:\n&quot; + &quot;\n&quot;.join(results)
+
+# 初始化示例数据
+initialize_sample_data()
+
+# 创建智能体
+agent = create_agent(
+    model=&quot;anthropic:claude-sonnet-4-5&quot;,
+    tools=[get_user_preferences, get_conversation_context, search_user_memories],
+    store=store,
+    context_schema=Context
+)
+
+# 使用示例
+result = agent.invoke(
+    {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;告诉我关于我的偏好和对话历史&quot;}]},
+    context=Context(user_id=&quot;user_123&quot;, session_id=&quot;session_456&quot;)
+)
+</code></pre>
+<h2 id="_6">在工具中写入长期记忆<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">from dataclasses import dataclass
+from typing_extensions import TypedDict
+from langchain.agents import create_agent
+from langchain.tools import tool, ToolRuntime
+from langgraph.store.memory import InMemoryStore
+
+# InMemoryStore 将数据保存到内存字典中。在生产环境中使用数据库支持的存储。
+store = InMemoryStore()
+
+@dataclass
+class Context:
+    user_id: str
+
+# TypedDict 为 LLM 定义用户信息的结构
+class UserInfo(TypedDict):
+    name: str
+
+# 允许智能体更新用户信息的工具（对聊天应用程序有用）
+@tool
+def save_user_info(user_info: UserInfo, runtime: ToolRuntime[Context]) -&gt; str:
+    &quot;&quot;&quot;保存用户信息。&quot;&quot;&quot;
+    # 访问存储 - 与提供给 `create_agent` 的存储相同
+    store = runtime.store
+    user_id = runtime.context.user_id
+    # 将数据存储在存储中（命名空间，键，数据）
+    store.put((&quot;users&quot;,), user_id, user_info)
+    return &quot;成功保存用户信息。&quot;
+
+agent = create_agent(
+    model=&quot;anthropic:claude-sonnet-4-5&quot;,
+    tools=[save_user_info],
+    store=store,
+    context_schema=Context
+)
+
+# 运行智能体
+agent.invoke(
+    {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;我的名字是张三&quot;}]},
+    # user_id 在上下文中传递以标识正在更新谁的信息
+    context=Context(user_id=&quot;user_123&quot;)
+)
+
+# 你可以直接访问存储来获取值
+print(store.get((&quot;users&quot;,), &quot;user_123&quot;).value)
+</code></pre>
+<h3 id="_7">高级记忆写入示例<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from dataclasses import dataclass
+from typing import Dict, Any, List
+from datetime import datetime
+import json
+from langchain.agents import create_agent
+from langchain.tools import tool, ToolRuntime
+from langgraph.store.memory import InMemoryStore
+
+@dataclass
+class Context:
+    user_id: str
+    session_id: str
+
+store = InMemoryStore()
+
+@tool
+def save_user_preference(runtime: ToolRuntime[Context], preference_type: str, value: str) -&gt; str:
+    &quot;&quot;&quot;保存用户偏好设置。&quot;&quot;&quot;
+    store = runtime.store
+    user_id = runtime.context.user_id
+
+    # 获取现有的偏好设置
+    existing_prefs = store.get((&quot;users&quot;, &quot;preferences&quot;), user_id)
+    prefs_data = existing_prefs.value if existing_prefs else {}
+
+    # 更新偏好设置
+    prefs_data[preference_type] = value
+    prefs_data[&quot;last_updated&quot;] = datetime.now().isoformat()
+
+    # 保存回存储
+    store.put((&quot;users&quot;, &quot;preferences&quot;), user_id, prefs_data)
+    return f&quot;成功保存偏好设置: {preference_type} = {value}&quot;
+
+@tool
+def record_conversation_topic(runtime: ToolRuntime[Context], topic: str) -&gt; str:
+    &quot;&quot;&quot;记录对话话题以供将来参考。&quot;&quot;&quot;
+    store = runtime.store
+    user_id = runtime.context.user_id
+
+    # 获取现有的对话历史
+    existing_conv = store.get((&quot;users&quot;, &quot;conversations&quot;), user_id)
+    conv_data = existing_conv.value if existing_conv else {
+        &quot;recent_topics&quot;: [],
+        &quot;conversation_count&quot;: 0,
+        &quot;first_interaction&quot;: datetime.now().isoformat()
+    }
+
+    # 更新话题列表（保持最近10个话题）
+    recent_topics = conv_data.get(&quot;recent_topics&quot;, [])
+    if topic not in recent_topics:
+        recent_topics.insert(0, topic)
+        recent_topics = recent_topics[:10]  # 只保留最近10个话题
+
+    # 更新对话计数
+    conv_data[&quot;recent_topics&quot;] = recent_topics
+    conv_data[&quot;conversation_count&quot;] = conv_data.get(&quot;conversation_count&quot;, 0) + 1
+    conv_data[&quot;last_interaction&quot;] = datetime.now().isoformat()
+
+    # 保存回存储
+    store.put((&quot;users&quot;, &quot;conversations&quot;), user_id, conv_data)
+    return f&quot;已记录话题: {topic}&quot;
+
+@tool
+def save_learning_progress(runtime: ToolRuntime[Context], topic: str, progress: str, notes: str = &quot;&quot;) -&gt; str:
+    &quot;&quot;&quot;保存用户的学习进度和笔记。&quot;&quot;&quot;
+    store = runtime.store
+    user_id = runtime.context.user_id
+
+    # 获取现有的学习记录
+    existing_learning = store.get((&quot;users&quot;, &quot;learning&quot;), user_id)
+    learning_data = existing_learning.value if existing_learning else {&quot;topics&quot;: {}}
+
+    # 更新特定话题的进度
+    learning_data[&quot;topics&quot;][topic] = {
+        &quot;progress&quot;: progress,
+        &quot;notes&quot;: notes,
+        &quot;last_updated&quot;: datetime.now().isoformat()
+    }
+    learning_data[&quot;overall_last_updated&quot;] = datetime.now().isoformat()
+
+    # 保存回存储
+    store.put((&quot;users&quot;, &quot;learning&quot;), user_id, learning_data)
+    return f&quot;已保存 {topic} 的学习进度: {progress}&quot;
+
+@tool
+def save_feedback(runtime: ToolRuntime[Context], feedback: str, rating: int) -&gt; str:
+    &quot;&quot;&quot;保存用户反馈和评分。&quot;&quot;&quot;
+    store = runtime.store
+    user_id = runtime.context.user_id
+    session_id = runtime.context.session_id
+
+    # 获取现有的反馈
+    existing_feedback = store.get((&quot;users&quot;, &quot;feedback&quot;), user_id)
+    feedback_data = existing_feedback.value if existing_feedback else {&quot;feedbacks&quot;: []}
+
+    # 添加新反馈
+    new_feedback = {
+        &quot;session_id&quot;: session_id,
+        &quot;feedback&quot;: feedback,
+        &quot;rating&quot;: rating,
+        &quot;timestamp&quot;: datetime.now().isoformat()
+    }
+    feedback_data[&quot;feedbacks&quot;].append(new_feedback)
+
+    # 保存回存储
+    store.put((&quot;users&quot;, &quot;feedback&quot;), user_id, feedback_data)
+    return f&quot;感谢您的反馈！评分: {rating}/5&quot;
+
+# 创建智能体
+agent = create_agent(
+    model=&quot;anthropic:claude-sonnet-4-5&quot;,
+    tools=[save_user_preference, record_conversation_topic, save_learning_progress, save_feedback],
+    store=store,
+    context_schema=Context
+)
+
+# 使用示例
+result = agent.invoke(
+    {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;我喜欢详细的技术解释，请记录下来&quot;}]},
+    context=Context(user_id=&quot;user_123&quot;, session_id=&quot;session_456&quot;)
+)
+</code></pre>
+<h2 id="_8">完整的长期记忆系统<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">from dataclasses import dataclass
+from typing import Dict, Any, List, Optional
+from datetime import datetime
+import json
+from langchain.agents import create_agent
+from langchain.tools import tool, ToolRuntime
+from langchain.agents.middleware import dynamic_prompt
+from langgraph.store.memory import InMemoryStore
+
+@dataclass
+class UserContext:
+    user_id: str
+    session_id: str
+    user_name: Optional[str] = None
+
+class LongTermMemorySystem:
+    def __init__(self):
+        self.store = InMemoryStore()
+
+    def initialize_user(self, user_id: str, initial_data: Dict[str, Any] = None):
+        &quot;&quot;&quot;初始化新用户的记忆存储&quot;&quot;&quot;
+        if initial_data is None:
+            initial_data = {}
+
+        base_data = {
+            &quot;created_at&quot;: datetime.now().isoformat(),
+            &quot;last_active&quot;: datetime.now().isoformat(),
+            &quot;conversation_count&quot;: 0,
+            **initial_data
+        }
+
+        self.store.put((&quot;users&quot;, &quot;profile&quot;), user_id, base_data)
+        self.store.put((&quot;users&quot;, &quot;preferences&quot;), user_id, {})
+        self.store.put((&quot;users&quot;, &quot;conversations&quot;), user_id, {&quot;recent_topics&quot;: []})
+        self.store.put((&quot;users&quot;, &quot;learning&quot;), user_id, {&quot;topics&quot;: {}})
+
+    def get_user_summary(self, user_id: str) -&gt; str:
+        &quot;&quot;&quot;获取用户记忆摘要&quot;&quot;&quot;
+        profile = self.store.get((&quot;users&quot;, &quot;profile&quot;), user_id)
+        preferences = self.store.get((&quot;users&quot;, &quot;preferences&quot;), user_id)
+        conversations = self.store.get((&quot;users&quot;, &quot;conversations&quot;), user_id)
+
+        if not profile:
+            return f&quot;用户 {user_id} 未初始化&quot;
+
+        profile_data = profile.value
+        prefs_data = preferences.value if preferences else {}
+        conv_data = conversations.value if conversations else {}
+
+        return f&quot;&quot;&quot;
+用户记忆摘要:
+- 用户ID: {user_id}
+- 创建时间: {profile_data.get('created_at', '未知')}
+- 最后活跃: {profile_data.get('last_active', '未知')}
+- 对话次数: {profile_data.get('conversation_count', 0)}
+- 偏好设置: {len(prefs_data)} 项
+- 最近话题: {len(conv_data.get('recent_topics', []))} 个
+&quot;&quot;&quot;
+
+# 创建记忆系统实例
+memory_system = LongTermMemorySystem()
+
+# 动态提示，基于用户记忆个性化
+@dynamic_prompt
+def personalized_prompt(request) -&gt; str:
+    &quot;&quot;&quot;基于用户记忆的个性化提示&quot;&quot;&quot;
+    user_id = request.runtime.context.user_id
+
+    # 获取用户偏好
+    preferences = request.runtime.store.get((&quot;users&quot;, &quot;preferences&quot;), user_id)
+    prefs_data = preferences.value if preferences else {}
+
+    # 构建个性化提示
+    base_prompt = &quot;你是一个有用的AI助手。&quot;
+
+    # 添加个性化元素
+    if prefs_data.get(&quot;communication_style&quot;):
+        style = prefs_data[&quot;communication_style&quot;]
+        if style == &quot;concise&quot;:
+            base_prompt += &quot; 请提供简洁、直接的回答。&quot;
+        elif style == &quot;detailed&quot;:
+            base_prompt += &quot; 请提供详细、全面的解释。&quot;
+        elif style == &quot;friendly&quot;:
+            base_prompt += &quot; 请使用友好、热情的语气。&quot;
+
+    if prefs_data.get(&quot;language&quot;) == &quot;zh-CN&quot;:
+        base_prompt += &quot; 请使用中文进行交流。&quot;
+
+    return base_prompt
+
+@tool
+def update_user_profile(runtime: ToolRuntime[UserContext], updates: Dict[str, Any]) -&gt; str:
+    &quot;&quot;&quot;更新用户个人资料信息。&quot;&quot;&quot;
+    store = runtime.store
+    user_id = runtime.context.user_id
+
+    # 获取现有个人资料
+    existing_profile = store.get((&quot;users&quot;, &quot;profile&quot;), user_id)
+    profile_data = existing_profile.value if existing_profile else {}
+
+    # 应用更新
+    profile_data.update(updates)
+    profile_data[&quot;last_updated&quot;] = datetime.now().isoformat()
+
+    # 保存回存储
+    store.put((&quot;users&quot;, &quot;profile&quot;), user_id, profile_data)
+
+    # 如果提供了用户名，更新上下文
+    if &quot;name&quot; in updates and runtime.context.user_name is None:
+        runtime.context.user_name = updates[&quot;name&quot;]
+
+    return &quot;个人资料已更新&quot;
+
+@tool
+def get_memory_summary(runtime: ToolRuntime[UserContext]) -&gt; str:
+    &quot;&quot;&quot;获取用户记忆系统的完整摘要。&quot;&quot;&quot;
+    return memory_system.get_user_summary(runtime.context.user_id)
+
+@tool
+def search_memories(runtime: ToolRuntime[UserContext], query: str, namespace: str = &quot;all&quot;) -&gt; str:
+    &quot;&quot;&quot;在用户记忆中搜索特定信息。&quot;&quot;&quot;
+    store = runtime.store
+    user_id = runtime.context.user_id
+
+    namespaces_to_search = []
+    if namespace == &quot;all&quot;:
+        namespaces_to_search = [(&quot;users&quot;, &quot;profile&quot;), (&quot;users&quot;, &quot;preferences&quot;), 
+                               (&quot;users&quot;, &quot;conversations&quot;), (&quot;users&quot;, &quot;learning&quot;)]
+    else:
+        namespaces_to_search = [(&quot;users&quot;, namespace)]
+
+    results = []
+    for ns in namespaces_to_search:
+        items = store.search(ns, query=query)
+        for item in items:
+            # 格式化结果
+            if isinstance(item.value, dict):
+                formatted_value = json.dumps(item.value, ensure_ascii=False, indent=2)
+            else:
+                formatted_value = str(item.value)
+
+            results.append(f&quot;=== {ns} ===\n{formatted_value}&quot;)
+
+    if not results:
+        return f&quot;在记忆中未找到与 '{query}' 相关的内容&quot;
+
+    return &quot;\n\n&quot;.join(results)
+
+# 初始化示例用户
+memory_system.initialize_user(&quot;user_123&quot;, {&quot;name&quot;: &quot;张三&quot;, &quot;initial_setup&quot;: True})
+
+# 创建完整的记忆增强智能体
+agent = create_agent(
+    model=&quot;anthropic:claude-sonnet-4-5&quot;,
+    tools=[update_user_profile, get_memory_summary, search_memories],
+    middleware=[personalized_prompt],
+    store=memory_system.store,
+    context_schema=UserContext
+)
+
+# 使用示例
+def demonstrate_memory_system():
+    print(&quot;=== 长期记忆系统演示 ===&quot;)
+
+    # 第一次交互
+    result1 = agent.invoke(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;请更新我的个人资料，设置我的沟通风格为详细&quot;}]},
+        context=UserContext(user_id=&quot;user_123&quot;, session_id=&quot;session_1&quot;)
+    )
+    print(&quot;第一次交互结果:&quot;, result1['messages'][-1].content)
+
+    # 第二次交互 - 系统会记住偏好
+    result2 = agent.invoke(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;告诉我关于我的记忆系统的信息&quot;}]},
+        context=UserContext(user_id=&quot;user_123&quot;, session_id=&quot;session_2&quot;)
+    )
+    print(&quot;第二次交互结果:&quot;, result2['messages'][-1].content)
+
+    # 搜索记忆
+    result3 = agent.invoke(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;搜索我的个人资料信息&quot;}]},
+        context=UserContext(user_id=&quot;user_123&quot;, session_id=&quot;session_3&quot;)
+    )
+    print(&quot;搜索结果:&quot;, result3['messages'][-1].content)
+
+# 运行演示
+demonstrate_memory_system()
+</code></pre>
+<h2 id="_9">生产环境建议<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 使用持久化存储<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 在生产环境中，使用数据库支持的存储而不是 InMemoryStore
+from langgraph.store.postgres import PostgresStore
+import os
+
+# 配置 PostgreSQL 存储
+def create_production_store():
+    return PostgresStore(
+        connection_string=os.getenv(&quot;DATABASE_URL&quot;),
+        # 其他配置选项...
+    )
+</code></pre>
+<h3 id="2">2. 记忆清理策略<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from datetime import datetime, timedelta
+
+class MemoryManager:
+    def __init__(self, store):
+        self.store = store
+
+    def cleanup_old_memories(self, user_id: str, days_old: int = 30):
+        &quot;&quot;&quot;清理旧的用户记忆&quot;&quot;&quot;
+        cutoff_date = datetime.now() - timedelta(days=days_old)
+
+        # 这里可以实现具体的清理逻辑
+        # 例如删除过时的对话记录、学习进度等
+        pass
+
+    def compress_conversation_history(self, user_id: str):
+        &quot;&quot;&quot;压缩对话历史以减少存储空间&quot;&quot;&quot;
+        conversations = self.store.get((&quot;users&quot;, &quot;conversations&quot;), user_id)
+        if conversations:
+            conv_data = conversations.value
+            # 保留最近的话题，归档旧话题
+            if &quot;recent_topics&quot; in conv_data:
+                conv_data[&quot;recent_topics&quot;] = conv_data[&quot;recent_topics&quot;][:20]  # 只保留最近20个
+                self.store.put((&quot;users&quot;, &quot;conversations&quot;), user_id, conv_data)
+</code></pre>
+<h3 id="3">3. 记忆备份和恢复<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import json
+
+class MemoryBackup:
+    def __init__(self, store):
+        self.store = store
+
+    def export_user_memories(self, user_id: str) -&gt; Dict[str, Any]:
+        &quot;&quot;&quot;导出用户的所有记忆&quot;&quot;&quot;
+        namespaces = [&quot;profile&quot;, &quot;preferences&quot;, &quot;conversations&quot;, &quot;learning&quot;, &quot;feedback&quot;]
+        memories = {}
+
+        for namespace in namespaces:
+            memory = self.store.get((&quot;users&quot;, namespace), user_id)
+            if memory:
+                memories[namespace] = memory.value
+
+        return memories
+
+    def import_user_memories(self, user_id: str, memories: Dict[str, Any]):
+        &quot;&quot;&quot;导入用户记忆&quot;&quot;&quot;
+        for namespace, data in memories.items():
+            self.store.put((&quot;users&quot;, namespace), user_id, data)
+</code></pre>
+<h2 id="_10">总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>长期记忆系统为 LangChain 智能体提供了持久化记忆能力，使它们能够：</p>
+<ol>
+<li><strong>记住用户偏好</strong> - 沟通风格、语言偏好、兴趣话题等</li>
+<li><strong>维护对话上下文</strong> - 跟踪对话历史、话题趋势</li>
+<li><strong>记录学习进度</strong> - 保存用户的学习轨迹和成就</li>
+<li><strong>个性化交互</strong> - 基于历史交互提供更相关的响应</li>
+</ol>
+<p><strong>关键最佳实践</strong>：
+- 在生产环境中使用数据库支持的存储
+- 实现记忆清理和压缩策略
+- 设计合理的命名空间结构
+- 提供记忆备份和恢复机制
+- 尊重用户隐私，提供记忆管理选项</p>
+<p>通过合理实现长期记忆系统，你可以创建真正个性化、上下文感知的 AI 应用，为用户提供持续且一致的体验。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+      
+        <script src="../../../../styles/javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>

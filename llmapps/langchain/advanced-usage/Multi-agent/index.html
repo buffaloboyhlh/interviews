@@ -1,0 +1,2578 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Buffalo">
+      
+      
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langchain/advanced-usage/Multi-agent/">
+      
+      
+        <link rel="prev" href="../Human-in-the-loop/">
+      
+      
+        <link rel="next" href="../Retrieval/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Multi-agent - 人工智能面试集合</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../styles/extra.css">
+    
+      <link rel="stylesheet" href="../../../../styles/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            人工智能面试集合
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Multi-agent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../machine/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../deeplearning/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../nlp/chart01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  从零开始学NLP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../core-components/agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  大模型应用开发
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    人工智能面试集合
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../machine/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    机器学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deeplearning/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    从零开始学NLP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            从零开始学NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 1 章：文本表示与词向量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 2 章：RNN/LSTM 序列模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 3 章：Transformer 与 Self-Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 4 章：BERT / GPT 原理与微调
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 5 章：NLP 实战与部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/nltk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    nltk库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/peft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    peft库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型应用开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            大模型应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain核心组件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain核心组件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    智能体（Agents）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型（Models）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消息（Messages）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    工具（Tools）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/short-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    短期记忆（Short-term memory）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    流（Streaming）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    中间件（Middleware）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-components/structured-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    结构化输出（Structured output）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain进阶用法
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain进阶用法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guardrails
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Runtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context-engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Context Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Human-in-the-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Human-in-the-loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Multi-agent
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-agent
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      适用场景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      多智能体模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多智能体模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      模式选择指南
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义智能体上下文
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      工具调用模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工具调用模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作流程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      完整示例：客户服务多智能体系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制子智能体的输入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制子智能体的输出
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制移交模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="控制移交模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作流程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      实现概念
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级多智能体架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级多智能体架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      分层智能体系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态智能体路由
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 智能体设计原则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 上下文管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 错误处理和降级
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 性能监控
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieval
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Long-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Long-term memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangGraph
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            LangGraph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/Local%20server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thinking in LangGraph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/workflows%2Bagents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflows+agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      适用场景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      多智能体模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多智能体模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      模式选择指南
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义智能体上下文
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      工具调用模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工具调用模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作流程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      完整示例：客户服务多智能体系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制子智能体的输入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制子智能体的输出
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制移交模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="控制移交模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作流程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      实现概念
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级多智能体架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级多智能体架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      分层智能体系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态智能体路由
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 智能体设计原则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 上下文管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 错误处理和降级
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 性能监控
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">多智能体系统构建教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>多智能体系统</strong>将复杂应用分解为多个专门化的智能体，通过协作解决问题。与依赖单一智能体处理每个步骤不同，<strong>多智能体架构</strong>允许你将更小、更专注的智能体组合成协调的工作流。</p>
+<h3 id="_3">适用场景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>多智能体系统在以下情况下特别有用：</p>
+<ul>
+<li>单一智能体工具过多，难以做出正确的工具选择决策</li>
+<li>上下文或记忆变得太大，单个智能体无法有效跟踪</li>
+<li>任务需要<strong>专门化</strong>（例如规划者、研究者、数学专家）</li>
+</ul>
+<h2 id="_4">多智能体模式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>工作原理</th>
+<th>控制流</th>
+<th>示例用例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#工具调用模式"><strong>工具调用</strong></a></td>
+<td><strong>监督者</strong>智能体将其他智能体作为<em>工具</em>调用。"工具"智能体不直接与用户对话，只运行任务并返回结果</td>
+<td>集中式：所有路由都通过调用智能体</td>
+<td>任务编排、结构化工作流</td>
+</tr>
+<tr>
+<td><a href="#控制移交模式"><strong>控制移交</strong></a></td>
+<td>当前智能体决定<strong>转移控制权</strong>给另一个智能体。活动智能体改变，用户可能继续与新智能体直接交互</td>
+<td>分散式：智能体可以改变活动智能体</td>
+<td>多领域对话、专家接管</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">模式选择指南<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>工具调用</th>
+<th>控制移交</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>需要集中控制工作流？</td>
+<td>✅ 是</td>
+<td>❌ 否</td>
+</tr>
+<tr>
+<td>希望智能体直接与用户交互？</td>
+<td>❌ 否</td>
+<td>✅ 是</td>
+</tr>
+<tr>
+<td>需要专家间复杂、类人对话？</td>
+<td>❌ 有限</td>
+<td>✅ 强大</td>
+</tr>
+</tbody>
+</table>
+<p><strong>提示</strong>：你可以混合使用两种模式——使用<strong>控制移交</strong>进行智能体切换，并让每个智能体<strong>将子智能体作为工具调用</strong>以完成专门任务。</p>
+<h2 id="_6">自定义智能体上下文<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>多智能体设计的核心是<strong>上下文工程</strong>——决定每个智能体看到什么信息。LangChain 让你可以精细控制：</p>
+<ul>
+<li>对话或状态的哪些部分传递给每个智能体</li>
+<li>为子智能体定制的专门提示</li>
+<li>中间推理的包含/排除</li>
+<li>每个智能体的自定义输入/输出格式</li>
+</ul>
+<p>系统的质量<strong>很大程度上取决于</strong>上下文工程。目标是确保每个智能体都能访问执行任务所需的正确数据，无论是作为工具还是活动智能体。</p>
+<h2 id="_7">工具调用模式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>在<strong>工具调用</strong>模式中，一个智能体（"<strong>控制器</strong>"）将其他智能体视为需要时调用的<em>工具</em>。控制器管理编排，而工具智能体执行特定任务并返回结果。</p>
+<h3 id="_8">工作流程<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>控制器</strong>接收输入并决定调用哪个工具（子智能体）</li>
+<li><strong>工具智能体</strong>基于控制器的指令运行任务</li>
+<li><strong>工具智能体</strong>将结果返回给控制器</li>
+<li><strong>控制器</strong>决定下一步或结束</li>
+</ol>
+<pre><code class="language-mermaid">graph LR
+    A[用户] --&gt; B[控制器智能体]
+    B --&gt; C[工具智能体 1]
+    B --&gt; D[工具智能体 2]
+    C --&gt; B
+    D --&gt; B
+    B --&gt; E[用户响应]
+</code></pre>
+<p><strong>提示</strong>：作为工具使用的智能体通常<strong>不期望</strong>继续与用户对话。它们的角色是执行任务并将结果返回给控制器智能体。如果需要子智能体能够与用户对话，请改用<strong>控制移交</strong>。</p>
+<h3 id="_9">基础实现<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>以下是一个最小示例，主智能体通过工具定义访问单个子智能体：</p>
+<pre><code class="language-python">from langchain.tools import tool
+from langchain.agents import create_agent
+
+# 创建子智能体
+subagent1 = create_agent(model=&quot;openai:gpt-4o&quot;, tools=[...])
+
+@tool(
+    &quot;数据分析专家&quot;,
+    description=&quot;专门处理数据分析和统计问题的专家。当需要分析数据、生成统计报告或进行数据可视化时使用此专家。&quot;
+)
+def call_data_analyst(query: str):
+    &quot;&quot;&quot;调用数据分析专家处理数据相关问题&quot;&quot;&quot;
+    result = subagent1.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: query}]
+    })
+    return result[&quot;messages&quot;][-1].content
+
+# 创建主智能体，包含子智能体作为工具
+agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;, 
+    tools=[call_data_analyst]
+)
+</code></pre>
+<p>在此模式中：</p>
+<ol>
+<li>当主智能体认为任务匹配子智能体描述时调用子智能体</li>
+<li>子智能体独立运行并返回结果</li>
+<li>主智能体接收结果并继续编排</li>
+</ol>
+<h3 id="_10">完整示例：客户服务多智能体系统<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain.tools import tool
+from langchain.agents import create_agent
+from langchain.agents.middleware import HumanInTheLoopMiddleware
+from langgraph.checkpoint.memory import InMemorySaver
+
+# 创建专门化子智能体
+
+# 订单处理专家
+order_agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[...],  # 订单相关工具
+)
+
+# 技术支持专家
+tech_support_agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;, 
+    tools=[...],  # 技术相关工具
+)
+
+# 账单专家
+billing_agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[...],  # 账单相关工具
+)
+
+# 将子智能体包装为工具
+@tool(
+    &quot;订单专家&quot;,
+    description=&quot;处理订单查询、状态检查、退货和换货请求。当用户询问订单状态、退货政策或物流信息时使用。&quot;
+)
+def call_order_expert(query: str):
+    result = order_agent.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: query}]
+    })
+    return result[&quot;messages&quot;][-1].content
+
+@tool(
+    &quot;技术支持专家&quot;, 
+    description=&quot;解决技术问题、产品使用指导和故障排除。当用户遇到技术困难、需要使用指导或报告bug时使用。&quot;
+)
+def call_tech_support(query: str):
+    result = tech_support_agent.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: query}]
+    })
+    return result[&quot;messages&quot;][-1].content
+
+@tool(
+    &quot;账单专家&quot;,
+    description=&quot;处理付款问题、发票查询、退款请求和订阅管理。当用户询问账单、付款或退款时使用。&quot;
+)
+def call_billing_expert(query: str):
+    result = billing_agent.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: query}]
+    })
+    return result[&quot;messages&quot;][-1].content
+
+# 创建主协调智能体
+supervisor_agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[call_order_expert, call_tech_support, call_billing_expert],
+    middleware=[
+        HumanInTheLoopMiddleware(
+            interrupt_on={
+                &quot;call_billing_expert&quot;: True,  # 账单操作需要人工批准
+            }
+        ),
+    ],
+    checkpointer=InMemorySaver(),
+)
+
+# 使用示例
+config = {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;customer_123&quot;}}
+
+result = supervisor_agent.invoke(
+    {
+        &quot;messages&quot;: [
+            {
+                &quot;role&quot;: &quot;user&quot;, 
+                &quot;content&quot;: &quot;我的订单#12345还没有收到，而且上个月的账单好像有问题&quot;
+            }
+        ]
+    },
+    config=config
+)
+</code></pre>
+<h3 id="_11">控制子智能体的输入<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>控制主智能体传递给子智能体输入的两个主要方法：</p>
+<ul>
+<li><strong>修改提示</strong> - 调整主智能体的提示或工具元数据（即子智能体的名称和描述），以更好地指导其何时以及如何调用子智能体</li>
+<li><strong>上下文注入</strong> - 通过调整工具调用从智能体状态中提取信息，添加无法在静态提示中捕获的输入（例如完整消息历史、先前结果、任务元数据）</li>
+</ul>
+<pre><code class="language-python">from langchain.agents import AgentState
+from langchain.tools import tool, ToolRuntime
+from langchain_core.messages import BaseMessage
+
+class CustomState(AgentState):
+    conversation_context: str
+    user_preferences: dict
+
+@tool(
+    &quot;个性化推荐专家&quot;,
+    description=&quot;基于用户历史和个人偏好提供个性化产品推荐&quot;
+)
+def call_recommendation_agent(query: str, runtime: ToolRuntime[None, CustomState]):
+    # 从状态中获取上下文信息
+    user_context = runtime.state[&quot;conversation_context&quot;]
+    user_prefs = runtime.state[&quot;user_preferences&quot;]
+
+    # 构建增强的输入
+    enhanced_input = f&quot;&quot;&quot;
+用户查询: {query}
+
+对话上下文:
+{user_context}
+
+用户偏好:
+{user_prefs}
+
+请基于以上信息提供个性化推荐。
+&quot;&quot;&quot;
+
+    result = recommendation_agent.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: enhanced_input}]
+    })
+    return result[&quot;messages&quot;][-1].content
+</code></pre>
+<h3 id="_12">控制子智能体的输出<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>两种常见的塑造主智能体从子智能体接收内容的策略：</p>
+<ul>
+<li><strong>修改提示</strong> - 优化子智能体的提示，明确指定应返回什么内容</li>
+<li><strong>自定义输出格式化</strong> - 在将结果交还给主智能体之前，在代码中调整或丰富子智能体的响应</li>
+</ul>
+<pre><code class="language-python">from typing import Annotated
+from langchain.agents import AgentState
+from langchain.tools import InjectedToolCallId
+from langchain_core.messages import ToolMessage
+from langgraph.types import Command
+
+@tool(
+    &quot;研究专家&quot;,
+    description=&quot;进行深入研究并返回结构化分析报告&quot;
+)
+def call_research_agent(
+    query: str,
+    tool_call_id: Annotated[str, InjectedToolCallId],
+) -&gt; Command:
+    result = research_agent.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: query}]
+    })
+
+    # 从结果中提取结构化信息
+    research_data = extract_research_data(result)
+
+    return Command(update={
+        # 将研究数据保存到状态供后续使用
+        &quot;research_findings&quot;: research_data,
+        &quot;messages&quot;: [
+            ToolMessage(
+                content=format_research_summary(research_data),
+                tool_call_id=tool_call_id
+            )
+        ]
+    })
+
+def extract_research_data(result):
+    &quot;&quot;&quot;从研究结果中提取结构化数据&quot;&quot;&quot;
+    # 实现数据提取逻辑
+    return {
+        &quot;key_findings&quot;: [...],
+        &quot;sources&quot;: [...],
+        &quot;confidence_score&quot;: 0.85
+    }
+
+def format_research_summary(research_data):
+    &quot;&quot;&quot;格式化研究摘要&quot;&quot;&quot;
+    return f&quot;&quot;&quot;
+研究摘要:
+关键发现: {', '.join(research_data['key_findings'])}
+可信度: {research_data['confidence_score'] * 100}%
+基于 {len(research_data['sources'])} 个信息来源
+&quot;&quot;&quot;
+</code></pre>
+<h2 id="_13">控制移交模式<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>在<strong>控制移交</strong>中，智能体可以直接将控制权传递给彼此。"活动"智能体发生改变，用户与当前拥有控制权的任何智能体交互。</p>
+<h3 id="_14">工作流程<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>当前智能体</strong>决定需要另一个智能体的帮助</li>
+<li>它将控制权（和状态）传递给<strong>下一个智能体</strong></li>
+<li><strong>新智能体</strong>直接与用户交互，直到决定再次移交或结束</li>
+</ol>
+<pre><code class="language-mermaid">graph LR
+    A[用户] --&gt; B[智能体 A]
+    B --&gt; C[智能体 B]
+    C --&gt; A
+</code></pre>
+<h3 id="_15">实现概念<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>虽然完整实现细节即将推出，但控制移交模式的核心概念是：</p>
+<pre><code class="language-python"># 概念代码 - 实际实现可能有所不同
+class HandoffSystem:
+    def __init__(self, agents: Dict[str, Agent]):
+        self.agents = agents
+        self.current_agent = &quot;default&quot;
+
+    def invoke(self, input_message, config=None):
+        while True:
+            result = self.agents[self.current_agent].invoke(
+                input_message, config=config
+            )
+
+            # 检查是否需要移交
+            if should_handoff(result):
+                self.current_agent = get_next_agent(result)
+                input_message = prepare_handoff_message(result)
+            else:
+                return result
+</code></pre>
+<h2 id="_16">高级多智能体架构<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h3 id="_17">分层智能体系统<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from dataclasses import dataclass
+from langchain.agents import create_agent
+from langchain.tools import tool
+
+@dataclass
+class ProjectContext:
+    project_type: str
+    complexity: str
+    deadline: str
+
+# 第一层：专业智能体
+code_review_agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[...],
+)
+
+documentation_agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;, 
+    tools=[...],
+)
+
+testing_agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[...],
+)
+
+# 第二层：领域协调智能体
+@tool(&quot;代码审查专家&quot;)
+def call_code_reviewer(task: str):
+    return code_review_agent.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: task}]
+    })[&quot;messages&quot;][-1].content
+
+@tool(&quot;文档专家&quot;)  
+def call_documentation_specialist(task: str):
+    return documentation_agent.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: task}]
+    })[&quot;messages&quot;][-1].content
+
+@tool(&quot;测试专家&quot;)
+def call_testing_specialist(task: str):
+    return testing_agent.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: task}]
+    })[&quot;messages&quot;][-1].content
+
+development_coordinator = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[call_code_reviewer, call_documentation_specialist, call_testing_specialist]
+)
+
+# 第三层：项目管理者
+@tool(&quot;开发协调员&quot;)
+def call_development_coordinator(project_requirements: str):
+    return development_coordinator.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: project_requirements}]
+    })[&quot;messages&quot;][-1].content
+
+project_manager = create_agent(
+    model=&quot;openai:gpt-4o&quot;, 
+    tools=[call_development_coordinator]
+)
+</code></pre>
+<h3 id="_18">动态智能体路由<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain.agents.middleware import wrap_model_call, ModelRequest, ModelResponse
+from typing import Callable
+
+class DynamicRouter:
+    def __init__(self):
+        self.agent_registry = {}
+
+    def register_agent(self, name: str, agent, capabilities: list):
+        self.agent_registry[name] = {
+            'agent': agent,
+            'capabilities': capabilities
+        }
+
+    def find_best_agent(self, query: str, current_context: dict):
+        # 实现智能体选择逻辑
+        scores = {}
+        for name, info in self.agent_registry.items():
+            score = self.calculate_match_score(query, info['capabilities'], current_context)
+            scores[name] = score
+
+        return max(scores, key=scores.get)
+
+# 动态路由中间件
+@wrap_model_call
+def dynamic_agent_router(
+    request: ModelRequest,
+    handler: Callable[[ModelRequest], ModelResponse]
+) -&gt; ModelResponse:
+    router = DynamicRouter()
+
+    # 基于查询内容决定使用哪个智能体
+    user_message = request.messages[-1].content
+    best_agent_name = router.find_best_agent(user_message, request.state)
+
+    if best_agent_name != &quot;current_agent&quot;:
+        # 路由到最佳智能体
+        best_agent = router.agent_registry[best_agent_name]['agent']
+        result = best_agent.invoke({&quot;messages&quot;: request.messages})
+        return ModelResponse(messages=result[&quot;messages&quot;])
+
+    return handler(request)
+</code></pre>
+<h2 id="_19">最佳实践<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 智能体设计原则<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 好的实践：专注的单一职责智能体
+@tool(
+    &quot;数据清洗专家&quot;,
+    description=&quot;专门处理数据清洗任务：去除重复值、处理缺失值、格式标准化&quot;
+)
+def call_data_cleaning_expert(data_description: str):
+    # 专注的数据清洗逻辑
+    pass
+
+# 避免：过于通用的智能体  
+@tool(
+    &quot;数据处理工具&quot;,  # 太宽泛
+    description=&quot;处理各种数据任务&quot;  # 不够具体
+)
+def call_data_tool(task: str):
+    # 试图处理所有数据相关任务
+    pass
+</code></pre>
+<h3 id="2">2. 上下文管理<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain.agents.middleware import dynamic_prompt
+
+@dynamic_prompt
+def specialized_agent_prompt(request: ModelRequest) -&gt; str:
+    &quot;&quot;&quot;为专门智能体提供聚焦的上下文&quot;&quot;&quot;
+    agent_role = request.runtime.context.get(&quot;agent_role&quot;, &quot;general&quot;)
+
+    prompts = {
+        &quot;data_analyst&quot;: &quot;&quot;&quot;
+你是一个数据分析专家。专注于：
+- 数据分析和统计计算
+- 图表解释和趋势分析
+- 数据质量评估
+
+避免处理与数据分析无关的任务。
+&quot;&quot;&quot;,
+        &quot;customer_service&quot;: &quot;&quot;&quot;
+你是一个客户服务专家。专注于：
+- 解决客户问题
+- 提供产品信息
+- 处理投诉和反馈
+
+将技术问题转给技术支持团队。
+&quot;&quot;&quot;
+    }
+
+    return prompts.get(agent_role, &quot;你是一个有用的助手。&quot;)
+</code></pre>
+<h3 id="3">3. 错误处理和降级<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain.tools import tool
+import asyncio
+
+@tool(&quot;容错子智能体调用&quot;)
+def call_agent_with_fallback(agent_func, query: str, max_retries: int = 2):
+    &quot;&quot;&quot;调用子智能体，带有错误处理和降级机制&quot;&quot;&quot;
+    for attempt in range(max_retries):
+        try:
+            result = agent_func(query)
+            return result
+        except Exception as e:
+            if attempt == max_retries - 1:
+                # 最终降级
+                return f&quot;无法完成请求。错误: {str(e)}。请稍后重试或联系人工客服。&quot;
+            await asyncio.sleep(1)  # 重试前等待
+</code></pre>
+<h3 id="4">4. 性能监控<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import time
+from functools import wraps
+
+def monitor_agent_performance(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        try:
+            result = func(*args, **kwargs)
+            execution_time = time.time() - start_time
+            log_performance_metrics(func.__name__, execution_time, &quot;success&quot;)
+            return result
+        except Exception as e:
+            execution_time = time.time() - start_time
+            log_performance_metrics(func.__name__, execution_time, f&quot;error: {str(e)}&quot;)
+            raise
+    return wrapper
+
+@tool(&quot;监控的子智能体&quot;)
+@monitor_agent_performance
+def call_monitored_agent(query: str):
+    return agent.invoke({
+        &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: query}]
+    })[&quot;messages&quot;][-1].content
+</code></pre>
+<h2 id="_20">总结<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>多智能体系统通过将复杂问题分解为专门化任务，显著提高了AI应用的可靠性和效率。通过合理使用工具调用和控制移交模式，你可以构建出能够处理复杂工作流的智能系统。</p>
+<p><strong>关键要点</strong>：
+- 为每个智能体明确定义职责范围
+- 精心设计上下文传递机制
+- 实现适当的错误处理和降级策略
+- 监控系统性能并持续优化
+- 在需要人工监督的关键操作中使用HITL中间件</p>
+<p>通过遵循这些最佳实践，你可以构建出强大、可靠且易于维护的多智能体系统。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+      
+        <script src="../../../../styles/javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>

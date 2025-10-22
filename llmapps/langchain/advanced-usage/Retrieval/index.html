@@ -10,28 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/chart04/">
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langchain/advanced-usage/Retrieval/">
       
       
-        <link rel="prev" href="../chart03/">
+        <link rel="prev" href="../Multi-agent/">
       
       
-        <link rel="next" href="../chart05/">
+        <link rel="next" href="../Long-term%20memory/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>第 4 章：BERT / GPT 原理与微调 - 人工智能面试集合</title>
+        <title>Retrieval - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../../styles/extra.css">
+      <link rel="stylesheet" href="../../../../styles/extra.css">
     
-      <link rel="stylesheet" href="../../styles/custom.css">
+      <link rel="stylesheet" href="../../../../styles/custom.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#41" class="md-skip">
+        <a href="#rag" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第 4 章：BERT / GPT 原理与微调
+              Retrieval
             
           </span>
         </div>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../machine/interview/" class="md-tabs__link">
+      <a href="../../../../machine/interview/" class="md-tabs__link">
         
   
   
@@ -246,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../deeplearning/interview/" class="md-tabs__link">
+      <a href="../../../../deeplearning/interview/" class="md-tabs__link">
         
   
   
@@ -263,13 +263,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../chart01/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../nlp/chart01/" class="md-tabs__link">
           
   
   
@@ -287,6 +285,8 @@
   
   
   
+    
+  
   
     
     
@@ -294,11 +294,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../llmapps/langchain/core-components/agents/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../core-components/agents/" class="md-tabs__link">
           
   
   
@@ -337,7 +339,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -367,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../machine/interview/" class="md-nav__link">
+      <a href="../../../../machine/interview/" class="md-nav__link">
         
   
   
@@ -389,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deeplearning/interview/" class="md-nav__link">
+      <a href="../../../../deeplearning/interview/" class="md-nav__link">
         
   
   
@@ -408,10 +410,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -433,22 +433,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -461,7 +460,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             从零开始学NLP
@@ -475,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart01/" class="md-nav__link">
+      <a href="../../../../nlp/chart01/" class="md-nav__link">
         
   
   
@@ -498,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart02/" class="md-nav__link">
+      <a href="../../../../nlp/chart02/" class="md-nav__link">
         
   
   
@@ -521,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart03/" class="md-nav__link">
+      <a href="../../../../nlp/chart03/" class="md-nav__link">
         
   
   
@@ -541,30 +540,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    第 4 章：BERT / GPT 原理与微调
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart04/" class="md-nav__link">
         
   
   
@@ -575,135 +554,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 学习目标
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#42-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 BERT 概念
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2 BERT 概念">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#421-masked-language-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2.1 Masked Language Model 示例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#43-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.3 GPT 概念
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#44-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 BERT 与 GPT 的差异
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#45-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5 BERT / GPT 的微调
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#451" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.1 微调原理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#452-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.2 文本分类微调（BERT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#453-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.3 文本生成微调（GPT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#46-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.6 BERT / GPT 的核心原理总结
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#47" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.7 本章小结
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -716,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart05/" class="md-nav__link">
+      <a href="../../../../nlp/chart05/" class="md-nav__link">
         
   
   
@@ -739,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nltk/" class="md-nav__link">
+      <a href="../../../../nlp/nltk/" class="md-nav__link">
         
   
   
@@ -762,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../peft/" class="md-nav__link">
+      <a href="../../../../nlp/peft/" class="md-nav__link">
         
   
   
@@ -789,8 +639,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -804,21 +656,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -831,7 +684,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             大模型应用开发
@@ -869,10 +722,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -881,7 +737,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   
@@ -908,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/agents/" class="md-nav__link">
+      <a href="../../core-components/agents/" class="md-nav__link">
         
   
   
@@ -931,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/models/" class="md-nav__link">
+      <a href="../../core-components/models/" class="md-nav__link">
         
   
   
@@ -954,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/messages/" class="md-nav__link">
+      <a href="../../core-components/messages/" class="md-nav__link">
         
   
   
@@ -977,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/tools/" class="md-nav__link">
+      <a href="../../core-components/tools/" class="md-nav__link">
         
   
   
@@ -1000,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/short-term%20memory/" class="md-nav__link">
+      <a href="../../core-components/short-term%20memory/" class="md-nav__link">
         
   
   
@@ -1023,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/streaming/" class="md-nav__link">
+      <a href="../../core-components/streaming/" class="md-nav__link">
         
   
   
@@ -1046,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/middleware/" class="md-nav__link">
+      <a href="../../core-components/middleware/" class="md-nav__link">
         
   
   
@@ -1069,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/structured-output/" class="md-nav__link">
+      <a href="../../core-components/structured-output/" class="md-nav__link">
         
   
   
@@ -1097,8 +953,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1123,20 +981,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   
@@ -1149,7 +1008,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             LangChain进阶用法
@@ -1163,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Guardrails/" class="md-nav__link">
+      <a href="../Guardrails/" class="md-nav__link">
         
   
   
@@ -1186,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Runtime/" class="md-nav__link">
+      <a href="../Runtime/" class="md-nav__link">
         
   
   
@@ -1209,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/context-engineering/" class="md-nav__link">
+      <a href="../context-engineering/" class="md-nav__link">
         
   
   
@@ -1232,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/MCP/" class="md-nav__link">
+      <a href="../MCP/" class="md-nav__link">
         
   
   
@@ -1255,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Human-in-the-loop/" class="md-nav__link">
+      <a href="../Human-in-the-loop/" class="md-nav__link">
         
   
   
@@ -1278,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Multi-agent/" class="md-nav__link">
+      <a href="../Multi-agent/" class="md-nav__link">
         
   
   
@@ -1298,10 +1157,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Retrieval/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Retrieval
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1312,6 +1191,183 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是检索增强生成（RAG）？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      构建知识库
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构建知识库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义知识库构建
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用现有知识库
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      检索流程详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="检索流程详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心构建模块
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rag_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG架构模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RAG架构模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-2-step-ragrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 2-Step RAG（两步式RAG）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-agentic-ragrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Agentic RAG（智能体RAG）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hybrid-ragrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Hybrid RAG（混合RAG）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      实践建议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实践建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择适合的架构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能优化考虑
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      错误处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      下一步学习
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1324,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Long-term%20memory/" class="md-nav__link">
+      <a href="../Long-term%20memory/" class="md-nav__link">
         
   
   
@@ -1373,10 +1429,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1385,7 +1444,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   
@@ -1412,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/overview/" class="md-nav__link">
+      <a href="../../../langgraph/overview/" class="md-nav__link">
         
   
   
@@ -1435,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/quickstart/" class="md-nav__link">
+      <a href="../../../langgraph/quickstart/" class="md-nav__link">
         
   
   
@@ -1458,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/Local%20server/" class="md-nav__link">
+      <a href="../../../langgraph/Local%20server/" class="md-nav__link">
         
   
   
@@ -1481,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
+      <a href="../../../langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
         
   
   
@@ -1504,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/workflows%2Bagents/" class="md-nav__link">
+      <a href="../../../langgraph/workflows%2Bagents/" class="md-nav__link">
         
   
   
@@ -1560,28 +1619,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
+  <a href="#rag" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 学习目标
+      什么是检索增强生成（RAG）？
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#42-bert" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 BERT 概念
+      构建知识库
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.2 BERT 概念">
+    <nav class="md-nav" aria-label="构建知识库">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#421-masked-language-model" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2.1 Masked Language Model 示例
+      自定义知识库构建
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用现有知识库
     </span>
   </a>
   
@@ -1593,55 +1661,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#43-gpt" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 GPT 概念
+      检索流程详解
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#44-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 BERT 与 GPT 的差异
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#45-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5 BERT / GPT 的微调
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
+    <nav class="md-nav" aria-label="检索流程详解">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#451" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.1 微调原理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#452-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.2 文本分类微调（BERT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#453-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.3 文本生成微调（GPT 示例）
+      核心构建模块
     </span>
   </a>
   
@@ -1653,18 +1685,93 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#46-bert-gpt" class="md-nav__link">
+  <a href="#rag_1" class="md-nav__link">
     <span class="md-ellipsis">
-      4.6 BERT / GPT 的核心原理总结
+      RAG架构模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RAG架构模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-2-step-ragrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 2-Step RAG（两步式RAG）
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#2-agentic-ragrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Agentic RAG（智能体RAG）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hybrid-ragrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Hybrid RAG（混合RAG）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#47" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      4.7 本章小结
+      实践建议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实践建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择适合的架构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能优化考虑
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      错误处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      下一步学习
     </span>
   </a>
   
@@ -1689,183 +1796,213 @@
   
 
 
-<h1 id="4-bert-gpt">第 4 章 : BERT / GPT 原理与微调<a class="headerlink" href="#4-bert-gpt" title="Permanent link">&para;</a></h1>
-<p>BERT 与 GPT 是现代 NLP 中最经典的预训练语言模型。它们都基于 Transformer，但在任务设计、训练方式和应用场景上有明显区别。本章将详细讲解它们的原理，并演示如何微调它们进行下游任务。</p>
-<hr />
-<h2 id="41">4.1 学习目标<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
-<p>完成本章后，你将能够：</p>
-<ol>
-<li>理解 BERT 和 GPT 的基本原理与差异</li>
-<li>掌握预训练任务：Masked Language Model (BERT) 与 Autoregressive LM (GPT)</li>
-<li>理解 Transformer 在 BERT/GPT 中的作用</li>
-<li>学会在 Python 中加载预训练模型并进行微调</li>
-<li>理解如何将预训练模型应用于文本分类、文本生成等任务</li>
-</ol>
-<hr />
-<h2 id="42-bert">4.2 BERT 概念<a class="headerlink" href="#42-bert" title="Permanent link">&para;</a></h2>
-<p>BERT（Bidirectional Encoder Representations from Transformers）是<strong>双向 Transformer Encoder</strong>：</p>
+<h1 id="retrieval-rag">Retrieval 与 RAG 完整教程：从基础概念到架构实践<a class="headerlink" href="#retrieval-rag" title="Permanent link">&para;</a></h1>
+<h2 id="rag">什么是检索增强生成（RAG）？<a class="headerlink" href="#rag" title="Permanent link">&para;</a></h2>
+<p>大型语言模型（LLM）虽然强大，但存在两个关键限制：</p>
 <ul>
-<li><strong>双向</strong>：同时考虑上下文的左侧和右侧信息</li>
-<li>
-<p><strong>预训练任务</strong>：</p>
-<ol>
-<li><strong>Masked Language Model (MLM)</strong>：随机遮盖一些词，预测被遮盖的词
-     $$
-     P(x_{\text{masked}} | x_{\text{context}})
-     $$</li>
-<li><strong>Next Sentence Prediction (NSP)</strong>：预测句子 B 是否紧跟句子 A</li>
-</ol>
-</li>
-<li>
-<p><strong>应用</strong>：文本分类、问答、命名实体识别等理解任务</p>
-</li>
+<li><strong>有限上下文</strong> — 无法一次性处理整个知识库</li>
+<li><strong>静态知识</strong> — 训练数据在某个时间点被冻结</li>
 </ul>
-<blockquote>
-<p>BERT 是 Encoder-only 结构，不用于文本生成。</p>
-</blockquote>
-<hr />
-<h3 id="421-masked-language-model">4.2.1 Masked Language Model 示例<a class="headerlink" href="#421-masked-language-model" title="Permanent link">&para;</a></h3>
-<p>句子：<strong>"The cat sat on the mat"</strong></p>
+<p>检索通过<strong>在查询时获取相关外部知识</strong>来解决这些问题，这就是<strong>检索增强生成（RAG）</strong> 的基础：用特定上下文信息增强LLM的回答能力。</p>
+<h2 id="_1">构建知识库<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>知识库</strong>是在检索过程中使用的文档或结构化数据存储库。</p>
+<h3 id="_2">自定义知识库构建<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>如果需要自定义知识库，可以使用LangChain的文档加载器和向量存储从自有数据构建：</p>
+<pre><code class="language-python"># 示例：构建知识库的基本流程
+from langchain.document_loaders import TextLoader
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Chroma
+
+# 1. 加载文档
+loader = TextLoader(&quot;your_document.txt&quot;)
+documents = loader.load()
+
+# 2. 分割文本
+text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+texts = text_splitter.split_documents(documents)
+
+# 3. 创建嵌入并存储
+embeddings = OpenAIEmbeddings()
+vectorstore = Chroma.from_documents(texts, embeddings)
+</code></pre>
+<h3 id="_3">使用现有知识库<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>如果已有知识库（如SQL数据库、CRM或内部文档系统），无需重建：</p>
 <ul>
-<li>随机遮盖词："The cat [MASK] on the mat"</li>
-<li>BERT 学习预测 <code>[MASK]</code> 对应的词 <code>"sat"</code></li>
+<li>将其作为<strong>工具</strong>连接到Agentic RAG中的智能体</li>
+<li>查询它并将检索内容作为上下文提供给LLM（2-Step RAG）</li>
 </ul>
-<hr />
-<h2 id="43-gpt">4.3 GPT 概念<a class="headerlink" href="#43-gpt" title="Permanent link">&para;</a></h2>
-<p>GPT（Generative Pre-trained Transformer）是<strong>单向 Transformer Decoder</strong>：</p>
-<ul>
-<li><strong>单向</strong>：从左到右生成文本</li>
-<li><strong>预训练任务</strong>：Autoregressive Language Model (自回归语言模型)
-  $$
-  P(x_t | x_1, x_2, ..., x_{t-1})
-  $$</li>
-<li><strong>应用</strong>：文本生成、对话生成、代码生成等任务</li>
-</ul>
-<blockquote>
-<p>GPT 是 Decoder-only 结构，适合生成任务。</p>
-</blockquote>
-<hr />
-<h2 id="44-bert-gpt">4.4 BERT 与 GPT 的差异<a class="headerlink" href="#44-bert-gpt" title="Permanent link">&para;</a></h2>
+<h2 id="_4">检索流程详解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>典型的检索工作流程如下：</p>
+<pre><code>数据源 → 文档加载器 → 文档 → 文本分割 → 嵌入转换 → 向量存储
+                                                      ↑
+用户查询 → 查询嵌入 → 检索器 → LLM使用检索信息 → 生成答案
+</code></pre>
+<p>每个组件都是模块化的：可以替换加载器、分割器、嵌入或向量存储，而无需重写应用逻辑。</p>
+<h3 id="_5">核心构建模块<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>特性</th>
-<th>BERT</th>
-<th>GPT</th>
+<th>组件</th>
+<th>功能</th>
+<th>关键特性</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Transformer 部分</td>
-<td>Encoder</td>
-<td>Decoder</td>
+<td><strong>文档加载器</strong></td>
+<td>从外部源（Google Drive、Slack、Notion等）提取数据</td>
+<td>返回标准化的Document对象</td>
 </tr>
 <tr>
-<td>上下文方向</td>
-<td>双向</td>
-<td>单向</td>
+<td><strong>文本分割器</strong></td>
+<td>将大文档拆分为可检索的小块</td>
+<td>确保适合模型的上下文窗口</td>
 </tr>
 <tr>
-<td>预训练任务</td>
-<td>MLM + NSP</td>
-<td>Autoregressive LM</td>
+<td><strong>嵌入模型</strong></td>
+<td>将文本转换为数值向量</td>
+<td>相似含义的文本在向量空间中位置相近</td>
 </tr>
 <tr>
-<td>适用任务</td>
-<td>理解任务</td>
-<td>生成任务</td>
+<td><strong>向量存储</strong></td>
+<td>专门用于存储和搜索嵌入的数据库</td>
+<td>支持相似性搜索</td>
 </tr>
 <tr>
-<td>典型应用</td>
-<td>文本分类、问答</td>
-<td>文本生成、对话、代码生成</td>
+<td><strong>检索器</strong></td>
+<td>根据非结构化查询返回文档的接口</td>
+<td>支持多种检索策略</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="45-bert-gpt">4.5 BERT / GPT 的微调<a class="headerlink" href="#45-bert-gpt" title="Permanent link">&para;</a></h2>
-<h3 id="451">4.5.1 微调原理<a class="headerlink" href="#451" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>预训练</strong>：在大规模语料上学习通用语言表示</li>
-<li><strong>微调</strong>：在下游任务上训练少量参数，使模型适应特定任务</li>
-</ul>
-<blockquote>
-<p>微调通常比从零训练效果好，且数据需求更少。</p>
-</blockquote>
-<hr />
-<h3 id="452-bert">4.5.2 文本分类微调（BERT 示例）<a class="headerlink" href="#452-bert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from transformers import BertTokenizer, BertForSequenceClassification
-from transformers import Trainer, TrainingArguments
-import torch
+<h2 id="rag_1">RAG架构模式<a class="headerlink" href="#rag_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-2-step-ragrag">1. 2-Step RAG（两步式RAG）<a class="headerlink" href="#1-2-step-ragrag" title="Permanent link">&para;</a></h3>
+<p><strong>特点</strong>：检索总是在生成之前执行，简单且可预测</p>
+<p><strong>适用场景</strong>：FAQ、文档问答机器人等简单应用</p>
+<pre><code class="language-python"># 2-Step RAG 基本示例
+from langchain.chains import RetrievalQA
 
-# 加载预训练模型和分词器
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
+# 创建检索增强的QA链
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    chain_type=&quot;stuff&quot;,
+    retriever=vectorstore.as_retriever(),
+    return_source_documents=True
+)
 
-# 示例文本
-texts = [&quot;I love NLP&quot;, &quot;I hate bugs&quot;]
-labels = torch.tensor([1,0])
-
-# 编码
-encodings = tokenizer(texts, padding=True, truncation=True, return_tensors='pt')
-dataset = torch.utils.data.TensorDataset(encodings['input_ids'], encodings['attention_mask'], labels)
-
-# Trainer 简单训练示例
-training_args = TrainingArguments(output_dir='./results', num_train_epochs=1, per_device_train_batch_size=2)
-trainer = Trainer(model=model, args=training_args, train_dataset=dataset)
-trainer.train()
+# 执行查询
+result = qa_chain({&quot;query&quot;: &quot;你的问题&quot;})
+print(result[&quot;result&quot;])
 </code></pre>
-<hr />
-<h3 id="453-gpt">4.5.3 文本生成微调（GPT 示例）<a class="headerlink" href="#453-gpt" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from transformers import GPT2Tokenizer, GPT2LMHeadModel
+<p><strong>优势</strong>：
+- ✅ 控制度高
+- ⚡ 延迟低且可预测
+- 🎯 适用于明确检索需求</p>
+<h3 id="2-agentic-ragrag">2. Agentic RAG（智能体RAG）<a class="headerlink" href="#2-agentic-ragrag" title="Permanent link">&para;</a></h3>
+<p><strong>特点</strong>：LLM驱动的智能体在推理过程中决定<em>何时</em>和<em>如何</em>检索</p>
+<p><strong>适用场景</strong>：需要访问多个工具的研究助手</p>
+<pre><code class="language-python">import requests
+from langchain.tools import tool
+from langchain.agents import create_agent
 
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-model = GPT2LMHeadModel.from_pretrained('gpt2')
+@tool
+def fetch_url(url: str) -&gt; str:
+    &quot;&quot;&quot;从URL获取文本内容&quot;&quot;&quot;
+    response = requests.get(url, timeout=10.0)
+    response.raise_for_status()
+    return response.text
 
-text = &quot;Once upon a time&quot;
-inputs = tokenizer(text, return_tensors='pt')
-
-# 生成文本
-outputs = model.generate(**inputs, max_length=20)
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+# 创建具有检索工具的智能体
+agent = create_agent(
+    model=&quot;claude-sonnet-4-0&quot;,
+    tools=[fetch_url],  # 检索工具
+    system_prompt=&quot;需要时使用fetch_url从网页获取信息&quot;,
+)
 </code></pre>
-<hr />
-<h2 id="46-bert-gpt">4.6 BERT / GPT 的核心原理总结<a class="headerlink" href="#46-bert-gpt" title="Permanent link">&para;</a></h2>
+<p><strong>工作流程</strong>：</p>
+<pre><code>用户输入 → 智能体判断是否需要外部信息
+    ↓ 是 → 使用工具搜索 → 判断是否足够回答
+    ↓ 否 → 生成最终答案 → 返回用户
+</code></pre>
+<p><strong>优势</strong>：
+- ✅ 灵活性高
+- 🧠 能够进行复杂推理
+- 🔧 可集成多个工具</p>
+<h3 id="3-hybrid-ragrag">3. Hybrid RAG（混合RAG）<a class="headerlink" href="#3-hybrid-ragrag" title="Permanent link">&para;</a></h3>
+<p><strong>特点</strong>：结合2-Step和Agentic RAG特性，加入验证步骤</p>
+<p><strong>适用场景</strong>：需要质量验证的领域特定问答系统</p>
+<p><strong>典型组件</strong>：
+- <strong>查询增强</strong>：改进输入问题以提高检索质量
+- <strong>检索验证</strong>：评估检索文档的相关性和充分性
+- <strong>答案验证</strong>：检查生成答案的准确性、完整性和与源内容的一致性</p>
+<pre><code class="language-mermaid">graph LR
+    A[用户问题] --&gt; B[查询增强]
+    B --&gt; C[检索文档]
+    C --&gt; D{信息是否充分?}
+    D -- 否 --&gt; E[优化查询]
+    E --&gt; C
+    D -- 是 --&gt; F[生成答案]
+    F --&gt; G{答案质量合格?}
+    G -- 否 --&gt; H{尝试不同方法?}
+    H -- 是 --&gt; E
+    H -- 否 --&gt; I[返回最佳答案]
+    G -- 是 --&gt; I
+    I --&gt; J[返回用户]
+</code></pre>
+<h2 id="_6">实践建议<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">选择适合的架构<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>需求特征</th>
+<th>推荐架构</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>简单问答、低延迟</td>
+<td>2-Step RAG</td>
+<td>结构简单，响应快速</td>
+</tr>
+<tr>
+<td>复杂推理、多源查询</td>
+<td>Agentic RAG</td>
+<td>灵活决策，适应复杂场景</td>
+</tr>
+<tr>
+<td>高质量要求、需要验证</td>
+<td>Hybrid RAG</td>
+<td>平衡控制与灵活性</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">性能优化考虑<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p><strong>Transformer</strong> 是底层架构</p>
-<ul>
-<li>BERT 用 Encoder</li>
-<li>GPT 用 Decoder</li>
-</ul>
-</li>
-<li>
-<p><strong>预训练任务</strong>学习语言知识</p>
-<ul>
-<li>BERT：Masked LM + NSP</li>
-<li>GPT：自回归 LM</li>
-</ul>
-</li>
-<li>
-<p><strong>微调</strong>在下游任务上少量训练即可获得高性能</p>
-</li>
-<li>
-<p><strong>应用广泛</strong>：</p>
-<ul>
-<li>BERT：分类、问答、命名实体识别</li>
-<li>GPT：文本生成、对话、代码生成</li>
-</ul>
-</li>
+<li><strong>分块策略</strong>：根据文档类型调整块大小和重叠</li>
+<li><strong>检索优化</strong>：使用混合检索（关键词+向量）提高召回率</li>
+<li><strong>缓存机制</strong>：对频繁查询实现结果缓存</li>
+<li><strong>增量更新</strong>：支持知识库的增量更新</li>
 </ol>
-<hr />
-<h2 id="47">4.7 本章小结<a class="headerlink" href="#47" title="Permanent link">&para;</a></h2>
-<ul>
-<li>BERT 强调语言理解，利用双向上下文</li>
-<li>GPT 强调文本生成，利用左到右预测</li>
-<li>预训练 + 微调是现代 NLP 的主流方法</li>
-<li>PyTorch + Transformers 库提供便捷工具，快速微调和应用</li>
-</ul>
-<hr />
+<h3 id="_9">错误处理<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 检索失败的处理示例
+try:
+    result = qa_chain({&quot;query&quot;: user_question})
+    if not result[&quot;source_documents&quot;]:
+        return &quot;抱歉，没有找到相关信息。&quot;
+    return result[&quot;result&quot;]
+except Exception as e:
+    return f&quot;检索过程中出现错误：{str(e)}&quot;
+</code></pre>
+<h2 id="_10">下一步学习<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>要深入了解和实践RAG，建议：</p>
+<ol>
+<li><strong>从2-Step RAG开始</strong>：掌握基本的检索增强生成流程</li>
+<li><strong>尝试Agentic RAG</strong>：体验智能体驱动的动态检索</li>
+<li><strong>探索高级特性</strong>：如查询重写、多跳检索、自我修正等</li>
+</ol>
+<p>通过本教程，你应该对RAG的基本概念、不同架构及其适用场景有了全面了解。根据具体需求选择合适的架构，开始构建你的检索增强应用吧！</p>
 
 
 
@@ -1916,10 +2053,10 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -1927,7 +2064,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="../../styles/javascripts/katex.js"></script>
+        <script src="../../../../styles/javascripts/katex.js"></script>
       
     
   </body>

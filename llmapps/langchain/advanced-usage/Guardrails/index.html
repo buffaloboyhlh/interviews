@@ -10,28 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/chart04/">
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langchain/advanced-usage/Guardrails/">
       
       
-        <link rel="prev" href="../chart03/">
+        <link rel="prev" href="../../core-components/structured-output/">
       
       
-        <link rel="next" href="../chart05/">
+        <link rel="next" href="../Runtime/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>第 4 章：BERT / GPT 原理与微调 - 人工智能面试集合</title>
+        <title>Guardrails - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../../styles/extra.css">
+      <link rel="stylesheet" href="../../../../styles/extra.css">
     
-      <link rel="stylesheet" href="../../styles/custom.css">
+      <link rel="stylesheet" href="../../../../styles/custom.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#41" class="md-skip">
+        <a href="#guardrails" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第 4 章：BERT / GPT 原理与微调
+              Guardrails
             
           </span>
         </div>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../machine/interview/" class="md-tabs__link">
+      <a href="../../../../machine/interview/" class="md-tabs__link">
         
   
   
@@ -246,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../deeplearning/interview/" class="md-tabs__link">
+      <a href="../../../../deeplearning/interview/" class="md-tabs__link">
         
   
   
@@ -263,13 +263,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../chart01/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../nlp/chart01/" class="md-tabs__link">
           
   
   
@@ -287,6 +285,8 @@
   
   
   
+    
+  
   
     
     
@@ -294,11 +294,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../llmapps/langchain/core-components/agents/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../core-components/agents/" class="md-tabs__link">
           
   
   
@@ -337,7 +339,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -367,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../machine/interview/" class="md-nav__link">
+      <a href="../../../../machine/interview/" class="md-nav__link">
         
   
   
@@ -389,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deeplearning/interview/" class="md-nav__link">
+      <a href="../../../../deeplearning/interview/" class="md-nav__link">
         
   
   
@@ -408,10 +410,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -433,22 +433,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -461,7 +460,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             从零开始学NLP
@@ -475,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart01/" class="md-nav__link">
+      <a href="../../../../nlp/chart01/" class="md-nav__link">
         
   
   
@@ -498,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart02/" class="md-nav__link">
+      <a href="../../../../nlp/chart02/" class="md-nav__link">
         
   
   
@@ -521,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart03/" class="md-nav__link">
+      <a href="../../../../nlp/chart03/" class="md-nav__link">
         
   
   
@@ -541,30 +540,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    第 4 章：BERT / GPT 原理与微调
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart04/" class="md-nav__link">
         
   
   
@@ -575,135 +554,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 学习目标
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#42-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 BERT 概念
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2 BERT 概念">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#421-masked-language-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2.1 Masked Language Model 示例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#43-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.3 GPT 概念
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#44-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 BERT 与 GPT 的差异
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#45-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5 BERT / GPT 的微调
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#451" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.1 微调原理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#452-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.2 文本分类微调（BERT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#453-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.3 文本生成微调（GPT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#46-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.6 BERT / GPT 的核心原理总结
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#47" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.7 本章小结
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -716,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart05/" class="md-nav__link">
+      <a href="../../../../nlp/chart05/" class="md-nav__link">
         
   
   
@@ -739,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nltk/" class="md-nav__link">
+      <a href="../../../../nlp/nltk/" class="md-nav__link">
         
   
   
@@ -762,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../peft/" class="md-nav__link">
+      <a href="../../../../nlp/peft/" class="md-nav__link">
         
   
   
@@ -789,8 +639,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -804,21 +656,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -831,7 +684,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             大模型应用开发
@@ -869,10 +722,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -881,7 +737,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   
@@ -908,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/agents/" class="md-nav__link">
+      <a href="../../core-components/agents/" class="md-nav__link">
         
   
   
@@ -931,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/models/" class="md-nav__link">
+      <a href="../../core-components/models/" class="md-nav__link">
         
   
   
@@ -954,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/messages/" class="md-nav__link">
+      <a href="../../core-components/messages/" class="md-nav__link">
         
   
   
@@ -977,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/tools/" class="md-nav__link">
+      <a href="../../core-components/tools/" class="md-nav__link">
         
   
   
@@ -1000,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/short-term%20memory/" class="md-nav__link">
+      <a href="../../core-components/short-term%20memory/" class="md-nav__link">
         
   
   
@@ -1023,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/streaming/" class="md-nav__link">
+      <a href="../../core-components/streaming/" class="md-nav__link">
         
   
   
@@ -1046,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/middleware/" class="md-nav__link">
+      <a href="../../core-components/middleware/" class="md-nav__link">
         
   
   
@@ -1069,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/structured-output/" class="md-nav__link">
+      <a href="../../core-components/structured-output/" class="md-nav__link">
         
   
   
@@ -1097,8 +953,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1123,20 +981,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   
@@ -1149,7 +1008,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             LangChain进阶用法
@@ -1160,10 +1019,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Guardrails/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Guardrails
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1174,6 +1053,165 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是 Guardrails？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="什么是 Guardrails？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要应用场景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardrails 的两种实现方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guardrails 的两种实现方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 确定性 Guardrails
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 基于模型的 Guardrails
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用内置 Guardrails
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用内置 Guardrails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pii" class="md-nav__link">
+    <span class="md-ellipsis">
+      PII 检测中间件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      人工介入中间件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建自定义 Guardrails
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建自定义 Guardrails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-agent-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before Agent Guardrails
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-agent-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      After Agent Guardrails
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      组合多个 Guardrails
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1186,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Runtime/" class="md-nav__link">
+      <a href="../Runtime/" class="md-nav__link">
         
   
   
@@ -1209,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/context-engineering/" class="md-nav__link">
+      <a href="../context-engineering/" class="md-nav__link">
         
   
   
@@ -1232,7 +1270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/MCP/" class="md-nav__link">
+      <a href="../MCP/" class="md-nav__link">
         
   
   
@@ -1255,7 +1293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Human-in-the-loop/" class="md-nav__link">
+      <a href="../Human-in-the-loop/" class="md-nav__link">
         
   
   
@@ -1278,7 +1316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Multi-agent/" class="md-nav__link">
+      <a href="../Multi-agent/" class="md-nav__link">
         
   
   
@@ -1301,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Retrieval/" class="md-nav__link">
+      <a href="../Retrieval/" class="md-nav__link">
         
   
   
@@ -1324,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Long-term%20memory/" class="md-nav__link">
+      <a href="../Long-term%20memory/" class="md-nav__link">
         
   
   
@@ -1373,10 +1411,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1385,7 +1426,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   
@@ -1412,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/overview/" class="md-nav__link">
+      <a href="../../../langgraph/overview/" class="md-nav__link">
         
   
   
@@ -1435,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/quickstart/" class="md-nav__link">
+      <a href="../../../langgraph/quickstart/" class="md-nav__link">
         
   
   
@@ -1458,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/Local%20server/" class="md-nav__link">
+      <a href="../../../langgraph/Local%20server/" class="md-nav__link">
         
   
   
@@ -1481,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
+      <a href="../../../langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
         
   
   
@@ -1504,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/workflows%2Bagents/" class="md-nav__link">
+      <a href="../../../langgraph/workflows%2Bagents/" class="md-nav__link">
         
   
   
@@ -1560,28 +1601,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
+  <a href="#guardrails" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 学习目标
+      什么是 Guardrails？
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#42-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 BERT 概念
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2 BERT 概念">
+    <nav class="md-nav" aria-label="什么是 Guardrails？">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#421-masked-language-model" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2.1 Masked Language Model 示例
+      主要应用场景
     </span>
   </a>
   
@@ -1593,55 +1625,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#43-gpt" class="md-nav__link">
+  <a href="#guardrails_1" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 GPT 概念
+      Guardrails 的两种实现方式
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#44-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 BERT 与 GPT 的差异
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#45-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5 BERT / GPT 的微调
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
+    <nav class="md-nav" aria-label="Guardrails 的两种实现方式">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#451" class="md-nav__link">
+  <a href="#1-guardrails" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.1 微调原理
+      1. 确定性 Guardrails
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#452-bert" class="md-nav__link">
+  <a href="#2-guardrails" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.2 文本分类微调（BERT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#453-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.3 文本生成微调（GPT 示例）
+      2. 基于模型的 Guardrails
     </span>
   </a>
   
@@ -1653,18 +1658,84 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#46-bert-gpt" class="md-nav__link">
+  <a href="#guardrails_2" class="md-nav__link">
     <span class="md-ellipsis">
-      4.6 BERT / GPT 的核心原理总结
+      使用内置 Guardrails
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用内置 Guardrails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pii" class="md-nav__link">
+    <span class="md-ellipsis">
+      PII 检测中间件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      人工介入中间件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建自定义 Guardrails
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建自定义 Guardrails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-agent-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before Agent Guardrails
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-agent-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      After Agent Guardrails
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      组合多个 Guardrails
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#47" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      4.7 本章小结
+      最佳实践
     </span>
   </a>
   
@@ -1689,183 +1760,251 @@
   
 
 
-<h1 id="4-bert-gpt">第 4 章 : BERT / GPT 原理与微调<a class="headerlink" href="#4-bert-gpt" title="Permanent link">&para;</a></h1>
-<p>BERT 与 GPT 是现代 NLP 中最经典的预训练语言模型。它们都基于 Transformer，但在任务设计、训练方式和应用场景上有明显区别。本章将详细讲解它们的原理，并演示如何微调它们进行下游任务。</p>
-<hr />
-<h2 id="41">4.1 学习目标<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
-<p>完成本章后，你将能够：</p>
-<ol>
-<li>理解 BERT 和 GPT 的基本原理与差异</li>
-<li>掌握预训练任务：Masked Language Model (BERT) 与 Autoregressive LM (GPT)</li>
-<li>理解 Transformer 在 BERT/GPT 中的作用</li>
-<li>学会在 Python 中加载预训练模型并进行微调</li>
-<li>理解如何将预训练模型应用于文本分类、文本生成等任务</li>
-</ol>
-<hr />
-<h2 id="42-bert">4.2 BERT 概念<a class="headerlink" href="#42-bert" title="Permanent link">&para;</a></h2>
-<p>BERT（Bidirectional Encoder Representations from Transformers）是<strong>双向 Transformer Encoder</strong>：</p>
+<h1 id="guardrails-ai">使用 Guardrails 构建安全合规的 AI 应用教程<a class="headerlink" href="#guardrails-ai" title="Permanent link">&para;</a></h1>
+<h2 id="guardrails">什么是 Guardrails？<a class="headerlink" href="#guardrails" title="Permanent link">&para;</a></h2>
+<p>Guardrails（安全护栏）是在 AI 代理执行的关键节点进行内容验证和过滤的安全检查机制。它们帮助开发者构建安全、合规的 AI 应用，能够在问题发生前检测敏感信息、执行内容策略、验证输出并防止不安全行为。</p>
+<h3 id="_1">主要应用场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>双向</strong>：同时考虑上下文的左侧和右侧信息</li>
-<li>
-<p><strong>预训练任务</strong>：</p>
-<ol>
-<li><strong>Masked Language Model (MLM)</strong>：随机遮盖一些词，预测被遮盖的词
-     $$
-     P(x_{\text{masked}} | x_{\text{context}})
-     $$</li>
-<li><strong>Next Sentence Prediction (NSP)</strong>：预测句子 B 是否紧跟句子 A</li>
-</ol>
-</li>
-<li>
-<p><strong>应用</strong>：文本分类、问答、命名实体识别等理解任务</p>
-</li>
+<li><strong>防止 PII 泄露</strong> - 保护个人身份信息</li>
+<li><strong>检测和阻止提示注入攻击</strong> - 防范恶意输入</li>
+<li><strong>阻止不当或有害内容</strong> - 过滤违规内容</li>
+<li><strong>执行业务规则和合规要求</strong> - 满足行业规范</li>
+<li><strong>验证输出质量和准确性</strong> - 确保响应可靠性</li>
 </ul>
-<blockquote>
-<p>BERT 是 Encoder-only 结构，不用于文本生成。</p>
-</blockquote>
-<hr />
-<h3 id="421-masked-language-model">4.2.1 Masked Language Model 示例<a class="headerlink" href="#421-masked-language-model" title="Permanent link">&para;</a></h3>
-<p>句子：<strong>"The cat sat on the mat"</strong></p>
-<ul>
-<li>随机遮盖词："The cat [MASK] on the mat"</li>
-<li>BERT 学习预测 <code>[MASK]</code> 对应的词 <code>"sat"</code></li>
-</ul>
-<hr />
-<h2 id="43-gpt">4.3 GPT 概念<a class="headerlink" href="#43-gpt" title="Permanent link">&para;</a></h2>
-<p>GPT（Generative Pre-trained Transformer）是<strong>单向 Transformer Decoder</strong>：</p>
-<ul>
-<li><strong>单向</strong>：从左到右生成文本</li>
-<li><strong>预训练任务</strong>：Autoregressive Language Model (自回归语言模型)
-  $$
-  P(x_t | x_1, x_2, ..., x_{t-1})
-  $$</li>
-<li><strong>应用</strong>：文本生成、对话生成、代码生成等任务</li>
-</ul>
-<blockquote>
-<p>GPT 是 Decoder-only 结构，适合生成任务。</p>
-</blockquote>
-<hr />
-<h2 id="44-bert-gpt">4.4 BERT 与 GPT 的差异<a class="headerlink" href="#44-bert-gpt" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>特性</th>
-<th>BERT</th>
-<th>GPT</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Transformer 部分</td>
-<td>Encoder</td>
-<td>Decoder</td>
-</tr>
-<tr>
-<td>上下文方向</td>
-<td>双向</td>
-<td>单向</td>
-</tr>
-<tr>
-<td>预训练任务</td>
-<td>MLM + NSP</td>
-<td>Autoregressive LM</td>
-</tr>
-<tr>
-<td>适用任务</td>
-<td>理解任务</td>
-<td>生成任务</td>
-</tr>
-<tr>
-<td>典型应用</td>
-<td>文本分类、问答</td>
-<td>文本生成、对话、代码生成</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="45-bert-gpt">4.5 BERT / GPT 的微调<a class="headerlink" href="#45-bert-gpt" title="Permanent link">&para;</a></h2>
-<h3 id="451">4.5.1 微调原理<a class="headerlink" href="#451" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>预训练</strong>：在大规模语料上学习通用语言表示</li>
-<li><strong>微调</strong>：在下游任务上训练少量参数，使模型适应特定任务</li>
-</ul>
-<blockquote>
-<p>微调通常比从零训练效果好，且数据需求更少。</p>
-</blockquote>
-<hr />
-<h3 id="452-bert">4.5.2 文本分类微调（BERT 示例）<a class="headerlink" href="#452-bert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from transformers import BertTokenizer, BertForSequenceClassification
-from transformers import Trainer, TrainingArguments
-import torch
+<h2 id="guardrails_1">Guardrails 的两种实现方式<a class="headerlink" href="#guardrails_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-guardrails">1. 确定性 Guardrails<a class="headerlink" href="#1-guardrails" title="Permanent link">&para;</a></h3>
+<p>使用基于规则的逻辑，如正则表达式、关键词匹配或显式检查。速度快、可预测且成本低，但可能遗漏复杂违规情况。</p>
+<h3 id="2-guardrails">2. 基于模型的 Guardrails<a class="headerlink" href="#2-guardrails" title="Permanent link">&para;</a></h3>
+<p>使用 LLM 或分类器进行语义理解评估。能捕获规则可能遗漏的细微问题，但速度较慢且成本更高。</p>
+<h2 id="guardrails_2">使用内置 Guardrails<a class="headerlink" href="#guardrails_2" title="Permanent link">&para;</a></h2>
+<h3 id="pii">PII 检测中间件<a class="headerlink" href="#pii" title="Permanent link">&para;</a></h3>
+<p>LangChain 提供了内置的 PII 检测中间件，可识别电子邮件、信用卡、IP 地址等常见敏感信息。</p>
+<pre><code class="language-python">from langchain.agents import create_agent
+from langchain.agents.middleware import PIIMiddleware
 
-# 加载预训练模型和分词器
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
+agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[customer_service_tool, email_tool],
+    middleware=[
+        # 在发送给模型前对用户输入中的电子邮件进行脱敏
+        PIIMiddleware(
+            &quot;email&quot;,
+            strategy=&quot;redact&quot;,
+            apply_to_input=True,
+        ),
+        # 对用户输入中的信用卡进行掩码处理
+        PIIMiddleware(
+            &quot;credit_card&quot;,
+            strategy=&quot;mask&quot;,
+            apply_to_input=True,
+        ),
+        # 检测到 API 密钥时抛出错误
+        PIIMiddleware(
+            &quot;api_key&quot;,
+            detector=r&quot;sk-[a-zA-Z0-9]{32}&quot;,
+            strategy=&quot;block&quot;,
+            apply_to_input=True,
+        ),
+    ],
+)
 
-# 示例文本
-texts = [&quot;I love NLP&quot;, &quot;I hate bugs&quot;]
-labels = torch.tensor([1,0])
-
-# 编码
-encodings = tokenizer(texts, padding=True, truncation=True, return_tensors='pt')
-dataset = torch.utils.data.TensorDataset(encodings['input_ids'], encodings['attention_mask'], labels)
-
-# Trainer 简单训练示例
-training_args = TrainingArguments(output_dir='./results', num_train_epochs=1, per_device_train_batch_size=2)
-trainer = Trainer(model=model, args=training_args, train_dataset=dataset)
-trainer.train()
+# 当用户提供 PII 时，将根据策略进行处理
+result = agent.invoke({
+    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;My email is john.doe@example.com and card is 4532-1234-5678-9010&quot;}]
+})
 </code></pre>
-<hr />
-<h3 id="453-gpt">4.5.3 文本生成微调（GPT 示例）<a class="headerlink" href="#453-gpt" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from transformers import GPT2Tokenizer, GPT2LMHeadModel
+<p><strong>PII 处理策略：</strong></p>
+<ul>
+<li><code>redact</code> - 替换为 <code>[REDACTED_TYPE]</code></li>
+<li><code>mask</code> - 部分遮蔽（如显示最后4位）</li>
+<li><code>hash</code> - 替换为确定性哈希值</li>
+<li><code>block</code> - 检测到时抛出异常</li>
+</ul>
+<h3 id="_2">人工介入中间件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>对于高风险操作，可以要求人工审批后再执行。</p>
+<pre><code class="language-python">from langchain.agents import create_agent
+from langchain.agents.middleware import HumanInTheLoopMiddleware
+from langgraph.checkpoint.memory import InMemorySaver
+from langgraph.types import Command
 
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-model = GPT2LMHeadModel.from_pretrained('gpt2')
+agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[search_tool, send_email_tool, delete_database_tool],
+    middleware=[
+        HumanInTheLoopMiddleware(
+            interrupt_on={
+                # 敏感操作需要审批
+                &quot;send_email&quot;: True,
+                &quot;delete_database&quot;: True,
+                # 安全操作自动批准
+                &quot;search&quot;: False,
+            }
+        ),
+    ],
+    checkpointer=InMemorySaver(),  # 持久化状态
+)
 
-text = &quot;Once upon a time&quot;
-inputs = tokenizer(text, return_tensors='pt')
+config = {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;some_id&quot;}}
 
-# 生成文本
-outputs = model.generate(**inputs, max_length=20)
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+# 代理将在执行敏感工具前暂停并等待批准
+result = agent.invoke(
+    {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Send an email to the team&quot;}]},
+    config=config
+)
+
+# 人工批准后继续执行
+result = agent.invoke(
+    Command(resume={&quot;decisions&quot;: [{&quot;type&quot;: &quot;approve&quot;}]}),
+    config=config
+)
 </code></pre>
-<hr />
-<h2 id="46-bert-gpt">4.6 BERT / GPT 的核心原理总结<a class="headerlink" href="#46-bert-gpt" title="Permanent link">&para;</a></h2>
+<h2 id="guardrails_3">创建自定义 Guardrails<a class="headerlink" href="#guardrails_3" title="Permanent link">&para;</a></h2>
+<h3 id="before-agent-guardrails">Before Agent Guardrails<a class="headerlink" href="#before-agent-guardrails" title="Permanent link">&para;</a></h3>
+<p>在代理开始执行前验证请求，适用于会话级检查，如身份验证、速率限制或阻止不当请求。</p>
+<p><strong>类语法：</strong></p>
+<pre><code class="language-python">from typing import Any
+from langchain.agents.middleware import AgentMiddleware, AgentState, hook_config
+from langgraph.runtime import Runtime
+
+class ContentFilterMiddleware(AgentMiddleware):
+    &quot;&quot;&quot;确定性护栏：阻止包含禁用关键词的请求&quot;&quot;&quot;
+
+    def __init__(self, banned_keywords: list[str]):
+        super().__init__()
+        self.banned_keywords = [kw.lower() for kw in banned_keywords]
+
+    @hook_config(can_jump_to=[&quot;end&quot;])
+    def before_agent(self, state: AgentState, runtime: Runtime) -&gt; dict[str, Any] | None:
+        if not state[&quot;messages&quot;]:
+            return None
+
+        first_message = state[&quot;messages&quot;][0]
+        if first_message.type != &quot;human&quot;:
+            return None
+
+        content = first_message.content.lower()
+
+        for keyword in self.banned_keywords:
+            if keyword in content:
+                return {
+                    &quot;messages&quot;: [{
+                        &quot;role&quot;: &quot;assistant&quot;,
+                        &quot;content&quot;: &quot;I cannot process requests containing inappropriate content.&quot;
+                    }],
+                    &quot;jump_to&quot;: &quot;end&quot;
+                }
+        return None
+
+# 使用自定义护栏
+agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[search_tool, calculator_tool],
+    middleware=[ContentFilterMiddleware([&quot;hack&quot;, &quot;exploit&quot;, &quot;malware&quot;])],
+)
+</code></pre>
+<p><strong>装饰器语法：</strong></p>
+<pre><code class="language-python">from typing import Any
+from langchain.agents.middleware import before_agent, AgentState, hook_config
+from langgraph.runtime import Runtime
+
+banned_keywords = [&quot;hack&quot;, &quot;exploit&quot;, &quot;malware&quot;]
+
+@before_agent(can_jump_to=[&quot;end&quot;])
+def content_filter(state: AgentState, runtime: Runtime) -&gt; dict[str, Any] | None:
+    &quot;&quot;&quot;确定性护栏：阻止包含禁用关键词的请求&quot;&quot;&quot;
+    if not state[&quot;messages&quot;]:
+        return None
+
+    first_message = state[&quot;messages&quot;][0]
+    if first_message.type != &quot;human&quot;:
+        return None
+
+    content = first_message.content.lower()
+
+    for keyword in banned_keywords:
+        if keyword in content:
+            return {
+                &quot;messages&quot;: [{
+                    &quot;role&quot;: &quot;assistant&quot;,
+                    &quot;content&quot;: &quot;I cannot process requests containing inappropriate content.&quot;
+                }],
+                &quot;jump_to&quot;: &quot;end&quot;
+            }
+    return None
+</code></pre>
+<h3 id="after-agent-guardrails">After Agent Guardrails<a class="headerlink" href="#after-agent-guardrails" title="Permanent link">&para;</a></h3>
+<p>在返回给用户前验证最终输出，适用于基于模型的安全检查、质量验证或最终合规扫描。</p>
+<p><strong>类语法：</strong></p>
+<pre><code class="language-python">from langchain.agents.middleware import AgentMiddleware, AgentState, hook_config
+from langgraph.runtime import Runtime
+from langchain_core.messages import AIMessage
+from langchain.chat_models import init_chat_model
+from typing import Any
+
+class SafetyGuardrailMiddleware(AgentMiddleware):
+    &quot;&quot;&quot;基于模型的护栏：使用 LLM 评估响应安全性&quot;&quot;&quot;
+
+    def __init__(self):
+        super().__init__()
+        self.safety_model = init_chat_model(&quot;openai:gpt-4o-mini&quot;)
+
+    @hook_config(can_jump_to=[&quot;end&quot;])
+    def after_agent(self, state: AgentState, runtime: Runtime) -&gt; dict[str, Any] | None:
+        if not state[&quot;messages&quot;]:
+            return None
+
+        last_message = state[&quot;messages&quot;][-1]
+        if not isinstance(last_message, AIMessage):
+            return None
+
+        # 使用模型评估安全性
+        safety_prompt = f&quot;&quot;&quot;评估此响应是否安全适当。
+        仅回复 'SAFE' 或 'UNSAFE'。
+
+        响应：{last_message.content}&quot;&quot;&quot;
+
+        result = self.safety_model.invoke([{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: safety_prompt}])
+
+        if &quot;UNSAFE&quot; in result.content:
+            return {
+                &quot;messages&quot;: [{
+                    &quot;role&quot;: &quot;assistant&quot;, 
+                    &quot;content&quot;: &quot;I cannot provide that response.&quot;
+                }],
+                &quot;jump_to&quot;: &quot;end&quot;
+            }
+        return None
+</code></pre>
+<h2 id="guardrails_4">组合多个 Guardrails<a class="headerlink" href="#guardrails_4" title="Permanent link">&para;</a></h2>
+<p>你可以通过将多个 Guardrails 添加到中间件数组中来堆叠它们，构建分层保护：</p>
+<pre><code class="language-python">agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[search_tool, send_email_tool],
+    middleware=[
+        # 第1层：确定性输入过滤器（代理前）
+        ContentFilterMiddleware(banned_keywords=[&quot;hack&quot;, &quot;exploit&quot;]),
+
+        # 第2层：PII 保护（模型前后）
+        PIIMiddleware(&quot;email&quot;, strategy=&quot;redact&quot;, apply_to_input=True),
+        PIIMiddleware(&quot;email&quot;, strategy=&quot;redact&quot;, apply_to_output=True),
+
+        # 第3层：敏感工具的人工审批
+        HumanInTheLoopMiddleware(interrupt_on={&quot;send_email&quot;: True}),
+
+        # 第4层：基于模型的安全检查（代理后）
+        SafetyGuardrailMiddleware(),
+    ],
+)
+</code></pre>
+<h2 id="_3">最佳实践<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p><strong>Transformer</strong> 是底层架构</p>
-<ul>
-<li>BERT 用 Encoder</li>
-<li>GPT 用 Decoder</li>
-</ul>
-</li>
-<li>
-<p><strong>预训练任务</strong>学习语言知识</p>
-<ul>
-<li>BERT：Masked LM + NSP</li>
-<li>GPT：自回归 LM</li>
-</ul>
-</li>
-<li>
-<p><strong>微调</strong>在下游任务上少量训练即可获得高性能</p>
-</li>
-<li>
-<p><strong>应用广泛</strong>：</p>
-<ul>
-<li>BERT：分类、问答、命名实体识别</li>
-<li>GPT：文本生成、对话、代码生成</li>
-</ul>
-</li>
+<li><strong>分层防御</strong>：结合确定性和基于模型的 Guardrails</li>
+<li><strong>早期拦截</strong>：在代理执行前尽可能早地拦截问题</li>
+<li><strong>成本平衡</strong>：对高频率操作使用确定性检查，对关键决策使用模型检查</li>
+<li><strong>持续测试</strong>：定期测试安全机制的有效性</li>
+<li><strong>人工监督</strong>：对高风险操作保留人工审批环节</li>
 </ol>
-<hr />
-<h2 id="47">4.7 本章小结<a class="headerlink" href="#47" title="Permanent link">&para;</a></h2>
-<ul>
-<li>BERT 强调语言理解，利用双向上下文</li>
-<li>GPT 强调文本生成，利用左到右预测</li>
-<li>预训练 + 微调是现代 NLP 的主流方法</li>
-<li>PyTorch + Transformers 库提供便捷工具，快速微调和应用</li>
-</ul>
-<hr />
+<p>通过合理配置 Guardrails，你可以显著提升 AI 应用的安全性和合规性，同时保持用户体验的流畅性。</p>
 
 
 
@@ -1916,10 +2055,10 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -1927,7 +2066,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="../../styles/javascripts/katex.js"></script>
+        <script src="../../../../styles/javascripts/katex.js"></script>
       
     
   </body>
