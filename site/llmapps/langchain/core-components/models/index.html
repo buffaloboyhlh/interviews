@@ -2519,15 +2519,14 @@ if reasoning_blocks:
 </code></pre>
 <h3 id="3_2">3. 本地模型<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
 <pre><code class="language-python"># 使用 Ollama 运行本地模型
-from langchain_community.chat_models import ChatOllama
+from langchain_ollama import ChatOllama
 
-local_model = ChatOllama(
-    model=&quot;llama2&quot;,  # 或其它本地模型
-    temperature=0.7,
-    num_predict=1000
+model = ChatOllama(
+    model=&quot;qwen3:1.7b&quot;,
+    temperature=0.8
 )
 
-response = local_model.invoke(&quot;用中文解释机器学习&quot;)
+response = model.invoke(&quot;用中文解释机器学习&quot;)
 print(&quot;本地模型回复:&quot;, response.content)
 </code></pre>
 <h3 id="4">4. 速率限制<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
