@@ -2368,51 +2368,55 @@ for chunk in client.runs.stream(
 <h2 id="_2">故障排除<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">常见问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>端口冲突</strong></li>
-<li>
-<p>如果 2024 端口被占用，使用 <code>--port</code> 参数指定其他端口：
-   <code>shell
-   langgraph dev --port 3030</code></p>
+<li><strong>端口冲突</strong><ul>
+<li>如果 2024 端口被占用，使用 <code>--port</code> 参数指定其他端口：</li>
+</ul>
 </li>
+</ol>
+<pre><code class="language-shell">         langgraph dev --port 3030
+</code></pre>
+<ol>
 <li>
 <p><strong>API 密钥错误</strong></p>
-</li>
-<li>
-<p>确保 <code>.env</code> 文件中的 <code>LANGSMITH_API_KEY</code> 设置正确</p>
+<ul>
+<li>确保 <code>.env</code> 文件中的 <code>LANGSMITH_API_KEY</code> 设置正确</li>
+</ul>
 </li>
 <li>
 <p><strong>依赖安装失败</strong></p>
-</li>
+<ul>
 <li>确保 Python 版本 &gt;= 3.11</li>
-<li>
-<p>尝试使用虚拟环境</p>
+<li>尝试使用虚拟环境</li>
+</ul>
 </li>
 <li>
 <p><strong>模板创建失败</strong></p>
-</li>
+<ul>
 <li>检查网络连接</li>
 <li>尝试使用不同的模板名称</li>
+</ul>
+</li>
 </ol>
 <h3 id="_4">调试技巧<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p><strong>查看详细日志</strong>
-   <code>shell
-   langgraph dev --verbose</code></p>
-</li>
+<li><strong>查看详细日志</strong></li>
+</ol>
+<pre><code class="language-shell">   langgraph dev --verbose
+</code></pre>
+<ol>
 <li>
 <p><strong>检查应用配置</strong></p>
-</li>
+<ul>
 <li>确认 <code>langgraph.json</code> 文件配置正确</li>
-<li>
-<p>验证助手名称与代码中使用的名称一致</p>
+<li>验证助手名称与代码中使用的名称一致</li>
+</ul>
 </li>
 <li>
-<p><strong>测试连接</strong>
-   <code>bash
-   curl http://localhost:2024/health</code></p>
+<p><strong>测试连接</strong></p>
 </li>
 </ol>
+<pre><code class="language-bash">   curl http://localhost:2024/health
+</code></pre>
 <h2 id="_5">项目结构说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>成功创建项目后，你会看到以下典型结构：</p>
 <pre><code>your-app/
