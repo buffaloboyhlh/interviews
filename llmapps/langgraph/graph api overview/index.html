@@ -10,24 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/nlp/interview/">
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langgraph/graph%20api%20overview/">
       
       
+        <link rel="prev" href="../application%20structure/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+        <link rel="next" href="../use%20the%20graph%20api/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>NLP (自然语言处理) - 人工智能面试集合</title>
+        <title>Graph API - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../../styles/extra.css">
+      <link rel="stylesheet" href="../../../styles/extra.css">
     
-      <link rel="stylesheet" href="../../styles/custom.css">
+      <link rel="stylesheet" href="../../../styles/custom.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -92,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NLP (自然语言处理)
+              Graph API
             
           </span>
         </div>
@@ -223,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../machine/interview/" class="md-tabs__link">
+      <a href="../../../machine/interview/" class="md-tabs__link">
         
   
   
@@ -242,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../deeplearning/interview/" class="md-tabs__link">
+      <a href="../../../deeplearning/interview/" class="md-tabs__link">
         
   
   
@@ -263,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../chart01/" class="md-tabs__link">
+        <a href="../../../nlp/chart01/" class="md-tabs__link">
           
   
   
@@ -281,6 +285,8 @@
   
   
   
+    
+  
   
     
     
@@ -288,11 +294,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../llmapps/langchain/core-components/agents/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../langchain/core-components/agents/" class="md-tabs__link">
           
   
   
@@ -331,7 +339,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -361,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../machine/interview/" class="md-nav__link">
+      <a href="../../../machine/interview/" class="md-nav__link">
         
   
   
@@ -383,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deeplearning/interview/" class="md-nav__link">
+      <a href="../../../deeplearning/interview/" class="md-nav__link">
         
   
   
@@ -466,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart01/" class="md-nav__link">
+      <a href="../../../nlp/chart01/" class="md-nav__link">
         
   
   
@@ -489,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart02/" class="md-nav__link">
+      <a href="../../../nlp/chart02/" class="md-nav__link">
         
   
   
@@ -512,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart03/" class="md-nav__link">
+      <a href="../../../nlp/chart03/" class="md-nav__link">
         
   
   
@@ -535,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart04/" class="md-nav__link">
+      <a href="../../../nlp/chart04/" class="md-nav__link">
         
   
   
@@ -558,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chart05/" class="md-nav__link">
+      <a href="../../../nlp/chart05/" class="md-nav__link">
         
   
   
@@ -581,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nltk/" class="md-nav__link">
+      <a href="../../../nlp/nltk/" class="md-nav__link">
         
   
   
@@ -604,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../peft/" class="md-nav__link">
+      <a href="../../../nlp/peft/" class="md-nav__link">
         
   
   
@@ -631,8 +639,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -646,21 +656,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -673,7 +684,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             大模型应用开发
@@ -711,10 +722,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -723,7 +737,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   
@@ -750,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/agents/" class="md-nav__link">
+      <a href="../../langchain/core-components/agents/" class="md-nav__link">
         
   
   
@@ -773,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/models/" class="md-nav__link">
+      <a href="../../langchain/core-components/models/" class="md-nav__link">
         
   
   
@@ -796,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/messages/" class="md-nav__link">
+      <a href="../../langchain/core-components/messages/" class="md-nav__link">
         
   
   
@@ -819,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/tools/" class="md-nav__link">
+      <a href="../../langchain/core-components/tools/" class="md-nav__link">
         
   
   
@@ -842,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/short-term%20memory/" class="md-nav__link">
+      <a href="../../langchain/core-components/short-term%20memory/" class="md-nav__link">
         
   
   
@@ -865,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/streaming/" class="md-nav__link">
+      <a href="../../langchain/core-components/streaming/" class="md-nav__link">
         
   
   
@@ -888,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/middleware/" class="md-nav__link">
+      <a href="../../langchain/core-components/middleware/" class="md-nav__link">
         
   
   
@@ -911,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/core-components/structured-output/" class="md-nav__link">
+      <a href="../../langchain/core-components/structured-output/" class="md-nav__link">
         
   
   
@@ -966,10 +980,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -978,7 +995,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   
@@ -1005,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Guardrails/" class="md-nav__link">
+      <a href="../../langchain/advanced-usage/Guardrails/" class="md-nav__link">
         
   
   
@@ -1028,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Runtime/" class="md-nav__link">
+      <a href="../../langchain/advanced-usage/Runtime/" class="md-nav__link">
         
   
   
@@ -1051,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/context-engineering/" class="md-nav__link">
+      <a href="../../langchain/advanced-usage/context-engineering/" class="md-nav__link">
         
   
   
@@ -1074,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/MCP/" class="md-nav__link">
+      <a href="../../langchain/advanced-usage/MCP/" class="md-nav__link">
         
   
   
@@ -1097,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Human-in-the-loop/" class="md-nav__link">
+      <a href="../../langchain/advanced-usage/Human-in-the-loop/" class="md-nav__link">
         
   
   
@@ -1120,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Multi-agent/" class="md-nav__link">
+      <a href="../../langchain/advanced-usage/Multi-agent/" class="md-nav__link">
         
   
   
@@ -1143,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Retrieval/" class="md-nav__link">
+      <a href="../../langchain/advanced-usage/Retrieval/" class="md-nav__link">
         
   
   
@@ -1166,7 +1183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langchain/advanced-usage/Long-term%20memory/" class="md-nav__link">
+      <a href="../../langchain/advanced-usage/Long-term%20memory/" class="md-nav__link">
         
   
   
@@ -1194,8 +1211,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1232,20 +1251,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   
@@ -1258,7 +1278,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             LangGraph
@@ -1272,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1295,7 +1315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/quickstart/" class="md-nav__link">
+      <a href="../quickstart/" class="md-nav__link">
         
   
   
@@ -1318,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/Local%20server/" class="md-nav__link">
+      <a href="../Local%20server/" class="md-nav__link">
         
   
   
@@ -1341,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
+      <a href="../thinking%20in%20Langgraph/" class="md-nav__link">
         
   
   
@@ -1364,7 +1384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/workflows%2Bagents/" class="md-nav__link">
+      <a href="../workflows%2Bagents/" class="md-nav__link">
         
   
   
@@ -1387,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/persistence/" class="md-nav__link">
+      <a href="../persistence/" class="md-nav__link">
         
   
   
@@ -1410,7 +1430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/durable%20execution/" class="md-nav__link">
+      <a href="../durable%20execution/" class="md-nav__link">
         
   
   
@@ -1433,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/streaming/" class="md-nav__link">
+      <a href="../streaming/" class="md-nav__link">
         
   
   
@@ -1456,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/interrupts/" class="md-nav__link">
+      <a href="../interrupts/" class="md-nav__link">
         
   
   
@@ -1479,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/time%20travel/" class="md-nav__link">
+      <a href="../time%20travel/" class="md-nav__link">
         
   
   
@@ -1502,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/memory/" class="md-nav__link">
+      <a href="../memory/" class="md-nav__link">
         
   
   
@@ -1525,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/Subgraphs/" class="md-nav__link">
+      <a href="../Subgraphs/" class="md-nav__link">
         
   
   
@@ -1548,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/application%20structure/" class="md-nav__link">
+      <a href="../application%20structure/" class="md-nav__link">
         
   
   
@@ -1568,8 +1588,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1586,13 +1608,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_14" checked>
         
           
           <label class="md-nav__link" for="__nav_4_3_14" id="__nav_4_3_14_label" tabindex="0">
@@ -1608,7 +1628,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_14_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_14_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3_14">
             <span class="md-nav__icon md-icon"></span>
             Graph API
@@ -1619,10 +1639,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/graph%20api%20overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Graph API
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1633,6 +1673,318 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 图的基本组成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      快速开始
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速开始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤1：定义状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤2：创建图构建器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤3：添加节点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤4：定义边
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤5：编译图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤6：执行图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      深入理解状态管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="深入理解状态管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      状态归约器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级节点功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级节点功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      节点参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      节点缓存
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      复杂路由控制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="复杂路由控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件边
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用映射表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级特性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行时配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运行时配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加上下文
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归限制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      完整示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1645,7 +1997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llmapps/langgraph/use%20the%20graph%20api/" class="md-nav__link">
+      <a href="../use%20the%20graph%20api/" class="md-nav__link">
         
   
   
@@ -1711,125 +2063,119 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      一、基础教程
+      概述
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="一、基础教程">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心概念">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nlp_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      🌍 一、NLP 是什么？
+      1. 图的基本组成
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#nlp_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 二、NLP 的核心任务
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 三、文本预处理基础
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#word-embedding" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔣 四、词向量（Word Embedding）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#language-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 五、语言模型（Language Model）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rnn-lstm-gru" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔂 六、序列模型（RNN / LSTM / GRU）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚡ 七、Transformer 架构
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#plm" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧬 八、预训练语言模型（PLM）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nlp_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 九、NLP 任务与模型对应
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 十、实战示例：中文情感分类（BERT 微调）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📊 十一、评估指标
+      快速开始
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速开始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤1：定义状态
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚙️ 十二、优化与微调技巧
+      步骤2：创建图构建器
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤3：添加节点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤4：定义边
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤5：编译图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤6：执行图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      深入理解状态管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="深入理解状态管理">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 十三、工程与部署
+      状态归约器
     </span>
   </a>
   
@@ -1838,25 +2184,7 @@
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      🧭 十四、学习路径建议
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 十五、推荐学习资源
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ 十六、总结
+      消息处理
     </span>
   </a>
   
@@ -1864,6 +2192,165 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级节点功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级节点功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      节点参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      节点缓存
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      复杂路由控制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="复杂路由控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件边
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用映射表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级特性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行时配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运行时配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加上下文
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归限制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      完整示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
   
 </li>
       
@@ -1886,424 +2373,246 @@
   
 
 
-<h1 id="nlp">NLP (自然语言处理)<a class="headerlink" href="#nlp" title="Permanent link">&para;</a></h1>
-<h2 id="_1">一、基础教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="nlp_1">🌍 一、NLP 是什么？<a class="headerlink" href="#nlp_1" title="Permanent link">&para;</a></h3>
-<p><strong>自然语言处理（Natural Language Processing, NLP）</strong>
-是一门让计算机能够<strong>理解、生成和处理人类语言</strong>的科学。</p>
-<p>它融合了：</p>
+<h1 id="langgraph">LangGraph 入门教程：构建智能代理工作流<a class="headerlink" href="#langgraph" title="Permanent link">&para;</a></h1>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>LangGraph 是一个用于构建智能代理工作流的框架，它将工作流程建模为<strong>图</strong>。通过定义状态、节点和边，你可以创建复杂、可循环的工作流。</p>
+<h2 id="_2">核心概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 图的基本组成<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>LangGraph 工作流由三个核心组件构成：</p>
 <ul>
-<li>语言学（语法、语义、上下文）</li>
-<li>计算机科学（算法、工程实现）</li>
-<li>机器学习 / 深度学习（模型训练）</li>
+<li><strong>State（状态）</strong>：共享数据结构，表示应用的当前快照</li>
+<li><strong>Nodes（节点）</strong>：执行具体逻辑的函数，接收状态并返回更新</li>
+<li><strong>Edges（边）</strong>：决定下一个执行节点的路由逻辑</li>
 </ul>
-<hr />
-<h3 id="nlp_2">🧩 二、NLP 的核心任务<a class="headerlink" href="#nlp_2" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>类别</th>
-<th>任务</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本分类</td>
-<td>情感分析、垃圾邮件识别</td>
-<td>“这家餐厅真棒！” → 积极</td>
-</tr>
-<tr>
-<td>序列标注</td>
-<td>命名实体识别（NER）、词性标注</td>
-<td>“张三 在 北京” → 人名 / 地名</td>
-</tr>
-<tr>
-<td>文本匹配</td>
-<td>相似度计算、语义检索</td>
-<td>“天气预报”和“今日气象”相似</td>
-</tr>
-<tr>
-<td>文本生成</td>
-<td>翻译、摘要、对话</td>
-<td>“Translate: 你好 → Hello”</td>
-</tr>
-<tr>
-<td>问答系统</td>
-<td>抽取式 / 生成式 QA</td>
-<td>“中国首都是哪？”→ 北京</td>
-</tr>
-<tr>
-<td>语言建模</td>
-<td>下一词预测</td>
-<td>“我今天很____” → 高兴</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="_2">🧠 三、文本预处理基础<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>分词（Tokenization）</strong></p>
-<ul>
-<li>英文：空格、标点分割</li>
-<li>中文：jieba、pkuseg、HanLP</li>
-<li>子词（Subword）：BPE、WordPiece、Unigram</li>
-</ul>
-</li>
-<li>
-<p><strong>停用词（Stopwords）</strong>：去掉高频无意义词（如“的”“了”“and”）</p>
-</li>
-<li>
-<p><strong>词形还原（Lemmatization）</strong></p>
-</li>
-<li>
-<p><strong>向量化（Vectorization）</strong>：将文本转为数字表示</p>
-<ul>
-<li>One-hot encoding</li>
-<li>Bag-of-Words (BoW)</li>
-<li>TF-IDF</li>
-<li>Word Embedding (Word2Vec, GloVe)</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h3 id="word-embedding">🔣 四、词向量（Word Embedding）<a class="headerlink" href="#word-embedding" title="Permanent link">&para;</a></h3>
-<p><strong>目标</strong>：将每个词映射为稠密向量，使相似词语向量接近。</p>
-<div class="arithmatex">\[
-\text{Embedding}: \text{Word} \to \mathbb{R}^d
-\]</div>
-<h5 id="1-word2vec">1️⃣ Word2Vec<a class="headerlink" href="#1-word2vec" title="Permanent link">&para;</a></h5>
-<ul>
-<li>模型结构：Skip-gram / CBOW</li>
-<li>Skip-gram 目标函数：</li>
-</ul>
-<p>$$
-  \max_\theta \sum_{t=1}^T \sum_{-c \le j \le c, j\neq 0} \log P(w_{t+j} \mid w_t)
-  $$</p>
-<p>其中：
-$$
-P(w_O \mid w_I) = \frac{\exp(v_{w_O}^\top v_{w_I})}{\sum_{w}\exp(v_w^\top v_{w_I})}
-$$</p>
-<h5 id="2-glove">2️⃣ GloVe<a class="headerlink" href="#2-glove" title="Permanent link">&para;</a></h5>
-<ul>
-<li>基于词共现矩阵 <span class="arithmatex">\(X_{ij}\)</span> 的对数回归：</li>
-</ul>
-<div class="arithmatex">\[
-  J = \sum_{i,j=1}^{V} f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}*j - \log X*{ij})^2
-\]</div>
-<hr />
-<h3 id="language-model">🔁 五、语言模型（Language Model）<a class="headerlink" href="#language-model" title="Permanent link">&para;</a></h3>
-<p>预测一个句子中词语的概率分布：</p>
-<div class="arithmatex">\[
-P(w_1, w_2, ..., w_T) = \prod_{t=1}^{T} P(w_t \mid w_1, ..., w_{t-1})
-\]</div>
-<h5 id="1-n-gram">1️⃣ N-gram 模型<a class="headerlink" href="#1-n-gram" title="Permanent link">&para;</a></h5>
-<p>近似假设：
-$$
-P(w_t \mid w_1,...,w_{t-1}) \approx P(w_t \mid w_{t-n+1},...,w_{t-1})
-$$</p>
-<h5 id="2">2️⃣ 神经语言模型<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
-<p>用神经网络（RNN / Transformer）代替概率表：
-$$
-h_t = f(W_{xh}x_t + W_{hh}h_{t-1})
-$$
-$$
-P(w_t \mid h_t) = \text{softmax}(Wh_t)
-$$</p>
-<hr />
-<h3 id="rnn-lstm-gru">🔂 六、序列模型（RNN / LSTM / GRU）<a class="headerlink" href="#rnn-lstm-gru" title="Permanent link">&para;</a></h3>
-<h4 id="1-rnn">1️⃣ RNN<a class="headerlink" href="#1-rnn" title="Permanent link">&para;</a></h4>
-<p>递归结构：
-$$
-h_t = \tanh(W_{xh}x_t + W_{hh}h_{t-1})
-$$
-但存在梯度消失/爆炸问题。</p>
-<h4 id="2-lstm">2️⃣ LSTM（长短期记忆网络）<a class="headerlink" href="#2-lstm" title="Permanent link">&para;</a></h4>
-<p>通过“门控机制”保留长期依赖：</p>
-<div class="arithmatex">\[
-f_t = \sigma(W_f[x_t,h_{t-1}]+b_f)
-\]</div>
-<div class="arithmatex">\[
-i_t = \sigma(W_i[x_t,h_{t-1}]+b_i)
-\]</div>
-<div class="arithmatex">\[
-o_t = \sigma(W_o[x_t,h_{t-1}]+b_o)
-\]</div>
-<div class="arithmatex">\[
-c_t = f_t*c_{t-1}+i_t*\tanh(W_c[x_t,h_{t-1}]+b_c)
-\]</div>
-<div class="arithmatex">\[
-h_t = o_t*\tanh(c_t)
-\]</div>
-<hr />
-<h3 id="transformer">⚡ 七、Transformer 架构<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h3>
-<p>Transformer 取代 RNN，成为 NLP 的核心模型。</p>
-<h4 id="self-attention">Self-Attention 公式：<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">\[
-\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
-\]</div>
-<p>每个词向量与序列中其他词交互，捕获全局依赖。</p>
-<p><strong>优势：</strong></p>
-<ul>
-<li>并行计算</li>
-<li>长程依赖捕捉能力强</li>
-<li>更易扩展（预训练大模型）</li>
-</ul>
-<hr />
-<h3 id="plm">🧬 八、预训练语言模型（PLM）<a class="headerlink" href="#plm" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>模型</th>
-<th>架构</th>
-<th>目标任务</th>
-<th>应用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>BERT</strong></td>
-<td>Encoder</td>
-<td>掩码语言模型 (MLM)</td>
-<td>分类、NER、QA</td>
-</tr>
-<tr>
-<td><strong>GPT</strong></td>
-<td>Decoder</td>
-<td>自回归生成</td>
-<td>对话、写作</td>
-</tr>
-<tr>
-<td><strong>T5 / BART</strong></td>
-<td>Encoder–Decoder</td>
-<td>文本到文本</td>
-<td>翻译、摘要、问答</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="nlp_3">🧰 九、NLP 任务与模型对应<a class="headerlink" href="#nlp_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>任务</th>
-<th>输入输出</th>
-<th>模型</th>
-<th>损失函数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本分类</td>
-<td>文本 → 类别</td>
-<td>BERT + Linear</td>
-<td>CrossEntropy</td>
-</tr>
-<tr>
-<td>序列标注</td>
-<td>文本 → 标签序列</td>
-<td>BERT + CRF</td>
-<td>NLL</td>
-</tr>
-<tr>
-<td>机器翻译</td>
-<td>句子 → 句子</td>
-<td>Transformer</td>
-<td>CrossEntropy</td>
-</tr>
-<tr>
-<td>摘要生成</td>
-<td>文本 → 摘要</td>
-<td>BART / T5</td>
-<td>NLL</td>
-</tr>
-<tr>
-<td>QA 问答</td>
-<td>文本 → 答案</td>
-<td>BERT / T5</td>
-<td>Span / CrossEntropy</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="bert">🧪 十、实战示例：中文情感分类（BERT 微调）<a class="headerlink" href="#bert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
-from datasets import load_dataset
-
-model_name = &quot;bert-base-chinese&quot;
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2)
-
-# 加载数据
-dataset = load_dataset(&quot;csv&quot;, data_files={&quot;train&quot;: &quot;train.csv&quot;, &quot;test&quot;: &quot;test.csv&quot;})
-dataset = dataset.map(lambda e: tokenizer(e[&quot;text&quot;], padding=&quot;max_length&quot;, truncation=True), batched=True)
-
-args = TrainingArguments(
-    output_dir=&quot;./output&quot;,
-    per_device_train_batch_size=16,
-    num_train_epochs=3,
-    evaluation_strategy=&quot;epoch&quot;,
-    learning_rate=2e-5
-)
-
-trainer = Trainer(model=model, args=args,
-                  train_dataset=dataset[&quot;train&quot;],
-                  eval_dataset=dataset[&quot;test&quot;])
-
-trainer.train()
-</code></pre>
-<hr />
-<h3 id="_3">📊 十一、评估指标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>任务类型</th>
-<th>指标</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>分类</td>
-<td>Accuracy, Precision, Recall, F1</td>
-</tr>
-<tr>
-<td>序列标注</td>
-<td>Token-level / Entity-level F1</td>
-</tr>
-<tr>
-<td>生成</td>
-<td>BLEU, ROUGE</td>
-</tr>
-<tr>
-<td>语言模型</td>
-<td>Perplexity</td>
-</tr>
-<tr>
-<td>检索</td>
-<td>MRR, Recall@k, NDCG@k</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="_4">⚙️ 十二、优化与微调技巧<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
-<li>学习率：<span class="arithmatex">\(1e^{-5} \sim 5e^{-5}\)</span></li>
-<li>warmup + linear decay 调度</li>
-<li>Dropout、权重衰减防止过拟合</li>
-<li>冻结底层，先训练上层</li>
-<li>小样本：使用 <strong>LoRA / PEFT / Prompt-tuning</strong></li>
-</ul>
-<hr />
-<h3 id="_5">🧠 十三、工程与部署<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ul>
-<li>推理优化：FP16 / 量化 / ONNX / TensorRT</li>
-<li>服务化：FastAPI + TorchServe</li>
-<li>检索增强（RAG）：LLM + 向量数据库（FAISS / Chroma）</li>
-<li>模型监控：延迟、准确率漂移、日志分析</li>
-</ul>
-<hr />
-<h3 id="_6">🧭 十四、学习路径建议<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>阶段</th>
-<th>学习目标</th>
-<th>推荐实践</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1️⃣ NLP 基础</td>
-<td>理解词袋、TF-IDF、Word2Vec</td>
-<td>做文本分类</td>
-</tr>
-<tr>
-<td>2️⃣ 序列模型</td>
-<td>掌握 RNN / LSTM</td>
-<td>做情感分析、NER</td>
-</tr>
-<tr>
-<td>3️⃣ Transformer</td>
-<td>理解 Self-Attention</td>
-<td>实现机器翻译</td>
-</tr>
-<tr>
-<td>4️⃣ 预训练模型</td>
-<td>使用 BERT / GPT</td>
-<td>做 QA、摘要</td>
-</tr>
-<tr>
-<td>5️⃣ 工程实践</td>
-<td>模型优化与部署</td>
-<td>FastAPI + ONNX</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="_7">📚 十五、推荐学习资源<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>书籍：</p>
-</li>
-<li>
-<p>《Speech and Language Processing》—— Jurafsky &amp; Martin</p>
-</li>
-<li>《Deep Learning for NLP》—— Yoav Goldberg</li>
-<li>
-<p>《自然语言处理综论》—— 周明</p>
-</li>
-<li>
-<p>开源课程：</p>
-</li>
-<li>
-<p>CS224N（Stanford NLP）</p>
-</li>
-<li>Hugging Face Transformers 官方教程</li>
-</ul>
-<hr />
-<h3 id="_8">✅ 十六、总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>模块</th>
-<th>关键词</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本表示</td>
-<td>Tokenization, Embedding</td>
-</tr>
-<tr>
-<td>序列建模</td>
-<td>RNN, LSTM, Attention</td>
-</tr>
-<tr>
-<td>现代架构</td>
-<td>Transformer, BERT, GPT</td>
-</tr>
-<tr>
-<td>任务映射</td>
-<td>分类 / 生成 / QA</td>
-</tr>
-<tr>
-<td>优化与部署</td>
-<td>微调、蒸馏、ONNX</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p>如果你想进一步学习，我可以为你生成一个分阶段系统课程：</p>
 <blockquote>
-<p>📘「从零开始学 NLP」系列
-第 1 章：文本表示与词向量
-第 2 章：RNN/LSTM 序列模型
-第 3 章：Transformer 与 Self-Attention
-第 4 章：BERT / GPT 原理与微调
-第 5 章：NLP 实战与部署</p>
+<p><strong>核心原则</strong>：<em>节点执行工作，边决定下一步做什么</em></p>
 </blockquote>
-<p>是否希望我帮你制定这个 <strong>系统化 NLP 学习路线表（附练习任务和代码）</strong>？</p>
+<h2 id="_3">快速开始<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">步骤1：定义状态<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>首先定义图的状态结构，通常使用 <code>TypedDict</code>：</p>
+<pre><code class="language-python">from typing_extensions import TypedDict
+
+class State(TypedDict):
+    user_input: str
+    processed_result: str
+    conversation_history: list
+</code></pre>
+<h3 id="2">步骤2：创建图构建器<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langgraph.graph import StateGraph
+
+builder = StateGraph(State)
+</code></pre>
+<h3 id="3">步骤3：添加节点<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>节点是执行具体工作的函数：</p>
+<pre><code class="language-python">def process_input(state: State):
+    # 处理用户输入
+    processed = state[&quot;user_input&quot;].upper()
+    return {&quot;processed_result&quot;: processed}
+
+def generate_response(state: State):
+    # 生成响应
+    response = f&quot;Processed: {state['processed_result']}&quot;
+    return {&quot;conversation_history&quot;: [response]}
+
+# 添加节点到图中
+builder.add_node(&quot;process_input&quot;, process_input)
+builder.add_node(&quot;generate_response&quot;, generate_response)
+</code></pre>
+<h3 id="4">步骤4：定义边<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>连接节点，定义执行流程：</p>
+<pre><code class="language-python">from langgraph.graph import START, END
+
+# 设置入口点
+builder.add_edge(START, &quot;process_input&quot;)
+# 连接处理节点到响应节点
+builder.add_edge(&quot;process_input&quot;, &quot;generate_response&quot;)
+# 设置结束点
+builder.add_edge(&quot;generate_response&quot;, END)
+</code></pre>
+<h3 id="5">步骤5：编译图<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p><strong>必须编译后才能使用</strong>：</p>
+<pre><code class="language-python">graph = builder.compile()
+</code></pre>
+<h3 id="6">步骤6：执行图<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 输入初始状态
+result = graph.invoke({&quot;user_input&quot;: &quot;hello world&quot;})
+print(result)
+# 输出: {'user_input': 'hello world', 'processed_result': 'HELLO WORLD', 'conversation_history': ['Processed: HELLO WORLD']}
+</code></pre>
+<h2 id="_4">深入理解状态管理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">状态归约器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>归约器定义如何更新状态：</p>
+<pre><code class="language-python">from typing import Annotated
+from operator import add
+
+class State(TypedDict):
+    # 默认归约器：覆盖更新
+    current_value: int
+    # 使用add归约器：追加更新
+    history: Annotated[list, add]
+</code></pre>
+<h3 id="_6">消息处理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>处理对话消息的常用模式：</p>
+<pre><code class="language-python">from langchain.messages import AnyMessage
+from langgraph.graph.message import add_messages
+
+class GraphState(TypedDict):
+    messages: Annotated[list[AnyMessage], add_messages]
+</code></pre>
+<p>或者使用预定义的 <code>MessagesState</code>：</p>
+<pre><code class="language-python">from langgraph.graph import MessagesState
+
+class State(MessagesState):
+    additional_data: str
+</code></pre>
+<h2 id="_7">高级节点功能<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">节点参数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>节点可以接收多种参数：</p>
+<pre><code class="language-python">def advanced_node(
+    state: State, 
+    config: RunnableConfig, 
+    runtime: Runtime
+):
+    print(f&quot;Thread ID: {config['configurable']['thread_id']}&quot;)
+    # 执行节点逻辑
+    return {&quot;result&quot;: &quot;success&quot;}
+</code></pre>
+<h3 id="_9">节点缓存<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>对计算密集型节点启用缓存：</p>
+<pre><code class="language-python">from langgraph.types import CachePolicy
+
+# 设置缓存策略（TTL=5秒）
+cache_policy = CachePolicy(ttl=5)
+builder.add_node(&quot;expensive_node&quot;, expensive_function, cache_policy=cache_policy)
+</code></pre>
+<h2 id="_10">复杂路由控制<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">条件边<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>根据条件决定下一个节点：</p>
+<pre><code class="language-python">def routing_function(state: State):
+    if len(state[&quot;user_input&quot;]) &gt; 10:
+        return &quot;long_input_node&quot;
+    else:
+        return &quot;short_input_node&quot;
+
+builder.add_conditional_edges(&quot;process_input&quot;, routing_function)
+</code></pre>
+<h3 id="_12">使用映射表<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">route_map = {
+    &quot;long&quot;: &quot;long_input_node&quot;,
+    &quot;short&quot;: &quot;short_input_node&quot;
+}
+builder.add_conditional_edges(&quot;process_input&quot;, routing_function, route_map)
+</code></pre>
+<h2 id="_13">高级特性<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="send-api">Send API<a class="headerlink" href="#send-api" title="Permanent link">&para;</a></h3>
+<p>用于动态生成边（如map-reduce模式）：</p>
+<pre><code class="language-python">from langgraph.types import Send
+
+def split_and_process(state: State):
+    words = state[&quot;user_input&quot;].split()
+    return [Send(&quot;process_word&quot;, {&quot;word&quot;: word}) for word in words]
+</code></pre>
+<h3 id="command-api">Command API<a class="headerlink" href="#command-api" title="Permanent link">&para;</a></h3>
+<p>结合状态更新和路由控制：</p>
+<pre><code class="language-python">from langgraph.types import Command
+from typing import Literal
+
+def smart_node(state: State) -&gt; Command[Literal[&quot;next_node&quot;]]:
+    if state[&quot;value&quot;] &gt; 100:
+        return Command(
+            update={&quot;status&quot;: &quot;high&quot;},
+            goto=&quot;handle_high_value&quot;
+        )
+    else:
+        return Command(
+            update={&quot;status&quot;: &quot;low&quot;}, 
+            goto=&quot;handle_low_value&quot;
+        )
+</code></pre>
+<h2 id="_14">运行时配置<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="_15">添加上下文<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from dataclasses import dataclass
+
+@dataclass
+class ContextSchema:
+    user_id: str
+    api_key: str
+
+graph = StateGraph(State, context_schema=ContextSchema)
+
+# 使用上下文
+def context_aware_node(state: State, runtime: Runtime[ContextSchema]):
+    user_id = runtime.context.user_id
+    # 使用上下文信息
+</code></pre>
+<h3 id="_16">递归限制<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>防止无限循环：</p>
+<pre><code class="language-python"># 限制最大执行步数
+result = graph.invoke(
+    inputs, 
+    config={&quot;recursion_limit&quot;: 50}
+)
+</code></pre>
+<h2 id="_17">完整示例<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>下面是一个完整的对话代理示例：</p>
+<pre><code class="language-python">from typing_extensions import TypedDict
+from typing import Annotated
+from langgraph.graph import StateGraph, MessagesState, add_messages
+from langchain.messages import HumanMessage, AIMessage
+
+class State(MessagesState):
+    needs_clarification: bool = False
+
+def process_input(state: State):
+    last_message = state[&quot;messages&quot;][-1]
+
+    if &quot;?&quot; in last_message.content:
+        return {&quot;needs_clarification&quot;: True}
+    return {&quot;needs_clarification&quot;: False}
+
+def generate_clarification(state: State):
+    return {&quot;messages&quot;: [AIMessage(content=&quot;Could you please clarify your question?&quot;)]}
+
+def generate_response(state: State):
+    last_message = state[&quot;messages&quot;][-1]
+    response = f&quot;I understand you said: {last_message.content}&quot;
+    return {&quot;messages&quot;: [AIMessage(content=response)]}
+
+def route_conversation(state: State):
+    if state[&quot;needs_clarification&quot;]:
+        return &quot;generate_clarification&quot;
+    else:
+        return &quot;generate_response&quot;
+
+# 构建图
+builder = StateGraph(State)
+builder.add_node(&quot;process_input&quot;, process_input)
+builder.add_node(&quot;generate_clarification&quot;, generate_clarification)
+builder.add_node(&quot;generate_response&quot;, generate_response)
+
+builder.add_edge(START, &quot;process_input&quot;)
+builder.add_conditional_edges(&quot;process_input&quot;, route_conversation)
+builder.add_edge(&quot;generate_clarification&quot;, END)
+builder.add_edge(&quot;generate_response&quot;, END)
+
+graph = builder.compile()
+
+# 使用图
+result = graph.invoke({
+    &quot;messages&quot;: [HumanMessage(content=&quot;Hello, how are you?&quot;)]
+})
+</code></pre>
+<h2 id="_18">最佳实践<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>状态设计</strong>：保持状态简洁，只包含必要的数据</li>
+<li><strong>节点职责</strong>：每个节点应该只负责一个明确的职责</li>
+<li><strong>错误处理</strong>：在节点中添加适当的错误处理逻辑</li>
+<li><strong>测试</strong>：对每个节点进行单元测试，对整个工作流进行集成测试</li>
+<li><strong>监控</strong>：利用LangGraph的追踪功能监控工作流执行</li>
+</ol>
+<h2 id="_19">总结<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>LangGraph 提供了一个强大的框架来构建复杂的代理工作流。通过理解状态管理、节点执行和路由控制，你可以创建高效、可维护的智能应用。记住关键的工作流程：<strong>定义状态 → 添加节点 → 连接边 → 编译执行</strong>。</p>
+<p>开始构建你的第一个LangGraph工作流吧！</p>
 
 
 
@@ -2354,10 +2663,10 @@ trainer.train()
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -2365,7 +2674,7 @@ trainer.train()
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="../../styles/javascripts/katex.js"></script>
+        <script src="../../../styles/javascripts/katex.js"></script>
       
     
   </body>

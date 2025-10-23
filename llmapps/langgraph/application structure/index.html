@@ -10,13 +10,13 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langgraph/thinking%20in%20Langgraph/">
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langgraph/application%20structure/">
       
       
-        <link rel="prev" href="../Local%20server/">
+        <link rel="prev" href="../Subgraphs/">
       
       
-        <link rel="next" href="../workflows%2Bagents/">
+        <link rel="next" href="../graph%20api%20overview/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Thinking in LangGraph - 人工智能面试集合</title>
+        <title>Application structure - 人工智能面试集合</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Thinking in LangGraph
+              Application structure
             
           </span>
         </div>
@@ -1358,30 +1358,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Thinking in LangGraph
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../thinking%20in%20Langgraph/" class="md-nav__link">
         
   
   
@@ -1392,225 +1372,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      从要自动化的流程开始
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      步骤 1：将工作流程映射为离散步骤
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      步骤 2：识别每个步骤需要做什么
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="步骤 2：识别每个步骤需要做什么">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#llm" class="md-nav__link">
-    <span class="md-ellipsis">
-      LLM 步骤
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      数据步骤
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      操作步骤
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      用户输入步骤
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      步骤 3：设计你的状态
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="步骤 3：设计你的状态">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      什么应该放在状态中？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      保持状态原始，按需格式化提示
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      步骤 4：构建你的节点
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="步骤 4：构建你的节点">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      适当处理错误
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      实现我们的邮件智能体节点
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      步骤 5：将它们连接起来
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="步骤 5：将它们连接起来">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      测试你的智能体
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      总结和下一步
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="总结和下一步">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      关键见解
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      高级考虑
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      从这里去哪里
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1804,10 +1565,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../application%20structure/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Application structure
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1818,6 +1599,384 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-langgraphjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 配置文件 (langgraph.json)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 图 (Graphs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 依赖管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 环境变量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      项目结构详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="项目结构详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python 项目结构（使用 requirements.txt）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-pyprojecttoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python 项目结构（使用 pyproject.toml）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置文件详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置文件详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#langgraphjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      langgraph.json 结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置参数说明
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      依赖管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="依赖管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法一：requirements.txt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyprojecttoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法二：pyproject.toml
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      图定义示例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="图定义示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agentpy-" class="md-nav__link">
+    <span class="md-ellipsis">
+      agent.py - 图构建代码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statepy-" class="md-nav__link">
+    <span class="md-ellipsis">
+      state.py - 状态定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodespy-" class="md-nav__link">
+    <span class="md-ellipsis">
+      nodes.py - 节点函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolspy-" class="md-nav__link">
+    <span class="md-ellipsis">
+      tools.py - 工具函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境变量配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="环境变量配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      .env 文件示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署配置最佳实践
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部署配置最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-langgraphjson_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 完整的 langgraph.json 配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 多图应用结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      开发工作流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="开发工作流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 1：初始化项目结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 2：创建核心文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 3：配置依赖和环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 4：测试和部署
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      故障排除
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="故障排除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      调试技巧
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1970,62 +2129,53 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      从要自动化的流程开始
+      概述
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      步骤 1：将工作流程映射为离散步骤
+      核心概念
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      步骤 2：识别每个步骤需要做什么
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="步骤 2：识别每个步骤需要做什么">
+    <nav class="md-nav" aria-label="核心概念">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#llm" class="md-nav__link">
+  <a href="#1-langgraphjson" class="md-nav__link">
     <span class="md-ellipsis">
-      LLM 步骤
+      1. 配置文件 (langgraph.json)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#2-graphs" class="md-nav__link">
     <span class="md-ellipsis">
-      数据步骤
+      2. 图 (Graphs)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      操作步骤
+      3. 依赖管理
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      用户输入步骤
+      4. 环境变量
     </span>
   </a>
   
@@ -2037,28 +2187,94 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      步骤 3：设计你的状态
+      项目结构详解
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="步骤 3：设计你的状态">
+    <nav class="md-nav" aria-label="项目结构详解">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python 项目结构（使用 requirements.txt）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-pyprojecttoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python 项目结构（使用 pyproject.toml）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置文件详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置文件详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#langgraphjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      langgraph.json 结构
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      什么应该放在状态中？
+      配置参数说明
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      保持状态原始，按需格式化提示
+      依赖管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="依赖管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法一：requirements.txt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyprojecttoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法二：pyproject.toml
     </span>
   </a>
   
@@ -2070,28 +2286,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      步骤 4：构建你的节点
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="步骤 4：构建你的节点">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      适当处理错误
+      图定义示例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="图定义示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agentpy-" class="md-nav__link">
+    <span class="md-ellipsis">
+      agent.py - 图构建代码
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#statepy-" class="md-nav__link">
     <span class="md-ellipsis">
-      实现我们的邮件智能体节点
+      state.py - 状态定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodespy-" class="md-nav__link">
+    <span class="md-ellipsis">
+      nodes.py - 节点函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolspy-" class="md-nav__link">
+    <span class="md-ellipsis">
+      tools.py - 工具函数
     </span>
   </a>
   
@@ -2103,19 +2337,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      步骤 5：将它们连接起来
+      环境变量配置
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="步骤 5：将它们连接起来">
+    <nav class="md-nav" aria-label="环境变量配置">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      .env 文件示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
-      测试你的智能体
+      部署配置最佳实践
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部署配置最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-langgraphjson_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 完整的 langgraph.json 配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 多图应用结构
     </span>
   </a>
   
@@ -2129,26 +2396,68 @@
         <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
-      总结和下一步
+      开发工作流程
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="总结和下一步">
+    <nav class="md-nav" aria-label="开发工作流程">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      关键见解
+      步骤 1：初始化项目结构
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 2：创建核心文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 3：配置依赖和环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 4：测试和部署
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      故障排除
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="故障排除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
-      高级考虑
+      常见问题
     </span>
   </a>
   
@@ -2157,7 +2466,7 @@
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
-      从这里去哪里
+      调试技巧
     </span>
   </a>
   
@@ -2165,6 +2474,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
   
 </li>
       
@@ -2187,534 +2505,250 @@
   
 
 
-<h1 id="langgraph">LangGraph 思维模式完全指南<a class="headerlink" href="#langgraph" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>通过将客户支持邮件智能体分解为离散步骤，学习如何用 LangGraph 构建智能体</p>
-</blockquote>
-<p>LangGraph 可以改变你构建智能体的思维方式。使用 LangGraph 构建智能体时，你首先需要将其分解为称为<strong>节点</strong>的离散步骤。然后，描述每个节点的不同决策和转换。最后，通过共享的<strong>状态</strong>将节点连接起来，每个节点都可以读取和写入这个状态。本教程将指导你完成构建客户支持邮件智能体的思维过程。</p>
-<h2 id="_1">从要自动化的流程开始<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>假设你需要构建一个处理客户支持邮件的 AI 智能体。产品团队给了你以下要求：</p>
-<p>智能体应该能够：</p>
-<ul>
-<li>读取传入的客户邮件</li>
-<li>按紧急程度和主题进行分类</li>
-<li>搜索相关文档来回答问题</li>
-<li>起草适当的回复</li>
-<li>将复杂问题转交给人工代理</li>
-<li>需要时安排跟进</li>
-</ul>
-<p>需要处理的示例场景：</p>
-<ol>
-<li>简单产品问题："如何重置密码？"</li>
-<li>错误报告："选择 PDF 格式时导出功能崩溃"</li>
-<li>紧急账单问题："我的订阅被重复收费了！"</li>
-<li>功能请求："能否为移动应用添加深色模式？"</li>
-<li>复杂技术问题："我们的 API 集成间歇性失败，出现 504 错误"</li>
-</ol>
-<p>要在 LangGraph 中实现智能体，你通常需要遵循相同的五个步骤。</p>
-<h2 id="1">步骤 1：将工作流程映射为离散步骤<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>首先识别流程中的不同步骤。每个步骤将成为一个<strong>节点</strong>（执行特定操作的函数）。然后勾画这些步骤如何相互连接。</p>
-<pre><code class="language-mermaid">flowchart TD
-    A[开始] --&gt; B[读取邮件]
-    B --&gt; C[分类意图]
-
-    C -.-&gt; D[文档搜索]
-    C -.-&gt; E[错误跟踪]
-    C -.-&gt; F[人工审核]
-
-    D --&gt; G[起草回复]
-    E --&gt; G
-    F --&gt; G
-
-    G -.-&gt; H[人工审核]
-    G -.-&gt; I[发送回复]
-
-    H --&gt; J[结束]
-    I --&gt; J[结束]
+<h1 id="langgraph">LangGraph 应用结构完整教程<a class="headerlink" href="#langgraph" title="Permanent link">&para;</a></h1>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本教程将详细介绍如何构建一个完整的 LangGraph 应用程序。LangGraph 应用由一个或多个图、配置文件、依赖文件以及可选的环境变量文件组成。</p>
+<h2 id="_2">核心概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>要成功部署 LangGraph 应用，需要提供以下关键组件：</p>
+<h3 id="1-langgraphjson">1. 配置文件 (<code>langgraph.json</code>)<a class="headerlink" href="#1-langgraphjson" title="Permanent link">&para;</a></h3>
+<p>这是应用的核心配置文件，指定了依赖项、图和环境变量。</p>
+<h3 id="2-graphs">2. 图 (Graphs)<a class="headerlink" href="#2-graphs" title="Permanent link">&para;</a></h3>
+<p>实现应用逻辑的流程图或状态机。</p>
+<h3 id="3">3. 依赖管理<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>应用运行所需的包依赖。</p>
+<h3 id="4">4. 环境变量<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>应用运行所需的环境配置。</p>
+<h2 id="_3">项目结构详解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="python-requirementstxt">Python 项目结构（使用 requirements.txt）<a class="headerlink" href="#python-requirementstxt" title="Permanent link">&para;</a></h3>
+<pre><code class="language-plaintext">my-app/
+├── my_agent/                    # 项目主代码目录
+│   ├── utils/                   # 工具和工具函数目录
+│   │   ├── __init__.py
+│   │   ├── tools.py            # 图中使用的工具函数
+│   │   ├── nodes.py            # 图节点函数
+│   │   └── state.py            # 状态定义
+│   ├── __init__.py
+│   └── agent.py                # 图构建代码
+├── .env                        # 环境变量文件
+├── requirements.txt            # Python 包依赖
+└── langgraph.json             # LangGraph 配置文件
 </code></pre>
-<p>箭头显示可能的路径，但实际选择哪条路径的决策发生在每个节点内部。</p>
-<p>现在你已经识别了工作流程中的组件，让我们理解每个节点需要做什么：</p>
-<ul>
-<li><strong>读取邮件</strong>：提取和解析邮件内容</li>
-<li><strong>分类意图</strong>：使用 LLM 分类紧急程度和主题，然后路由到适当的操作</li>
-<li><strong>文档搜索</strong>：查询知识库获取相关信息</li>
-<li><strong>错误跟踪</strong>：在跟踪系统中创建或更新问题</li>
-<li><strong>起草回复</strong>：生成适当的响应</li>
-<li><strong>人工审核</strong>：转交给人工代理进行批准或处理</li>
-<li><strong>发送回复</strong>：发送邮件回复</li>
-</ul>
-<blockquote>
-<p><strong>提示</strong>：注意有些节点决定下一步去哪里（分类意图、起草回复、人工审核），而其他节点总是进入相同的下一步（读取邮件总是到分类意图，文档搜索总是到起草回复）。</p>
-</blockquote>
-<h2 id="2">步骤 2：识别每个步骤需要做什么<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<p>对于图中的每个节点，确定它代表什么类型的操作以及需要什么上下文才能正常工作。</p>
-<h3 id="llm">LLM 步骤<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h3>
-<p>当步骤需要理解、分析、生成文本或做出推理决策时使用：</p>
-<p><strong>分类意图节点</strong>
-* 静态上下文（提示）：分类类别、紧急程度定义、响应格式
-* 动态上下文（来自状态）：邮件内容、发件人信息
-* 期望结果：确定路由的结构化分类</p>
-<p><strong>起草回复节点</strong>
-* 静态上下文（提示）：语气指南、公司政策、响应模板
-* 动态上下文（来自状态）：分类结果、搜索结果、客户历史
-* 期望结果：准备审核的专业邮件回复</p>
-<h3 id="_2">数据步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>当步骤需要从外部源检索信息时使用：</p>
-<p><strong>文档搜索节点</strong>
-* 参数：根据意图和主题构建的查询
-* 重试策略：是，对暂时性故障使用指数退避
-* 缓存：可以缓存常见查询以减少 API 调用</p>
-<p><strong>客户历史查询</strong>
-* 参数：来自状态的客户邮件或 ID
-* 重试策略：是，但如果不可用则回退到基本信息
-* 缓存：是，使用生存时间来平衡新鲜度和性能</p>
-<h3 id="_3">操作步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>当步骤需要执行外部操作时使用：</p>
-<p><strong>发送回复节点</strong>
-* 执行时机：批准后（人工或自动）
-* 重试策略：是，对网络问题使用指数退避
-* 不应缓存：每次发送都是唯一操作</p>
-<p><strong>错误跟踪节点</strong>
-* 执行时机：意图为"错误"时总是执行
-* 重试策略：是，关键是不能丢失错误报告
-* 返回：要在响应中包含的工单 ID</p>
-<h3 id="_4">用户输入步骤<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>当步骤需要人工干预时使用：</p>
-<p><strong>人工审核节点</strong>
-* 决策上下文：原始邮件、草稿回复、紧急程度、分类
-* 期望输入格式：批准布尔值加上可选的编辑响应
-* 触发时机：高紧急程度、复杂问题或质量担忧</p>
-<h2 id="3">步骤 3：设计你的状态<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>状态是你的智能体中所有节点都可以访问的共享<a href="/oss/python/concepts/memory">内存</a>。可以把它看作你的智能体在处理过程中用来跟踪一切学习和决策的笔记本。</p>
-<h3 id="_5">什么应该放在状态中？<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>对每个数据片段问自己这些问题：</p>
-<p><strong>包含在状态中</strong>
-* 是否需要跨步骤持久化？如果是，就放在状态中</p>
-<p><strong>不要存储</strong>
-* 能否从其他数据推导出来？如果是，在需要时计算而不是存储在状态中</p>
-<p>对于我们的邮件智能体，我们需要跟踪：</p>
-<ul>
-<li>原始邮件和发件人信息（无法重建这些）</li>
-<li>分类结果（多个下游节点需要）</li>
-<li>搜索结果和客户数据（重新获取成本高）</li>
-<li>草稿回复（需要通过审核持久化）</li>
-<li>执行元数据（用于调试和恢复）</li>
-</ul>
-<h3 id="_6">保持状态原始，按需格式化提示<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><strong>关键原则</strong>：你的状态应该存储原始数据，而不是格式化文本。在需要时在节点内部格式化提示。</p>
-</blockquote>
-<p>这种分离意味着：</p>
-<ul>
-<li>不同节点可以为了各自的需要以不同方式格式化相同的数据</li>
-<li>你可以更改提示模板而不修改状态模式</li>
-<li>调试更清晰 - 你可以看到每个节点接收到的确切数据</li>
-<li>你的智能体可以演进而不破坏现有状态</li>
-</ul>
-<p>让我们定义我们的状态：</p>
-<pre><code class="language-python">from typing import TypedDict, Literal
-
-# 定义邮件分类结构
-class EmailClassification(TypedDict):
-    intent: Literal[&quot;question&quot;, &quot;bug&quot;, &quot;billing&quot;, &quot;feature&quot;, &quot;complex&quot;]
-    urgency: Literal[&quot;low&quot;, &quot;medium&quot;, &quot;high&quot;, &quot;critical&quot;]
-    topic: str
-    summary: str
-
-class EmailAgentState(TypedDict):
-    # 原始邮件数据
-    email_content: str
-    sender_email: str
-    email_id: str
-
-    # 分类结果
-    classification: EmailClassification | None
-
-    # 原始搜索/API 结果
-    search_results: list[str] | None  # 原始文档块列表
-    customer_history: dict | None  # 来自 CRM 的原始客户数据
-
-    # 生成的内容
-    draft_response: str | None
+<h3 id="python-pyprojecttoml">Python 项目结构（使用 pyproject.toml）<a class="headerlink" href="#python-pyprojecttoml" title="Permanent link">&para;</a></h3>
+<pre><code class="language-plaintext">my-app/
+├── my_agent/
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── tools.py
+│   │   ├── nodes.py
+│   │   └── state.py
+│   ├── __init__.py
+│   └── agent.py
+├── .env
+├── langgraph.json
+└── pyproject.toml             # 项目依赖配置
 </code></pre>
-<p>注意状态只包含原始数据 - 没有提示模板，没有格式化字符串，没有指令。分类输出作为单个字典存储，直接来自 LLM。</p>
-<h2 id="4">步骤 4：构建你的节点<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<p>现在我们实现每个步骤作为一个函数。LangGraph 中的节点只是一个 Python 函数，它接受当前状态并返回对其的更新。</p>
-<h3 id="_7">适当处理错误<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>不同类型的错误需要不同的处理策略：</p>
-<table>
-<thead>
-<tr>
-<th>错误类型</th>
-<th>谁修复</th>
-<th>策略</th>
-<th>使用时机</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>暂时性错误（网络问题、速率限制）</td>
-<td>系统（自动）</td>
-<td>重试策略</td>
-<td>通常重试能解决的临时故障</td>
-</tr>
-<tr>
-<td>LLM 可恢复错误（工具故障、解析问题）</td>
-<td>LLM</td>
-<td>将错误存储在状态中并循环回去</td>
-<td>LLM 可以看到错误并调整方法</td>
-</tr>
-<tr>
-<td>用户可修复错误（缺少信息、指令不清）</td>
-<td>人工</td>
-<td>使用 <code>interrupt()</code> 暂停</td>
-<td>需要用户输入才能继续</td>
-</tr>
-<tr>
-<td>意外错误</td>
-<td>开发者</td>
-<td>让它们冒泡</td>
-<td>需要调试的未知问题</td>
-</tr>
-</tbody>
-</table>
-<p><strong>暂时性错误处理</strong></p>
-<pre><code class="language-python">from langgraph.types import RetryPolicy
-
-workflow.add_node(
-    &quot;search_documentation&quot;,
-    search_documentation,
-    retry_policy=RetryPolicy(max_attempts=3, initial_interval=1.0)
-)
-</code></pre>
-<p><strong>LLM 可恢复错误处理</strong></p>
-<pre><code class="language-python">from langgraph.types import Command
-
-def execute_tool(state: State) -&gt; Command[Literal[&quot;agent&quot;, &quot;execute_tool&quot;]]:
-    try:
-        result = run_tool(state['tool_call'])
-        return Command(update={&quot;tool_result&quot;: result}, goto=&quot;agent&quot;)
-    except ToolError as e:
-        # 让 LLM 看到问题并重试
-        return Command(
-            update={&quot;tool_result&quot;: f&quot;工具错误: {str(e)}&quot;},
-            goto=&quot;agent&quot;
-        )
-</code></pre>
-<p><strong>用户可修复错误处理</strong></p>
-<pre><code class="language-python">from langgraph.types import Command
-
-def lookup_customer_history(state: State) -&gt; Command[Literal[&quot;draft_response&quot;]]:
-    if not state.get('customer_id'):
-        user_input = interrupt({
-            &quot;message&quot;: &quot;需要客户 ID&quot;,
-            &quot;request&quot;: &quot;请提供客户账户 ID 以查询订阅历史&quot;
-        })
-        return Command(
-            update={&quot;customer_id&quot;: user_input['customer_id']},
-            goto=&quot;lookup_customer_history&quot;
-        )
-    # 现在继续查询
-    customer_data = fetch_customer_history(state['customer_id'])
-    return Command(update={&quot;customer_history&quot;: customer_data}, goto=&quot;draft_response&quot;)
-</code></pre>
-<p><strong>意外错误处理</strong></p>
-<pre><code class="language-python">def send_reply(state: EmailAgentState):
-    try:
-        email_service.send(state[&quot;draft_response&quot;])
-    except Exception:
-        raise  # 抛出意外错误
-</code></pre>
-<h3 id="_8">实现我们的邮件智能体节点<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>我们将每个节点实现为一个简单的函数。记住：节点接受状态，执行工作，并返回更新。</p>
-<p><strong>读取和分类节点</strong></p>
-<pre><code class="language-python">from typing import Literal
-from langgraph.graph import StateGraph, START, END
-from langgraph.types import interrupt, Command, RetryPolicy
-from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage
-
-llm = ChatOpenAI(model=&quot;gpt-4&quot;)
-
-def read_email(state: EmailAgentState) -&gt; dict:
-    &quot;&quot;&quot;提取和解析邮件内容&quot;&quot;&quot;
-    # 在生产环境中，这将连接到你的邮件服务
-    return {
-        &quot;messages&quot;: [HumanMessage(content=f&quot;处理邮件: {state['email_content']}&quot;)]
-    }
-
-def classify_intent(state: EmailAgentState) -&gt; Command[Literal[&quot;search_documentation&quot;, &quot;human_review&quot;, &quot;draft_response&quot;, &quot;bug_tracking&quot;]]:
-    &quot;&quot;&quot;使用 LLM 分类邮件意图和紧急程度，然后相应路由&quot;&quot;&quot;
-
-    # 创建返回 EmailClassification 字典的结构化 LLM
-    structured_llm = llm.with_structured_output(EmailClassification)
-
-    # 按需格式化提示，不存储在状态中
-    classification_prompt = f&quot;&quot;&quot;
-    分析此客户邮件并分类：
-
-    邮件: {state['email_content']}
-    发件人: {state['sender_email']}
-
-    提供分类，包括意图、紧急程度、主题和摘要。
-    &quot;&quot;&quot;
-
-    # 直接获取结构化响应作为字典
-    classification = structured_llm.invoke(classification_prompt)
-
-    # 根据分类确定下一个节点
-    if classification['intent'] == 'billing' or classification['urgency'] == 'critical':
-        goto = &quot;human_review&quot;
-    elif classification['intent'] in ['question', 'feature']:
-        goto = &quot;search_documentation&quot;
-    elif classification['intent'] == 'bug':
-        goto = &quot;bug_tracking&quot;
-    else:
-        goto = &quot;draft_response&quot;
-
-    # 将分类作为单个字典存储在状态中
-    return Command(
-        update={&quot;classification&quot;: classification},
-        goto=goto
-    )
-</code></pre>
-<p><strong>搜索和跟踪节点</strong></p>
-<pre><code class="language-python">def search_documentation(state: EmailAgentState) -&gt; Command[Literal[&quot;draft_response&quot;]]:
-    &quot;&quot;&quot;搜索知识库获取相关信息&quot;&quot;&quot;
-
-    # 从分类构建搜索查询
-    classification = state.get('classification', {})
-    query = f&quot;{classification.get('intent', '')} {classification.get('topic', '')}&quot;
-
-    try:
-        # 在此实现你的搜索逻辑
-        # 存储原始搜索结果，不是格式化文本
-        search_results = [
-            &quot;通过设置 &gt; 安全 &gt; 更改密码重置密码&quot;,
-            &quot;密码必须至少12个字符&quot;,
-            &quot;包含大写字母、小写字母、数字和符号&quot;
-        ]
-    except SearchAPIError as e:
-        # 对于可恢复的搜索错误，存储错误并继续
-        search_results = [f&quot;搜索暂时不可用: {str(e)}&quot;]
-
-    return Command(
-        update={&quot;search_results&quot;: search_results},  # 存储原始结果或错误
-        goto=&quot;draft_response&quot;
-    )
-
-def bug_tracking(state: EmailAgentState) -&gt; Command[Literal[&quot;draft_response&quot;]]:
-    &quot;&quot;&quot;在错误跟踪系统中创建或更新工单&quot;&quot;&quot;
-
-    # 通过 API 在你的错误跟踪系统中创建工单
-    ticket_id = &quot;BUG-12345&quot;  # 将通过 API 创建
-
-    return Command(
-        update={
-            &quot;search_results&quot;: [f&quot;错误工单 {ticket_id} 已创建&quot;],
-            &quot;current_step&quot;: &quot;bug_tracked&quot;
-        },
-        goto=&quot;draft_response&quot;
-    )
-</code></pre>
-<p><strong>响应节点</strong></p>
-<pre><code class="language-python">def draft_response(state: EmailAgentState) -&gt; Command[Literal[&quot;human_review&quot;, &quot;send_reply&quot;]]:
-    &quot;&quot;&quot;使用上下文生成响应并根据质量路由&quot;&quot;&quot;
-
-    classification = state.get('classification', {})
-
-    # 按需从原始状态数据格式化上下文
-    context_sections = []
-
-    if state.get('search_results'):
-        # 为提示格式化搜索结果
-        formatted_docs = &quot;\n&quot;.join([f&quot;- {doc}&quot; for doc in state['search_results']])
-        context_sections.append(f&quot;相关文档:\n{formatted_docs}&quot;)
-
-    if state.get('customer_history'):
-        # 为提示格式化客户数据
-        context_sections.append(f&quot;客户层级: {state['customer_history'].get('tier', 'standard')}&quot;)
-
-    # 使用格式化上下文构建提示
-    draft_prompt = f&quot;&quot;&quot;
-    起草对此客户邮件的回复：
-    {state['email_content']}
-
-    邮件意图: {classification.get('intent', 'unknown')}
-    紧急程度: {classification.get('urgency', 'medium')}
-
-    {chr(10).join(context_sections)}
-
-    指南：
-    - 专业且乐于助人
-    - 解决他们的具体问题
-    - 相关时使用提供的文档
-    &quot;&quot;&quot;
-
-    response = llm.invoke(draft_prompt)
-
-    # 根据紧急程度和意图确定是否需要人工审核
-    needs_review = (
-        classification.get('urgency') in ['high', 'critical'] or
-        classification.get('intent') == 'complex'
-    )
-
-    # 路由到适当的下一节点
-    goto = &quot;human_review&quot; if needs_review else &quot;send_reply&quot;
-
-    return Command(
-        update={&quot;draft_response&quot;: response.content},  # 只存储原始响应
-        goto=goto
-    )
-
-def human_review(state: EmailAgentState) -&gt; Command[Literal[&quot;send_reply&quot;, END]]:
-    &quot;&quot;&quot;使用 interrupt 暂停人工审核并根据决策路由&quot;&quot;&quot;
-
-    classification = state.get('classification', {})
-
-    # interrupt() 必须首先出现 - 它之前的任何代码都将在恢复时重新运行
-    human_decision = interrupt({
-        &quot;email_id&quot;: state['email_id'],
-        &quot;original_email&quot;: state['email_content'],
-        &quot;draft_response&quot;: state['draft_response'],
-        &quot;urgency&quot;: classification.get('urgency'),
-        &quot;intent&quot;: classification.get('intent'),
-        &quot;action&quot;: &quot;请审核并批准/编辑此响应&quot;
-    })
-
-    # 现在处理人工决策
-    if human_decision.get(&quot;approved&quot;):
-        return Command(
-            update={&quot;draft_response&quot;: human_decision.get(&quot;edited_response&quot;, state['draft_response'])},
-            goto=&quot;send_reply&quot;
-        )
-    else:
-        # 拒绝意味着人工将直接处理
-        return Command(update={}, goto=END)
-
-def send_reply(state: EmailAgentState) -&gt; dict:
-    &quot;&quot;&quot;发送邮件回复&quot;&quot;&quot;
-    # 与邮件服务集成
-    print(f&quot;发送回复: {state['draft_response'][:100]}...&quot;)
-    return {}
-</code></pre>
-<h2 id="5">步骤 5：将它们连接起来<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<p>现在我们将节点连接成一个工作图。由于我们的节点处理自己的路由决策，我们只需要一些基本的边。</p>
-<p>要使用 <code>interrupt()</code> 启用<a href="/oss/python/langgraph/interrupts">人工干预</a>，我们需要使用<a href="/oss/python/langgraph/persistence">检查点</a>进行编译以在运行之间保存状态：</p>
-<pre><code class="language-python">from langgraph.checkpoint.memory import MemorySaver
-from langgraph.types import RetryPolicy
-
-# 创建图
-workflow = StateGraph(EmailAgentState)
-
-# 添加带有适当错误处理的节点
-workflow.add_node(&quot;read_email&quot;, read_email)
-workflow.add_node(&quot;classify_intent&quot;, classify_intent)
-
-# 为可能有暂时性故障的节点添加重试策略
-workflow.add_node(
-    &quot;search_documentation&quot;,
-    search_documentation,
-    retry_policy=RetryPolicy(max_attempts=3)
-)
-workflow.add_node(&quot;bug_tracking&quot;, bug_tracking)
-workflow.add_node(&quot;draft_response&quot;, draft_response)
-workflow.add_node(&quot;human_review&quot;, human_review)
-workflow.add_node(&quot;send_reply&quot;, send_reply)
-
-# 只添加基本边
-workflow.add_edge(START, &quot;read_email&quot;)
-workflow.add_edge(&quot;read_email&quot;, &quot;classify_intent&quot;)
-workflow.add_edge(&quot;send_reply&quot;, END)
-
-# 使用检查点进行持久化编译
-memory = MemorySaver()
-app = workflow.compile(checkpointer=memory)
-</code></pre>
-<p>图结构是最小的，因为路由通过 <a href="https://reference.langchain.com/python/langgraph/types/#langgraph.types.Command"><code>Command</code></a> 对象在节点内部发生。每个节点使用类型提示如 <code>Command[Literal["node1", "node2"]]</code> 声明它可以去哪里，使流程明确且可追踪。</p>
-<h3 id="_9">测试你的智能体<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>让我们用一个需要人工审核的紧急账单问题来运行我们的智能体：</p>
-<pre><code class="language-python"># 测试紧急账单问题
-initial_state = {
-    &quot;email_content&quot;: &quot;我的订阅被重复收费了！这很紧急！&quot;,
-    &quot;sender_email&quot;: &quot;customer@example.com&quot;,
-    &quot;email_id&quot;: &quot;email_123&quot;,
-    &quot;messages&quot;: []
+<h2 id="_4">配置文件详解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="langgraphjson">langgraph.json 结构<a class="headerlink" href="#langgraphjson" title="Permanent link">&para;</a></h3>
+<pre><code class="language-json">{
+  &quot;dependencies&quot;: [&quot;langchain_openai&quot;, &quot;./your_package&quot;],
+  &quot;graphs&quot;: {
+    &quot;my_agent&quot;: &quot;./your_package/your_file.py:agent&quot;
+  },
+  &quot;env&quot;: &quot;./.env&quot;
 }
-
-# 使用 thread_id 进行持久化运行
-config = {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;customer_123&quot;}}
-result = app.invoke(initial_state, config)
-# 图将在 human_review 处暂停
-print(f&quot;准备审核的草稿: {result['draft_response'][:100]}...&quot;)
-
-# 准备就绪时，提供人工输入以恢复
-from langgraph.types import Command
-
-human_response = Command(
-    resume={
-        &quot;approved&quot;: True,
-        &quot;edited_response&quot;: &quot;我们为重复收费诚挚道歉。我已立即启动退款...&quot;
-    }
-)
-
-# 恢复执行
-final_result = app.invoke(human_response, config)
-print(f&quot;邮件发送成功！&quot;)
 </code></pre>
-<p>当图遇到 <code>interrupt()</code> 时暂停，将所有内容保存到检查点，并等待。它可以在几天后恢复，从停止的地方准确继续。<code>thread_id</code> 确保此对话的所有状态都一起保存。</p>
-<h2 id="_10">总结和下一步<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<h3 id="_11">关键见解<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>构建这个邮件智能体向我们展示了 LangGraph 的思维方式：</p>
-<p><strong>分解为离散步骤</strong>
-* 每个节点做好一件事。这种分解支持流式进度更新、可以暂停和恢复的持久执行，以及清晰的调试，因为你可以在步骤之间检查状态。</p>
-<p><strong>状态是共享内存</strong>
-* 存储原始数据，而不是格式化文本。这让不同节点以不同方式使用相同的信息。</p>
-<p><strong>节点是函数</strong>
-* 它们接受状态，执行工作，并返回更新。当需要做出路由决策时，它们指定状态更新和下一个目的地。</p>
-<p><strong>错误是流程的一部分</strong>
-* 暂时性故障重试，LLM 可恢复错误循环回去并提供上下文，用户可修复问题暂停等待输入，意外错误冒泡用于调试。</p>
-<p><strong>人工输入是一等公民</strong>
-* <code>interrupt()</code> 函数无限期暂停执行，保存所有状态，并在你提供输入时从停止的地方准确恢复。当与节点中的其他操作结合时，它必须首先出现。</p>
-<p><strong>图结构自然出现</strong>
-* 你定义基本连接，你的节点处理自己的路由逻辑。这使控制流明确且可追踪 - 你总是可以通过查看当前节点来理解你的智能体下一步将做什么。</p>
-<h3 id="_12">高级考虑<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p><strong>节点粒度权衡</strong>
-你可能会想：为什么不将"读取邮件"和"分类意图"合并为一个节点？或者为什么将文档搜索与起草回复分开？</p>
-<p>答案涉及弹性与可观察性之间的权衡。</p>
-<p><strong>弹性考虑：</strong> LangGraph 的<a href="/oss/python/langgraph/durable-execution">持久执行</a>在节点边界创建检查点。当工作流程在中断或故障后恢复时，它从执行停止的节点开始。较小的节点意味着更频繁的检查点，这意味着如果出现问题，重复的工作更少。如果你将多个操作合并到一个大节点中，接近末尾的失败意味着从该节点开始重新执行一切。</p>
-<p>我们为邮件智能体选择这种分解的原因：</p>
+<h3 id="_5">配置参数说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>外部服务隔离：</strong> 文档搜索和错误跟踪是单独的节点，因为它们调用外部 API。如果搜索服务缓慢或失败，我们希望将其与 LLM 调用隔离。我们可以为这些特定节点添加重试策略而不影响其他节点。</p>
-</li>
-<li>
-<p><strong>中间可见性：</strong> 将"分类意图"作为自己的节点让我们可以在采取行动之前检查 LLM 的决定。这对于调试和监控很有价值 - 你可以准确看到智能体何时以及为何路由到人工审核。</p>
-</li>
-<li>
-<p><strong>不同的故障模式：</strong> LLM 调用、数据库查询和邮件发送有不同的重试策略。单独的节点让你可以独立配置这些。</p>
-</li>
-<li>
-<p><strong>可重用性和测试：</strong> 较小的节点更容易单独测试并在其他工作流程中重用。</p>
-</li>
+<li><strong>dependencies</strong>: 依赖包列表，支持本地包和 PyPI 包</li>
+<li><strong>graphs</strong>: 图定义，格式为 <code>"图名": "文件路径:变量名"</code></li>
+<li><strong>env</strong>: 环境变量文件路径</li>
 </ul>
-<p>不同的有效方法：你可以将"读取邮件"和"分类意图"合并为单个节点。你将失去在分类之前检查原始邮件的能力，并且在该节点出现任何故障时会重复这两个操作。对于大多数应用，单独节点的可观察性和调试好处是值得的权衡。</p>
-<p><strong>控制检查点行为：</strong> 你可以使用<a href="/oss/python/langgraph/durable-execution#durability-modes">持久性模式</a>调整检查点的写入时间。默认的 <code>"async"</code> 模式在后台写入检查点以获得良好的性能，同时保持持久性。使用 <code>"exit"</code> 模式仅在完成时检查点（对于不需要中间执行恢复的长时间运行图更快），或使用 <code>"sync"</code> 模式保证在继续下一步之前写入检查点（当你需要确保状态在继续执行之前持久化时很有用）。</p>
-<h3 id="_13">从这里去哪里<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>这是关于使用 LangGraph 构建智能体的思维方式的介绍。你可以用以下内容扩展这个基础：</p>
-<p><strong>人工干预模式</strong>
-* 学习如何在执行前添加工具批准、批量批准和其他模式</p>
-<p><strong>子图</strong>
-* 为复杂的多步骤操作创建子图</p>
-<p><strong>流式传输</strong>
-* 添加流式传输以向用户显示实时进度</p>
-<p><strong>可观察性</strong>
-* 使用 LangSmith 添加可观察性以进行调试和监控</p>
-<p><strong>工具集成</strong>
-* 集成更多工具以进行网络搜索、数据库查询和 API 调用</p>
-<p><strong>重试逻辑</strong>
-* 为失败的操作实现指数退避的重试逻辑</p>
-<p>通过掌握这些核心概念，你现在可以构建复杂、有状态、生产就绪的智能体，能够处理现实世界的业务流程，同时保持对执行流程的完全控制和可见性。</p>
+<h2 id="_6">依赖管理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="requirementstxt">方法一：requirements.txt<a class="headerlink" href="#requirementstxt" title="Permanent link">&para;</a></h3>
+<pre><code class="language-txt">langchain_openai&gt;=0.1.0
+langgraph&gt;=0.1.0
+requests&gt;=2.31.0
+</code></pre>
+<h3 id="pyprojecttoml">方法二：pyproject.toml<a class="headerlink" href="#pyprojecttoml" title="Permanent link">&para;</a></h3>
+<pre><code class="language-toml">[build-system]
+requires = [&quot;setuptools&quot;, &quot;wheel&quot;]
+
+[project]
+name = &quot;my-agent&quot;
+dependencies = [
+    &quot;langchain_openai&gt;=0.1.0&quot;,
+    &quot;langgraph&gt;=0.1.0&quot;,
+]
+
+[tool.setuptools.packages.find]
+where = [&quot;.&quot;]
+</code></pre>
+<h2 id="_7">图定义示例<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="agentpy-">agent.py - 图构建代码<a class="headerlink" href="#agentpy-" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langgraph.graph import Graph
+from .utils.nodes import process_input, generate_response
+from .utils.state import AgentState
+
+def create_agent_graph():
+    &quot;&quot;&quot;创建代理图&quot;&quot;&quot;
+    graph = Graph()
+
+    # 添加节点
+    graph.add_node(&quot;process&quot;, process_input)
+    graph.add_node(&quot;generate&quot;, generate_response)
+
+    # 设置边
+    graph.set_entry_point(&quot;process&quot;)
+    graph.add_edge(&quot;process&quot;, &quot;generate&quot;)
+    graph.set_finish_point(&quot;generate&quot;)
+
+    return graph.compile()
+
+# 导出的图实例
+agent = create_agent_graph()
+</code></pre>
+<h3 id="statepy-">state.py - 状态定义<a class="headerlink" href="#statepy-" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from typing import TypedDict, List, Annotated
+from langgraph.graph import add_messages
+
+class AgentState(TypedDict):
+    messages: Annotated[List, add_messages]
+    input_data: str
+    processed_data: dict
+</code></pre>
+<h3 id="nodespy-">nodes.py - 节点函数<a class="headerlink" href="#nodespy-" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from .state import AgentState
+
+def process_input(state: AgentState) -&gt; AgentState:
+    &quot;&quot;&quot;处理输入数据的节点&quot;&quot;&quot;
+    # 处理逻辑
+    state[&quot;processed_data&quot;] = {&quot;content&quot;: state[&quot;input_data&quot;]}
+    return state
+
+def generate_response(state: AgentState) -&gt; AgentState:
+    &quot;&quot;&quot;生成响应的节点&quot;&quot;&quot;
+    # 响应生成逻辑
+    state[&quot;messages&quot;].append({&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: &quot;Response&quot;})
+    return state
+</code></pre>
+<h3 id="toolspy-">tools.py - 工具函数<a class="headerlink" href="#toolspy-" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain.tools import tool
+
+@tool
+def search_tool(query: str) -&gt; str:
+    &quot;&quot;&quot;搜索工具&quot;&quot;&quot;
+    # 实现搜索逻辑
+    return f&quot;Search results for: {query}&quot;
+</code></pre>
+<h2 id="_8">环境变量配置<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="env">.env 文件示例<a class="headerlink" href="#env" title="Permanent link">&para;</a></h3>
+<pre><code class="language-env">OPENAI_API_KEY=your_openai_api_key_here
+LANGCHAIN_API_KEY=your_langchain_api_key
+DATABASE_URL=your_database_connection_string
+</code></pre>
+<h2 id="_9">部署配置最佳实践<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1-langgraphjson_1">1. 完整的 langgraph.json 配置<a class="headerlink" href="#1-langgraphjson_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-json">{
+  &quot;dependencies&quot;: [
+    &quot;langchain_openai&quot;,
+    &quot;langgraph&quot;,
+    &quot;pydantic&gt;=2.0.0&quot;,
+    &quot;./my_agent&quot;
+  ],
+  &quot;graphs&quot;: {
+    &quot;chat_agent&quot;: &quot;./my_agent/agent.py:agent&quot;,
+    &quot;analysis_agent&quot;: &quot;./my_agent/analysis.py:analyzer&quot;
+  },
+  &quot;env&quot;: &quot;./.env&quot;,
+  &quot;dockerfile_lines&quot;: [
+    &quot;RUN apt-get update &amp;&amp; apt-get install -y curl&quot;,
+    &quot;RUN pip install --upgrade pip&quot;
+  ]
+}
+</code></pre>
+<h3 id="2">2. 多图应用结构<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>对于包含多个图的应用：</p>
+<pre><code class="language-plaintext">multi-agent-app/
+├── agents/
+│   ├── chat_agent.py
+│   ├── analysis_agent.py
+│   └── utils/
+├── shared/
+│   ├── state.py
+│   └── tools.py
+├── .env
+├── requirements.txt
+└── langgraph.json
+</code></pre>
+<h2 id="_10">开发工作流程<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="1">步骤 1：初始化项目结构<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">mkdir my-langgraph-app
+cd my-langgraph-app
+mkdir -p my_agent/utils
+touch my_agent/__init__.py my_agent/utils/__init__.py
+</code></pre>
+<h3 id="2_1">步骤 2：创建核心文件<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">touch my_agent/agent.py my_agent/utils/state.py
+touch my_agent/utils/nodes.py my_agent/utils/tools.py
+touch .env requirements.txt langgraph.json
+</code></pre>
+<h3 id="3_1">步骤 3：配置依赖和环境<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash"># requirements.txt
+echo &quot;langchain_openai&quot; &gt;&gt; requirements.txt
+echo &quot;langgraph&quot; &gt;&gt; requirements.txt
+
+# .env
+echo &quot;OPENAI_API_KEY=your_key_here&quot; &gt;&gt; .env
+</code></pre>
+<h3 id="4_1">步骤 4：测试和部署<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash"># 本地测试
+python -c &quot;from my_agent.agent import agent; print('Graph compiled successfully')&quot;
+
+# 使用 LangGraph CLI 部署
+langgraph deploy
+</code></pre>
+<h2 id="_11">故障排除<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">常见问题<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>依赖解析失败</strong></li>
+<li>检查依赖包名称和版本</li>
+<li>
+<p>验证本地包路径是否正确</p>
+</li>
+<li>
+<p><strong>图加载错误</strong></p>
+</li>
+<li>确认文件路径和变量名正确</li>
+<li>
+<p>检查图编译是否有语法错误</p>
+</li>
+<li>
+<p><strong>环境变量缺失</strong></p>
+</li>
+<li>验证 <code>.env</code> 文件存在且格式正确</li>
+<li>检查生产环境变量配置</li>
+</ol>
+<h3 id="_13">调试技巧<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 在 agent.py 中添加调试信息
+def create_agent_graph():
+    print(&quot;开始构建图...&quot;)
+    graph = Graph()
+    # ... 构建逻辑
+    compiled_graph = graph.compile()
+    print(&quot;图构建完成&quot;)
+    return compiled_graph
+</code></pre>
+<h2 id="_14">总结<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>通过本教程，您应该能够：</p>
+<ul>
+<li>✅ 理解 LangGraph 应用的核心组件</li>
+<li>✅ 创建标准的项目结构</li>
+<li>✅ 配置正确的依赖管理</li>
+<li>✅ 定义和构建功能图</li>
+<li>✅ 设置环境变量和配置文件</li>
+<li>✅ 准备应用进行部署</li>
+</ul>
+<p>遵循这些最佳实践将确保您的 LangGraph 应用结构清晰、易于维护，并能够顺利部署到生产环境。</p>
 
 
 

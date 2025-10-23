@@ -10,28 +10,26 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langchain/advanced-usage/MCP/">
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/langgraph/use%20the%20graph%20api/">
       
       
-        <link rel="prev" href="../context-engineering/">
+        <link rel="prev" href="../graph%20api%20overview/">
       
       
-        <link rel="next" href="../Human-in-the-loop/">
       
-      
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Model Context Protocol - 人工智能面试集合</title>
+        <title>Use the graph API - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../../styles/extra.css">
+      <link rel="stylesheet" href="../../../styles/extra.css">
     
-      <link rel="stylesheet" href="../../../../styles/custom.css">
+      <link rel="stylesheet" href="../../../styles/custom.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mcp" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Model Context Protocol
+              Use the graph API
             
           </span>
         </div>
@@ -227,7 +225,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../machine/interview/" class="md-tabs__link">
+      <a href="../../../machine/interview/" class="md-tabs__link">
         
   
   
@@ -246,7 +244,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../deeplearning/interview/" class="md-tabs__link">
+      <a href="../../../deeplearning/interview/" class="md-tabs__link">
         
   
   
@@ -267,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../nlp/chart01/" class="md-tabs__link">
+        <a href="../../../nlp/chart01/" class="md-tabs__link">
           
   
   
@@ -300,7 +298,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../core-components/agents/" class="md-tabs__link">
+        <a href="../../langchain/core-components/agents/" class="md-tabs__link">
           
   
   
@@ -339,7 +337,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -369,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../machine/interview/" class="md-nav__link">
+      <a href="../../../machine/interview/" class="md-nav__link">
         
   
   
@@ -391,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../deeplearning/interview/" class="md-nav__link">
+      <a href="../../../deeplearning/interview/" class="md-nav__link">
         
   
   
@@ -474,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nlp/chart01/" class="md-nav__link">
+      <a href="../../../nlp/chart01/" class="md-nav__link">
         
   
   
@@ -497,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nlp/chart02/" class="md-nav__link">
+      <a href="../../../nlp/chart02/" class="md-nav__link">
         
   
   
@@ -520,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nlp/chart03/" class="md-nav__link">
+      <a href="../../../nlp/chart03/" class="md-nav__link">
         
   
   
@@ -543,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nlp/chart04/" class="md-nav__link">
+      <a href="../../../nlp/chart04/" class="md-nav__link">
         
   
   
@@ -566,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nlp/chart05/" class="md-nav__link">
+      <a href="../../../nlp/chart05/" class="md-nav__link">
         
   
   
@@ -589,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nlp/nltk/" class="md-nav__link">
+      <a href="../../../nlp/nltk/" class="md-nav__link">
         
   
   
@@ -612,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nlp/peft/" class="md-nav__link">
+      <a href="../../../nlp/peft/" class="md-nav__link">
         
   
   
@@ -764,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-components/agents/" class="md-nav__link">
+      <a href="../../langchain/core-components/agents/" class="md-nav__link">
         
   
   
@@ -787,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-components/models/" class="md-nav__link">
+      <a href="../../langchain/core-components/models/" class="md-nav__link">
         
   
   
@@ -810,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-components/messages/" class="md-nav__link">
+      <a href="../../langchain/core-components/messages/" class="md-nav__link">
         
   
   
@@ -833,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-components/tools/" class="md-nav__link">
+      <a href="../../langchain/core-components/tools/" class="md-nav__link">
         
   
   
@@ -856,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-components/short-term%20memory/" class="md-nav__link">
+      <a href="../../langchain/core-components/short-term%20memory/" class="md-nav__link">
         
   
   
@@ -879,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-components/streaming/" class="md-nav__link">
+      <a href="../../langchain/core-components/streaming/" class="md-nav__link">
         
   
   
@@ -902,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-components/middleware/" class="md-nav__link">
+      <a href="../../langchain/core-components/middleware/" class="md-nav__link">
         
   
   
@@ -925,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-components/structured-output/" class="md-nav__link">
+      <a href="../../langchain/core-components/structured-output/" class="md-nav__link">
         
   
   
@@ -953,486 +951,10 @@
                 
   
   
-    
-  
   
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    LangChain进阶用法
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            LangChain进阶用法
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Guardrails/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Guardrails
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Runtime/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Runtime
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../context-engineering/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Context-engineering
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Model Context Protocol
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Model Context Protocol
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      一、什么是 MCP？
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcp-langchain" class="md-nav__link">
-    <span class="md-ellipsis">
-      二、MCP 与 LangChain 的结合
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      三、安装
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="三、安装">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pip" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用 pip
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uv" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用 uv
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcp-transport-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      四、MCP 的通信机制（Transport Types）
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#langchain-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      五、在 LangChain 中使用 MCP 工具
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="五、在 LangChain 中使用 MCP 工具">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      示例代码
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcp-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      六、自定义 MCP Server
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="六、自定义 MCP Server">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#1-stdio" class="md-nav__link">
-    <span class="md-ellipsis">
-      示例 1：数学服务器（本地 stdio 模式）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2http" class="md-nav__link">
-    <span class="md-ellipsis">
-      示例 2：天气服务器（HTTP 模式）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stateful-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      七、保持有状态的会话（Stateful Session）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="七、保持有状态的会话（Stateful Session）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      示例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      八、延伸阅读
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      九、总结
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Human-in-the-loop/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Human-in-the-loop
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Multi-agent/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Multi-agent
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Retrieval/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Retrieval
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Long-term%20memory/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Long-term memory
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -1468,7 +990,277 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain进阶用法
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain进阶用法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/advanced-usage/Guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guardrails
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/advanced-usage/Runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Runtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/advanced-usage/context-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context-engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/advanced-usage/MCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Context Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/advanced-usage/Human-in-the-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Human-in-the-loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/advanced-usage/Multi-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/advanced-usage/Retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieval
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/advanced-usage/Long-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Long-term memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
@@ -1484,7 +1276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             LangGraph
@@ -1498,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1521,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/quickstart/" class="md-nav__link">
+      <a href="../quickstart/" class="md-nav__link">
         
   
   
@@ -1544,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/Local%20server/" class="md-nav__link">
+      <a href="../Local%20server/" class="md-nav__link">
         
   
   
@@ -1567,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
+      <a href="../thinking%20in%20Langgraph/" class="md-nav__link">
         
   
   
@@ -1590,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/workflows%2Bagents/" class="md-nav__link">
+      <a href="../workflows%2Bagents/" class="md-nav__link">
         
   
   
@@ -1613,7 +1405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/persistence/" class="md-nav__link">
+      <a href="../persistence/" class="md-nav__link">
         
   
   
@@ -1636,7 +1428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/durable%20execution/" class="md-nav__link">
+      <a href="../durable%20execution/" class="md-nav__link">
         
   
   
@@ -1659,7 +1451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/streaming/" class="md-nav__link">
+      <a href="../streaming/" class="md-nav__link">
         
   
   
@@ -1682,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/interrupts/" class="md-nav__link">
+      <a href="../interrupts/" class="md-nav__link">
         
   
   
@@ -1705,7 +1497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/time%20travel/" class="md-nav__link">
+      <a href="../time%20travel/" class="md-nav__link">
         
   
   
@@ -1728,7 +1520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/memory/" class="md-nav__link">
+      <a href="../memory/" class="md-nav__link">
         
   
   
@@ -1751,7 +1543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/Subgraphs/" class="md-nav__link">
+      <a href="../Subgraphs/" class="md-nav__link">
         
   
   
@@ -1774,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/application%20structure/" class="md-nav__link">
+      <a href="../application%20structure/" class="md-nav__link">
         
   
   
@@ -1794,8 +1586,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1812,13 +1606,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_14" checked>
         
           
           <label class="md-nav__link" for="__nav_4_3_14" id="__nav_4_3_14_label" tabindex="0">
@@ -1834,7 +1626,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_14_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_14_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3_14">
             <span class="md-nav__icon md-icon"></span>
             Graph API
@@ -1848,7 +1640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../langgraph/graph%20api%20overview/" class="md-nav__link">
+      <a href="../graph%20api%20overview/" class="md-nav__link">
         
   
   
@@ -1868,10 +1660,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../langgraph/use%20the%20graph%20api/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Use the graph API
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1882,6 +1694,270 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装与设置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义和更新状态
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="定义和更新状态">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      更新状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reducers" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 Reducers 处理状态更新
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messagesstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      MessagesState
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行时配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      重试策略
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      节点缓存
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建步骤序列
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建步骤序列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本序列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用内置简写
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建分支
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建分支">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      并行执行节点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件分支
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-reduce-send-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map-Reduce 和 Send API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建和控制循环
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建和控制循环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      设置递归限制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      异步支持
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 Command 结合控制流和状态更新
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      可视化图
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可视化图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mermaid 语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#png" class="md-nav__link">
+    <span class="md-ellipsis">
+      PNG 图像
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1935,145 +2011,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      一、什么是 MCP？
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcp-langchain" class="md-nav__link">
-    <span class="md-ellipsis">
-      二、MCP 与 LangChain 的结合
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      三、安装
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="三、安装">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pip" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用 pip
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uv" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用 uv
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcp-transport-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      四、MCP 的通信机制（Transport Types）
+      安装与设置
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#langchain-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      五、在 LangChain 中使用 MCP 工具
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="五、在 LangChain 中使用 MCP 工具">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      示例代码
+      定义和更新状态
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcp-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      六、自定义 MCP Server
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="六、自定义 MCP Server">
+    <nav class="md-nav" aria-label="定义和更新状态">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      安装
+      定义状态
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#1-stdio" class="md-nav__link">
-    <span class="md-ellipsis">
-      示例 1：数学服务器（本地 stdio 模式）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2http" class="md-nav__link">
-    <span class="md-ellipsis">
-      示例 2：天气服务器（HTTP 模式）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stateful-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      七、保持有状态的会话（Stateful Session）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="七、保持有状态的会话（Stateful Session）">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      示例
+      更新状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reducers" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 Reducers 处理状态更新
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messagesstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      MessagesState
     </span>
   </a>
   
@@ -2087,7 +2073,7 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      八、延伸阅读
+      运行时配置
     </span>
   </a>
   
@@ -2096,9 +2082,177 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      九、总结
+      重试策略
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      节点缓存
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建步骤序列
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建步骤序列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本序列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用内置简写
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建分支
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建分支">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      并行执行节点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件分支
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-reduce-send-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map-Reduce 和 Send API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建和控制循环
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建和控制循环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      设置递归限制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      异步支持
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 Command 结合控制流和状态更新
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      可视化图
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可视化图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mermaid 语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#png" class="md-nav__link">
+    <span class="md-ellipsis">
+      PNG 图像
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2121,178 +2275,351 @@
   
 
 
-<h1 id="model-context-protocol-mcp">🧭 Model Context Protocol (MCP) 教程<a class="headerlink" href="#model-context-protocol-mcp" title="Permanent link">&para;</a></h1>
-<h2 id="mcp">一、什么是 MCP？<a class="headerlink" href="#mcp" title="Permanent link">&para;</a></h2>
-<p><strong>Model Context Protocol（MCP）</strong> 是一种开放协议，用于标准化 <strong>应用程序与大语言模型（LLM）之间</strong> 的上下文与工具交互方式。
-简单来说，它定义了一种“语言模型访问外部世界的统一方式”。</p>
-<p>传统上，LLM 只能处理纯文本输入，但通过 MCP，你可以让模型访问：</p>
-<ul>
-<li>本地或远程工具（Tool）</li>
-<li>外部 API 或服务（例如天气、计算、数据库）</li>
-<li>统一上下文管理（Context Management）</li>
-</ul>
-<p>MCP 的目标是让不同平台的工具、插件、上下文模块之间实现互操作，就像 HTTP 让不同网站之间可以交互一样。</p>
-<hr />
-<h2 id="mcp-langchain">二、MCP 与 LangChain 的结合<a class="headerlink" href="#mcp-langchain" title="Permanent link">&para;</a></h2>
-<p>LangChain 提供了 <a href="https://github.com/langchain-ai/langchain-mcp-adapters"><code>langchain-mcp-adapters</code></a> 库，使 LangChain Agent 可以直接访问 MCP 定义的工具。
-这意味着你可以像调用普通函数一样，让 Agent 使用外部 MCP Server 提供的功能。</p>
-<hr />
-<h2 id="_1">三、安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="pip">使用 <code>pip</code><a class="headerlink" href="#pip" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">pip install langchain-mcp-adapters
+<h1 id="langgraph-graph-api">LangGraph Graph API 教程<a class="headerlink" href="#langgraph-graph-api" title="Permanent link">&para;</a></h1>
+<p>本教程将演示 LangGraph Graph API 的基础知识，包括状态管理、常见图结构（序列、分支、循环）的构建，以及 LangGraph 的控制特性。</p>
+<h2 id="_1">安装与设置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>首先安装 <code>langgraph</code>：</p>
+<pre><code class="language-bash">pip install -U langgraph
 </code></pre>
-<h3 id="uv">使用 <code>uv</code><a class="headerlink" href="#uv" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">uv add langchain-mcp-adapters
+<p>或使用 uv：</p>
+<pre><code class="language-bash">uv add langgraph
 </code></pre>
-<p>安装完成后，你就可以在 LangGraph 或 LangChain 中使用 MCP 工具了。</p>
-<hr />
-<h2 id="mcp-transport-types">四、MCP 的通信机制（Transport Types）<a class="headerlink" href="#mcp-transport-types" title="Permanent link">&para;</a></h2>
-<p>MCP 支持多种通信机制（传输层协议）用于客户端与服务器之间的数据交互：</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-<th>适用场景</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>stdio</strong></td>
-<td>使用标准输入/输出进行通信，客户端启动服务器进程并通过管道通信。</td>
-<td>本地运行、简单调试</td>
-</tr>
-<tr>
-<td><strong>streamable-http</strong></td>
-<td>使用 HTTP 通信，支持多客户端并发访问。</td>
-<td>远程部署、Web 服务</td>
-</tr>
-<tr>
-<td><strong>SSE (Server-Sent Events)</strong></td>
-<td>HTTP 的实时流式通信变体。</td>
-<td>实时数据更新，如聊天流</td>
-</tr>
-</tbody>
-</table>
-<p>例如：</p>
-<ul>
-<li><code>stdio</code> 更适合运行在你本机的轻量工具。</li>
-<li><code>streamable_http</code> 则适合部署在云端的多用户环境。</li>
-</ul>
-<hr />
-<h2 id="langchain-mcp">五、在 LangChain 中使用 MCP 工具<a class="headerlink" href="#langchain-mcp" title="Permanent link">&para;</a></h2>
-<p><code>MultiServerMCPClient</code> 允许连接多个 MCP Server，让一个 Agent 同时使用多个外部工具。</p>
-<h3 id="_2">示例代码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from langchain_mcp_adapters.client import MultiServerMCPClient
-from langchain.agents import create_agent
+<p><strong>提示</strong>：设置 LangSmith 以获得更好的调试体验，可以快速发现并改进 LangGraph 项目的性能问题。</p>
+<h2 id="_2">定义和更新状态<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">定义状态<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>在 LangGraph 中，状态可以是 <code>TypedDict</code>、<code>Pydantic</code> 模型或数据类。以下使用 <code>TypedDict</code>：</p>
+<pre><code class="language-python">from langchain.messages import AnyMessage
+from typing_extensions import TypedDict
 
-# 定义两个 MCP Server：一个数学计算，一个天气服务
-client = MultiServerMCPClient({
-    &quot;math&quot;: {
-        &quot;transport&quot;: &quot;stdio&quot;,
-        &quot;command&quot;: &quot;python&quot;,
-        &quot;args&quot;: [&quot;/path/to/math_server.py&quot;],  # 本地路径
-    },
-    &quot;weather&quot;: {
-        &quot;transport&quot;: &quot;streamable_http&quot;,
-        &quot;url&quot;: &quot;http://localhost:8000/mcp&quot;,  # 远程服务
-    }
-})
-
-tools = await client.get_tools()
-
-agent = create_agent(&quot;anthropic:claude-sonnet-4-5&quot;, tools)
-
-# 让模型调用 math 工具
-math_response = await agent.ainvoke({
-    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;what's (3 + 5) x 12?&quot;}]
-})
-
-# 调用 weather 工具
-weather_response = await agent.ainvoke({
-    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;what is the weather in nyc?&quot;}]
-})
+class State(TypedDict):
+    messages: list[AnyMessage]
+    extra_field: int
 </code></pre>
-<blockquote>
-<p>⚙️ 注意：
-<code>MultiServerMCPClient</code> 默认是<strong>无状态的（stateless）</strong>，每次调用都会重新创建一个会话并在执行后关闭。</p>
-</blockquote>
-<hr />
-<h2 id="mcp-server">六、自定义 MCP Server<a class="headerlink" href="#mcp-server" title="Permanent link">&para;</a></h2>
-<p>要创建自己的 MCP Server，可以使用 <a href="https://pypi.org/project/mcp/"><code>mcp</code></a> 库。
-这个库让你很容易定义工具（Tool）并将其暴露为 MCP 服务。</p>
-<h3 id="_3">安装<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">pip install mcp
+<h3 id="_4">更新状态<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>节点是读取和更新状态的 Python 函数：</p>
+<pre><code class="language-python">from langchain.messages import AIMessage
+
+def node(state: State):
+    messages = state[&quot;messages&quot;]
+    new_message = AIMessage(&quot;Hello!&quot;)
+    return {&quot;messages&quot;: messages + [new_message], &quot;extra_field&quot;: 10}
 </code></pre>
-<hr />
-<h3 id="1-stdio">示例 1：数学服务器（本地 stdio 模式）<a class="headerlink" href="#1-stdio" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from mcp.server.fastmcp import FastMCP
+<p><strong>警告</strong>：节点应直接返回状态更新，而不是改变状态。</p>
+<p>构建图：</p>
+<pre><code class="language-python">from langgraph.graph import StateGraph
 
-mcp = FastMCP(&quot;Math&quot;)
-
-@mcp.tool()
-def add(a: int, b: int) -&gt; int:
-    &quot;&quot;&quot;加法&quot;&quot;&quot;
-    return a + b
-
-@mcp.tool()
-def multiply(a: int, b: int) -&gt; int:
-    &quot;&quot;&quot;乘法&quot;&quot;&quot;
-    return a * b
-
-if __name__ == &quot;__main__&quot;:
-    mcp.run(transport=&quot;stdio&quot;)
+builder = StateGraph(State)
+builder.add_node(node)
+builder.set_entry_point(&quot;node&quot;)
+graph = builder.compile()
 </code></pre>
-<p>运行这个脚本后，它会作为一个本地 MCP Server 运行，客户端可以通过 <code>stdio</code> 调用。</p>
-<hr />
-<h3 id="2http">示例 2：天气服务器（HTTP 模式）<a class="headerlink" href="#2http" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from mcp.server.fastmcp import FastMCP
+<p>可视化图：</p>
+<pre><code class="language-python">from IPython.display import Image, display
 
-mcp = FastMCP(&quot;Weather&quot;)
-
-@mcp.tool()
-async def get_weather(location: str) -&gt; str:
-    &quot;&quot;&quot;获取指定城市的天气&quot;&quot;&quot;
-    return &quot;It's always sunny in New York&quot;
-
-if __name__ == &quot;__main__&quot;:
-    mcp.run(transport=&quot;streamable-http&quot;)
+display(Image(graph.get_graph().draw_mermaid_png()))
 </code></pre>
-<p>启动后，该服务会监听一个 HTTP 端口（默认 8000），支持远程访问。</p>
-<hr />
-<h2 id="stateful-session">七、保持有状态的会话（Stateful Session）<a class="headerlink" href="#stateful-session" title="Permanent link">&para;</a></h2>
-<p>有时你需要让 MCP Server 记住上一次的状态，比如上下文、缓存或用户数据。
-这种情况下，可以使用 <code>client.session()</code> 创建持久会话。</p>
-<h3 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from langchain_mcp_adapters.tools import load_mcp_tools
-from langchain_mcp_adapters.client import MultiServerMCPClient
+<p>调用图：</p>
+<pre><code class="language-python">from langchain.messages import HumanMessage
 
-client = MultiServerMCPClient({...})
-
-# 创建持久化 session
-async with client.session(&quot;math&quot;) as session:
-    tools = await load_mcp_tools(session)
-    # 在同一个会话中多次调用工具
+result = graph.invoke({&quot;messages&quot;: [HumanMessage(&quot;Hi&quot;)]})
 </code></pre>
-<hr />
-<h2 id="_5">八、延伸阅读<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://modelcontextprotocol.io/introduction">官方 MCP 文档</a></li>
-<li><a href="https://modelcontextprotocol.io/docs/concepts/transports">MCP Transport 机制说明</a></li>
-<li><a href="https://github.com/langchain-ai/langchain-mcp-adapters">langchain-mcp-adapters 源码</a></li>
-</ul>
-<hr />
-<h2 id="_6">九、总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>MCP 为 LLM 工具调用建立了一个<strong>开放、通用的协议层</strong>。
-它带来的关键优势包括：</p>
+<h3 id="reducers">使用 Reducers 处理状态更新<a class="headerlink" href="#reducers" title="Permanent link">&para;</a></h3>
+<p>每个状态键可以有独立的 reducer 函数来控制更新处理方式：</p>
+<pre><code class="language-python">from typing_extensions import Annotated
+
+def add(left, right):
+    return left + right
+
+class State(TypedDict):
+    messages: Annotated[list[AnyMessage], add]
+    extra_field: int
+</code></pre>
+<p>现在节点可以简化：</p>
+<pre><code class="language-python">def node(state: State):
+    new_message = AIMessage(&quot;Hello!&quot;)
+    return {&quot;messages&quot;: [new_message], &quot;extra_field&quot;: 10}
+</code></pre>
+<h3 id="messagesstate">MessagesState<a class="headerlink" href="#messagesstate" title="Permanent link">&para;</a></h3>
+<p>LangGraph 包含内置的 <code>add_messages</code> reducer：</p>
+<pre><code class="language-python">from langgraph.graph.message import add_messages
+
+class State(TypedDict):
+    messages: Annotated[list[AnyMessage], add_messages]
+    extra_field: int
+</code></pre>
+<p>也可以使用预构建的 <code>MessagesState</code>：</p>
+<pre><code class="language-python">from langgraph.graph import MessagesState
+
+class State(MessagesState):
+    extra_field: int
+</code></pre>
+<h2 id="_5">运行时配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>添加运行时配置：</p>
 <ol>
-<li><strong>统一标准</strong>：不同工具和服务之间实现一致的接口。</li>
-<li><strong>多语言支持</strong>：任何实现 MCP 协议的语言都能交互。</li>
-<li><strong>LangChain 无缝集成</strong>：可直接扩展 Agent 的外部能力。</li>
+<li>指定配置模式</li>
+<li>在节点或条件边函数签名中添加配置</li>
+<li>将配置传递到图中</li>
 </ol>
-<p>在未来，MCP 很可能成为 AI Agent 世界中的“API 协议层”，让模型能够像浏览器访问网页那样访问工具与上下文。</p>
-<hr />
-<p>如果你想，我可以接着写一篇 <strong>“手动从零实现一个最小 MCP 工具链”</strong> 教程，展示从自定义 Server 到 LangChain Agent 全流程调试。是否要继续？</p>
+<pre><code class="language-python">from langgraph.graph import END, StateGraph, START
+from langgraph.runtime import Runtime
+from typing_extensions import TypedDict
+
+# 1. 指定配置模式
+class ContextSchema(TypedDict):
+    my_runtime_value: str
+
+# 2. 定义访问配置的图
+class State(TypedDict):
+    my_state_value: str
+
+def node(state: State, runtime: Runtime[ContextSchema]):
+    if runtime.context[&quot;my_runtime_value&quot;] == &quot;a&quot;:
+        return {&quot;my_state_value&quot;: 1}
+    elif runtime.context[&quot;my_runtime_value&quot;] == &quot;b&quot;:
+        return {&quot;my_state_value&quot;: 2}
+    else:
+        raise ValueError(&quot;Unknown values.&quot;)
+
+builder = StateGraph(State, context_schema=ContextSchema)
+builder.add_node(node)
+builder.add_edge(START, &quot;node&quot;)
+builder.add_edge(&quot;node&quot;, END)
+
+graph = builder.compile()
+
+# 3. 在运行时传入配置
+print(graph.invoke({}, context={&quot;my_runtime_value&quot;: &quot;a&quot;}))
+</code></pre>
+<h2 id="_6">重试策略<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>为节点添加重试策略：</p>
+<pre><code class="language-python">from langgraph.types import RetryPolicy
+
+builder.add_node(
+    &quot;node_name&quot;,
+    node_function,
+    retry_policy=RetryPolicy(),
+)
+</code></pre>
+<h2 id="_7">节点缓存<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>配置节点缓存策略：</p>
+<pre><code class="language-python">from langgraph.types import CachePolicy
+from langgraph.cache.memory import InMemoryCache
+
+builder.add_node(
+    &quot;node_name&quot;,
+    node_function,
+    cache_policy=CachePolicy(ttl=120),
+)
+
+graph = builder.compile(cache=InMemoryCache())
+</code></pre>
+<h2 id="_8">创建步骤序列<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="_9">基本序列<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langgraph.graph import START, StateGraph
+
+builder = StateGraph(State)
+
+# 添加节点
+builder.add_node(step_1)
+builder.add_node(step_2)
+builder.add_node(step_3)
+
+# 添加边
+builder.add_edge(START, &quot;step_1&quot;)
+builder.add_edge(&quot;step_1&quot;, &quot;step_2&quot;)
+builder.add_edge(&quot;step_2&quot;, &quot;step_3&quot;)
+</code></pre>
+<h3 id="_10">使用内置简写<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">builder = StateGraph(State).add_sequence([step_1, step_2, step_3])
+builder.add_edge(START, &quot;step_1&quot;)
+</code></pre>
+<h2 id="_11">创建分支<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">并行执行节点<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import operator
+from typing import Annotated
+from typing_extensions import TypedDict
+from langgraph.graph import StateGraph, START, END
+
+class State(TypedDict):
+    aggregate: Annotated[list, operator.add]
+
+def a(state: State):
+    print(f'Adding &quot;A&quot; to {state[&quot;aggregate&quot;]}')
+    return {&quot;aggregate&quot;: [&quot;A&quot;]}
+
+def b(state: State):
+    print(f'Adding &quot;B&quot; to {state[&quot;aggregate&quot;]}')
+    return {&quot;aggregate&quot;: [&quot;B&quot;]}
+
+def c(state: State):
+    print(f'Adding &quot;C&quot; to {state[&quot;aggregate&quot;]}')
+    return {&quot;aggregate&quot;: [&quot;C&quot;]}
+
+def d(state: State):
+    print(f'Adding &quot;D&quot; to {state[&quot;aggregate&quot;]}')
+    return {&quot;aggregate&quot;: [&quot;D&quot;]}
+
+builder = StateGraph(State)
+builder.add_node(a)
+builder.add_node(b)
+builder.add_node(c)
+builder.add_node(d)
+builder.add_edge(START, &quot;a&quot;)
+builder.add_edge(&quot;a&quot;, &quot;b&quot;)
+builder.add_edge(&quot;a&quot;, &quot;c&quot;)
+builder.add_edge(&quot;b&quot;, &quot;d&quot;)
+builder.add_edge(&quot;c&quot;, &quot;d&quot;)
+builder.add_edge(&quot;d&quot;, END)
+graph = builder.compile()
+</code></pre>
+<h3 id="_13">条件分支<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from typing import Literal
+
+def conditional_edge(state: State) -&gt; Literal[&quot;b&quot;, &quot;c&quot;]:
+    return state[&quot;which&quot;]
+
+builder.add_conditional_edges(&quot;a&quot;, conditional_edge)
+</code></pre>
+<h2 id="map-reduce-send-api">Map-Reduce 和 Send API<a class="headerlink" href="#map-reduce-send-api" title="Permanent link">&para;</a></h2>
+<p>使用 Send API 实现 map-reduce 模式：</p>
+<pre><code class="language-python">from langgraph.graph import StateGraph, START, END
+from langgraph.types import Send
+from typing_extensions import TypedDict, Annotated
+import operator
+
+class OverallState(TypedDict):
+    topic: str
+    subjects: list[str]
+    jokes: Annotated[list[str], operator.add]
+    best_selected_joke: str
+
+def generate_topics(state: OverallState):
+    return {&quot;subjects&quot;: [&quot;lions&quot;, &quot;elephants&quot;, &quot;penguins&quot;]}
+
+def generate_joke(state: OverallState):
+    joke_map = {
+        &quot;lions&quot;: &quot;Why don't lions like fast food? Because they can't catch it!&quot;,
+        &quot;elephants&quot;: &quot;Why don't elephants use computers? They're afraid of the mouse!&quot;,
+        &quot;penguins&quot;: &quot;Why don't penguins like talking to strangers at parties? Because they find it hard to break the ice.&quot;
+    }
+    return {&quot;jokes&quot;: [joke_map[state[&quot;subject&quot;]]]}
+
+def continue_to_jokes(state: OverallState):
+    return [Send(&quot;generate_joke&quot;, {&quot;subject&quot;: s}) for s in state[&quot;subjects&quot;]]
+
+builder = StateGraph(OverallState)
+builder.add_node(&quot;generate_topics&quot;, generate_topics)
+builder.add_node(&quot;generate_joke&quot;, generate_joke)
+builder.add_edge(START, &quot;generate_topics&quot;)
+builder.add_conditional_edges(&quot;generate_topics&quot;, continue_to_jokes, [&quot;generate_joke&quot;])
+</code></pre>
+<h2 id="_14">创建和控制循环<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="_15">基本循环<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import operator
+from typing import Annotated, Literal
+from typing_extensions import TypedDict
+from langgraph.graph import StateGraph, START, END
+
+class State(TypedDict):
+    aggregate: Annotated[list, operator.add]
+
+def a(state: State):
+    print(f'Node A sees {state[&quot;aggregate&quot;]}')
+    return {&quot;aggregate&quot;: [&quot;A&quot;]}
+
+def b(state: State):
+    print(f'Node B sees {state[&quot;aggregate&quot;]}')
+    return {&quot;aggregate&quot;: [&quot;B&quot;]}
+
+# 定义节点
+builder = StateGraph(State)
+builder.add_node(a)
+builder.add_node(b)
+
+# 定义边
+def route(state: State) -&gt; Literal[&quot;b&quot;, END]:
+    if len(state[&quot;aggregate&quot;]) &lt; 7:
+        return &quot;b&quot;
+    else:
+        return END
+
+builder.add_edge(START, &quot;a&quot;)
+builder.add_conditional_edges(&quot;a&quot;, route)
+builder.add_edge(&quot;b&quot;, &quot;a&quot;)
+graph = builder.compile()
+</code></pre>
+<h3 id="_16">设置递归限制<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langgraph.errors import GraphRecursionError
+
+try:
+    graph.invoke({&quot;aggregate&quot;: []}, {&quot;recursion_limit&quot;: 4})
+except GraphRecursionError:
+    print(&quot;Recursion Error&quot;)
+</code></pre>
+<h2 id="_17">异步支持<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>将同步实现转换为异步实现：</p>
+<pre><code class="language-python">from langchain.chat_models import init_chat_model
+from langgraph.graph import MessagesState, StateGraph
+
+async def node(state: MessagesState):
+    new_message = await llm.ainvoke(state[&quot;messages&quot;])
+    return {&quot;messages&quot;: [new_message]}
+
+builder = StateGraph(MessagesState).add_node(node).set_entry_point(&quot;node&quot;)
+graph = builder.compile()
+
+input_message = {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hello&quot;}
+result = await graph.ainvoke({&quot;messages&quot;: [input_message]})
+</code></pre>
+<h2 id="command">使用 Command 结合控制流和状态更新<a class="headerlink" href="#command" title="Permanent link">&para;</a></h2>
+<p>使用 <code>Command</code> 对象在同一节点中执行状态更新和决定下一个节点：</p>
+<pre><code class="language-python">import random
+from typing_extensions import TypedDict, Literal
+from langgraph.graph import StateGraph, START
+from langgraph.types import Command
+
+class State(TypedDict):
+    foo: str
+
+def node_a(state: State) -&gt; Command[Literal[&quot;node_b&quot;, &quot;node_c&quot;]]:
+    print(&quot;Called A&quot;)
+    value = random.choice([&quot;b&quot;, &quot;c&quot;])
+    if value == &quot;b&quot;:
+        goto = &quot;node_b&quot;
+    else:
+        goto = &quot;node_c&quot;
+
+    return Command(
+        update={&quot;foo&quot;: value},
+        goto=goto,
+    )
+
+def node_b(state: State):
+    print(&quot;Called B&quot;)
+    return {&quot;foo&quot;: state[&quot;foo&quot;] + &quot;b&quot;}
+
+def node_c(state: State):
+    print(&quot;Called C&quot;)
+    return {&quot;foo&quot;: state[&quot;foo&quot;] + &quot;c&quot;}
+
+builder = StateGraph(State)
+builder.add_edge(START, &quot;node_a&quot;)
+builder.add_node(node_a)
+builder.add_node(node_b)
+builder.add_node(node_c)
+
+graph = builder.compile()
+</code></pre>
+<h2 id="_18">可视化图<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<h3 id="mermaid">Mermaid 语法<a class="headerlink" href="#mermaid" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">print(app.get_graph().draw_mermaid())
+</code></pre>
+<h3 id="png">PNG 图像<a class="headerlink" href="#png" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from IPython.display import Image, display
+
+display(Image(app.get_graph().draw_mermaid_png()))
+</code></pre>
+<p>本教程涵盖了 LangGraph Graph API 的核心概念，包括状态管理、序列、分支、循环、异步支持和可视化。这些基础将帮助您构建复杂的 AI 应用程序工作流。</p>
 
 
 
@@ -2343,10 +2670,10 @@ async with client.session(&quot;math&quot;) as session:
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -2354,7 +2681,7 @@ async with client.session(&quot;math&quot;) as session:
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="../../../../styles/javascripts/katex.js"></script>
+        <script src="../../../styles/javascripts/katex.js"></script>
       
     
   </body>
