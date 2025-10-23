@@ -97,6 +97,17 @@ nav:
           - Local server: llmapps/langgraph/Local server.md
           - Thinking in LangGraph: llmapps/langgraph/thinking in Langgraph.md
           - Workflows+agents: llmapps/langgraph/workflows+agents.md
+          - Persistence: llmapps/langgraph/persistence.md
+          - Durable execution: llmapps/langgraph/durable execution.md
+          - Streaming: llmapps/langgraph/streaming.md
+          - Interrupts: llmapps/langgraph/interrupts.md
+          - Time travel: llmapps/langgraph/time travel.md
+          - Memory: llmapps/langgraph/memory.md
+          - Subgraphs: llmapps/langgraph/Subgraphs.md
+          - Application structure: llmapps/langgraph/application structure.md
+          - Graph API:
+              - Graph API: llmapps/langgraph/graph api overview.md
+              - Use the graph API: llmapps/langgraph/use the graph api.md
 
 
 
