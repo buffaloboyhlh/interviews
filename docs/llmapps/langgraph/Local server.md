@@ -203,37 +203,40 @@ curl -s --request POST \
 ### 常见问题
 
 1. **端口冲突**
-   - 如果 2024 端口被占用，使用 `--port` 参数指定其他端口：
-   ```shell
-   langgraph dev --port 3030
-   ```
+       - 如果 2024 端口被占用，使用 `--port` 参数指定其他端口：
+
+```shell
+         langgraph dev --port 3030
+```
 
 2. **API 密钥错误**
-   - 确保 `.env` 文件中的 `LANGSMITH_API_KEY` 设置正确
+
+      - 确保 `.env` 文件中的 `LANGSMITH_API_KEY` 设置正确
 
 3. **依赖安装失败**
-   - 确保 Python 版本 >= 3.11
-   - 尝试使用虚拟环境
+     - 确保 Python 版本 >= 3.11
+     - 尝试使用虚拟环境
 
 4. **模板创建失败**
-   - 检查网络连接
-   - 尝试使用不同的模板名称
+     - 检查网络连接
+     - 尝试使用不同的模板名称
 
 ### 调试技巧
 
 1. **查看详细日志**
-   ```shell
+```shell
    langgraph dev --verbose
-   ```
+```
 
 2. **检查应用配置**
-   - 确认 `langgraph.json` 文件配置正确
-   - 验证助手名称与代码中使用的名称一致
+     - 确认 `langgraph.json` 文件配置正确
+     - 验证助手名称与代码中使用的名称一致
 
 3. **测试连接**
-   ```bash
+
+```bash
    curl http://localhost:2024/health
-   ```
+```
 
 ## 项目结构说明
 
