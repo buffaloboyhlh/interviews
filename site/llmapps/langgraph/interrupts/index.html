@@ -2211,17 +2211,21 @@
 <p>当触发中断时，LangGraph 会使用其<a href="/oss/python/langgraph/persistence">持久化层</a>保存图状态，并无限期等待直到你恢复执行。</p>
 <h2 id="_2">核心概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">中断的工作原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>中断通过在图的节点中调用 <code>interrupt()</code> 函数来工作：
-- 中断是<strong>动态的</strong> - 可以在代码的任何位置放置，并基于应用逻辑条件触发
-- 检查点保持你的位置 - 检查点器保存确切的图状态，即使处于错误状态也能稍后恢复
-- <code>thread_id</code> 是指针 - 设置 <code>config={"configurable": {"thread_id": ...}}</code> 来告诉检查点器加载哪个状态
-- 中断负载显示为 <code>__interrupt__</code> - 传递给 <code>interrupt()</code> 的值会在 <code>__interrupt__</code> 字段中返回给调用者</p>
+<p>中断通过在图的节点中调用 <code>interrupt()</code> 函数来工作：</p>
+<ul>
+<li>中断是<strong>动态的</strong> - 可以在代码的任何位置放置，并基于应用逻辑条件触发</li>
+<li>检查点保持你的位置 - 检查点器保存确切的图状态，即使处于错误状态也能稍后恢复</li>
+<li><code>thread_id</code> 是指针 - 设置 <code>config={"configurable": {"thread_id": ...}}</code> 来告诉检查点器加载哪个状态</li>
+<li>中断负载显示为 <code>__interrupt__</code> - 传递给 <code>interrupt()</code> 的值会在 <code>__interrupt__</code> 字段中返回给调用者</li>
+</ul>
 <h2 id="_4">基础用法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="1-interrupt">1. 使用 <code>interrupt</code> 暂停执行<a class="headerlink" href="#1-interrupt" title="Permanent link">&para;</a></h3>
-<p>要使用中断，你需要：
-1. <strong>检查点器</strong> - 持久化图状态（生产环境使用持久化检查点器）
-2. <strong>线程 ID</strong> - 在配置中指定，以便运行时知道从哪个状态恢复
-3. <strong>调用 <code>interrupt()</code></strong> - 在需要暂停的地方调用</p>
+<p>要使用中断，你需要：</p>
+<ol>
+<li><strong>检查点器</strong> - 持久化图状态（生产环境使用持久化检查点器）</li>
+<li><strong>线程 ID</strong> - 在配置中指定，以便运行时知道从哪个状态恢复</li>
+<li><strong>调用 <code>interrupt()</code></strong> - 在需要暂停的地方调用</li>
+</ol>
 <pre><code class="language-python">from langgraph.types import interrupt
 
 def approval_node(state: State):
@@ -2231,12 +2235,14 @@ def approval_node(state: State):
     # 当你恢复时，Command(resume=...) 的值会在这里返回
     return {&quot;approved&quot;: approved}
 </code></pre>
-<p>当调用 <code>interrupt</code> 时会发生：
-1. <strong>图执行被挂起</strong>在调用 <code>interrupt</code> 的确切位置
-2. <strong>状态被保存</strong>以便稍后恢复执行
-3. <strong>值返回给调用者</strong>在 <code>__interrupt__</code> 字段下
-4. <strong>图无限期等待</strong>直到你恢复执行
-5. <strong>响应传回节点</strong>当你恢复时，成为 <code>interrupt()</code> 调用的返回值</p>
+<p>当调用 <code>interrupt</code> 时会发生：</p>
+<ol>
+<li><strong>图执行被挂起</strong>在调用 <code>interrupt</code> 的确切位置</li>
+<li><strong>状态被保存</strong>以便稍后恢复执行</li>
+<li><strong>值返回给调用者</strong>在 <code>__interrupt__</code> 字段下</li>
+<li><strong>图无限期等待</strong>直到你恢复执行</li>
+<li><strong>响应传回节点</strong>当你恢复时，成为 <code>interrupt()</code> 调用的返回值</li>
+</ol>
 <h3 id="2">2. 恢复中断<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>中断暂停执行后，通过使用包含恢复值的 <code>Command</code> 再次调用图来恢复：</p>
 <pre><code class="language-python">from langgraph.types import Command
@@ -2253,11 +2259,13 @@ print(result[&quot;__interrupt__&quot;])
 # resume 负载成为节点内 interrupt() 的返回值
 graph.invoke(Command(resume=True), config=config)
 </code></pre>
-<p><strong>恢复的关键点：</strong>
-- 必须使用与中断发生时<strong>相同的线程 ID</strong>
-- 传递给 <code>Command(resume=...)</code> 的值成为 <code>interrupt</code> 调用的返回值
-- 节点从调用 <code>interrupt</code> 的节点开头重新开始
-- 可以传递任何 JSON 可序列化的值作为恢复值</p>
+<p><strong>恢复的关键点：</strong></p>
+<ul>
+<li>必须使用与中断发生时<strong>相同的线程 ID</strong></li>
+<li>传递给 <code>Command(resume=...)</code> 的值成为 <code>interrupt</code> 调用的返回值</li>
+<li>节点从调用 <code>interrupt</code> 的节点开头重新开始</li>
+<li>可以传递任何 JSON 可序列化的值作为恢复值</li>
+</ul>
 <h2 id="_5">常用模式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="1">1. 批准或拒绝工作流<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>最常见的用途是在关键操作前暂停并请求批准：</p>
