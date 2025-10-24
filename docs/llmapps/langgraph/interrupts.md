@@ -64,6 +64,7 @@ graph.invoke(Command(resume=True), config=config)
 ```
 
 **恢复要点**：
+
 - 必须使用**相同的线程ID**
 - `Command(resume=...)` 的值成为 `interrupt()` 的返回值
 - 节点会从头开始重新执行
