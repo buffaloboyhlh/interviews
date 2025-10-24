@@ -108,6 +108,10 @@ nav:
           - Graph API:
               - Graph API: llmapps/langgraph/graph api overview.md
               - Use the graph API: llmapps/langgraph/use the graph api.md
+  - 向量数据库:
+      - Chroma:  Vector Stores/Chroma/tutorial.md
+      - Milvus: Vector Stores/Milvus/tutorial.md
+      - FAISS: Vector Stores/FAISS/tutorial.md
 
 
 

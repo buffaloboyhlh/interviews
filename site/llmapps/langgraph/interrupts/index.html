@@ -2305,10 +2305,12 @@ print(result[&quot;__interrupt__&quot;])
 # resume 的值会成为节点内 interrupt() 的返回值
 graph.invoke(Command(resume=True), config=config)
 </code></pre>
-<p><strong>恢复要点</strong>：
-- 必须使用<strong>相同的线程ID</strong>
-- <code>Command(resume=...)</code> 的值成为 <code>interrupt()</code> 的返回值
-- 节点会从头开始重新执行</p>
+<p><strong>恢复要点</strong>：</p>
+<ul>
+<li>必须使用<strong>相同的线程ID</strong></li>
+<li><code>Command(resume=...)</code> 的值成为 <code>interrupt()</code> 的返回值</li>
+<li>节点会从头开始重新执行</li>
+</ul>
 <h2 id="_7">常见使用模式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">1. 审批工作流<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <p>在关键操作前暂停并请求批准：</p>
