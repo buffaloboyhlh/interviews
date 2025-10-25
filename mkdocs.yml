@@ -91,6 +91,10 @@ nav:
           - Retrieval: llmapps/langchain/advanced-usage/Retrieval.md
           - Long-term memory: llmapps/langchain/advanced-usage/Long-term memory.md
 
+      - LangChain应用开发:
+          - 相似搜索: llmapps/apps/langchain/semantic search.md
+          - RAG agent: llmapps/apps/langchain/RAG agent.md
+
       - LangGraph:
           - 概述: llmapps/langgraph/overview.md
           - 快速入门: llmapps/langgraph/quickstart.md
