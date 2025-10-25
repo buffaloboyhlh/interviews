@@ -12,7 +12,7 @@
 import os
 
 os.environ['LANGSMITH_TRACING'] ='true'
-os.environ['LANGSMITH_API_KEY'] = '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'
+os.environ['LANGSMITH_API_KEY'] = '***************************************'
 ```
 
 ### 2️⃣ 加载文档
