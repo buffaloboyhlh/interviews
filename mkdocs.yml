@@ -94,6 +94,7 @@ nav:
       - LangChain应用开发:
           - 相似搜索: llmapps/apps/langchain/semantic search.md
           - RAG agent: llmapps/apps/langchain/RAG agent.md
+          - 人工审核: llmapps/apps/langchain/humain_middleware.md
 
       - LangGraph:
           - 概述: llmapps/langgraph/overview.md
