@@ -117,6 +117,7 @@ nav:
       - Chroma:  Vector Stores/Chroma/tutorial.md
       - Milvus: Vector Stores/Milvus/tutorial.md
       - FAISS: Vector Stores/FAISS/tutorial.md
+  - Streamlit: llmapps/apps/Streamlit/tutorial.md
 
 
 
