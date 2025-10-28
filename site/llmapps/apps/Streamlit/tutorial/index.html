@@ -1,0 +1,3588 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Buffalo">
+      
+      
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/llmapps/apps/Streamlit/tutorial/">
+      
+      
+        <link rel="prev" href="../../../../Vector%20Stores/FAISS/tutorial/">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Streamlit - 人工智能面试集合</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../styles/extra.css">
+    
+      <link rel="stylesheet" href="../../../../styles/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            人工智能面试集合
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Streamlit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../machine/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../deeplearning/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../nlp/chart01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  从零开始学NLP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../langchain/core-components/agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  大模型应用开发
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Vector%20Stores/Chroma/tutorial/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  向量数据库
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Streamlit
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    人工智能面试集合
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../machine/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    机器学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deeplearning/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    从零开始学NLP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            从零开始学NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 1 章：文本表示与词向量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 2 章：RNN/LSTM 序列模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 3 章：Transformer 与 Self-Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 4 章：BERT / GPT 原理与微调
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/chart05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 5 章：NLP 实战与部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/nltk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    nltk库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nlp/peft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    peft库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型应用开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            大模型应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain核心组件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain核心组件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/core-components/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    智能体（Agents）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/core-components/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型（Models）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/core-components/messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消息（Messages）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/core-components/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    工具（Tools）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/core-components/short-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    短期记忆（Short-term memory）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/core-components/streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    流（Streaming）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/core-components/middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    中间件（Middleware）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/core-components/structured-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    结构化输出（Structured output）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain进阶用法
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain进阶用法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/advanced-usage/Guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guardrails
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/advanced-usage/Runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Runtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/advanced-usage/context-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context-engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/advanced-usage/MCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Context Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/advanced-usage/Human-in-the-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Human-in-the-loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/advanced-usage/Multi-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/advanced-usage/Retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieval
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langchain/advanced-usage/Long-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Long-term memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain应用开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/semantic%20search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    相似搜索
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/RAG%20agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langchain/humain_middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    人工审核
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangGraph
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            LangGraph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/Local%20server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thinking in LangGraph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/workflows%2Bagents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflows+agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/persistence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Persistence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/durable%20execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Durable execution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Streaming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/interrupts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interrupts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/time%20travel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time travel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/Subgraphs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraphs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/application%20structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_14" id="__nav_4_4_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Graph API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_14">
+            <span class="md-nav__icon md-icon"></span>
+            Graph API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/graph%20api%20overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graph API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../langgraph/use%20the%20graph%20api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use the graph API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    向量数据库
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            向量数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Vector%20Stores/Chroma/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chroma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Vector%20Stores/Milvus/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Milvus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Vector%20Stores/FAISS/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAISS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Streamlit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Streamlit
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念介绍
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概念介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#streamlit_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是 Streamlit？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心特点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础代码示例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础代码示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 安装和基础应用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      页面布局详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="页面布局详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 侧边栏布局
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 列布局
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 容器和扩展器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 标签页布局
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session State 详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session State 详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-session-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Session State 基础
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-session-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Session State 高级用法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 表单和状态结合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 缓存和性能优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      完整应用示例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="完整应用示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 综合应用：数据分析仪表板
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行应用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部署应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      本地部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署到 Streamlit Cloud
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署到其他平台
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心概念掌握：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念介绍
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概念介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#streamlit_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是 Streamlit？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心特点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础代码示例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础代码示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 安装和基础应用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      页面布局详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="页面布局详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 侧边栏布局
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 列布局
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 容器和扩展器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 标签页布局
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session State 详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session State 详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-session-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Session State 基础
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-session-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Session State 高级用法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 表单和状态结合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 缓存和性能优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      完整应用示例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="完整应用示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 综合应用：数据分析仪表板
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行应用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部署应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      本地部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署到 Streamlit Cloud
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署到其他平台
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心概念掌握：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="streamlit">Streamlit 完整教程：从基础到高级<a class="headerlink" href="#streamlit" title="Permanent link">&para;</a></h1>
+<h2 id="_1">概念介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="streamlit_1">什么是 Streamlit？<a class="headerlink" href="#streamlit_1" title="Permanent link">&para;</a></h3>
+<p>Streamlit 是一个开源的 Python 框架，专门用于快速构建和分享数据科学和机器学习 Web 应用。它让数据科学家和工程师能够用简单的 Python 脚本创建交互式、美观的 Web 应用，而无需前端开发经验。</p>
+<h3 id="_2">核心特点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>简单易用</strong>：只需几行 Python 代码</li>
+<li><strong>实时更新</strong>：代码保存后应用立即更新</li>
+<li><strong>丰富组件</strong>：内置多种交互式组件</li>
+<li><strong>无需前端</strong>：纯 Python，无需 HTML/CSS/JavaScript</li>
+<li><strong>数据集成</strong>：完美支持 Pandas、Matplotlib、Plotly 等</li>
+</ul>
+<h2 id="_3">基础代码示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 安装和基础应用<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 安装 streamlit
+# pip install streamlit
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 设置页面配置（必须在最前面）
+st.set_page_config(
+    page_title=&quot;我的 Streamlit 应用&quot;,
+    page_icon=&quot;🚀&quot;,
+    layout=&quot;wide&quot;,  # &quot;wide&quot; 或 &quot;centered&quot;
+    initial_sidebar_state=&quot;expanded&quot;,  # &quot;auto&quot;, &quot;expanded&quot;, &quot;collapsed&quot;
+    menu_items={
+        'Get Help': 'https://docs.streamlit.io/',
+        'Report a bug': &quot;https://github.com/streamlit/streamlit/issues&quot;,
+        'About': &quot;# 这是我的第一个 Streamlit 应用!&quot;
+    }
+)
+
+# 标题和文本
+st.title(&quot;🎯 我的 Streamlit 教程应用&quot;)
+st.header(&quot;这是主标题&quot;)
+st.subheader(&quot;这是副标题&quot;)
+
+# Markdown 支持
+st.markdown(&quot;&quot;&quot;
+这是 **粗体** 和 *斜体* 文本
+- 列表项 1
+- 列表项 2
+- 列表项 3
+
+[这是一个链接](https://streamlit.io)
+&quot;&quot;&quot;)
+
+# 代码块
+st.code(&quot;&quot;&quot;
+import streamlit as st
+st.write('Hello World!')
+&quot;&quot;&quot;, language='python')
+</code></pre>
+<h2 id="_4">页面布局详解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="2">2. 侧边栏布局<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 侧边栏 - 所有以 st.sidebar 开头的组件都会显示在侧边栏
+st.sidebar.title(&quot;🎛️ 控制面板&quot;)
+st.sidebar.markdown(&quot;这里是应用的配置选项&quot;)
+
+# 侧边栏组件
+sidebar_option = st.sidebar.radio(
+    &quot;选择功能&quot;,
+    [&quot;数据查看&quot;, &quot;数据分析&quot;, &quot;数据可视化&quot;]
+)
+
+# 侧边栏文件上传
+uploaded_file = st.sidebar.file_uploader(
+    &quot;上传数据文件&quot;,
+    type=['csv', 'xlsx', 'txt']
+)
+
+# 侧边栏下载按钮
+if st.sidebar.button(&quot;下载示例数据&quot;):
+    # 创建示例数据供下载
+    sample_data = pd.DataFrame({
+        'x': range(100),
+        'y': np.random.randn(100)
+    })
+    csv = sample_data.to_csv(index=False)
+    st.sidebar.download_button(
+        label=&quot;下载 CSV&quot;,
+        data=csv,
+        file_name=&quot;sample_data.csv&quot;,
+        mime=&quot;text/csv&quot;
+    )
+</code></pre>
+<h3 id="3">3. 列布局<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 列布局示例
+st.header(&quot;📐 列布局示例&quot;)
+
+# 创建等宽列
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.subheader(&quot;第一列&quot;)
+    st.metric(&quot;温度&quot;, &quot;25°C&quot;, &quot;1.2°C&quot;)
+    st.button(&quot;列1按钮&quot;, key=&quot;btn1&quot;)
+
+with col2:
+    st.subheader(&quot;第二列&quot;)
+    st.metric(&quot;湿度&quot;, &quot;60%&quot;, &quot;-5%&quot;)
+    st.button(&quot;列2按钮&quot;, key=&quot;btn2&quot;)
+
+with col3:
+    st.subheader(&quot;第三列&quot;)
+    st.metric(&quot;压力&quot;, &quot;1013 hPa&quot;, &quot;2 hPa&quot;)
+    st.button(&quot;列3按钮&quot;, key=&quot;btn3&quot;)
+
+# 创建不等宽列
+st.header(&quot;不等宽列布局&quot;)
+wide_col, narrow_col = st.columns([3, 1])
+
+with wide_col:
+    st.subheader(&quot;主要内容区&quot;)
+    # 生成示例数据
+    data = pd.DataFrame({
+        '姓名': ['张三', '李四', '王五', '赵六'],
+        '年龄': [25, 30, 35, 28],
+        '城市': ['北京', '上海', '广州', '深圳'],
+        '分数': [85, 92, 78, 96]
+    })
+    st.dataframe(data, use_container_width=True)
+
+with narrow_col:
+    st.subheader(&quot;控制区&quot;)
+    show_age = st.checkbox(&quot;显示年龄&quot;)
+    show_city = st.checkbox(&quot;显示城市&quot;)
+    theme = st.selectbox(&quot;主题&quot;, [&quot;浅色&quot;, &quot;深色&quot;])
+</code></pre>
+<h3 id="4">4. 容器和扩展器<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 容器示例
+st.header(&quot;📦 容器和扩展器&quot;)
+
+# 使用容器组织相关内容
+with st.container():
+    st.subheader(&quot;相关功能组&quot;)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        name = st.text_input(&quot;姓名&quot;)
+        email = st.text_input(&quot;邮箱&quot;)
+
+    with col2:
+        phone = st.text_input(&quot;电话&quot;)
+        department = st.selectbox(&quot;部门&quot;, [&quot;技术&quot;, &quot;市场&quot;, &quot;销售&quot;, &quot;人事&quot;])
+
+    st.info(&quot;这是一个信息容器，相关的内容可以放在一起&quot;)
+
+# 扩展器（可折叠内容）
+with st.expander(&quot;📊 点击查看详细统计信息&quot;, expanded=False):
+    st.write(&quot;### 数据统计&quot;)
+    if 'data' in locals():
+        st.write(f&quot;数据行数: {len(data)}&quot;)
+        st.write(f&quot;数据列数: {len(data.columns)}&quot;)
+        st.write(&quot;数据类型:&quot;)
+        st.write(data.dtypes)
+
+    # 在扩展器内部还可以有图表
+    fig, ax = plt.subplots()
+    if 'data' in locals() and '年龄' in data.columns:
+        ax.hist(data['年龄'], bins=10, alpha=0.7, color='skyblue')
+        ax.set_title('年龄分布')
+        st.pyplot(fig)
+
+# 多个扩展器
+expander1 = st.expander(&quot;📝 使用说明&quot;)
+with expander1:
+    st.write(&quot;&quot;&quot;
+    这是一个 Streamlit 应用的使用说明：
+    1. 首先在侧边栏上传数据
+    2. 然后选择分析功能
+    3. 查看结果和可视化
+    &quot;&quot;&quot;)
+
+expander2 = st.expander(&quot;⚙️ 高级设置&quot;)
+with expander2:
+    precision = st.slider(&quot;计算精度&quot;, 1, 10, 2)
+    auto_refresh = st.checkbox(&quot;自动刷新&quot;)
+    refresh_interval = st.number_input(&quot;刷新间隔(秒)&quot;, 1, 60, 5)
+</code></pre>
+<h3 id="5">5. 标签页布局<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 标签页布局 (Streamlit 1.23.0+)
+st.header(&quot;📑 标签页布局&quot;)
+
+tab1, tab2, tab3, tab4 = st.tabs([&quot;📊 数据&quot;, &quot;📈 图表&quot;, &quot;🔧 设置&quot;, &quot;ℹ️ 关于&quot;])
+
+with tab1:
+    st.subheader(&quot;数据管理&quot;)
+    if 'data' in locals():
+        st.dataframe(data, use_container_width=True)
+
+        # 数据编辑功能
+        st.subheader(&quot;数据编辑&quot;)
+        edited_data = st.data_editor(data, num_rows=&quot;dynamic&quot;)
+        if st.button(&quot;保存更改&quot;):
+            st.success(&quot;数据已更新！&quot;)
+
+with tab2:
+    st.subheader(&quot;数据可视化&quot;)
+
+    if 'data' in locals():
+        chart_type = st.selectbox(&quot;选择图表类型&quot;, [&quot;折线图&quot;, &quot;柱状图&quot;, &quot;散点图&quot;])
+
+        if chart_type == &quot;折线图&quot;:
+            st.line_chart(data.set_index('姓名')['分数'])
+        elif chart_type == &quot;柱状图&quot;:
+            st.bar_chart(data.set_index('姓名')['分数'])
+        elif chart_type == &quot;散点图&quot;:
+            fig = px.scatter(data, x='年龄', y='分数', text='姓名')
+            st.plotly_chart(fig, use_container_width=True)
+
+with tab3:
+    st.subheader(&quot;应用设置&quot;)
+
+    # 主题设置
+    theme = st.selectbox(&quot;选择主题&quot;, [&quot;浅色&quot;, &quot;深色&quot;, &quot;系统默认&quot;])
+
+    # 数据设置
+    st.subheader(&quot;数据设置&quot;)
+    decimal_places = st.slider(&quot;小数位数&quot;, 0, 6, 2)
+    date_format = st.selectbox(&quot;日期格式&quot;, [&quot;YYYY-MM-DD&quot;, &quot;DD/MM/YYYY&quot;, &quot;MM/DD/YYYY&quot;])
+
+    # 保存设置
+    if st.button(&quot;应用设置&quot;):
+        st.success(&quot;设置已保存！&quot;)
+
+with tab4:
+    st.subheader(&quot;关于应用&quot;)
+    st.write(&quot;&quot;&quot;
+    ## Streamlit 数据仪表板
+
+    **版本**: 1.0.0
+    **作者**: Your Name
+    **描述**: 这是一个用于数据分析和可视化的 Streamlit 应用
+
+    ### 功能特性
+    - 数据上传和查看
+    - 交互式数据分析
+    - 多种可视化图表
+    - 可自定义的设置
+    &quot;&quot;&quot;)
+</code></pre>
+<h2 id="session-state">Session State 详解<a class="headerlink" href="#session-state" title="Permanent link">&para;</a></h2>
+<h3 id="6-session-state">6. Session State 基础<a class="headerlink" href="#6-session-state" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># Session State 管理应用状态
+st.header(&quot;💾 Session State 管理&quot;)
+
+# 初始化 session state
+if 'counter' not in st.session_state:
+    st.session_state.counter = 0
+if 'user_data' not in st.session_state:
+    st.session_state.user_data = {}
+if 'app_state' not in st.session_state:
+    st.session_state.app_state = {
+        'theme': 'light',
+        'language': 'zh',
+        'data_loaded': False
+    }
+
+# 计数器示例
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    if st.button(&quot;增加计数&quot;):
+        st.session_state.counter += 1
+
+with col2:
+    if st.button(&quot;减少计数&quot;):
+        st.session_state.counter -= 1
+
+with col3:
+    if st.button(&quot;重置计数&quot;):
+        st.session_state.counter = 0
+
+st.metric(&quot;当前计数&quot;, st.session_state.counter)
+
+# 显示所有 session state
+with st.expander(&quot;查看所有 Session State&quot;):
+    st.write(&quot;计数器:&quot;, st.session_state.counter)
+    st.write(&quot;用户数据:&quot;, st.session_state.user_data)
+    st.write(&quot;应用状态:&quot;, st.session_state.app_state)
+</code></pre>
+<h3 id="7-session-state">7. Session State 高级用法<a class="headerlink" href="#7-session-state" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 复杂状态管理
+st.header(&quot;🔄 复杂状态管理&quot;)
+
+# 用户会话管理
+if 'user_session' not in st.session_state:
+    st.session_state.user_session = {
+        'logged_in': False,
+        'username': '',
+        'preferences': {},
+        'history': []
+    }
+
+# 登录系统
+st.subheader(&quot;用户会话管理&quot;)
+
+if not st.session_state.user_session['logged_in']:
+    with st.form(&quot;login_form&quot;):
+        username = st.text_input(&quot;用户名&quot;)
+        password = st.text_input(&quot;密码&quot;, type=&quot;password&quot;)
+        submit = st.form_submit_button(&quot;登录&quot;)
+
+        if submit:
+            if username and password:  # 简单验证
+                st.session_state.user_session.update({
+                    'logged_in': True,
+                    'username': username,
+                    'login_time': pd.Timestamp.now()
+                })
+                st.success(f&quot;欢迎 {username}!&quot;)
+                st.rerun()
+else:
+    st.success(f&quot;已登录为: {st.session_state.user_session['username']}&quot;)
+
+    # 用户偏好设置
+    with st.form(&quot;preferences_form&quot;):
+        st.subheader(&quot;用户偏好设置&quot;)
+        theme = st.selectbox(&quot;主题&quot;, [&quot;浅色&quot;, &quot;深色&quot;, &quot;自动&quot;])
+        language = st.selectbox(&quot;语言&quot;, [&quot;中文&quot;, &quot;英文&quot;])
+        notifications = st.checkbox(&quot;启用通知&quot;)
+
+        if st.form_submit_button(&quot;保存偏好&quot;):
+            st.session_state.user_session['preferences'] = {
+                'theme': theme,
+                'language': language,
+                'notifications': notifications
+            }
+            st.success(&quot;偏好设置已保存!&quot;)
+
+    # 退出登录
+    if st.button(&quot;退出登录&quot;):
+        # 保存历史记录
+        if 'history' not in st.session_state.user_session:
+            st.session_state.user_session['history'] = []
+
+        st.session_state.user_session['history'].append({
+            'action': 'logout',
+            'time': pd.Timestamp.now()
+        })
+
+        st.session_state.user_session['logged_in'] = False
+        st.info(&quot;已退出登录&quot;)
+        st.rerun()
+
+# 购物车示例
+st.subheader(&quot;购物车示例&quot;)
+
+if 'shopping_cart' not in st.session_state:
+    st.session_state.shopping_cart = []
+
+products = [
+    {&quot;id&quot;: 1, &quot;name&quot;: &quot;笔记本电脑&quot;, &quot;price&quot;: 5999},
+    {&quot;id&quot;: 2, &quot;name&quot;: &quot;无线鼠标&quot;, &quot;price&quot;: 199},
+    {&quot;id&quot;: 3, &quot;name&quot;: &quot;机械键盘&quot;, &quot;price&quot;: 599},
+    {&quot;id&quot;: 4, &quot;name&quot;: &quot;显示器&quot;, &quot;price&quot;: 1299},
+]
+
+# 显示商品列表
+st.write(&quot;### 商品列表&quot;)
+for product in products:
+    col1, col2, col3 = st.columns([3, 1, 1])
+    with col1:
+        st.write(f&quot;**{product['name']}** - ¥{product['price']}&quot;)
+    with col2:
+        if st.button(f&quot;加入购物车&quot;, key=f&quot;add_{product['id']}&quot;):
+            st.session_state.shopping_cart.append(product)
+            st.success(f&quot;已添加 {product['name']} 到购物车&quot;)
+    with col3:
+        if st.button(f&quot;移除&quot;, key=f&quot;remove_{product['id']}&quot;):
+            # 移除最后一个匹配的商品
+            for i in range(len(st.session_state.shopping_cart)-1, -1, -1):
+                if st.session_state.shopping_cart[i]['id'] == product['id']:
+                    st.session_state.shopping_cart.pop(i)
+                    st.info(f&quot;已移除 {product['name']}&quot;)
+                    break
+
+# 显示购物车
+st.write(&quot;### 购物车&quot;)
+if st.session_state.shopping_cart:
+    cart_df = pd.DataFrame(st.session_state.shopping_cart)
+    st.dataframe(cart_df)
+
+    total_price = sum(item['price'] for item in st.session_state.shopping_cart)
+    st.metric(&quot;总价&quot;, f&quot;¥{total_price}&quot;)
+
+    if st.button(&quot;清空购物车&quot;):
+        st.session_state.shopping_cart = []
+        st.rerun()
+else:
+    st.info(&quot;购物车为空&quot;)
+</code></pre>
+<h3 id="8">8. 表单和状态结合<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 表单状态管理
+st.header(&quot;📝 表单状态管理&quot;)
+
+# 多步骤表单
+if 'form_step' not in st.session_state:
+    st.session_state.form_step = 1
+if 'form_data' not in st.session_state:
+    st.session_state.form_data = {}
+
+# 步骤指示器
+steps = [&quot;基本信息&quot;, &quot;详细资料&quot;, &quot;确认信息&quot;]
+current_step = st.session_state.form_step
+
+# 显示进度
+progress = current_step / len(steps)
+st.progress(progress)
+st.write(f&quot;步骤 {current_step}/{len(steps)}: {steps[current_step-1]}&quot;)
+
+# 多步骤表单内容
+if current_step == 1:
+    with st.form(&quot;step1_form&quot;):
+        st.subheader(&quot;基本信息&quot;)
+        name = st.text_input(&quot;姓名&quot;, value=st.session_state.form_data.get('name', ''))
+        email = st.text_input(&quot;邮箱&quot;, value=st.session_state.form_data.get('email', ''))
+
+        if st.form_submit_button(&quot;下一步&quot;):
+            st.session_state.form_data.update({
+                'name': name,
+                'email': email
+            })
+            st.session_state.form_step = 2
+            st.rerun()
+
+elif current_step == 2:
+    with st.form(&quot;step2_form&quot;):
+        st.subheader(&quot;详细资料&quot;)
+        age = st.number_input(&quot;年龄&quot;, min_value=0, max_value=150, 
+                             value=st.session_state.form_data.get('age', 25))
+        city = st.selectbox(&quot;城市&quot;, [&quot;北京&quot;, &quot;上海&quot;, &quot;广州&quot;, &quot;深圳&quot;, &quot;其他&quot;],
+                           index=st.session_state.form_data.get('city_index', 0))
+
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.form_submit_button(&quot;上一步&quot;):
+                st.session_state.form_step = 1
+                st.rerun()
+        with col2:
+            if st.form_submit_button(&quot;下一步&quot;):
+                st.session_state.form_data.update({
+                    'age': age,
+                    'city': city
+                })
+                st.session_state.form_step = 3
+                st.rerun()
+
+elif current_step == 3:
+    st.subheader(&quot;确认信息&quot;)
+    st.write(&quot;请确认您输入的信息:&quot;)
+    st.json(st.session_state.form_data)
+
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button(&quot;返回修改&quot;):
+            st.session_state.form_step = 2
+            st.rerun()
+    with col2:
+        if st.button(&quot;提交&quot;):
+            st.success(&quot;表单提交成功!&quot;)
+            # 重置表单
+            st.session_state.form_step = 1
+            st.session_state.form_data = {}
+            st.rerun()
+</code></pre>
+<h3 id="9">9. 缓存和性能优化<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 缓存机制
+st.header(&quot;⚡ 缓存和性能优化&quot;)
+
+# 数据缓存
+@st.cache_data(ttl=3600)  # 缓存1小时
+def load_large_dataset(file_path):
+    &quot;&quot;&quot;模拟加载大型数据集&quot;&quot;&quot;
+    st.info(&quot;正在加载数据...&quot;)
+    time.sleep(2)  # 模拟耗时操作
+    return pd.DataFrame({
+        'id': range(1000),
+        'value': np.random.randn(1000),
+        'category': np.random.choice(['A', 'B', 'C'], 1000)
+    })
+
+# 资源缓存
+@st.cache_resource
+def get_expensive_model():
+    &quot;&quot;&quot;模拟加载昂贵模型&quot;&quot;&quot;
+    st.info(&quot;正在加载模型...&quot;)
+    time.sleep(3)
+    return &quot;模拟的机器学习模型&quot;
+
+# 缓存使用示例
+if st.button(&quot;加载数据(使用缓存)&quot;):
+    data = load_large_dataset(&quot;dummy_path.csv&quot;)
+    st.write(f&quot;数据加载完成，共 {len(data)} 行&quot;)
+
+if st.button(&quot;加载模型(使用缓存)&quot;):
+    model = get_expensive_model()
+    st.success(f&quot;模型加载完成: {model}&quot;)
+
+# 清空缓存
+if st.button(&quot;清空所有缓存&quot;):
+    st.cache_data.clear()
+    st.cache_resource.clear()
+    st.success(&quot;缓存已清空!&quot;)
+</code></pre>
+<h2 id="_5">完整应用示例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="10">10. 综合应用：数据分析仪表板<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import plotly.graph_objects as go
+from datetime import datetime, timedelta
+
+# 应用配置
+st.set_page_config(
+    page_title=&quot;高级数据分析仪表板&quot;,
+    page_icon=&quot;📊&quot;,
+    layout=&quot;wide&quot;,
+    initial_sidebar_state=&quot;expanded&quot;
+)
+
+# 初始化 session state
+if 'dashboard' not in st.session_state:
+    st.session_state.dashboard = {
+        'data_loaded': False,
+        'current_view': 'overview',
+        'filters': {},
+        'charts_config': {}
+    }
+
+def main():
+    # 标题和描述
+    st.title(&quot;📊 高级数据分析仪表板&quot;)
+    st.markdown(&quot;---&quot;)
+
+    # 侧边栏
+    with st.sidebar:
+        st.header(&quot;控制面板&quot;)
+
+        # 数据上传
+        uploaded_file = st.file_uploader(
+            &quot;上传数据文件 (CSV)&quot;,
+            type=['csv'],
+            key=&quot;file_uploader&quot;
+        )
+
+        if uploaded_file is not None:
+            try:
+                data = pd.read_csv(uploaded_file)
+                st.session_state.dashboard['data'] = data
+                st.session_state.dashboard['data_loaded'] = True
+                st.success(f&quot;数据加载成功! 共 {len(data)} 行, {len(data.columns)} 列&quot;)
+            except Exception as e:
+                st.error(f&quot;数据加载失败: {e}&quot;)
+
+        # 视图选择
+        if st.session_state.dashboard['data_loaded']:
+            view_options = {
+                &quot;overview&quot;: &quot;数据概览&quot;,
+                &quot;explore&quot;: &quot;数据探索&quot;, 
+                &quot;visualize&quot;: &quot;数据可视化&quot;,
+                &quot;analyze&quot;: &quot;高级分析&quot;
+            }
+
+            selected_view = st.radio(
+                &quot;选择视图&quot;,
+                options=list(view_options.keys()),
+                format_func=lambda x: view_options[x]
+            )
+            st.session_state.dashboard['current_view'] = selected_view
+
+    # 主内容区
+    if st.session_state.dashboard['data_loaded']:
+        data = st.session_state.dashboard['data']
+        current_view = st.session_state.dashboard['current_view']
+
+        if current_view == 'overview':
+            show_data_overview(data)
+        elif current_view == 'explore':
+            show_data_exploration(data)
+        elif current_view == 'visualize':
+            show_data_visualization(data)
+        elif current_view == 'analyze':
+            show_advanced_analysis(data)
+    else:
+        show_welcome_screen()
+
+def show_welcome_screen():
+    &quot;&quot;&quot;欢迎界面&quot;&quot;&quot;
+    st.header(&quot;欢迎使用数据分析仪表板&quot;)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.info(&quot;&quot;&quot;
+        ### 🚀 功能特性
+        - 数据上传和预览
+        - 交互式数据探索
+        - 多种可视化图表
+        - 高级统计分析
+        - 实时数据过滤
+        &quot;&quot;&quot;)
+
+    with col2:
+        st.warning(&quot;&quot;&quot;
+        ### 📝 使用说明
+        1. 在左侧边栏上传 CSV 文件
+        2. 选择不同的视图模式
+        3. 使用交互式控件探索数据
+        4. 保存和导出分析结果
+        &quot;&quot;&quot;)
+
+    # 示例数据
+    if st.button(&quot;加载示例数据&quot;):
+        # 生成示例数据
+        np.random.seed(42)
+        sample_data = pd.DataFrame({
+            '日期': pd.date_range('2023-01-01', periods=100),
+            '销售额': np.random.normal(1000, 200, 100).cumsum(),
+            '客户数': np.random.poisson(50, 100),
+            '产品类别': np.random.choice(['电子产品', '服装', '食品', '家居'], 100),
+            '地区': np.random.choice(['华北', '华东', '华南', '西部'], 100)
+        })
+        st.session_state.dashboard['data'] = sample_data
+        st.session_state.dashboard['data_loaded'] = True
+        st.rerun()
+
+def show_data_overview(data):
+    &quot;&quot;&quot;数据概览视图&quot;&quot;&quot;
+    st.header(&quot;📈 数据概览&quot;)
+
+    # 关键指标
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.metric(&quot;总行数&quot;, len(data))
+    with col2:
+        st.metric(&quot;总列数&quot;, len(data.columns))
+    with col3:
+        st.metric(&quot;缺失值&quot;, data.isnull().sum().sum())
+    with col4:
+        st.metric(&quot;内存使用&quot;, f&quot;{data.memory_usage(deep=True).sum() / 1024**2:.2f} MB&quot;)
+
+    # 数据预览
+    st.subheader(&quot;数据预览&quot;)
+    tab1, tab2, tab3 = st.tabs([&quot;前几行&quot;, &quot;后几行&quot;, &quot;随机样本&quot;])
+
+    with tab1:
+        st.dataframe(data.head(10), use_container_width=True)
+    with tab2:
+        st.dataframe(data.tail(10), use_container_width=True)
+    with tab3:
+        st.dataframe(data.sample(10), use_container_width=True)
+
+    # 数据类型信息
+    st.subheader(&quot;数据类型信息&quot;)
+    dtype_info = pd.DataFrame({
+        '列名': data.columns,
+        '数据类型': data.dtypes,
+        '非空值数量': data.count(),
+        '空值数量': data.isnull().sum()
+    })
+    st.dataframe(dtype_info, use_container_width=True)
+
+def show_data_exploration(data):
+    &quot;&quot;&quot;数据探索视图&quot;&quot;&quot;
+    st.header(&quot;🔍 数据探索&quot;)
+
+    # 列选择器
+    col1, col2 = st.columns(2)
+
+    with col1:
+        selected_columns = st.multiselect(
+            &quot;选择要分析的列&quot;,
+            options=data.columns.tolist(),
+            default=data.columns.tolist()[:3] if len(data.columns) &gt;= 3 else data.columns.tolist()
+        )
+
+    with col2:
+        # 数据过滤
+        st.subheader(&quot;数据过滤&quot;)
+        filter_col = st.selectbox(&quot;过滤列&quot;, [None] + data.select_dtypes(include=[np.number]).columns.tolist())
+        if filter_col:
+            min_val, max_val = float(data[filter_col].min()), float(data[filter_col].max())
+            filter_range = st.slider(
+                f&quot;选择 {filter_col} 范围&quot;,
+                min_val, max_val, (min_val, max_val)
+            )
+            filtered_data = data[(data[filter_col] &gt;= filter_range[0]) &amp; (data[filter_col] &lt;= filter_range[1])]
+        else:
+            filtered_data = data
+
+    if selected_columns:
+        # 显示选中的列数据
+        st.subheader(&quot;选中的数据&quot;)
+        st.dataframe(filtered_data[selected_columns], use_container_width=True)
+
+        # 描述性统计
+        st.subheader(&quot;描述性统计&quot;)
+        st.dataframe(filtered_data[selected_columns].describe(), use_container_width=True)
+
+        # 相关性分析（如果有多列数值数据）
+        numeric_cols = filtered_data[selected_columns].select_dtypes(include=[np.number]).columns
+        if len(numeric_cols) &gt; 1:
+            st.subheader(&quot;相关性矩阵&quot;)
+            corr_matrix = filtered_data[numeric_cols].corr()
+            fig = px.imshow(corr_matrix, text_auto=True, aspect=&quot;auto&quot;)
+            st.plotly_chart(fig, use_container_width=True)
+
+def show_data_visualization(data):
+    &quot;&quot;&quot;数据可视化视图&quot;&quot;&quot;
+    st.header(&quot;📊 数据可视化&quot;)
+
+    # 图表类型选择
+    chart_type = st.selectbox(
+        &quot;选择图表类型&quot;,
+        [&quot;散点图&quot;, &quot;折线图&quot;, &quot;柱状图&quot;, &quot;直方图&quot;, &quot;箱线图&quot;, &quot;热力图&quot;]
+    )
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        # X 轴选择
+        x_axis = st.selectbox(&quot;X 轴&quot;, data.columns.tolist())
+
+    with col2:
+        # Y 轴选择（如果是数值型图表）
+        if chart_type in [&quot;散点图&quot;, &quot;折线图&quot;, &quot;柱状图&quot;]:
+            y_axis = st.selectbox(&quot;Y 轴&quot;, data.select_dtypes(include=[np.number]).columns.tolist())
+        else:
+            y_axis = None
+
+    # 颜色分组
+    color_by = st.selectbox(&quot;按颜色分组&quot;, [None] + data.select_dtypes(include=['object']).columns.tolist())
+
+    # 生成图表
+    if chart_type == &quot;散点图&quot; and y_axis:
+        fig = px.scatter(data, x=x_axis, y=y_axis, color=color_by, hover_data=data.columns)
+        st.plotly_chart(fig, use_container_width=True)
+
+    elif chart_type == &quot;折线图&quot; and y_axis:
+        # 如果 x 轴是日期，自动排序
+        if pd.api.types.is_datetime64_any_dtype(data[x_axis]):
+            sorted_data = data.sort_values(x_axis)
+        else:
+            sorted_data = data
+        fig = px.line(sorted_data, x=x_axis, y=y_axis, color=color_by)
+        st.plotly_chart(fig, use_container_width=True)
+
+    elif chart_type == &quot;柱状图&quot; and y_axis:
+        fig = px.bar(data, x=x_axis, y=y_axis, color=color_by)
+        st.plotly_chart(fig, use_container_width=True)
+
+    elif chart_type == &quot;直方图&quot;:
+        fig = px.histogram(data, x=x_axis, color=color_by, nbins=20)
+        st.plotly_chart(fig, use_container_width=True)
+
+    elif chart_type == &quot;箱线图&quot; and y_axis:
+        fig = px.box(data, x=x_axis, y=y_axis, color=color_by)
+        st.plotly_chart(fig, use_container_width=True)
+
+    elif chart_type == &quot;热力图&quot;:
+        numeric_data = data.select_dtypes(include=[np.number])
+        if len(numeric_data.columns) &gt; 1:
+            fig = px.imshow(numeric_data.corr(), text_auto=True, aspect=&quot;auto&quot;)
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.warning(&quot;需要至少两个数值列来生成热力图&quot;)
+
+def show_advanced_analysis(data):
+    &quot;&quot;&quot;高级分析视图&quot;&quot;&quot;
+    st.header(&quot;🧠 高级分析&quot;)
+
+    # 时间序列分析（如果数据包含日期列）
+    date_columns = data.select_dtypes(include=['datetime64']).columns
+    if len(date_columns) &gt; 0:
+        st.subheader(&quot;时间序列分析&quot;)
+
+        date_col = st.selectbox(&quot;选择日期列&quot;, date_columns)
+        value_col = st.selectbox(&quot;选择数值列&quot;, data.select_dtypes(include=[np.number]).columns)
+
+        if date_col and value_col:
+            # 确保数据按日期排序
+            time_series_data = data.sort_values(date_col).set_index(date_col)
+
+            # 移动平均
+            window = st.slider(&quot;移动平均窗口&quot;, 1, 30, 7)
+            time_series_data[f'{value_col}_MA'] = time_series_data[value_col].rolling(window=window).mean()
+
+            # 绘制时间序列和移动平均
+            fig = go.Figure()
+            fig.add_trace(go.Scatter(
+                x=time_series_data.index,
+                y=time_series_data[value_col],
+                name='原始数据',
+                line=dict(color='blue')
+            ))
+            fig.add_trace(go.Scatter(
+                x=time_series_data.index,
+                y=time_series_data[f'{value_col}_MA'],
+                name=f'{window}期移动平均',
+                line=dict(color='red', dash='dash')
+            ))
+            fig.update_layout(title=f&quot;{value_col} 时间序列分析&quot;)
+            st.plotly_chart(fig, use_container_width=True)
+
+    # 聚类分析
+    st.subheader(&quot;聚类分析&quot;)
+    if st.checkbox(&quot;启用聚类分析&quot;):
+        numeric_cols = data.select_dtypes(include=[np.number]).columns.tolist()
+        if len(numeric_cols) &gt;= 2:
+            from sklearn.cluster import KMeans
+            from sklearn.preprocessing import StandardScaler
+
+            selected_cluster_cols = st.multiselect(
+                &quot;选择聚类特征&quot;,
+                numeric_cols,
+                default=numeric_cols[:2]
+            )
+
+            n_clusters = st.slider(&quot;聚类数量&quot;, 2, 10, 3)
+
+            if len(selected_cluster_cols) &gt;= 2:
+                # 准备数据
+                cluster_data = data[selected_cluster_cols].dropna()
+                scaler = StandardScaler()
+                scaled_data = scaler.fit_transform(cluster_data)
+
+                # 执行聚类
+                kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+                clusters = kmeans.fit_predict(scaled_data)
+
+                # 可视化结果
+                cluster_data['Cluster'] = clusters
+                fig = px.scatter(
+                    cluster_data, 
+                    x=selected_cluster_cols[0], 
+                    y=selected_cluster_cols[1],
+                    color='Cluster',
+                    title=&quot;K-means 聚类结果&quot;
+                )
+                st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.warning(&quot;需要至少两个数值列进行聚类分析&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h2 id="_6">运行应用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>要运行 Streamlit 应用，在终端中执行：</p>
+<pre><code class="language-bash">streamlit run your_app.py
+</code></pre>
+<h2 id="_7">部署应用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">本地部署<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">streamlit run app.py
+</code></pre>
+<h3 id="streamlit-cloud">部署到 Streamlit Cloud<a class="headerlink" href="#streamlit-cloud" title="Permanent link">&para;</a></h3>
+<ol>
+<li>将代码推送到 GitHub</li>
+<li>访问 <a href="https://share.streamlit.io">share.streamlit.io</a></li>
+<li>连接 GitHub 仓库</li>
+<li>选择分支和文件路径</li>
+</ol>
+<h3 id="_9">部署到其他平台<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Heroku</strong>: 使用 Procfile 和 requirements.txt</li>
+<li><strong>AWS/Azure</strong>: 使用 Docker 容器</li>
+<li><strong>Hugging Face</strong>: 支持 Streamlit 空间</li>
+</ul>
+<h2 id="_10">总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>这个完整教程涵盖了 Streamlit 的所有重要概念：</p>
+<h3 id="_11">核心概念掌握：<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>页面布局</strong>：侧边栏、列、容器、标签页、扩展器</li>
+<li><strong>Session State</strong>：状态管理、用户会话、表单状态、购物车模式</li>
+<li><strong>数据展示</strong>：表格、图表、指标、交互组件</li>
+<li><strong>性能优化</strong>：缓存机制、懒加载</li>
+<li><strong>部署发布</strong>：多平台部署选项</li>
+</ol>
+<h3 id="_12">最佳实践：<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>合理使用 Session State 管理应用状态</li>
+<li>使用缓存优化性能</li>
+<li>采用模块化设计组织代码</li>
+<li>提供清晰的用户引导和反馈</li>
+<li>考虑响应式布局设计</li>
+</ul>
+<p>这个教程提供了从基础到高级的完整学习路径，你可以基于这些模式构建复杂的数据应用！</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+      
+        <script src="../../../../styles/javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>

@@ -117,7 +117,20 @@ nav:
       - Chroma:  Vector Stores/Chroma/tutorial.md
       - Milvus: Vector Stores/Milvus/tutorial.md
       - FAISS: Vector Stores/FAISS/tutorial.md
-  - Streamlit: llmapps/apps/Streamlit/tutorial.md
+  - 大模型微调和部署:
+      - 大模型部署:
+          - Streamlit: llm/deploy/Streamlit/tutorial.md
+          - Gradio: llm/deploy/Gradio/tutorial.md
+      -  大模型微调:
+           - Transformers:
+               - 快速入门: llm/tunning/transformers/quick start.md
+           - PEFT:
+               - 快速入门: llm/tunning/peft/quick start.md
+               - 中文PEFT微调实战: llm/tunning/peft/chinese peft.md
+
+      - 大模型推理:
+          - vLLM:
+              - 快速入门: llm/inference/vLLM/quick start.md
 
 
 
