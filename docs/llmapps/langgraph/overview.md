@@ -4,7 +4,7 @@
 
 LangGraph 是一个低级别的编排框架和运行时，专门用于构建、管理和部署长时间运行的有状态智能体。它被 Klarna、Replit、Elastic 等领先公司广泛使用，专注于智能体的**编排**核心能力。
 
-> **重要通知**: LangGraph v1.0 已正式发布！如需查看完整变更列表和升级指南，请参阅[发布说明](/oss/python/releases/langgraph-v1)和[迁移指南](/oss/python/migrate/langgraph-v1)。
+> **重要通知**: LangGraph v1.0 已正式发布！如需查看完整变更列表和升级指南。
 
 ## 核心优势
 
@@ -205,17 +205,3 @@ for chunk in graph.stream({"messages": [...]}):
 3. **内存管理**
    - 对于长时间运行的工作流，定期清理不需要的状态
 
-### 获取帮助
-
-- 遇到问题？[提交 issue](https://github.com/langchain-ai/docs/issues/new?template=02-langgraph.yml&labels=langgraph,python)
-- 查看 [v0.x 文档](https://langchain-ai.github.io/langgraph/)（归档版本）
-- 通过 [MCP](/use-these-docs) 连接这些文档到 Claude、VSCode 等工具获取实时答案
-
-## 下一步
-
-- 深入学习[持久执行](/oss/python/langgraph/durable-execution)
-- 了解[人工干预](/oss/python/langgraph/interrupts)功能
-- 探索[内存管理](/oss/python/concepts/memory)概念
-- 查看[生产部署](/langsmith/deployments)指南
-
-LangGraph 为你提供了构建复杂、有状态智能体应用所需的所有底层能力，让你能够专注于业务逻辑而不是基础设施。

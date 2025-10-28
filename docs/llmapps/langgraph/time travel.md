@@ -41,7 +41,7 @@ for state in states:
     print()
 ```
 
-或者，在目标节点前设置[中断](/oss/python/langgraph/interrupts)，然后在中断处找到最近的检查点。
+或者，在目标节点前设置[中断]，然后在中断处找到最近的检查点。
 
 ### 3. 更新状态（可选）
 

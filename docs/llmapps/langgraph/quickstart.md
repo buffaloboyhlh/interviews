@@ -280,10 +280,3 @@ for chunk in agent.stream(messages, stream_mode="updates"):
 | **代码复杂度** | 较高 | 较低 |
 | **适用场景** | 复杂工作流 | 简单到中等复杂度 |
 
-## 下一步学习建议
-
-- 深入了解 [Graph API 概述](/oss/python/langgraph/graph-api)
-- 学习 [Functional API 概述](/oss/python/langgraph/functional-api)
-- 探索更复杂的智能体模式和应用场景
-
-两种 API 都能构建强大的智能体，选择哪种取决于你的具体需求和个人偏好。Graph API 提供更多控制和可视化能力，而 Functional API 则更简洁易用。

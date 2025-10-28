@@ -185,14 +185,3 @@ LangGraph 的持久化接口是统一的，这意味着你可以替换底层存�
 
 在构建**个性化助理、对话机器人或持续学习型智能体**时，长期记忆是不可或缺的能力。
 
----
-
-## 延伸阅读
-
-* [LangGraph Persistence 文档](https://python.langchain.com/oss/langgraph/persistence#memory-store)
-* [LangChain Agents 教程](https://python.langchain.com/docs/modules/agents/)
-* [MCP 协议集成方式](/use-these-docs)
-
----
-
-如果你希望我帮你把这份教程改写成 **教学视频脚本** 或 **企业级部署版本（使用 PostgreSQL 作为后端）**，我可以继续扩展。你想我往哪个方向延伸？

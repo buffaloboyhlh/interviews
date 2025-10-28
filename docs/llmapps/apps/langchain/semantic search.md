@@ -244,11 +244,3 @@ retriever = vector_store.as_retriever(
 2. **API限制**：注意嵌入模型的API调用限制和成本
 3. **分割策略**：根据文档类型调整chunk_size和chunk_overlap参数
 
-## 下一步
-
-- 探索更多[文档加载器集成](/oss/python/integrations/document_loaders/)
-- 了解不同的[嵌入模型选项](/oss/python/integrations/text_embedding/)
-- 尝试各种[向量存储解决方案](/oss/python/integrations/vectorstores/)
-- 学习如何构建完整的[RAG应用程序](/oss/python/langchain/rag/)
-
-这个语义搜索引擎可以作为构建更复杂AI应用的基础，如智能问答系统、文档分析工具等。

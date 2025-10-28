@@ -83,11 +83,11 @@ langgraph dev
 >    - LangGraph Studio Web UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
 ```
 
-> **重要说明**：`langgraph dev` 命令以内存模式启动 LangGraph 服务器，适用于开发和测试。生产环境请使用持久化存储后端部署。详见[托管概述](/langsmith/hosting)。
+> **重要说明**：`langgraph dev` 命令以内存模式启动 LangGraph 服务器，适用于开发和测试。生产环境请使用持久化存储后端部署。
 
 ## 步骤 6：在 Studio 中测试应用
 
-[Studio](/langsmith/studio) 是一个专门的 UI 界面，可以连接到 LangGraph API 服务器，用于可视化、交互和调试你的应用。
+[Studio]是一个专门的 UI 界面，可以连接到 LangGraph API 服务器，用于可视化、交互和调试你的应用。
 
 访问 `langgraph dev` 命令输出中提供的 URL 来在 Studio 中测试你的图：
 
@@ -253,22 +253,3 @@ your-app/
 │       └── graph.py        # 主要的图定义
 └── README.md
 ```
-
-## 下一步
-
-现在你已经在本地成功运行了 LangGraph 应用，接下来可以：
-
-* [部署快速入门](/langsmith/deployment-quickstart)：使用 LangSmith 部署你的 LangGraph 应用
-* [LangSmith 基础](/langsmith/home)：学习 LangSmith 核心概念
-* [Python SDK 参考](https://reference.langchain.com/python/platform/python_sdk/)：探索 Python SDK API 参考文档
-
-## 总结
-
-通过本教程，你已经学会了：
-- 安装和配置 LangGraph CLI
-- 从模板创建新应用
-- 启动本地开发服务器
-- 使用 Studio 界面测试应用
-- 通过多种方式调用 API
-
-现在你可以开始构建和测试自己的 LangGraph 智能体应用了！

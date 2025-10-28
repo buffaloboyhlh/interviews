@@ -7,10 +7,9 @@ LangChain 的 [`create_agent`](https://reference.langchain.com/python/langchain/
 LangGraph 暴露了一个 [Runtime](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime) 对象，包含以下信息：
 
 1. **Context**：静态信息，如用户 ID、数据库连接或其他代理调用依赖项
-2. **Store**：用于[长期记忆](/oss/python/langchain/long-term-memory)的 [BaseStore](https://reference.langchain.com/python/langgraph/store/#langgraph.store.base.BaseStore) 实例
+2. **Store**：用于[长期记忆]的 [BaseStore](https://reference.langchain.com/python/langgraph/store/#langgraph.store.base.BaseStore) 实例
 3. **Stream writer**：通过 `"custom"` 流模式流式传输信息的对象
 
-你可以在[工具内部](#在工具中访问)和[中间件内部](#在中间件中访问)访问 Runtime 信息。
 
 ## 基本用法
 
@@ -47,7 +46,7 @@ agent.invoke(
 
 * 访问 context
 * 读取或写入长期记忆
-* 写入[自定义流](/oss/python/langchain/streaming#custom-updates)（例如工具进度/更新）
+* 写入[自定义流]（例如工具进度/更新）
 
 使用 `ToolRuntime` 参数在工具内部访问 [Runtime](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime) 对象。
 
