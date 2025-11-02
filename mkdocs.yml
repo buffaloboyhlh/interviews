@@ -130,6 +130,8 @@ nav:
       - 大模型推理:
           - vLLM:
               - 快速入门: llm/inference/vLLM/quick start.md
+  - 其他:
+    - WSL: others\wsl.md
 
 
 
