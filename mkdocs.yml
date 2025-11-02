@@ -127,7 +127,6 @@ nav:
            - PEFT:
                - 快速入门: llm/tunning/peft/quick start.md
                - 中文PEFT微调实战: llm/tunning/peft/chinese peft.md
-
       - 大模型推理:
           - vLLM:
               - 快速入门: llm/inference/vLLM/quick start.md

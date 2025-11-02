@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -3003,7 +3003,7 @@ for state in states:
     print(f&quot;检查点ID: {state.config['configurable']['checkpoint_id']}&quot;)
     print()
 </code></pre>
-<p>或者，在目标节点前设置<a href="/oss/python/langgraph/interrupts">中断</a>，然后在中断处找到最近的检查点。</p>
+<p>或者，在目标节点前设置[中断]，然后在中断处找到最近的检查点。</p>
 <h3 id="3">3. 更新状态（可选）<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>在检查点修改图状态：</p>
 <pre><code class="language-python">new_config = graph.update_state(

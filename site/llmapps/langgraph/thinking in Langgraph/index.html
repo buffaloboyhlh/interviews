@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -3146,7 +3146,7 @@
 <li>触发时机：高紧急程度、复杂问题或质量担忧</li>
 </ul>
 <h2 id="3">步骤 3：设计你的状态<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>状态是你的智能体中所有节点都可以访问的共享<a href="/oss/python/concepts/memory">内存</a>。可以把它看作你的智能体在处理过程中用来跟踪一切学习和决策的笔记本。</p>
+<p>状态是你的智能体中所有节点都可以访问的共享[内存]。可以把它看作你的智能体在处理过程中用来跟踪一切学习和决策的笔记本。</p>
 <h3 id="_5">什么应该放在状态中？<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>对每个数据片段问自己这些问题：</p>
 <p><strong>包含在状态中</strong></p>
@@ -3465,7 +3465,7 @@ def send_reply(state: EmailAgentState) -&gt; dict:
 </code></pre>
 <h2 id="5">步骤 5：将它们连接起来<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>现在我们将节点连接成一个工作图。由于我们的节点处理自己的路由决策，我们只需要一些基本的边。</p>
-<p>要使用 <code>interrupt()</code> 启用<a href="/oss/python/langgraph/interrupts">人工干预</a>，我们需要使用<a href="/oss/python/langgraph/persistence">检查点</a>进行编译以在运行之间保存状态：</p>
+<p>要使用 <code>interrupt()</code> 启用[人工干预]，我们需要使用[检查点]进行编译以在运行之间保存状态：</p>
 <pre><code class="language-python">from langgraph.checkpoint.memory import MemorySaver
 from langgraph.types import RetryPolicy
 
@@ -3547,7 +3547,7 @@ print(f&quot;邮件发送成功！&quot;)
 <p><strong>节点粒度权衡</strong>
 你可能会想：为什么不将"读取邮件"和"分类意图"合并为一个节点？或者为什么将文档搜索与起草回复分开？</p>
 <p>答案涉及弹性与可观察性之间的权衡。</p>
-<p><strong>弹性考虑：</strong> LangGraph 的<a href="/oss/python/langgraph/durable-execution">持久执行</a>在节点边界创建检查点。当工作流程在中断或故障后恢复时，它从执行停止的节点开始。较小的节点意味着更频繁的检查点，这意味着如果出现问题，重复的工作更少。如果你将多个操作合并到一个大节点中，接近末尾的失败意味着从该节点开始重新执行一切。</p>
+<p><strong>弹性考虑：</strong> LangGraph 的[持久执行]在节点边界创建检查点。当工作流程在中断或故障后恢复时，它从执行停止的节点开始。较小的节点意味着更频繁的检查点，这意味着如果出现问题，重复的工作更少。如果你将多个操作合并到一个大节点中，接近末尾的失败意味着从该节点开始重新执行一切。</p>
 <p>我们为邮件智能体选择这种分解的原因：</p>
 <ul>
 <li>
@@ -3564,7 +3564,7 @@ print(f&quot;邮件发送成功！&quot;)
 </li>
 </ul>
 <p>不同的有效方法：你可以将"读取邮件"和"分类意图"合并为单个节点。你将失去在分类之前检查原始邮件的能力，并且在该节点出现任何故障时会重复这两个操作。对于大多数应用，单独节点的可观察性和调试好处是值得的权衡。</p>
-<p><strong>控制检查点行为：</strong> 你可以使用<a href="/oss/python/langgraph/durable-execution#durability-modes">持久性模式</a>调整检查点的写入时间。默认的 <code>"async"</code> 模式在后台写入检查点以获得良好的性能，同时保持持久性。使用 <code>"exit"</code> 模式仅在完成时检查点（对于不需要中间执行恢复的长时间运行图更快），或使用 <code>"sync"</code> 模式保证在继续下一步之前写入检查点（当你需要确保状态在继续执行之前持久化时很有用）。</p>
+<p><strong>控制检查点行为：</strong> 你可以使用[持久性模式]调整检查点的写入时间。默认的 <code>"async"</code> 模式在后台写入检查点以获得良好的性能，同时保持持久性。使用 <code>"exit"</code> 模式仅在完成时检查点（对于不需要中间执行恢复的长时间运行图更快），或使用 <code>"sync"</code> 模式保证在继续下一步之前写入检查点（当你需要确保状态在继续执行之前持久化时很有用）。</p>
 <h3 id="_13">从这里去哪里<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>这是关于使用 LangGraph 构建智能体的思维方式的介绍。你可以用以下内容扩展这个基础：</p>
 <p><strong>人工干预模式</strong>

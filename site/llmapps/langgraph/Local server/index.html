@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -1767,24 +1767,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      下一步
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      总结
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3038,24 +3020,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      下一步
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      总结
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3130,10 +3094,10 @@ uv add .
 &gt;    - LangGraph Studio Web UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
 </code></pre>
 <blockquote>
-<p><strong>重要说明</strong>：<code>langgraph dev</code> 命令以内存模式启动 LangGraph 服务器，适用于开发和测试。生产环境请使用持久化存储后端部署。详见<a href="/langsmith/hosting">托管概述</a>。</p>
+<p><strong>重要说明</strong>：<code>langgraph dev</code> 命令以内存模式启动 LangGraph 服务器，适用于开发和测试。生产环境请使用持久化存储后端部署。</p>
 </blockquote>
 <h2 id="6-studio">步骤 6：在 Studio 中测试应用<a class="headerlink" href="#6-studio" title="Permanent link">&para;</a></h2>
-<p><a href="/langsmith/studio">Studio</a> 是一个专门的 UI 界面，可以连接到 LangGraph API 服务器，用于可视化、交互和调试你的应用。</p>
+<p>[Studio]是一个专门的 UI 界面，可以连接到 LangGraph API 服务器，用于可视化、交互和调试你的应用。</p>
 <p>访问 <code>langgraph dev</code> 命令输出中提供的 URL 来在 Studio 中测试你的图：</p>
 <pre><code>&gt;    - LangGraph Studio Web UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
 </code></pre>
@@ -3293,21 +3257,6 @@ for chunk in client.runs.stream(
 │       └── graph.py        # 主要的图定义
 └── README.md
 </code></pre>
-<h2 id="_6">下一步<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>现在你已经在本地成功运行了 LangGraph 应用，接下来可以：</p>
-<ul>
-<li><a href="/langsmith/deployment-quickstart">部署快速入门</a>：使用 LangSmith 部署你的 LangGraph 应用</li>
-<li><a href="/langsmith/home">LangSmith 基础</a>：学习 LangSmith 核心概念</li>
-<li><a href="https://reference.langchain.com/python/platform/python_sdk/">Python SDK 参考</a>：探索 Python SDK API 参考文档</li>
-</ul>
-<h2 id="_7">总结<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>通过本教程，你已经学会了：
-- 安装和配置 LangGraph CLI
-- 从模板创建新应用
-- 启动本地开发服务器
-- 使用 Studio 界面测试应用
-- 通过多种方式调用 API</p>
-<p>现在你可以开始构建和测试自己的 LangGraph 智能体应用了！</p>
 
 
 

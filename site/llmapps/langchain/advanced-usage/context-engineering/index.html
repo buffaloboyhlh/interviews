@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -3347,7 +3347,7 @@ def save_preference(preference_key: str, preference_value: str, runtime: ToolRun
 <h2 id="_16">生命周期上下文<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <p>控制<strong>核心智能体步骤之间</strong>发生的事情 - 拦截数据流以实现横切关注点，如摘要、护栏和日志记录。</p>
 <h3 id="_17">自动摘要<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<p>最常见的生命周期模式之一是在对话历史过长时自动压缩。与<a href="#消息管理">模型上下文</a>中显示的瞬态消息修剪不同，摘要<strong>持久更新状态</strong> - 永久用摘要替换旧消息，该摘要将保存供所有未来轮次使用。</p>
+<p>最常见的生命周期模式之一是在对话历史过长时自动压缩。与模型上下文中显示的瞬态消息修剪不同，摘要<strong>持久更新状态</strong> - 永久用摘要替换旧消息，该摘要将保存供所有未来轮次使用。</p>
 <p><strong>使用内置摘要中间件</strong></p>
 <pre><code class="language-python">from langchain.agents.middleware import SummarizationMiddleware
 

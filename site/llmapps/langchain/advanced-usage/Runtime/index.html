@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -2955,10 +2955,9 @@
 <p>LangGraph 暴露了一个 <a href="https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime">Runtime</a> 对象，包含以下信息：</p>
 <ol>
 <li><strong>Context</strong>：静态信息，如用户 ID、数据库连接或其他代理调用依赖项</li>
-<li><strong>Store</strong>：用于<a href="/oss/python/langchain/long-term-memory">长期记忆</a>的 <a href="https://reference.langchain.com/python/langgraph/store/#langgraph.store.base.BaseStore">BaseStore</a> 实例</li>
+<li><strong>Store</strong>：用于[长期记忆]的 <a href="https://reference.langchain.com/python/langgraph/store/#langgraph.store.base.BaseStore">BaseStore</a> 实例</li>
 <li><strong>Stream writer</strong>：通过 <code>"custom"</code> 流模式流式传输信息的对象</li>
 </ol>
-<p>你可以在<a href="#在工具中访问">工具内部</a>和<a href="#在中间件中访问">中间件内部</a>访问 Runtime 信息。</p>
 <h2 id="_2">基本用法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="context-schema">定义 Context Schema<a class="headerlink" href="#context-schema" title="Permanent link">&para;</a></h3>
 <p>使用 <a href="https://reference.langchain.com/python/langchain/agents/#langchain.agents.create_agent"><code>create_agent</code></a> 创建代理时，可以指定 <code>context_schema</code> 来定义存储在代理 <a href="https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime">Runtime</a> 中的 <code>context</code> 结构。</p>
@@ -2987,7 +2986,7 @@ agent.invoke(
 <ul>
 <li>访问 context</li>
 <li>读取或写入长期记忆</li>
-<li>写入<a href="/oss/python/langchain/streaming#custom-updates">自定义流</a>（例如工具进度/更新）</li>
+<li>写入[自定义流]（例如工具进度/更新）</li>
 </ul>
 <p>使用 <code>ToolRuntime</code> 参数在工具内部访问 <a href="https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime">Runtime</a> 对象。</p>
 <h3 id="_3">示例：访问用户信息和长期记忆<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
