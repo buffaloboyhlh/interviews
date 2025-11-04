@@ -212,9 +212,9 @@ print("注意力权重形状:", attn_weights.shape)  # (2,8,5,5)
 
 经过线性映射得到 Q、K、V，然后计算：
 
-[
+$$
 \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
-]
+$$
 
 并返回最终输出。
 
@@ -224,9 +224,9 @@ print("注意力权重形状:", attn_weights.shape)  # (2,8,5,5)
 
 我们自己定义每个变换矩阵：
 
-[
+$$
 W_Q, W_K, W_V \in \mathbb{R}^{d_{model} \times d_{model}}
-]
+$$
 
 这就等价于 `nn.Linear(d_model, d_model)` 的权重。
 
@@ -236,18 +236,20 @@ W_Q, W_K, W_V \in \mathbb{R}^{d_{model} \times d_{model}}
 
 `torch.matmul(x, self.W_Q)`
 相当于执行：
-[
+
+$$
 Q = XW_Q + b_Q
-]
+$$
+
 其中 (X) 是 `(batch, seq_len, d_model)`，矩阵乘法在最后一个维度上完成。
 
 ---
 
 ### ③ 注意力得分计算
 
-[
+$$
 \text{scores} = \frac{QK^\top}{\sqrt{d_k}}
-]
+$$
 
 * 维度变换：`K.transpose(-2, -1)`
   把 `(batch, seq_len, d_model)` 转为 `(batch, d_model, seq_len)`，
@@ -257,9 +259,9 @@ Q = XW_Q + b_Q
 
 ### ④ 加权求和
 
-[
+$$
 \text{Attention}(Q,K,V) = \text{softmax}(\text{scores})V
-]
+$$
 `torch.matmul(attn_weights, V)` 就是“把 weighted value 加起来”。
 
 ---
@@ -267,9 +269,9 @@ Q = XW_Q + b_Q
 ### ⑤ 输出映射
 
 最后再做一次线性投影：
-[
+$$
 O = (\text{Attention}(Q,K,V)) W_O + b_O
-]
+$$
 保证输出维度仍然是 `d_model`。
 
 ---
@@ -508,7 +510,7 @@ if __name__ == "__main__":
 ## 3.12 带掩码的自注意力机制
 
 
-### ✅ 带掩码的单头自注意力（纯手写版）
+### ✅ 带掩码的单头自注意力
 
 ```python
 import torch
@@ -698,7 +700,6 @@ mask =
 
 > 可以看到，随着行号增加（往后看），注意力“能看到”的部分逐渐增多。
 
----
 
 ### 📘 小结
 
@@ -713,7 +714,7 @@ mask =
 
 ## 3.13 多头注意力
 
-非常好 👍
+
 现在我们把之前的「单头注意力」扩展为 **多头注意力（Multi-Head Attention, MHA）**。
 这一步是 Transformer 的核心创新——多头机制让模型能**从多个子空间同时观察同一个序列的关系**。
 
