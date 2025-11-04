@@ -39,8 +39,8 @@ plugins:
 #  - macros
 
 extra_css:
-  - styles/extra.css
   - styles/custom.css
+  - styles/extra.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
 
 extra_javascript:
