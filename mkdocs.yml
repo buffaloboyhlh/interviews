@@ -1,6 +1,8 @@
 site_name: 人工智能面试集合
 site_author: Buffalo
+site_url: https://buffaloboyhlh.github.io/interviews/
 repo_url: https://github.com/buffaloboyhlh/interviews
+use_directory_urls: false
 theme:
   name: material
   primary: teal
