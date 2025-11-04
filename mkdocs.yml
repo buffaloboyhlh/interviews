@@ -61,7 +61,6 @@ markdown_extensions:
       toc_depth: 2-3
 
 nav:
-  - 首页: machine/interview.md
   - 机器学习: machine/interview.md
   - 深度学习: deeplearning/interview.md
   - 从零开始学NLP:
