@@ -871,7 +871,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ 带掩码的单头自注意力（纯手写版）
+      ✅ 带掩码的单头自注意力
     </span>
   </a>
   
@@ -3264,7 +3264,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ 带掩码的单头自注意力（纯手写版）
+      ✅ 带掩码的单头自注意力
     </span>
   </a>
   
@@ -3592,30 +3592,30 @@ print(&quot;注意力权重形状:&quot;, attn_weights.shape)  # (2,8,5,5)
 <li>d_model: 嵌入维度</li>
 </ul>
 <p>经过线性映射得到 Q、K、V，然后计算：</p>
-<p>[
+<div class="arithmatex">\[
 \text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
-]</p>
+\]</div>
 <p>并返回最终输出。</p>
 <hr />
 <h3 id="1">① 手动权重<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>我们自己定义每个变换矩阵：</p>
-<p>[
+<div class="arithmatex">\[
 W_Q, W_K, W_V \in \mathbb{R}^{d_{model} \times d_{model}}
-]</p>
+\]</div>
 <p>这就等价于 <code>nn.Linear(d_model, d_model)</code> 的权重。</p>
 <hr />
 <h3 id="2">② 手动矩阵乘法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p><code>torch.matmul(x, self.W_Q)</code>
-相当于执行：
-[
+相当于执行：</p>
+<div class="arithmatex">\[
 Q = XW_Q + b_Q
-]
-其中 (X) 是 <code>(batch, seq_len, d_model)</code>，矩阵乘法在最后一个维度上完成。</p>
+\]</div>
+<p>其中 (X) 是 <code>(batch, seq_len, d_model)</code>，矩阵乘法在最后一个维度上完成。</p>
 <hr />
 <h3 id="3">③ 注意力得分计算<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>[
+<div class="arithmatex">\[
 \text{scores} = \frac{QK^\top}{\sqrt{d_k}}
-]</p>
+\]</div>
 <ul>
 <li>维度变换：<code>K.transpose(-2, -1)</code>
   把 <code>(batch, seq_len, d_model)</code> 转为 <code>(batch, d_model, seq_len)</code>，
@@ -3623,16 +3623,16 @@ Q = XW_Q + b_Q
 </ul>
 <hr />
 <h3 id="4">④ 加权求和<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<p>[
+<p>$$
 \text{Attention}(Q,K,V) = \text{softmax}(\text{scores})V
-]
+$$
 <code>torch.matmul(attn_weights, V)</code> 就是“把 weighted value 加起来”。</p>
 <hr />
 <h3 id="5">⑤ 输出映射<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
 <p>最后再做一次线性投影：
-[
+$$
 O = (\text{Attention}(Q,K,V)) W_O + b_O
-]
+$$
 保证输出维度仍然是 <code>d_model</code>。</p>
 <hr />
 <h3 id="_1">📊 输出结果示例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
@@ -3881,7 +3881,7 @@ if __name__ == &quot;__main__&quot;:
     print(&quot;注意力权重矩阵（第1个样本）:\n&quot;, torch.round(weights[0], decimals=3))
 </code></pre>
 <h2 id="312">3.12 带掩码的自注意力机制<a class="headerlink" href="#312" title="Permanent link">&para;</a></h2>
-<h3 id="_5">✅ 带掩码的单头自注意力（纯手写版）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">✅ 带掩码的单头自注意力<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <pre><code class="language-python">import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -4047,7 +4047,6 @@ if __name__ == &quot;__main__&quot;:
 <blockquote>
 <p>可以看到，随着行号增加（往后看），注意力“能看到”的部分逐渐增多。</p>
 </blockquote>
-<hr />
 <h3 id="_7">📘 小结<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -4091,8 +4090,7 @@ if __name__ == &quot;__main__&quot;:
 </tbody>
 </table>
 <h2 id="313">3.13 多头注意力<a class="headerlink" href="#313" title="Permanent link">&para;</a></h2>
-<p>非常好 👍
-现在我们把之前的「单头注意力」扩展为 <strong>多头注意力（Multi-Head Attention, MHA）</strong>。
+<p>现在我们把之前的「单头注意力」扩展为 <strong>多头注意力（Multi-Head Attention, MHA）</strong>。
 这一步是 Transformer 的核心创新——多头机制让模型能<strong>从多个子空间同时观察同一个序列的关系</strong>。</p>
 <hr />
 <p>完整实现一个 <strong>Multi-Head Self-Attention</strong> 模块，<strong>只用 <code>nn.Parameter</code>，不用 <code>nn.Linear</code></strong>，包含以下核心步骤：</p>
