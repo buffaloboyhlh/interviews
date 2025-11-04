@@ -10,22 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
+        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/Vector%20Stores/Milvus/tutorial.html">
       
       
+        <link rel="prev" href="../Chroma/tutorial.html">
       
-      <link rel="icon" href="/interviews/assets/images/favicon.png">
+      
+        <link rel="next" href="../FAISS/tutorial.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>人工智能面试集合</title>
+        <title>Milvus - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="/interviews/assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="/interviews/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="/interviews/styles/custom.css">
+      <link rel="stylesheet" href="../../styles/custom.css">
     
-      <link rel="stylesheet" href="/interviews/styles/extra.css">
+      <link rel="stylesheet" href="../../styles/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("/interviews/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-milvus" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/interviews/." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Milvus
             
           </span>
         </div>
@@ -216,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/machine/interview.html" class="md-tabs__link">
+      <a href="../../machine/interview.html" class="md-tabs__link">
         
   
   
@@ -235,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-tabs__link">
+      <a href="../../deeplearning/interview.html" class="md-tabs__link">
         
   
   
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/nlp/chart01.html" class="md-tabs__link">
+        <a href="../../nlp/chart01.html" class="md-tabs__link">
           
   
   
@@ -285,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-tabs__link">
+        <a href="../../llmapps/langchain/core-components/agents.html" class="md-tabs__link">
           
   
   
@@ -306,11 +317,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Chroma/tutorial.html" class="md-tabs__link">
           
   
   
@@ -339,7 +352,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
+        <a href="../../llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
           
   
   
@@ -364,7 +377,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/others/wsl.html" class="md-tabs__link">
+        <a href="../../others/wsl.html" class="md-tabs__link">
           
   
   
@@ -400,7 +413,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/interviews/." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -430,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/machine/interview.html" class="md-nav__link">
+      <a href="../../machine/interview.html" class="md-nav__link">
         
   
   
@@ -452,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-nav__link">
+      <a href="../../deeplearning/interview.html" class="md-nav__link">
         
   
   
@@ -535,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart01.html" class="md-nav__link">
+      <a href="../../nlp/chart01.html" class="md-nav__link">
         
   
   
@@ -558,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart02.html" class="md-nav__link">
+      <a href="../../nlp/chart02.html" class="md-nav__link">
         
   
   
@@ -581,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart03.html" class="md-nav__link">
+      <a href="../../nlp/chart03.html" class="md-nav__link">
         
   
   
@@ -604,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart04.html" class="md-nav__link">
+      <a href="../../nlp/chart04.html" class="md-nav__link">
         
   
   
@@ -627,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart05.html" class="md-nav__link">
+      <a href="../../nlp/chart05.html" class="md-nav__link">
         
   
   
@@ -650,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/nltk.html" class="md-nav__link">
+      <a href="../../nlp/nltk.html" class="md-nav__link">
         
   
   
@@ -673,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/peft.html" class="md-nav__link">
+      <a href="../../nlp/peft.html" class="md-nav__link">
         
   
   
@@ -821,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/agents.html" class="md-nav__link">
         
   
   
@@ -844,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/models.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/models.html" class="md-nav__link">
         
   
   
@@ -867,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/messages.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/messages.html" class="md-nav__link">
         
   
   
@@ -890,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/tools.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/tools.html" class="md-nav__link">
         
   
   
@@ -913,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
         
   
   
@@ -936,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/streaming.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/streaming.html" class="md-nav__link">
         
   
   
@@ -959,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/middleware.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/middleware.html" class="md-nav__link">
         
   
   
@@ -982,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
         
   
   
@@ -1076,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
         
   
   
@@ -1099,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
         
   
   
@@ -1122,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
         
   
   
@@ -1145,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
         
   
   
@@ -1168,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
         
   
   
@@ -1191,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
         
   
   
@@ -1214,7 +1227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
         
   
   
@@ -1237,7 +1250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
         
   
   
@@ -1321,7 +1334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
+      <a href="../../llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
         
   
   
@@ -1344,7 +1357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
+      <a href="../../llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
         
   
   
@@ -1367,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
+      <a href="../../llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
         
   
   
@@ -1473,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/overview.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/overview.html" class="md-nav__link">
         
   
   
@@ -1496,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/quickstart.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/quickstart.html" class="md-nav__link">
         
   
   
@@ -1519,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Local%20server.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/Local%20server.html" class="md-nav__link">
         
   
   
@@ -1542,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
         
   
   
@@ -1565,7 +1578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
         
   
   
@@ -1588,7 +1601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/persistence.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/persistence.html" class="md-nav__link">
         
   
   
@@ -1611,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/durable%20execution.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/durable%20execution.html" class="md-nav__link">
         
   
   
@@ -1634,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/streaming.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/streaming.html" class="md-nav__link">
         
   
   
@@ -1657,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/interrupts.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/interrupts.html" class="md-nav__link">
         
   
   
@@ -1680,7 +1693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/time%20travel.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/time%20travel.html" class="md-nav__link">
         
   
   
@@ -1703,7 +1716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/memory.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/memory.html" class="md-nav__link">
         
   
   
@@ -1726,7 +1739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Subgraphs.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/Subgraphs.html" class="md-nav__link">
         
   
   
@@ -1749,7 +1762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/application%20structure.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/application%20structure.html" class="md-nav__link">
         
   
   
@@ -1823,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
         
   
   
@@ -1846,7 +1859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
         
   
   
@@ -1889,8 +1902,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1904,21 +1919,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1931,7 +1947,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             向量数据库
@@ -1945,7 +1961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
+      <a href="../Chroma/tutorial.html" class="md-nav__link">
         
   
   
@@ -1965,10 +1981,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Milvus
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tutorial.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1979,6 +2015,309 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-milvus" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Milvus 简介
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Milvus 简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心特性：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 环境准备
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 环境准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pymilvus_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 PyMilvus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#milvus" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动 Milvus 服务
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 基础概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 基础概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心组件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      距离度量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 基础操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 基础操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#milvus_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      连接 Milvus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建集合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建索引
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      搜索向量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询标量数据
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 进阶功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 进阶功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      分区管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      混合搜索（标量 + 向量）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据删除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      集合管理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 性能优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 性能优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      索引选择策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      批量操作优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 实战案例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 实战案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      案例：图像检索系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      案例：推荐系统
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1991,7 +2330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
+      <a href="../FAISS/tutorial.html" class="md-nav__link">
         
   
   
@@ -2125,7 +2464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
+      <a href="../../llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
         
   
   
@@ -2148,7 +2487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Gradio/tutorial.html" class="md-nav__link">
+      <a href="../../llm/deploy/Gradio/tutorial.html" class="md-nav__link">
         
   
   
@@ -2279,7 +2618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/transformers/quick%20start.html" class="md-nav__link">
+      <a href="../../llm/tunning/transformers/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2361,7 +2700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/quick%20start.html" class="md-nav__link">
+      <a href="../../llm/tunning/peft/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2384,7 +2723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
+      <a href="../../llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
         
   
   
@@ -2521,7 +2860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/inference/vLLM/quick%20start.html" class="md-nav__link">
+      <a href="../../llm/inference/vLLM/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2616,7 +2955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/others/wsl.html" class="md-nav__link">
+      <a href="../../others/wsl.html" class="md-nav__link">
         
   
   
@@ -2657,6 +2996,299 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-milvus" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Milvus 简介
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Milvus 简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心特性：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 环境准备
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 环境准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pymilvus_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 PyMilvus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#milvus" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动 Milvus 服务
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 基础概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 基础概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心组件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      距离度量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 基础操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 基础操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#milvus_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      连接 Milvus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建集合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建索引
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      搜索向量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询标量数据
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 进阶功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 进阶功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      分区管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      混合搜索（标量 + 向量）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据删除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      集合管理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 性能优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 性能优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      索引选择策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      批量操作优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 实战案例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 实战案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      案例：图像检索系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      案例：推荐系统
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2667,8 +3299,513 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="pymilvus">PyMilvus 使用教程：从入门到精通<a class="headerlink" href="#pymilvus" title="Permanent link">&para;</a></h1>
+<h2 id="1-milvus">1. Milvus 简介<a class="headerlink" href="#1-milvus" title="Permanent link">&para;</a></h2>
+<p>Milvus 是一个开源的向量数据库，专门用于处理大规模向量数据的存储和相似度搜索。它支持多种索引类型和距离度量方式，广泛应用于推荐系统、图像检索、自然语言处理等领域。</p>
+<h3 id="_1">核心特性：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>高性能向量相似度搜索</li>
+<li>支持多种索引类型（IVF_FLAT、HNSW、ANNOY等）</li>
+<li>可扩展的分布式架构</li>
+<li>支持多种距离度量（L2、内积、余弦等）</li>
+<li>丰富的 SDK 支持</li>
+</ul>
+<h2 id="2">2. 环境准备<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="pymilvus_1">安装 PyMilvus<a class="headerlink" href="#pymilvus_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">pip install pymilvus
+</code></pre>
+<h3 id="milvus">启动 Milvus 服务<a class="headerlink" href="#milvus" title="Permanent link">&para;</a></h3>
+<p>使用 Docker 启动 Milvus 单机版：</p>
+<pre><code class="language-bash">docker run -d --name milvus-standalone \
+  -p 19530:19530 \
+  -p 9091:9091 \
+  milvusdb/milvus:v2.3.4
+</code></pre>
+<h2 id="3">3. 基础概念<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="_2">核心组件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Collection（集合）</strong>：类似关系数据库中的表，包含多个实体</li>
+<li><strong>Field（字段）</strong>：集合中的列，可以是标量或向量</li>
+<li><strong>Entity（实体）</strong>：集合中的一行数据</li>
+<li><strong>Partition（分区）</strong>：用于数据管理的逻辑分组</li>
+<li><strong>Index（索引）</strong>：加速向量搜索的数据结构</li>
+<li><strong>Schema（模式）</strong>：定义集合的结构</li>
+</ol>
+<h3 id="_3">距离度量<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>L2（欧氏距离）</strong>：<code>"L2"</code></li>
+<li><strong>内积</strong>：<code>"IP"</code></li>
+<li><strong>余弦相似度</strong>：<code>"COSINE"</code></li>
+</ul>
+<h2 id="4">4. 基础操作<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="milvus_1">连接 Milvus<a class="headerlink" href="#milvus_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from pymilvus import connections, utility
+
+# 连接 Milvus
+connections.connect(
+    alias=&quot;default&quot;,
+    host=&quot;localhost&quot;,
+    port=&quot;19530&quot;
+)
+
+# 检查连接状态
+print(f&quot;Milvus 版本: {utility.get_server_version()}&quot;)
+</code></pre>
+<h3 id="_4">创建集合<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from pymilvus import Collection, FieldSchema, CollectionSchema, DataType
+
+# 定义字段
+fields = [
+    FieldSchema(name=&quot;id&quot;, dtype=DataType.INT64, is_primary=True, auto_id=True),
+    FieldSchema(name=&quot;embedding&quot;, dtype=DataType.FLOAT_VECTOR, dim=128),
+    FieldSchema(name=&quot;title&quot;, dtype=DataType.VARCHAR, max_length=200),
+    FieldSchema(name=&quot;category&quot;, dtype=DataType.VARCHAR, max_length=100)
+]
+
+# 创建模式
+schema = CollectionSchema(
+    fields=fields,
+    description=&quot;示例集合&quot;,
+    enable_dynamic_field=True
+)
+
+# 创建集合
+collection_name = &quot;example_collection&quot;
+collection = Collection(
+    name=collection_name,
+    schema=schema,
+    using=&quot;default&quot;
+)
+
+print(f&quot;集合 {collection_name} 创建成功&quot;)
+</code></pre>
+<h3 id="_5">插入数据<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import random
+
+# 生成示例数据
+num_entities = 1000
+embeddings = [[random.random() for _ in range(128)] for _ in range(num_entities)]
+titles = [f&quot;标题_{i}&quot; for i in range(num_entities)]
+categories = [f&quot;分类_{random.randint(1, 5)}&quot; for _ in range(num_entities)]
+
+# 准备插入数据
+data = [
+    embeddings,  # 向量数据
+    titles,      # 标量数据
+    categories   # 标量数据
+]
+
+# 插入数据
+insert_result = collection.insert(data)
+
+print(f&quot;插入了 {len(insert_result.primary_keys)} 条数据&quot;)
+print(f&quot;主键: {insert_result.primary_keys[:5]}&quot;)  # 显示前5个主键
+</code></pre>
+<h3 id="_6">创建索引<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 在插入数据后创建索引
+index_params = {
+    &quot;index_type&quot;: &quot;IVF_FLAT&quot;,
+    &quot;metric_type&quot;: &quot;L2&quot;,
+    &quot;params&quot;: {&quot;nlist&quot;: 128}
+}
+
+# 为向量字段创建索引
+collection.create_index(
+    field_name=&quot;embedding&quot;,
+    index_params=index_params
+)
+
+print(&quot;索引创建成功&quot;)
+</code></pre>
+<h3 id="_7">搜索向量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 加载集合到内存
+collection.load()
+
+# 准备搜索向量
+search_vectors = [[random.random() for _ in range(128)] for _ in range(5)]
+
+# 设置搜索参数
+search_params = {
+    &quot;metric_type&quot;: &quot;L2&quot;,
+    &quot;params&quot;: {&quot;nprobe&quot;: 10}
+}
+
+# 执行搜索
+results = collection.search(
+    data=search_vectors,
+    anns_field=&quot;embedding&quot;,
+    param=search_params,
+    limit=3,  # 返回top-3结果
+    output_fields=[&quot;title&quot;, &quot;category&quot;]  # 返回的字段
+)
+
+# 解析搜索结果
+for i, result in enumerate(results):
+    print(f&quot;\n搜索向量 {i+1} 的结果:&quot;)
+    for j, hit in enumerate(result):
+        print(f&quot;  第 {j+1} 名: ID={hit.id}, 距离={hit.distance:.4f}, &quot;
+              f&quot;标题={hit.entity.get('title')}, 分类={hit.entity.get('category')}&quot;)
+</code></pre>
+<h3 id="_8">查询标量数据<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 基于标量字段查询
+query_result = collection.query(
+    expr='category == &quot;分类_1&quot;',
+    output_fields=[&quot;id&quot;, &quot;title&quot;, &quot;category&quot;],
+    limit=5
+)
+
+print(&quot;\n分类为 '分类_1' 的数据:&quot;)
+for result in query_result:
+    print(f&quot;ID: {result['id']}, 标题: {result['title']}, 分类: {result['category']}&quot;)
+</code></pre>
+<h2 id="5">5. 进阶功能<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="_9">分区管理<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 创建分区
+partition_name = &quot;partition_1&quot;
+collection.create_partition(partition_name)
+
+# 向分区插入数据
+partition_data = [
+    [[random.random() for _ in range(128)] for _ in range(100)],
+    [f&quot;分区标题_{i}&quot; for i in range(100)],
+    [&quot;特殊分类&quot; for _ in range(100)]
+]
+
+partition_insert_result = collection.insert(partition_data, partition_name=partition_name)
+
+# 在指定分区搜索
+partition_results = collection.search(
+    data=search_vectors,
+    anns_field=&quot;embedding&quot;,
+    param=search_params,
+    limit=2,
+    partition_names=[partition_name],
+    output_fields=[&quot;title&quot;, &quot;category&quot;]
+)
+</code></pre>
+<h3 id="_10">混合搜索（标量 + 向量）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 结合标量过滤的向量搜索
+hybrid_search_results = collection.search(
+    data=search_vectors,
+    anns_field=&quot;embedding&quot;,
+    param=search_params,
+    limit=5,
+    expr='category == &quot;分类_2&quot;',  # 标量过滤条件
+    output_fields=[&quot;title&quot;, &quot;category&quot;]
+)
+
+print(&quot;\n混合搜索结果 (分类为 '分类_2'):&quot;)
+for i, result in enumerate(hybrid_search_results):
+    print(f&quot;搜索向量 {i+1}:&quot;)
+    for hit in result:
+        print(f&quot;  ID={hit.id}, 距离={hit.distance:.4f}, &quot;
+              f&quot;标题={hit.entity.get('title')}&quot;)
+</code></pre>
+<h3 id="_11">数据删除<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 删除特定数据
+delete_expr = 'category == &quot;特殊分类&quot;'
+collection.delete(delete_expr)
+
+print(&quot;数据删除完成&quot;)
+</code></pre>
+<h3 id="_12">集合管理<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 获取集合信息
+collection_info = {
+    &quot;实体数量&quot;: collection.num_entities,
+    &quot;分区列表&quot;: collection.partitions
+}
+
+print(&quot;集合信息:&quot;)
+for key, value in collection_info.items():
+    print(f&quot;  {key}: {value}&quot;)
+
+# 释放集合内存
+collection.release()
+</code></pre>
+<h2 id="6">6. 性能优化<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="_13">索引选择策略<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">def create_optimized_index(collection, field_name, data_size):
+    &quot;&quot;&quot;根据数据量选择最优索引&quot;&quot;&quot;
+    if data_size &lt; 10000:
+        # 小数据量使用FLAT
+        index_params = {
+            &quot;index_type&quot;: &quot;FLAT&quot;,
+            &quot;metric_type&quot;: &quot;L2&quot;
+        }
+    elif data_size &lt; 1000000:
+        # 中等数据量使用IVF_FLAT
+        index_params = {
+            &quot;index_type&quot;: &quot;IVF_FLAT&quot;,
+            &quot;metric_type&quot;: &quot;L2&quot;,
+            &quot;params&quot;: {&quot;nlist&quot;: 1024}
+        }
+    else:
+        # 大数据量使用HNSW
+        index_params = {
+            &quot;index_type&quot;: &quot;HNSW&quot;,
+            &quot;metric_type&quot;: &quot;L2&quot;,
+            &quot;params&quot;: {&quot;M&quot;: 16, &quot;efConstruction&quot;: 200}
+        }
+
+    collection.create_index(field_name, index_params)
+    return index_params
+
+# 使用优化索引
+optimized_index = create_optimized_index(collection, &quot;embedding&quot;, 100000)
+print(f&quot;创建的索引参数: {optimized_index}&quot;)
+</code></pre>
+<h3 id="_14">批量操作优化<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">def batch_insert(collection, data, batch_size=1000):
+    &quot;&quot;&quot;批量插入数据优化&quot;&quot;&quot;
+    total_records = len(data[0])
+    inserted_count = 0
+
+    for i in range(0, total_records, batch_size):
+        end_idx = min(i + batch_size, total_records)
+        batch_data = [field[i:end_idx] for field in data]
+
+        insert_result = collection.insert(batch_data)
+        inserted_count += len(insert_result.primary_keys)
+
+        print(f&quot;已插入 {inserted_count}/{total_records} 条数据&quot;)
+
+    return inserted_count
+
+# 使用批量插入
+large_embeddings = [[random.random() for _ in range(128)] for _ in range(5000)]
+large_titles = [f&quot;批量标题_{i}&quot; for i in range(5000)]
+large_categories = [f&quot;分类_{random.randint(1, 3)}&quot; for _ in range(5000)]
+
+large_data = [large_embeddings, large_titles, large_categories]
+batch_insert(collection, large_data, batch_size=500)
+</code></pre>
+<h2 id="7">7. 实战案例<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="_15">案例：图像检索系统<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import numpy as np
+from PIL import Image
+import requests
+from io import BytesIO
+
+class ImageSearchSystem:
+    def __init__(self, collection_name=&quot;image_search&quot;):
+        self.collection_name = collection_name
+        self.setup_collection()
+
+    def setup_collection(self):
+        &quot;&quot;&quot;设置图像搜索集合&quot;&quot;&quot;
+        if utility.has_collection(self.collection_name):
+            self.collection = Collection(self.collection_name)
+            return
+
+        fields = [
+            FieldSchema(name=&quot;id&quot;, dtype=DataType.INT64, is_primary=True, auto_id=True),
+            FieldSchema(name=&quot;image_vector&quot;, dtype=DataType.FLOAT_VECTOR, dim=512),
+            FieldSchema(name=&quot;image_url&quot;, dtype=DataType.VARCHAR, max_length=500),
+            FieldSchema(name=&quot;tags&quot;, dtype=DataType.VARCHAR, max_length=200),
+            FieldSchema(name=&quot;upload_time&quot;, dtype=DataType.INT64)
+        ]
+
+        schema = CollectionSchema(fields, &quot;图像搜索集合&quot;)
+        self.collection = Collection(self.collection_name, schema)
+
+        # 创建索引
+        index_params = {
+            &quot;index_type&quot;: &quot;IVF_FLAT&quot;,
+            &quot;metric_type&quot;: &quot;COSINE&quot;,  # 图像搜索通常使用余弦相似度
+            &quot;params&quot;: {&quot;nlist&quot;: 1024}
+        }
+        self.collection.create_index(&quot;image_vector&quot;, index_params)
+
+    def add_image(self, image_vector, image_url, tags):
+        &quot;&quot;&quot;添加图像到系统&quot;&quot;&quot;
+        current_time = int(time.time())
+        data = [
+            [image_vector],
+            [image_url],
+            [tags],
+            [current_time]
+        ]
+
+        result = self.collection.insert(data)
+        return result.primary_keys[0]
+
+    def search_similar_images(self, query_vector, top_k=10, tag_filter=None):
+        &quot;&quot;&quot;搜索相似图像&quot;&quot;&quot;
+        self.collection.load()
+
+        search_params = {
+            &quot;metric_type&quot;: &quot;COSINE&quot;,
+            &quot;params&quot;: {&quot;nprobe&quot;: 16}
+        }
+
+        expr = None
+        if tag_filter:
+            expr = f'tags like &quot;%{tag_filter}%&quot;'
+
+        results = self.collection.search(
+            data=[query_vector],
+            anns_field=&quot;image_vector&quot;,
+            param=search_params,
+            limit=top_k,
+            expr=expr,
+            output_fields=[&quot;image_url&quot;, &quot;tags&quot;, &quot;upload_time&quot;]
+        )
+
+        return results[0]
+
+    def demo_simulation(self):
+        &quot;&quot;&quot;演示模拟&quot;&quot;&quot;
+        print(&quot;=== 图像检索系统演示 ===&quot;)
+
+        # 模拟添加图像数据
+        print(&quot;\n1. 添加图像数据...&quot;)
+        for i in range(100):
+            # 模拟512维图像特征向量
+            fake_vector = [random.random() for _ in range(512)]
+            tags = f&quot;tag_{random.randint(1, 10)}&quot;
+            self.add_image(fake_vector, f&quot;http://example.com/image_{i}.jpg&quot;, tags)
+
+        # 模拟搜索
+        print(&quot;\n2. 执行相似图像搜索...&quot;)
+        query_vector = [random.random() for _ in range(512)]
+        results = self.search_similar_images(query_vector, top_k=5)
+
+        print(&quot;搜索结果:&quot;)
+        for i, hit in enumerate(results):
+            print(f&quot;  {i+1}. 相似度: {1 - hit.distance:.4f}, &quot;
+                  f&quot;URL: {hit.entity.get('image_url')}, &quot;
+                  f&quot;标签: {hit.entity.get('tags')}&quot;)
+
+# 运行演示
+image_system = ImageSearchSystem()
+image_system.demo_simulation()
+</code></pre>
+<h3 id="_16">案例：推荐系统<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">class RecommendationSystem:
+    def __init__(self):
+        self.collection_name = &quot;user_embeddings&quot;
+        self.setup_collection()
+
+    def setup_collection(self):
+        &quot;&quot;&quot;设置用户嵌入向量集合&quot;&quot;&quot;
+        if utility.has_collection(self.collection_name):
+            self.collection = Collection(self.collection_name)
+            return
+
+        fields = [
+            FieldSchema(name=&quot;user_id&quot;, dtype=DataType.INT64, is_primary=True),
+            FieldSchema(name=&quot;user_embedding&quot;, dtype=DataType.FLOAT_VECTOR, dim=256),
+            FieldSchema(name=&quot;user_features&quot;, dtype=DataType.VARCHAR, max_length=500),
+            FieldSchema(name=&quot;last_active&quot;, dtype=DataType.INT64)
+        ]
+
+        schema = CollectionSchema(fields, &quot;用户推荐系统&quot;)
+        self.collection = Collection(self.collection_name, schema)
+
+        index_params = {
+            &quot;index_type&quot;: &quot;HNSW&quot;,
+            &quot;metric_type&quot;: &quot;IP&quot;,  # 推荐系统常用内积
+            &quot;params&quot;: {&quot;M&quot;: 16, &quot;efConstruction&quot;: 200}
+        }
+        self.collection.create_index(&quot;user_embedding&quot;, index_params)
+
+    def add_user(self, user_id, embedding, features):
+        &quot;&quot;&quot;添加用户&quot;&quot;&quot;
+        current_time = int(time.time())
+        data = [
+            [user_id],
+            [embedding],
+            [features],
+            [current_time]
+        ]
+
+        self.collection.insert(data)
+
+    def find_similar_users(self, user_id, top_k=5):
+        &quot;&quot;&quot;查找相似用户&quot;&quot;&quot;
+        self.collection.load()
+
+        # 先获取目标用户的向量
+        target_user = self.collection.query(
+            expr=f&quot;user_id == {user_id}&quot;,
+            output_fields=[&quot;user_embedding&quot;]
+        )
+
+        if not target_user:
+            return []
+
+        target_embedding = target_user[0][&quot;user_embedding&quot;]
+
+        search_params = {
+            &quot;metric_type&quot;: &quot;IP&quot;,
+            &quot;params&quot;: {&quot;ef&quot;: 50}
+        }
+
+        results = self.collection.search(
+            data=[target_embedding],
+            anns_field=&quot;user_embedding&quot;,
+            param=search_params,
+            limit=top_k + 1,  # 包含自己
+            output_fields=[&quot;user_id&quot;, &quot;user_features&quot;]
+        )
+
+        # 过滤掉自己
+        similar_users = []
+        for hit in results[0]:
+            if hit.id != user_id:
+                similar_users.append({
+                    &quot;user_id&quot;: hit.id,
+                    &quot;score&quot;: hit.distance,
+                    &quot;features&quot;: hit.entity.get(&quot;user_features&quot;)
+                })
+
+        return similar_users[:top_k]
+
+# 使用示例
+rec_system = RecommendationSystem()
+
+# 添加示例用户
+for i in range(1, 101):
+    embedding = [random.random() for _ in range(256)]
+    features = f&quot;age_{random.randint(18, 60)},interests_{random.randint(1, 10)}&quot;
+    rec_system.add_user(i, embedding, features)
+
+# 查找相似用户
+similar_users = rec_system.find_similar_users(1, top_k=3)
+print(&quot;相似用户推荐:&quot;)
+for user in similar_users:
+    print(f&quot;用户ID: {user['user_id']}, 相似度: {user['score']:.4f}&quot;)
+</code></pre>
+<h2 id="_17">总结<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>本教程涵盖了 PyMilvus 从基础到进阶的完整使用流程：</p>
+<ol>
+<li><strong>基础概念</strong>：理解 Milvus 的核心组件和数据模型</li>
+<li><strong>基础操作</strong>：连接、集合管理、数据插入、搜索查询</li>
+<li><strong>进阶功能</strong>：分区管理、混合搜索、数据删除</li>
+<li><strong>性能优化</strong>：索引选择、批量操作</li>
+<li><strong>实战案例</strong>：图像检索、推荐系统等实际应用</li>
+</ol>
+<p>通过掌握这些知识，你可以在实际项目中高效地使用 Milvus 进行向量数据的管理和相似度搜索。记得根据具体业务场景选择合适的索引类型和搜索参数，以达到最佳的性能效果。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2706,10 +3843,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/interviews/", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "/interviews/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="/interviews/assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -2717,7 +3854,7 @@
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="/interviews/styles/javascripts/katex.js"></script>
+        <script src="../../styles/javascripts/katex.js"></script>
       
     
   </body>

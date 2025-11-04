@@ -10,22 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
+        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/llmapps/langchain/advanced-usage/Human-in-the-loop.html">
       
       
+        <link rel="prev" href="MCP.html">
       
-      <link rel="icon" href="/interviews/assets/images/favicon.png">
+      
+        <link rel="next" href="Multi-agent.html">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>人工智能面试集合</title>
+        <title>Human-in-the-loop - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="/interviews/assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="/interviews/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="/interviews/styles/custom.css">
+      <link rel="stylesheet" href="../../../styles/custom.css">
     
-      <link rel="stylesheet" href="/interviews/styles/extra.css">
+      <link rel="stylesheet" href="../../../styles/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("/interviews/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/interviews/." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Human-in-the-loop
             
           </span>
         </div>
@@ -216,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/machine/interview.html" class="md-tabs__link">
+      <a href="../../../machine/interview.html" class="md-tabs__link">
         
   
   
@@ -235,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-tabs__link">
+      <a href="../../../deeplearning/interview.html" class="md-tabs__link">
         
   
   
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/nlp/chart01.html" class="md-tabs__link">
+        <a href="../../../nlp/chart01.html" class="md-tabs__link">
           
   
   
@@ -274,6 +285,8 @@
   
   
   
+    
+  
   
     
     
@@ -281,11 +294,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../core-components/agents.html" class="md-tabs__link">
           
   
   
@@ -310,7 +325,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
+        <a href="../../../Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
           
   
   
@@ -339,7 +354,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
+        <a href="../../../llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
           
   
   
@@ -364,7 +379,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/others/wsl.html" class="md-tabs__link">
+        <a href="../../../others/wsl.html" class="md-tabs__link">
           
   
   
@@ -400,7 +415,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/interviews/." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -430,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/machine/interview.html" class="md-nav__link">
+      <a href="../../../machine/interview.html" class="md-nav__link">
         
   
   
@@ -452,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-nav__link">
+      <a href="../../../deeplearning/interview.html" class="md-nav__link">
         
   
   
@@ -535,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart01.html" class="md-nav__link">
+      <a href="../../../nlp/chart01.html" class="md-nav__link">
         
   
   
@@ -558,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart02.html" class="md-nav__link">
+      <a href="../../../nlp/chart02.html" class="md-nav__link">
         
   
   
@@ -581,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart03.html" class="md-nav__link">
+      <a href="../../../nlp/chart03.html" class="md-nav__link">
         
   
   
@@ -604,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart04.html" class="md-nav__link">
+      <a href="../../../nlp/chart04.html" class="md-nav__link">
         
   
   
@@ -627,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart05.html" class="md-nav__link">
+      <a href="../../../nlp/chart05.html" class="md-nav__link">
         
   
   
@@ -650,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/nltk.html" class="md-nav__link">
+      <a href="../../../nlp/nltk.html" class="md-nav__link">
         
   
   
@@ -673,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/peft.html" class="md-nav__link">
+      <a href="../../../nlp/peft.html" class="md-nav__link">
         
   
   
@@ -700,8 +715,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -717,21 +734,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -744,7 +762,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             大模型应用开发
@@ -782,10 +800,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -794,7 +815,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   
@@ -821,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-nav__link">
+      <a href="../core-components/agents.html" class="md-nav__link">
         
   
   
@@ -844,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/models.html" class="md-nav__link">
+      <a href="../core-components/models.html" class="md-nav__link">
         
   
   
@@ -867,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/messages.html" class="md-nav__link">
+      <a href="../core-components/messages.html" class="md-nav__link">
         
   
   
@@ -890,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/tools.html" class="md-nav__link">
+      <a href="../core-components/tools.html" class="md-nav__link">
         
   
   
@@ -913,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
+      <a href="../core-components/short-term%20memory.html" class="md-nav__link">
         
   
   
@@ -936,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/streaming.html" class="md-nav__link">
+      <a href="../core-components/streaming.html" class="md-nav__link">
         
   
   
@@ -959,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/middleware.html" class="md-nav__link">
+      <a href="../core-components/middleware.html" class="md-nav__link">
         
   
   
@@ -982,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
+      <a href="../core-components/structured-output.html" class="md-nav__link">
         
   
   
@@ -1010,8 +1031,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1036,20 +1059,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   
@@ -1062,7 +1086,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             LangChain进阶用法
@@ -1076,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
+      <a href="Guardrails.html" class="md-nav__link">
         
   
   
@@ -1099,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
+      <a href="Runtime.html" class="md-nav__link">
         
   
   
@@ -1122,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
+      <a href="context-engineering.html" class="md-nav__link">
         
   
   
@@ -1145,7 +1169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
+      <a href="MCP.html" class="md-nav__link">
         
   
   
@@ -1165,10 +1189,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Human-in-the-loop
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Human-in-the-loop.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1179,6 +1223,162 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、概念简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hitl" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、HITL 的工作原理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、三种人工决策类型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hitl_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、HITL 配置示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、触发中断与人工审查流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、触发中断与人工审查流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      六、提供人工决策（恢复执行）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、提供人工决策（恢复执行）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 批准执行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✏️ 修改参数后执行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ 拒绝执行并提供反馈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      多个操作同时中断时
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hitl_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      七、HITL 执行生命周期详解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hitl_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      八、自定义 HITL 逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      九、总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1191,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
+      <a href="Multi-agent.html" class="md-nav__link">
         
   
   
@@ -1214,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
+      <a href="Retrieval.html" class="md-nav__link">
         
   
   
@@ -1237,7 +1437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
+      <a href="Long-term%20memory.html" class="md-nav__link">
         
   
   
@@ -1282,10 +1482,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1294,7 +1497,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   
@@ -1321,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
+      <a href="../../apps/langchain/semantic%20search.html" class="md-nav__link">
         
   
   
@@ -1344,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
+      <a href="../../apps/langchain/RAG%20agent.html" class="md-nav__link">
         
   
   
@@ -1367,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
+      <a href="../../apps/langchain/humain_middleware.html" class="md-nav__link">
         
   
   
@@ -1434,10 +1637,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1446,7 +1652,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
             
   
   
@@ -1473,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/overview.html" class="md-nav__link">
+      <a href="../../langgraph/overview.html" class="md-nav__link">
         
   
   
@@ -1496,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/quickstart.html" class="md-nav__link">
+      <a href="../../langgraph/quickstart.html" class="md-nav__link">
         
   
   
@@ -1519,7 +1725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Local%20server.html" class="md-nav__link">
+      <a href="../../langgraph/Local%20server.html" class="md-nav__link">
         
   
   
@@ -1542,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
+      <a href="../../langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
         
   
   
@@ -1565,7 +1771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
+      <a href="../../langgraph/workflows%2Bagents.html" class="md-nav__link">
         
   
   
@@ -1588,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/persistence.html" class="md-nav__link">
+      <a href="../../langgraph/persistence.html" class="md-nav__link">
         
   
   
@@ -1611,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/durable%20execution.html" class="md-nav__link">
+      <a href="../../langgraph/durable%20execution.html" class="md-nav__link">
         
   
   
@@ -1634,7 +1840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/streaming.html" class="md-nav__link">
+      <a href="../../langgraph/streaming.html" class="md-nav__link">
         
   
   
@@ -1657,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/interrupts.html" class="md-nav__link">
+      <a href="../../langgraph/interrupts.html" class="md-nav__link">
         
   
   
@@ -1680,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/time%20travel.html" class="md-nav__link">
+      <a href="../../langgraph/time%20travel.html" class="md-nav__link">
         
   
   
@@ -1703,7 +1909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/memory.html" class="md-nav__link">
+      <a href="../../langgraph/memory.html" class="md-nav__link">
         
   
   
@@ -1726,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Subgraphs.html" class="md-nav__link">
+      <a href="../../langgraph/Subgraphs.html" class="md-nav__link">
         
   
   
@@ -1749,7 +1955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/application%20structure.html" class="md-nav__link">
+      <a href="../../langgraph/application%20structure.html" class="md-nav__link">
         
   
   
@@ -1823,7 +2029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
+      <a href="../../langgraph/graph%20api%20overview.html" class="md-nav__link">
         
   
   
@@ -1846,7 +2052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
+      <a href="../../langgraph/use%20the%20graph%20api.html" class="md-nav__link">
         
   
   
@@ -1945,7 +2151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
+      <a href="../../../Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
         
   
   
@@ -1968,7 +2174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
+      <a href="../../../Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
         
   
   
@@ -1991,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
+      <a href="../../../Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
         
   
   
@@ -2125,7 +2331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
+      <a href="../../../llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
         
   
   
@@ -2148,7 +2354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Gradio/tutorial.html" class="md-nav__link">
+      <a href="../../../llm/deploy/Gradio/tutorial.html" class="md-nav__link">
         
   
   
@@ -2279,7 +2485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/transformers/quick%20start.html" class="md-nav__link">
+      <a href="../../../llm/tunning/transformers/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2361,7 +2567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/quick%20start.html" class="md-nav__link">
+      <a href="../../../llm/tunning/peft/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2384,7 +2590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
+      <a href="../../../llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
         
   
   
@@ -2521,7 +2727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/inference/vLLM/quick%20start.html" class="md-nav__link">
+      <a href="../../../llm/inference/vLLM/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2616,7 +2822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/others/wsl.html" class="md-nav__link">
+      <a href="../../../others/wsl.html" class="md-nav__link">
         
   
   
@@ -2657,6 +2863,152 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、概念简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hitl" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、HITL 的工作原理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、三种人工决策类型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hitl_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、HITL 配置示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、触发中断与人工审查流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、触发中断与人工审查流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      六、提供人工决策（恢复执行）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、提供人工决策（恢复执行）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 批准执行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✏️ 修改参数后执行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ 拒绝执行并提供反馈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      多个操作同时中断时
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hitl_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      七、HITL 执行生命周期详解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hitl_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      八、自定义 HITL 逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      九、总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2667,8 +3019,255 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="human-in-the-loop">🧭 Human-in-the-Loop（人类在环）教程<a class="headerlink" href="#human-in-the-loop" title="Permanent link">&para;</a></h1>
+<h2 id="_1">一、概念简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>在自动化智能系统中，我们希望 AI 具备强大的自主决策能力，但在一些关键操作上（例如删除数据库记录、写入文件、发送邮件），<strong>完全交由模型自动执行是不安全的</strong>。
+这时就需要 <strong>Human-in-the-Loop（HITL）</strong> 机制。</p>
+<p><strong>HITL 中间件</strong> 允许你在 Agent 执行工具调用（Tool Call）之前，插入一个人工审查环节。
+当模型计划执行高风险或敏感操作时，它会<strong>暂停执行</strong>，等待人工批准、修改或拒绝。</p>
+<p>换句话说，HITL 是 AI 系统的<strong>“安全阀”</strong> —— 它让你决定何时让人类介入、如何恢复执行。</p>
+<hr />
+<h2 id="hitl">二、HITL 的工作原理<a class="headerlink" href="#hitl" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>模型生成计划</strong>：Agent 输出一个工具调用请求（例如执行 SQL）。</li>
+<li><strong>中间件检查</strong>：HITL 中间件根据预先设定的策略检查这个调用。</li>
+<li><strong>触发中断</strong>：若该操作需要人工干预，中间件会发出一个 <em>interrupt（中断）</em> 信号，暂停执行。</li>
+<li><strong>保存状态</strong>：当前对话状态通过 LangGraph 的持久化层（Persistence Layer）保存。</li>
+<li>
+<p><strong>人工审查</strong>：人类可以选择：</p>
+</li>
+<li>
+<p>✅ <code>approve</code>（批准执行）</p>
+</li>
+<li>✏️ <code>edit</code>（修改执行参数）</li>
+<li>❌ <code>reject</code>（拒绝并反馈原因）</li>
+<li><strong>恢复执行</strong>：系统根据人工决策继续运行或放弃该操作。</li>
+</ol>
+<hr />
+<h2 id="_2">三、三种人工决策类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>决策类型</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ <strong>approve</strong></td>
+<td>批准操作并执行</td>
+<td>发送邮件草稿原样发送</td>
+</tr>
+<tr>
+<td>✏️ <strong>edit</strong></td>
+<td>修改参数后再执行</td>
+<td>改动邮件收件人后再发送</td>
+</tr>
+<tr>
+<td>❌ <strong>reject</strong></td>
+<td>拒绝执行并反馈</td>
+<td>拒绝草稿并说明改进建议</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示：
+修改工具参数（<code>edit</code>）时建议小幅调整。过大改动可能导致模型重新规划，引发多次执行或不可预期行为。</p>
+</blockquote>
+<hr />
+<h2 id="hitl_1">四、HITL 配置示例<a class="headerlink" href="#hitl_1" title="Permanent link">&para;</a></h2>
+<p>在创建 Agent 时，将 <code>HumanInTheLoopMiddleware</code> 添加到 <code>middleware</code> 列表中即可启用 HITL。
+通过 <code>interrupt_on</code> 字典来定义哪些工具需要人工审批，以及允许的决策类型。</p>
+<pre><code class="language-python">from langchain.agents import create_agent
+from langchain.agents.middleware import HumanInTheLoopMiddleware
+from langgraph.checkpoint.memory import InMemorySaver
+
+agent = create_agent(
+    model=&quot;openai:gpt-4o&quot;,
+    tools=[write_file_tool, execute_sql_tool, read_data_tool],
+    middleware=[
+        HumanInTheLoopMiddleware(
+            interrupt_on={
+                &quot;write_file&quot;: True,  # 允许approve/edit/reject三种操作
+                &quot;execute_sql&quot;: {&quot;allowed_decisions&quot;: [&quot;approve&quot;, &quot;reject&quot;]},  # 禁止edit修改
+                &quot;read_data&quot;: False,  # 安全操作，不需要人工审批
+            },
+            description_prefix=&quot;工具调用等待人工审批&quot;,
+        ),
+    ],
+    # HITL 依赖检查点机制来在中断后恢复状态
+    checkpointer=InMemorySaver(),  # 测试用内存保存器
+)
+</code></pre>
+<blockquote>
+<p>⚙️ 在生产环境中，请使用持久化的保存器（如 <code>AsyncPostgresSaver</code>）以保证在服务重启后仍能恢复执行状态。
+详见 LangGraph <a href="https://reference.langchain.com/python/langgraph/checkpoints/#langgraph.checkpoint.postgres.aio.AsyncPostgresSaver">Checkpoint 文档</a>。</p>
+</blockquote>
+<hr />
+<h2 id="_3">五、触发中断与人工审查流程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>当你运行 Agent 时，它会一直执行，直到遇到需要人工干预的工具调用。
+此时，返回结果会包含一个 <code>__interrupt__</code> 字段，其中列出所有待审查的操作。</p>
+<h3 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langgraph.types import Command
+
+config = {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;user_session_001&quot;}}
+
+# 调用触发潜在危险操作
+result = agent.invoke(
+    {
+        &quot;messages&quot;: [
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Delete old records from the database&quot;}
+        ]
+    },
+    config=config
+)
+
+print(result['__interrupt__'])
+</code></pre>
+<p>输出中断请求，内容类似：</p>
+<pre><code class="language-python">[
+  Interrupt(
+    value={
+      &quot;action_requests&quot;: [
+        {
+          &quot;name&quot;: &quot;execute_sql&quot;,
+          &quot;arguments&quot;: {&quot;query&quot;: &quot;DELETE FROM records WHERE created_at &lt; NOW() - INTERVAL '30 days';&quot;},
+          &quot;description&quot;: &quot;工具调用等待人工审批\n\nTool: execute_sql\nArgs: {...}&quot;
+        }
+      ],
+      &quot;review_configs&quot;: [
+        {
+          &quot;action_name&quot;: &quot;execute_sql&quot;,
+          &quot;allowed_decisions&quot;: [&quot;approve&quot;, &quot;reject&quot;]
+        }
+      ]
+    }
+  )
+]
+</code></pre>
+<hr />
+<h2 id="_5">六、提供人工决策（恢复执行）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>执行被中断后，你可以使用 <code>Command(resume=...)</code> 提供人工决策并恢复流程。</p>
+<h3 id="_6">✅ 批准执行<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">agent.invoke(
+    Command(
+        resume={
+            &quot;decisions&quot;: [{&quot;type&quot;: &quot;approve&quot;}]
+        }
+    ),
+    config=config
+)
+</code></pre>
+<hr />
+<h3 id="_7">✏️ 修改参数后执行<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">agent.invoke(
+    Command(
+        resume={
+            &quot;decisions&quot;: [
+                {
+                    &quot;type&quot;: &quot;edit&quot;,
+                    &quot;edited_action&quot;: {
+                        &quot;name&quot;: &quot;execute_sql&quot;,
+                        &quot;args&quot;: {&quot;query&quot;: &quot;DELETE FROM records WHERE created_at &lt; NOW() - INTERVAL '60 days';&quot;}
+                    }
+                }
+            ]
+        }
+    ),
+    config=config
+)
+</code></pre>
+<hr />
+<h3 id="_8">❌ 拒绝执行并提供反馈<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">agent.invoke(
+    Command(
+        resume={
+            &quot;decisions&quot;: [
+                {
+                    &quot;type&quot;: &quot;reject&quot;,
+                    &quot;message&quot;: &quot;不允许删除数据，请仅归档旧记录。&quot;
+                }
+            ]
+        }
+    ),
+    config=config
+)
+</code></pre>
+<hr />
+<h3 id="_9">多个操作同时中断时<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>必须按中断请求中操作出现的顺序依次提供决策：</p>
+<pre><code class="language-python">{
+  &quot;decisions&quot;: [
+    {&quot;type&quot;: &quot;approve&quot;},
+    {
+      &quot;type&quot;: &quot;edit&quot;,
+      &quot;edited_action&quot;: {&quot;name&quot;: &quot;tool_name&quot;, &quot;args&quot;: {&quot;param&quot;: &quot;new_value&quot;}}
+    },
+    {
+      &quot;type&quot;: &quot;reject&quot;,
+      &quot;message&quot;: &quot;该操作未获批准&quot;
+    }
+  ]
+}
+</code></pre>
+<hr />
+<h2 id="hitl_2">七、HITL 执行生命周期详解<a class="headerlink" href="#hitl_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Agent 向模型请求响应。</li>
+<li>模型返回包含工具调用的响应。</li>
+<li>HITL 中间件在 <code>after_model</code> 阶段检查这些调用。</li>
+<li>若发现需要审查的操作，构建 <code>HITLRequest</code> 并触发 <code>interrupt</code>。</li>
+<li>Agent 暂停，等待人工审查输入。</li>
+<li>
+<p>根据人工决策：</p>
+</li>
+<li>
+<p>执行批准或修改后的工具调用；</p>
+</li>
+<li>对拒绝的调用生成反馈消息；</li>
+<li>恢复继续执行模型推理。</li>
+</ol>
+<hr />
+<h2 id="hitl_3">八、自定义 HITL 逻辑<a class="headerlink" href="#hitl_3" title="Permanent link">&para;</a></h2>
+<p>如果你希望实现更复杂的人机交互流程（例如多级审批或条件触发），可以直接使用：</p>
+<ul>
+<li><code>interrupt</code> 原语（LangGraph 提供）</li>
+<li>自定义中间件（继承 <code>BaseMiddleware</code>）</li>
+</ul>
+<p>可参考 <a href="https://reference.langchain.com/python/langchain/middleware">LangChain Middleware 文档</a> 了解扩展方式。</p>
+<hr />
+<h2 id="_10">九、总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p><strong>Human-in-the-Loop（HITL）</strong> 是让 AI 具备“可控自治”的关键机制。
+它带来的好处包括：</p>
+<ul>
+<li>✅ <strong>安全性</strong>：避免模型自动执行危险操作</li>
+<li>🧠 <strong>可解释性</strong>：人工审查过程提供决策依据</li>
+<li>🔄 <strong>可恢复性</strong>：通过 checkpoint 能安全暂停与继续执行</li>
+</ul>
+<p>未来，HITL 将成为企业级智能代理系统的标准组成部分，使 AI 既能自主执行，又不失人类掌控。</p>
+<hr />
+<p>是否希望我继续写一篇《实战篇：用 HITL 审查 SQL + 文件写入操作》的进阶教程？我可以展示完整代码与中断处理流程。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2706,10 +3305,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/interviews/", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "/interviews/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="/interviews/assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -2717,7 +3316,7 @@
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="/interviews/styles/javascripts/katex.js"></script>
+        <script src="../../../styles/javascripts/katex.js"></script>
       
     
   </body>

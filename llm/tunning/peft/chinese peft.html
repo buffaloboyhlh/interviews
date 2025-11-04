@@ -10,22 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
+        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/llm/tunning/peft/chinese%20peft.html">
       
       
+        <link rel="prev" href="quick%20start.html">
       
-      <link rel="icon" href="/interviews/assets/images/favicon.png">
+      
+        <link rel="next" href="../../inference/vLLM/quick%20start.html">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>人工智能面试集合</title>
+        <title>中文PEFT微调实战 - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="/interviews/assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="/interviews/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="/interviews/styles/custom.css">
+      <link rel="stylesheet" href="../../../styles/custom.css">
     
-      <link rel="stylesheet" href="/interviews/styles/extra.css">
+      <link rel="stylesheet" href="../../../styles/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("/interviews/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/interviews/." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              中文PEFT微调实战
             
           </span>
         </div>
@@ -216,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/machine/interview.html" class="md-tabs__link">
+      <a href="../../../machine/interview.html" class="md-tabs__link">
         
   
   
@@ -235,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-tabs__link">
+      <a href="../../../deeplearning/interview.html" class="md-tabs__link">
         
   
   
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/nlp/chart01.html" class="md-tabs__link">
+        <a href="../../../nlp/chart01.html" class="md-tabs__link">
           
   
   
@@ -285,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-tabs__link">
+        <a href="../../../llmapps/langchain/core-components/agents.html" class="md-tabs__link">
           
   
   
@@ -310,7 +321,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
+        <a href="../../../Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
           
   
   
@@ -328,6 +339,8 @@
   
   
   
+    
+  
   
     
     
@@ -335,11 +348,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../deploy/Streamlit/tutorial.html" class="md-tabs__link">
           
   
   
@@ -364,7 +379,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/others/wsl.html" class="md-tabs__link">
+        <a href="../../../others/wsl.html" class="md-tabs__link">
           
   
   
@@ -400,7 +415,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/interviews/." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -430,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/machine/interview.html" class="md-nav__link">
+      <a href="../../../machine/interview.html" class="md-nav__link">
         
   
   
@@ -452,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-nav__link">
+      <a href="../../../deeplearning/interview.html" class="md-nav__link">
         
   
   
@@ -535,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart01.html" class="md-nav__link">
+      <a href="../../../nlp/chart01.html" class="md-nav__link">
         
   
   
@@ -558,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart02.html" class="md-nav__link">
+      <a href="../../../nlp/chart02.html" class="md-nav__link">
         
   
   
@@ -581,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart03.html" class="md-nav__link">
+      <a href="../../../nlp/chart03.html" class="md-nav__link">
         
   
   
@@ -604,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart04.html" class="md-nav__link">
+      <a href="../../../nlp/chart04.html" class="md-nav__link">
         
   
   
@@ -627,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart05.html" class="md-nav__link">
+      <a href="../../../nlp/chart05.html" class="md-nav__link">
         
   
   
@@ -650,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/nltk.html" class="md-nav__link">
+      <a href="../../../nlp/nltk.html" class="md-nav__link">
         
   
   
@@ -673,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/peft.html" class="md-nav__link">
+      <a href="../../../nlp/peft.html" class="md-nav__link">
         
   
   
@@ -821,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/core-components/agents.html" class="md-nav__link">
         
   
   
@@ -844,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/models.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/core-components/models.html" class="md-nav__link">
         
   
   
@@ -867,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/messages.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/core-components/messages.html" class="md-nav__link">
         
   
   
@@ -890,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/tools.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/core-components/tools.html" class="md-nav__link">
         
   
   
@@ -913,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
         
   
   
@@ -936,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/streaming.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/core-components/streaming.html" class="md-nav__link">
         
   
   
@@ -959,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/middleware.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/core-components/middleware.html" class="md-nav__link">
         
   
   
@@ -982,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
         
   
   
@@ -1076,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
         
   
   
@@ -1099,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
         
   
   
@@ -1122,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
         
   
   
@@ -1145,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
         
   
   
@@ -1168,7 +1183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
         
   
   
@@ -1191,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
         
   
   
@@ -1214,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
         
   
   
@@ -1237,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
+      <a href="../../../llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
         
   
   
@@ -1321,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
+      <a href="../../../llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
         
   
   
@@ -1344,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
+      <a href="../../../llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
         
   
   
@@ -1367,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
+      <a href="../../../llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
         
   
   
@@ -1473,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/overview.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/overview.html" class="md-nav__link">
         
   
   
@@ -1496,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/quickstart.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/quickstart.html" class="md-nav__link">
         
   
   
@@ -1519,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Local%20server.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/Local%20server.html" class="md-nav__link">
         
   
   
@@ -1542,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
         
   
   
@@ -1565,7 +1580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
         
   
   
@@ -1588,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/persistence.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/persistence.html" class="md-nav__link">
         
   
   
@@ -1611,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/durable%20execution.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/durable%20execution.html" class="md-nav__link">
         
   
   
@@ -1634,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/streaming.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/streaming.html" class="md-nav__link">
         
   
   
@@ -1657,7 +1672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/interrupts.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/interrupts.html" class="md-nav__link">
         
   
   
@@ -1680,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/time%20travel.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/time%20travel.html" class="md-nav__link">
         
   
   
@@ -1703,7 +1718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/memory.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/memory.html" class="md-nav__link">
         
   
   
@@ -1726,7 +1741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Subgraphs.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/Subgraphs.html" class="md-nav__link">
         
   
   
@@ -1749,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/application%20structure.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/application%20structure.html" class="md-nav__link">
         
   
   
@@ -1823,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
         
   
   
@@ -1846,7 +1861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
+      <a href="../../../llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
         
   
   
@@ -1945,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
+      <a href="../../../Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
         
   
   
@@ -1968,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
+      <a href="../../../Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
         
   
   
@@ -1991,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
+      <a href="../../../Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
         
   
   
@@ -2018,8 +2033,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2033,21 +2050,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2060,7 +2078,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             大模型微调和部署
@@ -2086,10 +2104,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2098,7 +2119,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
         
           
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
             
   
   
@@ -2125,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
+      <a href="../../deploy/Streamlit/tutorial.html" class="md-nav__link">
         
   
   
@@ -2148,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Gradio/tutorial.html" class="md-nav__link">
+      <a href="../../deploy/Gradio/tutorial.html" class="md-nav__link">
         
   
   
@@ -2176,8 +2197,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2190,20 +2213,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
             
   
   
@@ -2216,7 +2240,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             大模型微调
@@ -2279,7 +2303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/transformers/quick%20start.html" class="md-nav__link">
+      <a href="../transformers/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2307,8 +2331,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2325,13 +2351,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_6_2_2" id="__nav_6_2_2_label" tabindex="0">
@@ -2347,7 +2371,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_2_2">
             <span class="md-nav__icon md-icon"></span>
             PEFT
@@ -2361,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/quick%20start.html" class="md-nav__link">
+      <a href="quick%20start.html" class="md-nav__link">
         
   
   
@@ -2381,10 +2405,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    中文PEFT微调实战
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="chinese%20peft.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2395,6 +2439,105 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一步：安装依赖
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二步：准备数据集（中文情感分类）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三步：加载模型和 tokenizer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenize" class="md-nav__link">
+    <span class="md-ellipsis">
+      第四步：数据预处理（tokenize）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peftlora" class="md-nav__link">
+    <span class="md-ellipsis">
+      第五步：配置 PEFT（LoRA）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trainer" class="md-nav__link">
+    <span class="md-ellipsis">
+      第六步：训练（Trainer）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第七步：评估模型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      第八步：保存 LoRA adapter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      第九步：推理测试（加载 Adapter）
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2433,10 +2576,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2445,7 +2591,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
             
   
   
@@ -2521,7 +2667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/inference/vLLM/quick%20start.html" class="md-nav__link">
+      <a href="../../inference/vLLM/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2616,7 +2762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/others/wsl.html" class="md-nav__link">
+      <a href="../../../others/wsl.html" class="md-nav__link">
         
   
   
@@ -2657,6 +2803,95 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一步：安装依赖
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二步：准备数据集（中文情感分类）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三步：加载模型和 tokenizer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenize" class="md-nav__link">
+    <span class="md-ellipsis">
+      第四步：数据预处理（tokenize）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peftlora" class="md-nav__link">
+    <span class="md-ellipsis">
+      第五步：配置 PEFT（LoRA）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trainer" class="md-nav__link">
+    <span class="md-ellipsis">
+      第六步：训练（Trainer）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第七步：评估模型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      第八步：保存 LoRA adapter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      第九步：推理测试（加载 Adapter）
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2667,8 +2902,174 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<p>太好了，出发！
+我们给你一个完整、实用的 <strong>中文任务：情感分类 + LoRA 参数高效微调（PEFT）</strong> 的示范工程。你可以在自己的电脑或 Colab 上完成训练，并最终把模型部署出来。</p>
+<hr />
+<h1 id="peft">✅ 中文 PEFT 微调完整教程<a class="headerlink" href="#peft" title="Permanent link">&para;</a></h1>
+<p>任务选择：<strong>中文情感分析（正向 / 负向）</strong>
+模型选择：<strong>Chinese-BERT（如 bert-base-chinese）</strong>
+方法选择：<strong>LoRA（PEFT）</strong></p>
+<p>这份教程详细解释每一步，便于理解和拓展。</p>
+<hr />
+<h2 id="_1">第一步：安装依赖<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">pip install torch transformers datasets peft accelerate
+</code></pre>
+<p>如有 GPU 环境更佳。</p>
+<hr />
+<h2 id="_2">第二步：准备数据集（中文情感分类）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>示例使用 Hugging Face 自带的中文评论数据集（ChnSentiCorp）。</p>
+<pre><code class="language-python">from datasets import load_dataset
+
+dataset = load_dataset(&quot;chnsenticorp&quot;)
+dataset
+</code></pre>
+<p>数据格式：</p>
+<ul>
+<li><code>text</code>：评论内容</li>
+<li><code>label</code>：0 = 负面，1 = 正面</li>
+</ul>
+<p>为了更快演示，你也可以：</p>
+<pre><code class="language-python">dataset = dataset.shuffle(seed=42).select(range(3000))  # 小样本测试
+</code></pre>
+<hr />
+<h2 id="tokenizer">第三步：加载模型和 tokenizer<a class="headerlink" href="#tokenizer" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+model_name = &quot;bert-base-chinese&quot;
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSequenceClassification.from_pretrained(
+    model_name,
+    num_labels=2
+)
+</code></pre>
+<hr />
+<h2 id="tokenize">第四步：数据预处理（tokenize）<a class="headerlink" href="#tokenize" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">def tokenize_fn(batch):
+    return tokenizer(batch[&quot;text&quot;], padding=&quot;max_length&quot;, truncation=True, max_length=128)
+
+encoded = dataset.map(tokenize_fn, batched=True)
+encoded = encoded.remove_columns([&quot;text&quot;])
+encoded.set_format(&quot;torch&quot;)
+</code></pre>
+<hr />
+<h2 id="peftlora">第五步：配置 PEFT（LoRA）<a class="headerlink" href="#peftlora" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">from peft import LoraConfig, TaskType, get_peft_model
+
+peft_config = LoraConfig(
+    task_type=TaskType.SEQUENCE_CLASSIFICATION,  
+    r=8,
+    lora_alpha=16,
+    lora_dropout=0.05,
+    bias=&quot;none&quot;
+)
+
+model = get_peft_model(model, peft_config)
+model.print_trainable_parameters()
+</code></pre>
+<p>输出示例：
+可训练参数 &lt; 总参数的 1%
+这就是省资源的魔法！</p>
+<hr />
+<h2 id="trainer">第六步：训练（Trainer）<a class="headerlink" href="#trainer" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">from transformers import TrainingArguments, Trainer
+
+training_args = TrainingArguments(
+    output_dir=&quot;./peft-bert-chinese&quot;,
+    evaluation_strategy=&quot;epoch&quot;,
+    save_strategy=&quot;epoch&quot;,
+    per_device_train_batch_size=16,
+    num_train_epochs=2,
+    logging_steps=50,
+    load_best_model_at_end=True,
+)
+
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=encoded[&quot;train&quot;],
+    eval_dataset=encoded[&quot;validation&quot;]
+)
+
+trainer.train()
+</code></pre>
+<hr />
+<h2 id="_3">第七步：评估模型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">metrics = trainer.evaluate(encoded[&quot;test&quot;])
+metrics
+</code></pre>
+<p>如果训练正常，准确率通常能 &gt; 90%</p>
+<hr />
+<h2 id="lora-adapter">第八步：保存 LoRA adapter<a class="headerlink" href="#lora-adapter" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">model.save_pretrained(&quot;peft_lora_chnsentic&quot;)
+tokenizer.save_pretrained(&quot;peft_lora_chnsentic&quot;)
+</code></pre>
+<p>得到的小目录就是 LoRA 模块，它极轻量可部署。</p>
+<hr />
+<h2 id="adapter">第九步：推理测试（加载 Adapter）<a class="headerlink" href="#adapter" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">from peft import PeftModel
+
+base_model = AutoModelForSequenceClassification.from_pretrained(model_name)
+lora_model = PeftModel.from_pretrained(base_model, &quot;peft_lora_chnsentic&quot;)
+
+text = &quot;这家餐厅的菜太难吃了！&quot;
+tokens = tokenizer(text, return_tensors=&quot;pt&quot;)
+output = lora_model(**tokens)
+print(output.logits.argmax().item())  # 0 → 负面
+</code></pre>
+<p>测试成功 ✅</p>
+<hr />
+<h1 id="bonus-web-gradio">✅ Bonus：部署成 Web 应用（配 Gradio）<a class="headerlink" href="#bonus-web-gradio" title="Permanent link">&para;</a></h1>
+<pre><code class="language-python">import gradio as gr
+import torch
+
+def classify(text):
+    inputs = tokenizer(text, return_tensors=&quot;pt&quot;)
+    logits = lora_model(**inputs).logits
+    label_id = logits.argmax().item()
+    return &quot;正面👍&quot; if label_id == 1 else &quot;负面👎&quot;
+
+iface = gr.Interface(fn=classify, inputs=&quot;text&quot;, outputs=&quot;text&quot;, title=&quot;中文情感识别 LoRA 模型&quot;)
+iface.launch()
+</code></pre>
+<p>立刻体验：“这个模型真棒！” vs “辣鸡项目！”</p>
+<hr />
+<h1 id="_4">🌟你可以延伸的实验方向<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<ul>
+<li>换任务：摘要、翻译、对话、关键词提取</li>
+<li>换基础模型：RoBERTa、BERT-wwm-ext、Chinese-LLM</li>
+<li>加速策略：量化 8bit/4bit + LoRA（超省显存）</li>
+<li>部署：Hugging Face Spaces + CI/CD</li>
+</ul>
+<p>通过 PEFT，你已经掌握了 “小成本驯服大模型” 的技能。未来不用望着 130B 参数模型流泪：</p>
+<p>你有 Adapter，它轻，也聪明。</p>
+<hr />
+<p>如果你想，我还可以给你：</p>
+<p>✅ 中文摘要生成 — PEFT + T5
+✅ 中文对话模型 — PEFT + LLaMA/Mistral/Qwen
+✅ 多模态（图像+文本） PEFT
+✅ 完整项目结构（包含数据清洗、日志、实验记录）</p>
+<p>你对哪个方向更有兴趣？我可以继续为你定制完整学习路线。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2706,10 +3107,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/interviews/", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "/interviews/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="/interviews/assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -2717,7 +3118,7 @@
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="/interviews/styles/javascripts/katex.js"></script>
+        <script src="../../../styles/javascripts/katex.js"></script>
       
     
   </body>

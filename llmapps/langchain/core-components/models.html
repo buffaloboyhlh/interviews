@@ -1,0 +1,4294 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Buffalo">
+      
+      
+        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/llmapps/langchain/core-components/models.html">
+      
+      
+        <link rel="prev" href="agents.html">
+      
+      
+        <link rel="next" href="messages.html">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>模型（Models） - 人工智能面试集合</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/custom.css">
+    
+      <link rel="stylesheet" href="../../../styles/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            人工智能面试集合
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              模型（Models）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../machine/interview.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../deeplearning/interview.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../nlp/chart01.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  从零开始学NLP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="agents.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  大模型应用开发
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  向量数据库
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  大模型微调和部署
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../others/wsl.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  其他
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    人工智能面试集合
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../machine/interview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    机器学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deeplearning/interview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    从零开始学NLP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            从零开始学NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/chart01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 1 章：文本表示与词向量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/chart02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 2 章：RNN/LSTM 序列模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/chart03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 3 章：Transformer 与 Self-Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/chart04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 4 章：BERT / GPT 原理与微调
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/chart05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 5 章：NLP 实战与部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/nltk.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    nltk库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/peft.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    peft库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型应用开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            大模型应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain核心组件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain核心组件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    智能体（Agents）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    模型（Models）
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="models.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型（Models）
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础用法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 初始化模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 支持的提供商
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="参数配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      调用方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="调用方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-invoke" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 单次调用（Invoke）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 流式调用（Stream）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 批量调用（Batch）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      工具调用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工具调用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 绑定工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 工具执行循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 高级工具功能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构化输出
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构化输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pydantic" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Pydantic 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 包含原始响应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 复杂嵌套结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 多模态处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 推理过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 本地模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 速率限制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 令牌使用统计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 可配置模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      实际应用场景
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实际应用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景1：内容生成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景2：数据分析助手
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景3：代码助手
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 错误处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 性能优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 成本控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="messages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消息（Messages）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tools.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    工具（Tools）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="short-term%20memory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    短期记忆（Short-term memory）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="streaming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    流（Streaming）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="middleware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    中间件（Middleware）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="structured-output.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    结构化输出（Structured output）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain进阶用法
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain进阶用法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-usage/Guardrails.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guardrails
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-usage/Runtime.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Runtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-usage/context-engineering.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context-engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-usage/MCP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Context Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-usage/Human-in-the-loop.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Human-in-the-loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-usage/Multi-agent.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-usage/Retrieval.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieval
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-usage/Long-term%20memory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Long-term memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain应用开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/langchain/semantic%20search.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    相似搜索
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/langchain/RAG%20agent.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/langchain/humain_middleware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    人工审核
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangGraph
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            LangGraph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/quickstart.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/Local%20server.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thinking in LangGraph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/workflows%2Bagents.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflows+agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/persistence.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Persistence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/durable%20execution.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Durable execution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/streaming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Streaming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/interrupts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interrupts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/time%20travel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time travel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/memory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/Subgraphs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraphs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/application%20structure.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_14" id="__nav_4_4_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Graph API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_14">
+            <span class="md-nav__icon md-icon"></span>
+            Graph API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/graph%20api%20overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graph API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../langgraph/use%20the%20graph%20api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use the graph API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    向量数据库
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            向量数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chroma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Milvus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAISS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型微调和部署
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            大模型微调和部署
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型部署
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            大模型部署
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Streamlit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../llm/deploy/Gradio/tutorial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gradio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型微调
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            大模型微调
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_1" id="__nav_6_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Transformers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Transformers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../llm/tunning/transformers/quick%20start.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_2" id="__nav_6_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PEFT
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            PEFT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../llm/tunning/peft/quick%20start.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    中文PEFT微调实战
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型推理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            大模型推理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_1" id="__nav_6_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    vLLM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            vLLM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../llm/inference/vLLM/quick%20start.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    其他
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            其他
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/wsl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础用法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 初始化模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 支持的提供商
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="参数配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      调用方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="调用方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-invoke" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 单次调用（Invoke）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 流式调用（Stream）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 批量调用（Batch）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      工具调用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工具调用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 绑定工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 工具执行循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 高级工具功能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构化输出
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构化输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pydantic" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Pydantic 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 包含原始响应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 复杂嵌套结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 多模态处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 推理过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 本地模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 速率限制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 令牌使用统计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 可配置模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      实际应用场景
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实际应用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景1：内容生成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景2：数据分析助手
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      场景3：代码助手
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 错误处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 性能优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 成本控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="langchain-models">LangChain Models<a class="headerlink" href="#langchain-models" title="Permanent link">&para;</a></h1>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>大语言模型（LLMs）是能够像人类一样解释和生成文本的强大AI工具。它们足够通用，可以编写内容、翻译语言、总结和回答问题，而无需为每个任务进行专门训练。</p>
+<p>除了文本生成，许多模型还支持：</p>
+<ul>
+<li><strong>工具调用</strong> - 调用外部工具并在响应中使用结果</li>
+<li><strong>结构化输出</strong> - 模型的响应被约束为遵循定义的格式</li>
+<li><strong>多模态</strong> - 处理和返回文本以外的数据，如图像、音频和视频</li>
+<li><strong>推理</strong> - 模型执行多步推理以得出结论</li>
+</ul>
+<p>模型是Agent的推理引擎，驱动Agent的决策过程。您选择的模型的质量和能力直接影响Agent的可靠性和性能。</p>
+<h2 id="_2">基础用法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 初始化模型<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="init_chat_model">使用 <code>init_chat_model</code>（推荐）<a class="headerlink" href="#init_chat_model" title="Permanent link">&para;</a></h4>
+<pre><code class="language-python">import os
+from langchain.chat_models import init_chat_model
+
+# 设置API密钥
+os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;sk-...&quot;
+
+# 初始化模型
+model = init_chat_model(&quot;openai:gpt-4o&quot;)
+
+# 基本调用
+response = model.invoke(&quot;为什么鹦鹉会说话？&quot;)
+print(response.content)
+</code></pre>
+<h4 id="_3">使用模型类<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<pre><code class="language-python">from langchain_openai import ChatOpenAI
+
+# 直接使用模型类
+model = ChatOpenAI(
+    model=&quot;gpt-4o&quot;,
+    temperature=0.7,
+    max_tokens=1000,
+    timeout=30
+)
+
+response = model.invoke(&quot;解释量子计算&quot;)
+print(response.content)
+</code></pre>
+<h3 id="2">2. 支持的提供商<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># Anthropic
+from langchain_anthropic import ChatAnthropic
+model = ChatAnthropic(model=&quot;claude-3-5-sonnet-20241022&quot;)
+
+# Google Gemini
+from langchain_google_genai import ChatGoogleGenerativeAI
+model = ChatGoogleGenerativeAI(model=&quot;gemini-2.0-flash-exp&quot;)
+
+# Azure OpenAI
+from langchain_openai import AzureChatOpenAI
+model = AzureChatOpenAI(
+    azure_deployment=&quot;your-deployment-name&quot;,
+    openai_api_version=&quot;2023-05-15&quot;
+)
+</code></pre>
+<h2 id="_4">参数配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">常用参数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">model = init_chat_model(
+    &quot;openai:gpt-4o&quot;,
+    # 核心参数
+    temperature=0.7,      # 控制随机性 (0-1)
+    max_tokens=1000,      # 最大输出长度
+    timeout=30,           # 超时时间（秒）
+    max_retries=3,        # 最大重试次数
+
+    # 高级参数
+    top_p=0.9,           # 核采样参数
+    frequency_penalty=0.1, # 频率惩罚
+    presence_penalty=0.1,  # 存在惩罚
+)
+
+response = model.invoke(&quot;写一个关于AI的短故事&quot;)
+</code></pre>
+<h2 id="_6">调用方式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1-invoke">1. 单次调用（Invoke）<a class="headerlink" href="#1-invoke" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 单条消息
+response = model.invoke(&quot;Python的主要特点是什么？&quot;)
+print(response.content)
+
+# 对话历史
+messages = [
+    {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;你是一个有帮助的助手。&quot;},
+    {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;教我Python&quot;},
+    {&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: &quot;Python是一种高级编程语言...&quot;},
+    {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;它的主要应用领域是什么？&quot;}
+]
+
+response = model.invoke(messages)
+print(response.content)
+</code></pre>
+<h3 id="2-stream">2. 流式调用（Stream）<a class="headerlink" href="#2-stream" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">print(&quot;AI回复: &quot;, end=&quot;&quot;, flush=True)
+
+for chunk in model.stream(&quot;解释机器学习的基本概念&quot;):
+    if hasattr(chunk, 'content'):
+        print(chunk.content, end=&quot;&quot;, flush=True)
+print()  # 换行
+
+# 或者累积完整的消息
+full_response = None
+for chunk in model.stream(&quot;天气如何影响心情？&quot;):
+    full_response = chunk if full_response is None else full_response + chunk
+
+print(f&quot;\n完整回复: {full_response.content}&quot;)
+</code></pre>
+<h3 id="3-batch">3. 批量调用（Batch）<a class="headerlink" href="#3-batch" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 基本批量处理
+questions = [
+    &quot;什么是人工智能？&quot;,
+    &quot;解释深度学习&quot;,
+    &quot;机器学习的应用场景&quot;,
+    &quot;神经网络如何工作&quot;
+]
+
+responses = model.batch(questions)
+for i, response in enumerate(responses):
+    print(f&quot;问题 {i+1}: {response.content[:100]}...&quot;)
+
+# 异步完成批量处理
+print(&quot;按完成顺序输出:&quot;)
+for response in model.batch_as_completed(questions):
+    print(f&quot;收到回复: {response.content[:50]}...&quot;)
+
+# 控制并发数
+responses = model.batch(
+    questions,
+    config={'max_concurrency': 2}  # 限制同时2个请求
+)
+</code></pre>
+<h2 id="_7">工具调用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 绑定工具<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain.tools import tool
+
+@tool
+def get_weather(location: str) -&gt; str:
+    &quot;&quot;&quot;获取指定位置的天气信息。&quot;&quot;&quot;
+    return f&quot;{location}的天气：晴朗，25°C&quot;
+
+@tool
+def calculator(expression: str) -&gt; str:
+    &quot;&quot;&quot;计算数学表达式。&quot;&quot;&quot;
+    try:
+        result = eval(expression)
+        return f&quot;{expression} = {result}&quot;
+    except:
+        return &quot;计算错误&quot;
+
+# 绑定工具到模型
+model_with_tools = model.bind_tools([get_weather, calculator])
+
+# 调用带工具的模型
+response = model_with_tools.invoke(&quot;北京今天天气怎么样？然后计算 25 * 4&quot;)
+print(&quot;工具调用:&quot;, response.tool_calls)
+</code></pre>
+<h3 id="2_1">2. 工具执行循环<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">def execute_tool_calls(model, messages, tools):
+    &quot;&quot;&quot;执行工具调用循环&quot;&quot;&quot;
+    # 模型生成工具调用
+    ai_msg = model.invoke(messages)
+    messages.append(ai_msg)
+
+    # 执行所有工具调用
+    for tool_call in ai_msg.tool_calls:
+        tool_name = tool_call[&quot;name&quot;]
+        tool_args = tool_call[&quot;args&quot;]
+
+        # 找到对应的工具并执行
+        for tool in tools:
+            if tool.name == tool_name:
+                result = tool.invoke(tool_args)
+                messages.append({
+                    &quot;role&quot;: &quot;tool&quot;,
+                    &quot;content&quot;: result,
+                    &quot;tool_call_id&quot;: tool_call[&quot;id&quot;]
+                })
+                break
+
+    # 获取最终回复
+    final_response = model.invoke(messages)
+    return final_response
+
+# 使用示例
+tools = [get_weather, calculator]
+messages = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;北京天气如何？然后计算 15 + 27&quot;}]
+result = execute_tool_calls(model_with_tools, messages, tools)
+print(&quot;最终回复:&quot;, result.content)
+</code></pre>
+<h3 id="3">3. 高级工具功能<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 强制使用特定工具
+forced_model = model.bind_tools(
+    [get_weather], 
+    tool_choice=&quot;get_weather&quot;  # 强制使用天气工具
+)
+
+# 禁用并行工具调用
+sequential_model = model.bind_tools(
+    [get_weather, calculator],
+    parallel_tool_calls=False  # 顺序执行工具
+)
+
+# 流式工具调用
+print(&quot;流式工具调用:&quot;)
+for chunk in model_with_tools.stream(&quot;查询北京和上海的天气&quot;):
+    if hasattr(chunk, 'tool_call_chunks') and chunk.tool_call_chunks:
+        for tool_chunk in chunk.tool_call_chunks:
+            if tool_chunk.get('name'):
+                print(f&quot;工具: {tool_chunk['name']}&quot;)
+            if tool_chunk.get('args'):
+                print(f&quot;参数: {tool_chunk['args']}&quot;)
+</code></pre>
+<h2 id="_8">结构化输出<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="1-pydantic">1. Pydantic 模型<a class="headerlink" href="#1-pydantic" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from pydantic import BaseModel, Field
+from typing import List
+
+class Movie(BaseModel):
+    &quot;&quot;&quot;电影信息&quot;&quot;&quot;
+    title: str = Field(description=&quot;电影标题&quot;)
+    year: int = Field(description=&quot;上映年份&quot;)
+    director: str = Field(description=&quot;导演&quot;)
+    rating: float = Field(description=&quot;评分(0-10)&quot;)
+    genres: List[str] = Field(description=&quot;类型列表&quot;)
+
+class ProductReview(BaseModel):
+    &quot;&quot;&quot;产品评价&quot;&quot;&quot;
+    product_name: str = Field(description=&quot;产品名称&quot;)
+    rating: int = Field(description=&quot;评分(1-5)&quot;)
+    pros: List[str] = Field(description=&quot;优点&quot;)
+    cons: List[str] = Field(description=&quot;缺点&quot;)
+    summary: str = Field(description=&quot;总结&quot;)
+
+# 使用结构化输出
+structured_model = model.with_structured_output(Movie)
+response = structured_model.invoke(&quot;提供电影《盗梦空间》的详细信息&quot;)
+
+print(f&quot;标题: {response.title}&quot;)
+print(f&quot;年份: {response.year}&quot;)
+print(f&quot;导演: {response.director}&quot;)
+print(f&quot;评分: {response.rating}&quot;)
+</code></pre>
+<h3 id="2_2">2. 包含原始响应<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 同时获取解析结果和原始消息
+structured_model_with_raw = model.with_structured_output(
+    Movie, 
+    include_raw=True
+)
+
+result = structured_model_with_raw.invoke(&quot;描述电影《阿凡达》&quot;)
+
+print(&quot;解析结果:&quot;, result.parsed)
+print(&quot;原始消息:&quot;, result.raw)
+print(&quot;解析错误:&quot;, result.parsing_error)
+</code></pre>
+<h3 id="3_1">3. 复杂嵌套结构<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from typing import Optional
+
+class Actor(BaseModel):
+    &quot;&quot;&quot;演员信息&quot;&quot;&quot;
+    name: str = Field(description=&quot;演员姓名&quot;)
+    character: str = Field(description=&quot;扮演角色&quot;)
+
+class MovieDetails(BaseModel):
+    &quot;&quot;&quot;详细电影信息&quot;&quot;&quot;
+    title: str = Field(description=&quot;电影标题&quot;)
+    year: int = Field(description=&quot;上映年份&quot;)
+    director: str = Field(description=&quot;导演&quot;)
+    cast: List[Actor] = Field(description=&quot;演员表&quot;)
+    budget: Optional[float] = Field(description=&quot;预算（百万美元）&quot;)
+    box_office: Optional[float] = Field(description=&quot;票房（百万美元）&quot;)
+
+# 使用嵌套结构
+detailed_model = model.with_structured_output(MovieDetails)
+response = detailed_model.invoke(&quot;提供《泰坦尼克号》的完整信息&quot;)
+
+print(f&quot;电影: {response.title} ({response.year})&quot;)
+print(f&quot;导演: {response.director}&quot;)
+print(&quot;主演:&quot;)
+for actor in response.cast:
+    print(f&quot;  - {actor.name} 饰演 {actor.character}&quot;)
+</code></pre>
+<h2 id="_9">高级功能<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 多模态处理<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain_core.messages import HumanMessage
+import base64
+
+# 处理图像（模拟）
+def encode_image(image_path):
+    &quot;&quot;&quot;编码图像为base64&quot;&quot;&quot;
+    with open(image_path, &quot;rb&quot;) as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
+
+# 创建多模态消息
+multimodal_message = [
+    {
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;text&quot;: &quot;描述这张图片中的内容&quot;
+    },
+    {
+        &quot;type&quot;: &quot;image_url&quot;,
+        &quot;image_url&quot;: {
+            &quot;url&quot;: &quot;data:image/jpeg;base64,...&quot;  # 实际使用中替换为真实base64数据
+        }
+    }
+]
+
+# 支持多模态的模型调用
+response = model.invoke(multimodal_message)
+print(&quot;图像描述:&quot;, response.content)
+</code></pre>
+<h3 id="2_3">2. 推理过程<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 流式推理过程
+print(&quot;推理过程:&quot;)
+for chunk in model.stream(&quot;为什么天空是蓝色的？&quot;):
+    # 检查推理块
+    if hasattr(chunk, 'content_blocks'):
+        for block in chunk.content_blocks:
+            if block.get(&quot;type&quot;) == &quot;reasoning&quot; and block.get(&quot;reasoning&quot;):
+                print(f&quot;推理: {block['reasoning']}&quot;)
+            elif block.get(&quot;type&quot;) == &quot;text&quot; and block.get(&quot;text&quot;):
+                print(f&quot;回答: {block['text']}&quot;)
+
+# 获取完整推理
+response = model.invoke(&quot;解释全球变暖的原因&quot;, reasoning_effort=&quot;high&quot;)
+reasoning_blocks = [b for b in response.content_blocks if b.get(&quot;type&quot;) == &quot;reasoning&quot;]
+if reasoning_blocks:
+    print(&quot;完整推理过程:&quot;)
+    for block in reasoning_blocks:
+        print(block.get(&quot;reasoning&quot;, &quot;&quot;))
+</code></pre>
+<h3 id="3_2">3. 本地模型<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 使用 Ollama 运行本地模型
+from langchain_ollama import ChatOllama
+
+model = ChatOllama(
+    model=&quot;qwen3:1.7b&quot;,
+    temperature=0.8
+)
+
+response = model.invoke(&quot;用中文解释机器学习&quot;)
+print(&quot;本地模型回复:&quot;, response.content)
+</code></pre>
+<h3 id="4">4. 速率限制<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain_core.rate_limiters import InMemoryRateLimiter
+
+# 创建速率限制器
+rate_limiter = InMemoryRateLimiter(
+    requests_per_second=1,      # 每秒1个请求
+    check_every_n_seconds=0.1,  # 每100ms检查一次
+    max_bucket_size=5          # 最大突发请求数
+)
+
+model_with_limiter = init_chat_model(
+    &quot;openai:gpt-4o&quot;,
+    rate_limiter=rate_limiter
+)
+
+# 受速率限制的调用
+for i in range(3):
+    response = model_with_limiter.invoke(f&quot;问题 {i+1}: 什么是AI？&quot;)
+    print(f&quot;回复 {i+1}: {response.content[:50]}...&quot;)
+</code></pre>
+<h3 id="5">5. 令牌使用统计<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langchain_core.callbacks import get_usage_metadata_callback
+
+# 使用上下文管理器跟踪令牌使用
+with get_usage_metadata_callback() as callback:
+    response1 = model.invoke(&quot;解释神经网络&quot;)
+    response2 = model.invoke(&quot;什么是深度学习&quot;)
+
+    print(&quot;令牌使用统计:&quot;)
+    print(callback.usage_metadata)
+
+# 直接从响应获取令牌信息
+response = model.invoke(&quot;写一个Python函数计算斐波那契数列&quot;)
+if hasattr(response, 'response_metadata'):
+    usage = response.response_metadata.get('token_usage', {})
+    print(f&quot;输入令牌: {usage.get('prompt_tokens', 'N/A')}&quot;)
+    print(f&quot;输出令牌: {usage.get('completion_tokens', 'N/A')}&quot;)
+    print(f&quot;总令牌: {usage.get('total_tokens', 'N/A')}&quot;)
+</code></pre>
+<h3 id="6">6. 可配置模型<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python"># 创建运行时可配置的模型
+configurable_model = init_chat_model(
+    temperature=0,
+    configurable_fields=(&quot;model&quot;, &quot;temperature&quot;, &quot;max_tokens&quot;)
+)
+
+# 使用不同配置调用
+response1 = configurable_model.invoke(
+    &quot;解释机器学习&quot;,
+    config={&quot;configurable&quot;: {&quot;model&quot;: &quot;gpt-4o&quot;, &quot;temperature&quot;: 0.7}}
+)
+
+response2 = configurable_model.invoke(
+    &quot;写一首诗&quot;, 
+    config={&quot;configurable&quot;: {&quot;model&quot;: &quot;gpt-4o&quot;, &quot;temperature&quot;: 0.9}}
+)
+
+print(&quot;技术解释:&quot;, response1.content[:100])
+print(&quot;诗歌创作:&quot;, response2.content[:100])
+</code></pre>
+<h2 id="_10">实际应用场景<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">场景1：内容生成<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">class ContentGenerator:
+    &quot;&quot;&quot;内容生成器&quot;&quot;&quot;
+
+    def __init__(self, model):
+        self.model = model
+
+    def generate_blog_post(self, topic: str, style: str = &quot;informative&quot;) -&gt; str:
+        &quot;&quot;&quot;生成博客文章&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        以{style}的风格写一篇关于{topic}的博客文章。
+        要求：
+        1. 标题吸引人
+        2. 结构清晰（引言、正文、结论）
+        3. 包含具体例子
+        4. 字数800-1000字
+        &quot;&quot;&quot;
+
+        response = self.model.invoke(prompt)
+        return response.content
+
+    def generate_social_media_post(self, topic: str, platform: str) -&gt; str:
+        &quot;&quot;&quot;生成社交媒体帖子&quot;&quot;&quot;
+        platform_formats = {
+            &quot;twitter&quot;: &quot;280字符以内，使用话题标签&quot;,
+            &quot;linkedin&quot;: &quot;专业风格，聚焦行业见解&quot;,
+            &quot;instagram&quot;: &quot;轻松有趣，使用表情符号&quot;
+        }
+
+        format_guide = platform_formats.get(platform, &quot;简洁有力&quot;)
+        prompt = f&quot;为{platform}创建关于{topic}的帖子。要求：{format_guide}&quot;
+
+        response = self.model.invoke(prompt)
+        return response.content
+
+# 使用示例
+generator = ContentGenerator(model)
+blog_post = generator.generate_blog_post(&quot;人工智能的未来&quot;, &quot;专业&quot;)
+twitter_post = generator.generate_social_media_post(&quot;机器学习&quot;, &quot;twitter&quot;)
+
+print(&quot;博客文章:&quot;, blog_post[:200])
+print(&quot;推特帖子:&quot;, twitter_post)
+</code></pre>
+<h3 id="2_4">场景2：数据分析助手<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import json
+from typing import Dict, Any
+
+class DataAnalysisAssistant:
+    &quot;&quot;&quot;数据分析助手&quot;&quot;&quot;
+
+    def __init__(self, model):
+        self.model = model
+        # 配置结构化输出用于数据分析
+        self.analysis_model = model.with_structured_output(DataAnalysisResult)
+
+    def analyze_dataset(self, data_description: str, questions: List[str]) -&gt; Dict[str, Any]:
+        &quot;&quot;&quot;分析数据集&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        数据集描述: {data_description}
+
+        请分析这个数据集并回答以下问题:
+        {chr(10).join(f'{i+1}. {q}' for i, q in enumerate(questions))}
+
+        提供:
+        - 关键洞察
+        - 潜在模式
+        - 建议的进一步分析
+        &quot;&quot;&quot;
+
+        response = self.analysis_model.invoke(prompt)
+        return response.dict()
+
+    def generate_sql_query(self, requirement: str, schema: str) -&gt; str:
+        &quot;&quot;&quot;生成SQL查询&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        数据库模式: {schema}
+
+        需求: {requirement}
+
+        请生成一个优化的SQL查询来满足这个需求。
+        同时解释查询的逻辑。
+        &quot;&quot;&quot;
+
+        response = self.model.invoke(prompt)
+        return response.content
+
+# 数据结构定义
+class DataAnalysisResult(BaseModel):
+    key_insights: List[str]
+    patterns: List[str]
+    recommendations: List[str]
+    summary: str
+
+# 使用示例
+assistant = DataAnalysisAssistant(model)
+
+schema = &quot;&quot;&quot;
+用户表(users): id, name, age, city, signup_date
+订单表(orders): id, user_id, amount, order_date, status
+&quot;&quot;&quot;
+
+analysis = assistant.analyze_dataset(
+    &quot;电商平台的用户和订单数据&quot;,
+    [&quot;用户年龄分布如何？&quot;, &quot;哪个城市的用户最活跃？&quot;, &quot;订单趋势如何？&quot;]
+)
+
+sql_query = assistant.generate_sql_query(
+    &quot;查询最近30天每个城市的订单总量&quot;,
+    schema
+)
+
+print(&quot;分析结果:&quot;, analysis)
+print(&quot;SQL查询:&quot;, sql_query)
+</code></pre>
+<h3 id="3_3">场景3：代码助手<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">class CodeAssistant:
+    &quot;&quot;&quot;代码助手&quot;&quot;&quot;
+
+    def __init__(self, model):
+        self.model = model
+
+    def explain_code(self, code: str, language: str = &quot;python&quot;) -&gt; str:
+        &quot;&quot;&quot;解释代码&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        请解释以下{language}代码:
+
+        ```{language}
+        {code}
+        ```
+
+        解释应该包括:
+        1. 代码的功能
+        2. 关键逻辑步骤
+        3. 可能的改进建议
+        &quot;&quot;&quot;
+
+        response = self.model.invoke(prompt)
+        return response.content
+
+    def debug_code(self, code: str, error: str, language: str = &quot;python&quot;) -&gt; str:
+        &quot;&quot;&quot;调试代码&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        请帮助调试以下{language}代码:
+
+        ```{language}
+        {code}
+        ```
+
+        错误信息: {error}
+
+        请提供:
+        1. 错误原因分析
+        2. 修复建议
+        3. 修复后的代码
+        &quot;&quot;&quot;
+
+        response = self.model.invoke(prompt)
+        return response.content
+
+    def generate_test_cases(self, code: str, language: str = &quot;python&quot;) -&gt; str:
+        &quot;&quot;&quot;生成测试用例&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        为以下{language}代码生成测试用例:
+
+        ```{language}
+        {code}
+        ```
+
+        包括:
+        1. 正常情况测试
+        2. 边界情况测试  
+        3. 错误情况测试
+        &quot;&quot;&quot;
+
+        response = self.model.invoke(prompt)
+        return response.content
+
+# 使用示例
+code_assistant = CodeAssistant(model)
+
+sample_code = &quot;&quot;&quot;
+def fibonacci(n):
+    if n &lt;= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+&quot;&quot;&quot;
+
+explanation = code_assistant.explain_code(sample_code)
+test_cases = code_assistant.generate_test_cases(sample_code)
+
+print(&quot;代码解释:&quot;, explanation)
+print(&quot;测试用例:&quot;, test_cases)
+</code></pre>
+<h2 id="_11">最佳实践<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 错误处理<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from tenacity import retry, stop_after_attempt, wait_exponential
+import asyncio
+
+class RobustModelClient:
+    &quot;&quot;&quot;健壮的模型客户端&quot;&quot;&quot;
+
+    def __init__(self, model):
+        self.model = model
+
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=4, max=10)
+    )
+    def invoke_with_retry(self, prompt: str, **kwargs):
+        &quot;&quot;&quot;带重试的调用&quot;&quot;&quot;
+        try:
+            return self.model.invoke(prompt, **kwargs)
+        except Exception as e:
+            print(f&quot;调用失败: {e}, 进行重试...&quot;)
+            raise
+
+    def safe_batch_process(self, prompts: List[str], batch_size: int = 5):
+        &quot;&quot;&quot;安全的批量处理&quot;&quot;&quot;
+        results = []
+
+        for i in range(0, len(prompts), batch_size):
+            batch = prompts[i:i + batch_size]
+            try:
+                batch_results = self.model.batch(
+                    batch, 
+                    config={'max_concurrency': 2}
+                )
+                results.extend(batch_results)
+                print(f&quot;完成批次 {i//batch_size + 1}&quot;)
+            except Exception as e:
+                print(f&quot;批次 {i//batch_size + 1} 失败: {e}&quot;)
+                # 可以在这里添加重试逻辑
+
+        return results
+
+# 使用示例
+robust_client = RobustModelClient(model)
+
+try:
+    response = robust_client.invoke_with_retry(
+        &quot;解释量子力学&quot;, 
+        temperature=0.7
+    )
+    print(&quot;成功获取响应&quot;)
+except Exception as e:
+    print(f&quot;所有重试都失败了: {e}&quot;)
+</code></pre>
+<h3 id="2_5">2. 性能优化<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import time
+from functools import lru_cache
+
+class OptimizedModelHandler:
+    &quot;&quot;&quot;优化的模型处理器&quot;&quot;&quot;
+
+    def __init__(self, model):
+        self.model = model
+        self.response_cache = {}
+
+    @lru_cache(maxsize=100)
+    def cached_invoke(self, prompt: str, temperature: float = 0.7) -&gt; str:
+        &quot;&quot;&quot;带缓存的调用&quot;&quot;&quot;
+        cache_key = hash(prompt + str(temperature))
+
+        if cache_key in self.response_cache:
+            return self.response_cache[cache_key]
+
+        start_time = time.time()
+        response = self.model.invoke(prompt, temperature=temperature)
+        execution_time = time.time() - start_time
+
+        self.response_cache[cache_key] = response.content
+        print(f&quot;新请求 - 耗时: {execution_time:.2f}s&quot;)
+
+        return response.content
+
+    def batch_optimized(self, prompts: List[str], **kwargs):
+        &quot;&quot;&quot;优化的批量处理&quot;&quot;&quot;
+        # 去重
+        unique_prompts = list(set(prompts))
+
+        # 批量处理唯一提示
+        unique_responses = self.model.batch(unique_prompts, **kwargs)
+
+        # 构建响应映射
+        response_map = {prompt: resp.content for prompt, resp in zip(unique_prompts, unique_responses)}
+
+        # 按原始顺序返回
+        return [response_map[prompt] for prompt in prompts]
+
+# 使用示例
+optimized_handler = OptimizedModelHandler(model)
+
+# 重复请求会使用缓存
+for i in range(3):
+    result = optimized_handler.cached_invoke(&quot;什么是Python？&quot;)
+    print(f&quot;请求 {i+1}: {result[:50]}...&quot;)
+</code></pre>
+<h3 id="3_4">3. 成本控制<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">class CostAwareModelClient:
+    &quot;&quot;&quot;成本感知的模型客户端&quot;&quot;&quot;
+
+    def __init__(self, model, budget_limit: int = 1000000):  # 100万token限制
+        self.model = model
+        self.budget_limit = budget_limit
+        self.tokens_used = 0
+        self.requests_count = 0
+
+    def track_usage(self, response):
+        &quot;&quot;&quot;跟踪令牌使用&quot;&quot;&quot;
+        if hasattr(response, 'response_metadata'):
+            usage = response.response_metadata.get('token_usage', {})
+            tokens = usage.get('total_tokens', 0)
+            self.tokens_used += tokens
+            self.requests_count += 1
+
+            print(f&quot;本次使用: {tokens} tokens&quot;)
+            print(f&quot;累计使用: {self.tokens_used}/{self.budget_limit} tokens&quot;)
+
+            if self.tokens_used &gt;= self.budget_limit:
+                print(&quot;警告: 接近预算限制！&quot;)
+
+    def invoke_with_budget(self, prompt: str, **kwargs):
+        &quot;&quot;&quot;带预算控制的调用&quot;&quot;&quot;
+        if self.tokens_used &gt;= self.budget_limit:
+            raise Exception(&quot;已超过预算限制&quot;)
+
+        response = self.model.invoke(prompt, **kwargs)
+        self.track_usage(response)
+        return response
+
+    def get_usage_stats(self):
+        &quot;&quot;&quot;获取使用统计&quot;&quot;&quot;
+        return {
+            'tokens_used': self.tokens_used,
+            'requests_count': self.requests_count,
+            'budget_remaining': self.budget_limit - self.tokens_used,
+            'utilization_percentage': (self.tokens_used / self.budget_limit) * 100
+        }
+
+# 使用示例
+cost_aware_client = CostAwareModelClient(model, budget_limit=5000)  # 5000token测试限制
+
+try:
+    response1 = cost_aware_client.invoke_with_budget(&quot;解释机器学习&quot;)
+    response2 = cost_aware_client.invoke_with_budget(&quot;什么是深度学习&quot;)
+
+    stats = cost_aware_client.get_usage_stats()
+    print(&quot;使用统计:&quot;, stats)
+
+except Exception as e:
+    print(f&quot;调用失败: {e}&quot;)
+</code></pre>
+<h2 id="_12">总结<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>LangChain Models 提供了强大而灵活的方式来使用各种大语言模型：</p>
+<ul>
+<li><strong>多提供商支持</strong>：OpenAI、Anthropic、Google、Azure等</li>
+<li><strong>多种调用方式</strong>：单次调用、流式调用、批量调用</li>
+<li><strong>工具集成</strong>：绑定和执行外部工具</li>
+<li><strong>结构化输出</strong>：确保响应格式符合预期</li>
+<li><strong>高级功能</strong>：多模态、推理、本地部署等</li>
+<li><strong>生产就绪</strong>：错误处理、性能优化、成本控制</li>
+</ul>
+<p>通过合理使用这些功能，您可以构建出强大、可靠且成本效益高的AI应用系统。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+      
+        <script src="../../../styles/javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>

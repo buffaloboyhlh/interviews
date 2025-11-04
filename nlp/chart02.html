@@ -10,22 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
+        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/nlp/chart02.html">
       
       
+        <link rel="prev" href="chart01.html">
       
-      <link rel="icon" href="/interviews/assets/images/favicon.png">
+      
+        <link rel="next" href="chart03.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>人工智能面试集合</title>
+        <title>第 2 章：RNN/LSTM 序列模型 - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="/interviews/assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="/interviews/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="/interviews/styles/custom.css">
+      <link rel="stylesheet" href="../styles/custom.css">
     
-      <link rel="stylesheet" href="/interviews/styles/extra.css">
+      <link rel="stylesheet" href="../styles/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("/interviews/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#21" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/interviews/." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href=".." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              第 2 章：RNN/LSTM 序列模型
             
           </span>
         </div>
@@ -216,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/machine/interview.html" class="md-tabs__link">
+      <a href="../machine/interview.html" class="md-tabs__link">
         
   
   
@@ -235,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-tabs__link">
+      <a href="../deeplearning/interview.html" class="md-tabs__link">
         
   
   
@@ -252,11 +263,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/interviews/nlp/chart01.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="chart01.html" class="md-tabs__link">
           
   
   
@@ -285,7 +298,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-tabs__link">
+        <a href="../llmapps/langchain/core-components/agents.html" class="md-tabs__link">
           
   
   
@@ -310,7 +323,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
+        <a href="../Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
           
   
   
@@ -339,7 +352,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
+        <a href="../llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
           
   
   
@@ -364,7 +377,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/others/wsl.html" class="md-tabs__link">
+        <a href="../others/wsl.html" class="md-tabs__link">
           
   
   
@@ -400,7 +413,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/interviews/." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href=".." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -430,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/machine/interview.html" class="md-nav__link">
+      <a href="../machine/interview.html" class="md-nav__link">
         
   
   
@@ -452,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-nav__link">
+      <a href="../deeplearning/interview.html" class="md-nav__link">
         
   
   
@@ -471,8 +484,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -494,21 +509,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -521,7 +537,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             从零开始学NLP
@@ -535,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart01.html" class="md-nav__link">
+      <a href="chart01.html" class="md-nav__link">
         
   
   
@@ -555,10 +571,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/interviews/nlp/chart02.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第 2 章：RNN/LSTM 序列模型
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="chart02.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -569,6 +605,168 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 学习目标
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 循环神经网络（RNN）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 循环神经网络（RNN）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 RNN 概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 RNN 数学公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.3 RNN 的训练
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-rnn-python-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.4 RNN Python 示例（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 长短期记忆网络（LSTM）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 长短期记忆网络（LSTM）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1 LSTM 概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 LSTM 公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-lstm-python-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.3 LSTM Python 示例（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 LSTM 的直观理解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-rnn-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 RNN / LSTM 的应用举例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 RNN / LSTM 的应用举例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-pytorch-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 简单文本分类示例（PyTorch LSTM）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 本章小结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -581,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart03.html" class="md-nav__link">
+      <a href="chart03.html" class="md-nav__link">
         
   
   
@@ -604,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart04.html" class="md-nav__link">
+      <a href="chart04.html" class="md-nav__link">
         
   
   
@@ -627,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart05.html" class="md-nav__link">
+      <a href="chart05.html" class="md-nav__link">
         
   
   
@@ -650,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/nltk.html" class="md-nav__link">
+      <a href="nltk.html" class="md-nav__link">
         
   
   
@@ -673,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/peft.html" class="md-nav__link">
+      <a href="peft.html" class="md-nav__link">
         
   
   
@@ -821,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-nav__link">
+      <a href="../llmapps/langchain/core-components/agents.html" class="md-nav__link">
         
   
   
@@ -844,7 +1042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/models.html" class="md-nav__link">
+      <a href="../llmapps/langchain/core-components/models.html" class="md-nav__link">
         
   
   
@@ -867,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/messages.html" class="md-nav__link">
+      <a href="../llmapps/langchain/core-components/messages.html" class="md-nav__link">
         
   
   
@@ -890,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/tools.html" class="md-nav__link">
+      <a href="../llmapps/langchain/core-components/tools.html" class="md-nav__link">
         
   
   
@@ -913,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
+      <a href="../llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
         
   
   
@@ -936,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/streaming.html" class="md-nav__link">
+      <a href="../llmapps/langchain/core-components/streaming.html" class="md-nav__link">
         
   
   
@@ -959,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/middleware.html" class="md-nav__link">
+      <a href="../llmapps/langchain/core-components/middleware.html" class="md-nav__link">
         
   
   
@@ -982,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
+      <a href="../llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
         
   
   
@@ -1076,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
+      <a href="../llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
         
   
   
@@ -1099,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
+      <a href="../llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
         
   
   
@@ -1122,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
+      <a href="../llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
         
   
   
@@ -1145,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
+      <a href="../llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
         
   
   
@@ -1168,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
+      <a href="../llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
         
   
   
@@ -1191,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
+      <a href="../llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
         
   
   
@@ -1214,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
+      <a href="../llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
         
   
   
@@ -1237,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
+      <a href="../llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
         
   
   
@@ -1321,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
+      <a href="../llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
         
   
   
@@ -1344,7 +1542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
+      <a href="../llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
         
   
   
@@ -1367,7 +1565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
+      <a href="../llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
         
   
   
@@ -1473,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/overview.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/overview.html" class="md-nav__link">
         
   
   
@@ -1496,7 +1694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/quickstart.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/quickstart.html" class="md-nav__link">
         
   
   
@@ -1519,7 +1717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Local%20server.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/Local%20server.html" class="md-nav__link">
         
   
   
@@ -1542,7 +1740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
         
   
   
@@ -1565,7 +1763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
         
   
   
@@ -1588,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/persistence.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/persistence.html" class="md-nav__link">
         
   
   
@@ -1611,7 +1809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/durable%20execution.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/durable%20execution.html" class="md-nav__link">
         
   
   
@@ -1634,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/streaming.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/streaming.html" class="md-nav__link">
         
   
   
@@ -1657,7 +1855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/interrupts.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/interrupts.html" class="md-nav__link">
         
   
   
@@ -1680,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/time%20travel.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/time%20travel.html" class="md-nav__link">
         
   
   
@@ -1703,7 +1901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/memory.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/memory.html" class="md-nav__link">
         
   
   
@@ -1726,7 +1924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Subgraphs.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/Subgraphs.html" class="md-nav__link">
         
   
   
@@ -1749,7 +1947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/application%20structure.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/application%20structure.html" class="md-nav__link">
         
   
   
@@ -1823,7 +2021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
         
   
   
@@ -1846,7 +2044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
+      <a href="../llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
         
   
   
@@ -1945,7 +2143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
+      <a href="../Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
         
   
   
@@ -1968,7 +2166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
+      <a href="../Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
         
   
   
@@ -1991,7 +2189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
+      <a href="../Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
         
   
   
@@ -2125,7 +2323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
+      <a href="../llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
         
   
   
@@ -2148,7 +2346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Gradio/tutorial.html" class="md-nav__link">
+      <a href="../llm/deploy/Gradio/tutorial.html" class="md-nav__link">
         
   
   
@@ -2279,7 +2477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/transformers/quick%20start.html" class="md-nav__link">
+      <a href="../llm/tunning/transformers/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2361,7 +2559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/quick%20start.html" class="md-nav__link">
+      <a href="../llm/tunning/peft/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2384,7 +2582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
+      <a href="../llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
         
   
   
@@ -2521,7 +2719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/inference/vLLM/quick%20start.html" class="md-nav__link">
+      <a href="../llm/inference/vLLM/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2616,7 +2814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/others/wsl.html" class="md-nav__link">
+      <a href="../others/wsl.html" class="md-nav__link">
         
   
   
@@ -2657,6 +2855,158 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 学习目标
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 循环神经网络（RNN）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 循环神经网络（RNN）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 RNN 概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 RNN 数学公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.3 RNN 的训练
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-rnn-python-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.4 RNN Python 示例（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 长短期记忆网络（LSTM）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 长短期记忆网络（LSTM）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1 LSTM 概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 LSTM 公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-lstm-python-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.3 LSTM Python 示例（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 LSTM 的直观理解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-rnn-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 RNN / LSTM 的应用举例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 RNN / LSTM 的应用举例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-pytorch-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 简单文本分类示例（PyTorch LSTM）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 本章小结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2667,8 +3017,211 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="2-rnn-lstm">第 2 章 : RNN / LSTM 序列模型<a class="headerlink" href="#2-rnn-lstm" title="Permanent link">&para;</a></h1>
+<p>自然语言处理中的许多任务（如文本生成、机器翻译、情感分析）都需要处理<strong>序列数据</strong>。RNN（循环神经网络）和 LSTM（长短期记忆网络）是经典的序列模型，用于捕捉文本的时间依赖关系。</p>
+<hr />
+<h2 id="21">2.1 学习目标<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
+<p>完成本章后，你将能够：</p>
+<ol>
+<li>理解 RNN 的基本结构和原理</li>
+<li>掌握 LSTM 解决长序列依赖问题的方法</li>
+<li>理解 RNN / LSTM 的前向传播与梯度更新公式</li>
+<li>能用 PyTorch 实现 RNN / LSTM，进行文本分类或生成任务</li>
+<li>理解梯度消失与梯度爆炸问题，并知道常用解决方法</li>
+</ol>
+<hr />
+<h2 id="22-rnn">2.2 循环神经网络（RNN）<a class="headerlink" href="#22-rnn" title="Permanent link">&para;</a></h2>
+<h3 id="221-rnn">2.2.1 RNN 概念<a class="headerlink" href="#221-rnn" title="Permanent link">&para;</a></h3>
+<p>RNN 是一种专门处理序列数据的神经网络：</p>
+<ul>
+<li>对输入序列 <span class="arithmatex">\(x_1, x_2, ..., x_T\)</span> 逐步处理</li>
+<li>每一步都有一个隐藏状态 <span class="arithmatex">\(h_t\)</span> 记忆之前的信息</li>
+<li>输出可以是每一步的 <span class="arithmatex">\(y_t\)</span>，也可以只取最后一步</li>
+</ul>
+<p><strong>RNN 结构图</strong>：</p>
+<pre><code>x1 --&gt;[RNN]--&gt; h1 --&gt; y1
+x2 --&gt;[RNN]--&gt; h2 --&gt; y2
+...
+xT --&gt;[RNN]--&gt; hT --&gt; yT
+</code></pre>
+<hr />
+<h3 id="222-rnn">2.2.2 RNN 数学公式<a class="headerlink" href="#222-rnn" title="Permanent link">&para;</a></h3>
+<p><strong>隐藏状态更新</strong>：</p>
+<div class="arithmatex">\[
+h_t = \tanh(W_{xh} x_t + W_{hh} h_{t-1} + b_h)
+\]</div>
+<p><strong>输出计算</strong>：</p>
+<div class="arithmatex">\[
+y_t = W_{hy} h_t + b_y
+\]</div>
+<ul>
+<li><span class="arithmatex">\(x_t\)</span>：当前输入向量</li>
+<li><span class="arithmatex">\(h_t\)</span>：当前隐藏状态</li>
+<li><span class="arithmatex">\(h_{t-1}\)</span>：前一步隐藏状态</li>
+<li><span class="arithmatex">\(W_{xh}, W_{hh}, W_{hy}\)</span>：权重矩阵</li>
+<li><span class="arithmatex">\(b_h, b_y\)</span>：偏置</li>
+</ul>
+<blockquote>
+<p>直观理解：每个 <span class="arithmatex">\(h_t\)</span> 不仅包含当前输入 <span class="arithmatex">\(x_t\)</span> 的信息，还记住前面所有步骤的信息。</p>
+</blockquote>
+<hr />
+<h3 id="223-rnn">2.2.3 RNN 的训练<a class="headerlink" href="#223-rnn" title="Permanent link">&para;</a></h3>
+<p>使用 <strong>BPTT（Backpropagation Through Time）</strong> 进行梯度更新：</p>
+<div class="arithmatex">\[
+\frac{\partial L}{\partial W_{hh}} = \sum_{t=1}^T \frac{\partial L}{\partial h_t} \prod_{k=1}^t \frac{\partial h_k}{\partial h_{k-1}}
+\]</div>
+<ul>
+<li>长序列会导致梯度乘积过多</li>
+<li><strong>梯度消失</strong>：<span class="arithmatex">\(\prod \partial h_k/\partial h_{k-1} \to 0\)</span></li>
+<li><strong>梯度爆炸</strong>：<span class="arithmatex">\(\prod \partial h_k/\partial h_{k-1} \to \infty\)</span></li>
+</ul>
+<blockquote>
+<p>这是 RNN 难以捕捉长距离依赖的原因。</p>
+</blockquote>
+<hr />
+<h3 id="224-rnn-python-pytorch">2.2.4 RNN Python 示例（PyTorch）<a class="headerlink" href="#224-rnn-python-pytorch" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+
+# 假设输入序列长度=5，输入维度=10，隐藏状态=20
+rnn = nn.RNN(input_size=10, hidden_size=20, batch_first=True)
+
+x = torch.randn(3,5,10)  # batch_size=3
+out, h_n = rnn(x)
+print(out.shape)  # (3, 5, 20)
+print(h_n.shape)  # (1, 3, 20)
+</code></pre>
+<hr />
+<h2 id="23-lstm">2.3 长短期记忆网络（LSTM）<a class="headerlink" href="#23-lstm" title="Permanent link">&para;</a></h2>
+<h3 id="231-lstm">2.3.1 LSTM 概念<a class="headerlink" href="#231-lstm" title="Permanent link">&para;</a></h3>
+<p>LSTM 是 RNN 的改进版本，专门解决<strong>长序列依赖</strong>问题：</p>
+<ul>
+<li>引入 <strong>记忆单元 <span class="arithmatex">\(C_t\)</span></strong> 保存长期信息</li>
+<li>增加三个门控机制：遗忘门 <span class="arithmatex">\(f_t\)</span>、输入门 <span class="arithmatex">\(i_t\)</span>、输出门 <span class="arithmatex">\(o_t\)</span></li>
+<li>控制信息流动，防止梯度消失</li>
+</ul>
+<hr />
+<h3 id="232-lstm">2.3.2 LSTM 公式<a class="headerlink" href="#232-lstm" title="Permanent link">&para;</a></h3>
+<p><strong>遗忘门</strong>：决定保留多少前一状态信息</p>
+<div class="arithmatex">\[
+f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)
+\]</div>
+<p><strong>输入门</strong>：决定当前输入有多少更新到记忆单元</p>
+<div class="arithmatex">\[
+i_t = \sigma(W_i [h_{t-1}, x_t] + b_i)
+\]</div>
+<div class="arithmatex">\[
+\tilde{C}*t = \tanh(W_C [h*{t-1}, x_t] + b_C)
+\]</div>
+<p><strong>记忆单元更新</strong>：</p>
+<div class="arithmatex">\[
+C_t = f_t \odot C_{t-1} + i_t \odot \tilde{C}_t
+\]</div>
+<p><strong>输出门</strong>：决定输出隐藏状态 <span class="arithmatex">\(h_t\)</span></p>
+<div class="arithmatex">\[
+o_t = \sigma(W_o [h_{t-1}, x_t] + b_o)
+\]</div>
+<div class="arithmatex">\[
+h_t = o_t \odot \tanh(C_t)
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\sigma\)</span>：Sigmoid 函数</li>
+<li><span class="arithmatex">\(\odot\)</span>：逐元素乘法</li>
+<li><span class="arithmatex">\(C_t\)</span>：记忆单元</li>
+<li><span class="arithmatex">\(h_t\)</span>：隐藏状态</li>
+</ul>
+<blockquote>
+<p>LSTM 的门控机制让模型可以长时间保留信息，解决 RNN 的梯度消失问题。</p>
+</blockquote>
+<hr />
+<h3 id="233-lstm-python-pytorch">2.3.3 LSTM Python 示例（PyTorch）<a class="headerlink" href="#233-lstm-python-pytorch" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+
+# 输入维度=10，隐藏状态=20，序列长度=5
+lstm = nn.LSTM(input_size=10, hidden_size=20, batch_first=True)
+
+x = torch.randn(3,5,10)  # batch_size=3
+out, (h_n, c_n) = lstm(x)
+print(out.shape)  # (3, 5, 20)
+print(h_n.shape)   # (1, 3, 20)
+print(c_n.shape)   # (1, 3, 20)
+</code></pre>
+<hr />
+<h3 id="234-lstm">2.3.4 LSTM 的直观理解<a class="headerlink" href="#234-lstm" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>记忆单元 <span class="arithmatex">\(C_t\)</span></strong>：像一个长期记忆，决定信息保留多少</li>
+<li><strong>遗忘门 <span class="arithmatex">\(f_t\)</span></strong>：丢掉无关信息</li>
+<li><strong>输入门 <span class="arithmatex">\(i_t\)</span></strong>：更新新信息</li>
+<li><strong>输出门 <span class="arithmatex">\(o_t\)</span></strong>：决定隐藏状态输出</li>
+</ul>
+<blockquote>
+<p>LSTM 可以捕捉文本中的长距离依赖，比如 “The movie that I watched yesterday was amazing” 中，“movie” 和 “amazing” 的关系。</p>
+</blockquote>
+<hr />
+<h2 id="24-rnn-lstm">2.4 RNN / LSTM 的应用举例<a class="headerlink" href="#24-rnn-lstm" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>文本分类</strong>：情感分析、垃圾邮件识别</li>
+<li><strong>序列生成</strong>：文本生成、代码生成</li>
+<li><strong>机器翻译</strong>：序列到序列（Seq2Seq）任务</li>
+<li><strong>语音识别</strong>：将语音信号映射到文本</li>
+</ol>
+<hr />
+<h3 id="241-pytorch-lstm">2.4.1 简单文本分类示例（PyTorch LSTM）<a class="headerlink" href="#241-pytorch-lstm" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+
+class LSTMClassifier(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim):
+        super().__init__()
+        self.lstm = nn.LSTM(input_dim, hidden_dim, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, output_dim)
+    def forward(self, x):
+        out, (h_n, c_n) = self.lstm(x)
+        return self.fc(h_n[-1])  # 用最后一个隐藏状态做分类
+
+model = LSTMClassifier(input_dim=10, hidden_dim=20, output_dim=2)
+x = torch.randn(3,5,10)
+y = model(x)
+print(y.shape)  # (3,2)
+</code></pre>
+<hr />
+<h2 id="25">2.5 本章小结<a class="headerlink" href="#25" title="Permanent link">&para;</a></h2>
+<ol>
+<li>RNN 可以处理序列数据，但长序列容易梯度消失/爆炸</li>
+<li>LSTM 通过门控机制解决长距离依赖问题</li>
+<li>RNN / LSTM 适合分类、生成、翻译等 NLP 任务</li>
+<li>PyTorch 提供高效实现，可直接用于文本实验</li>
+</ol>
+<hr />
+<p>我可以继续帮你生成 <strong>第 2 章完整 Jupyter Notebook</strong>，包含：</p>
+<ul>
+<li>RNN 和 LSTM 训练示例</li>
+<li>文本分类任务</li>
+<li>可视化隐藏状态</li>
+</ul>
+<p>这样你可以直接运行实验，更直观理解序列模型。</p>
+<p>你希望我生成 notebook 吗？</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2706,10 +3259,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/interviews/", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "/interviews/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="/interviews/assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -2717,7 +3270,7 @@
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="/interviews/styles/javascripts/katex.js"></script>
+        <script src="../styles/javascripts/katex.js"></script>
       
     
   </body>

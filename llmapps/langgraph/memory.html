@@ -10,22 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
+        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/memory.html">
       
       
+        <link rel="prev" href="time%20travel.html">
       
-      <link rel="icon" href="/interviews/assets/images/favicon.png">
+      
+        <link rel="next" href="Subgraphs.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>人工智能面试集合</title>
+        <title>Memory - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="/interviews/assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="/interviews/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="/interviews/styles/custom.css">
+      <link rel="stylesheet" href="../../styles/custom.css">
     
-      <link rel="stylesheet" href="/interviews/styles/extra.css">
+      <link rel="stylesheet" href="../../styles/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("/interviews/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/interviews/." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Memory
             
           </span>
         </div>
@@ -216,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/machine/interview.html" class="md-tabs__link">
+      <a href="../../machine/interview.html" class="md-tabs__link">
         
   
   
@@ -235,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-tabs__link">
+      <a href="../../deeplearning/interview.html" class="md-tabs__link">
         
   
   
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/nlp/chart01.html" class="md-tabs__link">
+        <a href="../../nlp/chart01.html" class="md-tabs__link">
           
   
   
@@ -274,6 +285,8 @@
   
   
   
+    
+  
   
     
     
@@ -281,11 +294,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../langchain/core-components/agents.html" class="md-tabs__link">
           
   
   
@@ -310,7 +325,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
+        <a href="../../Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
           
   
   
@@ -339,7 +354,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
+        <a href="../../llm/deploy/Streamlit/tutorial.html" class="md-tabs__link">
           
   
   
@@ -364,7 +379,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/interviews/others/wsl.html" class="md-tabs__link">
+        <a href="../../others/wsl.html" class="md-tabs__link">
           
   
   
@@ -400,7 +415,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/interviews/." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -430,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/machine/interview.html" class="md-nav__link">
+      <a href="../../machine/interview.html" class="md-nav__link">
         
   
   
@@ -452,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/deeplearning/interview.html" class="md-nav__link">
+      <a href="../../deeplearning/interview.html" class="md-nav__link">
         
   
   
@@ -535,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart01.html" class="md-nav__link">
+      <a href="../../nlp/chart01.html" class="md-nav__link">
         
   
   
@@ -558,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart02.html" class="md-nav__link">
+      <a href="../../nlp/chart02.html" class="md-nav__link">
         
   
   
@@ -581,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart03.html" class="md-nav__link">
+      <a href="../../nlp/chart03.html" class="md-nav__link">
         
   
   
@@ -604,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart04.html" class="md-nav__link">
+      <a href="../../nlp/chart04.html" class="md-nav__link">
         
   
   
@@ -627,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/chart05.html" class="md-nav__link">
+      <a href="../../nlp/chart05.html" class="md-nav__link">
         
   
   
@@ -650,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/nltk.html" class="md-nav__link">
+      <a href="../../nlp/nltk.html" class="md-nav__link">
         
   
   
@@ -673,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/nlp/peft.html" class="md-nav__link">
+      <a href="../../nlp/peft.html" class="md-nav__link">
         
   
   
@@ -700,8 +715,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -717,21 +734,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -744,7 +762,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             大模型应用开发
@@ -782,10 +800,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -794,7 +815,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   
@@ -821,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/agents.html" class="md-nav__link">
+      <a href="../langchain/core-components/agents.html" class="md-nav__link">
         
   
   
@@ -844,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/models.html" class="md-nav__link">
+      <a href="../langchain/core-components/models.html" class="md-nav__link">
         
   
   
@@ -867,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/messages.html" class="md-nav__link">
+      <a href="../langchain/core-components/messages.html" class="md-nav__link">
         
   
   
@@ -890,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/tools.html" class="md-nav__link">
+      <a href="../langchain/core-components/tools.html" class="md-nav__link">
         
   
   
@@ -913,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
+      <a href="../langchain/core-components/short-term%20memory.html" class="md-nav__link">
         
   
   
@@ -936,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/streaming.html" class="md-nav__link">
+      <a href="../langchain/core-components/streaming.html" class="md-nav__link">
         
   
   
@@ -959,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/middleware.html" class="md-nav__link">
+      <a href="../langchain/core-components/middleware.html" class="md-nav__link">
         
   
   
@@ -982,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
+      <a href="../langchain/core-components/structured-output.html" class="md-nav__link">
         
   
   
@@ -1037,10 +1058,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1049,7 +1073,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   
@@ -1076,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
+      <a href="../langchain/advanced-usage/Guardrails.html" class="md-nav__link">
         
   
   
@@ -1099,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
+      <a href="../langchain/advanced-usage/Runtime.html" class="md-nav__link">
         
   
   
@@ -1122,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
+      <a href="../langchain/advanced-usage/context-engineering.html" class="md-nav__link">
         
   
   
@@ -1145,7 +1169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
+      <a href="../langchain/advanced-usage/MCP.html" class="md-nav__link">
         
   
   
@@ -1168,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
+      <a href="../langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
         
   
   
@@ -1191,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
+      <a href="../langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
         
   
   
@@ -1214,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
+      <a href="../langchain/advanced-usage/Retrieval.html" class="md-nav__link">
         
   
   
@@ -1237,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
+      <a href="../langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
         
   
   
@@ -1282,10 +1306,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1294,7 +1321,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   
@@ -1321,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
+      <a href="../apps/langchain/semantic%20search.html" class="md-nav__link">
         
   
   
@@ -1344,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
+      <a href="../apps/langchain/RAG%20agent.html" class="md-nav__link">
         
   
   
@@ -1367,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
+      <a href="../apps/langchain/humain_middleware.html" class="md-nav__link">
         
   
   
@@ -1395,8 +1422,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1433,20 +1462,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
             
   
   
@@ -1459,7 +1489,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             LangGraph
@@ -1473,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/overview.html" class="md-nav__link">
+      <a href="overview.html" class="md-nav__link">
         
   
   
@@ -1496,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/quickstart.html" class="md-nav__link">
+      <a href="quickstart.html" class="md-nav__link">
         
   
   
@@ -1519,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Local%20server.html" class="md-nav__link">
+      <a href="Local%20server.html" class="md-nav__link">
         
   
   
@@ -1542,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
+      <a href="thinking%20in%20Langgraph.html" class="md-nav__link">
         
   
   
@@ -1565,7 +1595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
+      <a href="workflows%2Bagents.html" class="md-nav__link">
         
   
   
@@ -1588,7 +1618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/persistence.html" class="md-nav__link">
+      <a href="persistence.html" class="md-nav__link">
         
   
   
@@ -1611,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/durable%20execution.html" class="md-nav__link">
+      <a href="durable%20execution.html" class="md-nav__link">
         
   
   
@@ -1634,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/streaming.html" class="md-nav__link">
+      <a href="streaming.html" class="md-nav__link">
         
   
   
@@ -1657,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/interrupts.html" class="md-nav__link">
+      <a href="interrupts.html" class="md-nav__link">
         
   
   
@@ -1680,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/time%20travel.html" class="md-nav__link">
+      <a href="time%20travel.html" class="md-nav__link">
         
   
   
@@ -1700,10 +1730,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/memory.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Memory
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="memory.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1714,6 +1764,219 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      短期内存配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="短期内存配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      生产环境配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      在子图中使用内存
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      长期内存配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="长期内存配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      生产环境配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      语义搜索
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      短期内存管理策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="短期内存管理策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息修剪
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息删除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息摘要
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      检查点管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="检查点管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看线程状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看线程历史
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除线程检查点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      预构建内存工具
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1726,7 +1989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/Subgraphs.html" class="md-nav__link">
+      <a href="Subgraphs.html" class="md-nav__link">
         
   
   
@@ -1749,7 +2012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/application%20structure.html" class="md-nav__link">
+      <a href="application%20structure.html" class="md-nav__link">
         
   
   
@@ -1823,7 +2086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
+      <a href="graph%20api%20overview.html" class="md-nav__link">
         
   
   
@@ -1846,7 +2109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
+      <a href="use%20the%20graph%20api.html" class="md-nav__link">
         
   
   
@@ -1945,7 +2208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
+      <a href="../../Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
         
   
   
@@ -1968,7 +2231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
+      <a href="../../Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
         
   
   
@@ -1991,7 +2254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
+      <a href="../../Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
         
   
   
@@ -2125,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
+      <a href="../../llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
         
   
   
@@ -2148,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/deploy/Gradio/tutorial.html" class="md-nav__link">
+      <a href="../../llm/deploy/Gradio/tutorial.html" class="md-nav__link">
         
   
   
@@ -2279,7 +2542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/transformers/quick%20start.html" class="md-nav__link">
+      <a href="../../llm/tunning/transformers/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2361,7 +2624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/quick%20start.html" class="md-nav__link">
+      <a href="../../llm/tunning/peft/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2384,7 +2647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
+      <a href="../../llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
         
   
   
@@ -2521,7 +2784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/llm/inference/vLLM/quick%20start.html" class="md-nav__link">
+      <a href="../../llm/inference/vLLM/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2616,7 +2879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/interviews/others/wsl.html" class="md-nav__link">
+      <a href="../../others/wsl.html" class="md-nav__link">
         
   
   
@@ -2657,6 +2920,209 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      短期内存配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="短期内存配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      生产环境配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      在子图中使用内存
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      长期内存配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="长期内存配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      生产环境配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      语义搜索
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      短期内存管理策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="短期内存管理策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息修剪
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息删除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息摘要
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      检查点管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="检查点管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看线程状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看线程历史
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除线程检查点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      预构建内存工具
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2667,8 +3133,341 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="langgraph">LangGraph 内存管理完整教程<a class="headerlink" href="#langgraph" title="Permanent link">&para;</a></h1>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>在AI应用中，内存（Memory）是实现多轮对话和上下文共享的关键组件。LangGraph提供了两种类型的内存管理：</p>
+<ul>
+<li><strong>短期内存</strong>：用于跟踪多轮对话的线程级持久化</li>
+<li><strong>长期内存</strong>：用于跨会话存储用户特定或应用级别的数据</li>
+</ul>
+<h2 id="_2">短期内存配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">基础配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langgraph.checkpoint.memory import InMemorySaver
+from langgraph.graph import StateGraph
+
+# 创建内存检查点保存器
+checkpointer = InMemorySaver()
+
+# 构建图并配置检查点
+builder = StateGraph(...)
+graph = builder.compile(checkpointer=checkpointer)
+
+# 使用线程ID调用图
+graph.invoke(
+    {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;hi! i am Bob&quot;}]},
+    {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;1&quot;}},
+)
+</code></pre>
+<h3 id="_4">生产环境配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>在生产环境中，建议使用数据库支持的检查点：</p>
+<pre><code class="language-python">from langgraph.checkpoint.postgres import PostgresSaver
+
+DB_URI = &quot;postgresql://postgres:postgres@localhost:5442/postgres?sslmode=disable&quot;
+with PostgresSaver.from_conn_string(DB_URI) as checkpointer:
+    builder = StateGraph(...)
+    graph = builder.compile(checkpointer=checkpointer)
+</code></pre>
+<h4 id="postgresql">PostgreSQL 示例<a class="headerlink" href="#postgresql" title="Permanent link">&para;</a></h4>
+<pre><code class="language-bash">pip install -U &quot;psycopg[binary,pool]&quot; langgraph langgraph-checkpoint-postgres
+</code></pre>
+<p><strong>同步版本：</strong></p>
+<pre><code class="language-python">from langchain.chat_models import init_chat_model
+from langgraph.graph import StateGraph, MessagesState, START
+from langgraph.checkpoint.postgres import PostgresSaver
+
+model = init_chat_model(model=&quot;anthropic:claude-3-5-haiku-latest&quot;)
+
+DB_URI = &quot;postgresql://postgres:postgres@localhost:5442/postgres?sslmode=disable&quot;
+with PostgresSaver.from_conn_string(DB_URI) as checkpointer:
+    # 首次使用时需要设置：checkpointer.setup()
+
+    def call_model(state: MessagesState):
+        response = model.invoke(state[&quot;messages&quot;])
+        return {&quot;messages&quot;: response}
+
+    builder = StateGraph(MessagesState)
+    builder.add_node(call_model)
+    builder.add_edge(START, &quot;call_model&quot;)
+
+    graph = builder.compile(checkpointer=checkpointer)
+
+    config = {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;1&quot;}}
+
+    # 多轮对话示例
+    for chunk in graph.stream(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;hi! I'm bob&quot;}]},
+        config,
+        stream_mode=&quot;values&quot;
+    ):
+        chunk[&quot;messages&quot;][-1].pretty_print()
+
+    for chunk in graph.stream(
+        {&quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;what's my name?&quot;}]},
+        config,
+        stream_mode=&quot;values&quot;
+    ):
+        chunk[&quot;messages&quot;][-1].pretty_print()
+</code></pre>
+<h4 id="mongodb">MongoDB 示例<a class="headerlink" href="#mongodb" title="Permanent link">&para;</a></h4>
+<pre><code class="language-bash">pip install -U pymongo langgraph langgraph-checkpoint-mongodb
+</code></pre>
+<pre><code class="language-python">from langgraph.checkpoint.mongodb import MongoDBSaver
+
+DB_URI = &quot;localhost:27017&quot;
+with MongoDBSaver.from_conn_string(DB_URI) as checkpointer:
+    # 配置图...
+</code></pre>
+<h4 id="redis">Redis 示例<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h4>
+<pre><code class="language-bash">pip install -U langgraph langgraph-checkpoint-redis
+</code></pre>
+<pre><code class="language-python">from langgraph.checkpoint.redis import RedisSaver
+
+DB_URI = &quot;redis://localhost:6379&quot;
+with RedisSaver.from_conn_string(DB_URI) as checkpointer:
+    # 首次使用时需要设置：checkpointer.setup()
+    # 配置图...
+</code></pre>
+<h3 id="_5">在子图中使用内存<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>如果图中包含子图，只需在父图编译时提供检查点，LangGraph会自动传播到子图：</p>
+<pre><code class="language-python">from langgraph.graph import START, StateGraph
+from langgraph.checkpoint.memory import InMemorySaver
+from typing import TypedDict
+
+class State(TypedDict):
+    foo: str
+
+# 子图配置
+def subgraph_node_1(state: State):
+    return {&quot;foo&quot;: state[&quot;foo&quot;] + &quot;bar&quot;}
+
+subgraph_builder = StateGraph(State)
+subgraph_builder.add_node(subgraph_node_1)
+subgraph_builder.add_edge(START, &quot;subgraph_node_1&quot;)
+subgraph = subgraph_builder.compile()
+
+# 父图配置
+builder = StateGraph(State)
+builder.add_node(&quot;node_1&quot;, subgraph)
+builder.add_edge(START, &quot;node_1&quot;)
+
+checkpointer = InMemorySaver()
+graph = builder.compile(checkpointer=checkpointer)
+</code></pre>
+<p>如果希望子图拥有独立内存：</p>
+<pre><code class="language-python">subgraph_builder = StateGraph(...)
+subgraph = subgraph_builder.compile(checkpointer=True)
+</code></pre>
+<h2 id="_6">长期内存配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">基础配置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langgraph.store.memory import InMemoryStore
+from langgraph.graph import StateGraph
+
+store = InMemoryStore()
+
+builder = StateGraph(...)
+graph = builder.compile(store=store)
+</code></pre>
+<h3 id="_8">生产环境配置<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">from langgraph.store.postgres import PostgresStore
+
+DB_URI = &quot;postgresql://postgres:postgres@localhost:5442/postgres?sslmode=disable&quot;
+with PostgresStore.from_conn_string(DB_URI) as store:
+    builder = StateGraph(...)
+    graph = builder.compile(store=store)
+</code></pre>
+<h4 id="postgresql_1">PostgreSQL 存储示例<a class="headerlink" href="#postgresql_1" title="Permanent link">&para;</a></h4>
+<pre><code class="language-python">from langchain_core.runnables import RunnableConfig
+from langchain.chat_models import init_chat_model
+from langgraph.graph import StateGraph, MessagesState, START
+from langgraph.checkpoint.postgres import PostgresSaver
+from langgraph.store.postgres import PostgresStore
+from langgraph.store.base import BaseStore
+import uuid
+
+model = init_chat_model(model=&quot;anthropic:claude-3-5-haiku-latest&quot;)
+
+DB_URI = &quot;postgresql://postgres:postgres@localhost:5442/postgres?sslmode=disable&quot;
+
+with (
+    PostgresStore.from_conn_string(DB_URI) as store,
+    PostgresSaver.from_conn_string(DB_URI) as checkpointer,
+):
+    # store.setup()  # 首次使用时需要设置
+    # checkpointer.setup()
+
+    def call_model(
+        state: MessagesState,
+        config: RunnableConfig,
+        *,
+        store: BaseStore,
+    ):
+        user_id = config[&quot;configurable&quot;][&quot;user_id&quot;]
+        namespace = (&quot;memories&quot;, user_id)
+
+        # 搜索相关记忆
+        memories = store.search(namespace, query=str(state[&quot;messages&quot;][-1].content))
+        info = &quot;\n&quot;.join([d.value[&quot;data&quot;] for d in memories])
+        system_msg = f&quot;You are a helpful assistant talking to the user. User info: {info}&quot;
+
+        # 如果用户要求记住，存储新记忆
+        last_message = state[&quot;messages&quot;][-1]
+        if &quot;remember&quot; in last_message.content.lower():
+            memory = &quot;User name is Bob&quot;
+            store.put(namespace, str(uuid.uuid4()), {&quot;data&quot;: memory})
+
+        response = model.invoke(
+            [{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: system_msg}] + state[&quot;messages&quot;]
+        )
+        return {&quot;messages&quot;: response}
+
+    builder = StateGraph(MessagesState)
+    builder.add_node(call_model)
+    builder.add_edge(START, &quot;call_model&quot;)
+
+    graph = builder.compile(
+        checkpointer=checkpointer,
+        store=store,
+    )
+
+    # 跨线程共享用户记忆
+    config1 = {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;1&quot;, &quot;user_id&quot;: &quot;1&quot;}}
+    config2 = {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;2&quot;, &quot;user_id&quot;: &quot;1&quot;}}
+</code></pre>
+<h3 id="_9">语义搜索<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>启用语义搜索功能：</p>
+<pre><code class="language-python">from langchain.embeddings import init_embeddings
+from langgraph.store.memory import InMemoryStore
+
+# 创建支持语义搜索的存储
+embeddings = init_embeddings(&quot;openai:text-embedding-3-small&quot;)
+store = InMemoryStore(
+    index={
+        &quot;embed&quot;: embeddings,
+        &quot;dims&quot;: 1536,
+    }
+)
+
+# 存储数据
+store.put((&quot;user_123&quot;, &quot;memories&quot;), &quot;1&quot;, {&quot;text&quot;: &quot;I love pizza&quot;})
+store.put((&quot;user_123&quot;, &quot;memories&quot;), &quot;2&quot;, {&quot;text&quot;: &quot;I am a plumber&quot;})
+
+# 语义搜索
+items = store.search(
+    (&quot;user_123&quot;, &quot;memories&quot;), query=&quot;I'm hungry&quot;, limit=1
+)
+</code></pre>
+<h2 id="_10">短期内存管理策略<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">消息修剪<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>当对话历史超过LLM上下文窗口时，可以修剪消息：</p>
+<pre><code class="language-python">from langchain_core.messages.utils import trim_messages, count_tokens_approximately
+
+def call_model(state: MessagesState):
+    messages = trim_messages(
+        state[&quot;messages&quot;],
+        strategy=&quot;last&quot;,  # 保留最后的消息
+        token_counter=count_tokens_approximately,
+        max_tokens=128,   # 最大token数
+        start_on=&quot;human&quot;,
+        end_on=(&quot;human&quot;, &quot;tool&quot;),
+    )
+    response = model.invoke(messages)
+    return {&quot;messages&quot;: [response]}
+</code></pre>
+<h3 id="_12">消息删除<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>删除特定消息：</p>
+<pre><code class="language-python">from langchain.messages import RemoveMessage
+
+def delete_messages(state):
+    messages = state[&quot;messages&quot;]
+    if len(messages) &gt; 2:
+        # 删除最早的两条消息
+        return {&quot;messages&quot;: [RemoveMessage(id=m.id) for m in messages[:2]]}
+</code></pre>
+<p>删除所有消息：</p>
+<pre><code class="language-python">from langgraph.graph.message import REMOVE_ALL_MESSAGES
+
+def delete_all_messages(state):
+    return {&quot;messages&quot;: [RemoveMessage(id=REMOVE_ALL_MESSAGES)]}
+</code></pre>
+<h3 id="_13">消息摘要<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>使用摘要来压缩对话历史：</p>
+<pre><code class="language-python">from typing import Any, TypedDict
+from langchain.messages import AnyMessage
+from langgraph.graph import StateGraph, START, MessagesState
+from langmem.short_term import SummarizationNode, RunningSummary
+
+class State(MessagesState):
+    context: dict[str, RunningSummary]
+
+summarization_node = SummarizationNode(
+    token_counter=count_tokens_approximately,
+    model=summarization_model,
+    max_tokens=256,
+    max_tokens_before_summary=256,
+    max_summary_tokens=128,
+)
+
+# 在图中使用摘要节点
+builder = StateGraph(State)
+builder.add_node(call_model)
+builder.add_node(&quot;summarize&quot;, summarization_node)
+builder.add_edge(START, &quot;summarize&quot;)
+builder.add_edge(&quot;summarize&quot;, &quot;call_model&quot;)
+</code></pre>
+<h2 id="_14">检查点管理<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="_15">查看线程状态<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">config = {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;1&quot;}}
+
+# 使用图API
+state_snapshot = graph.get_state(config)
+
+# 使用检查点API
+checkpoint_tuple = checkpointer.get_tuple(config)
+</code></pre>
+<h3 id="_16">查看线程历史<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">config = {&quot;configurable&quot;: {&quot;thread_id&quot;: &quot;1&quot;}}
+
+# 获取状态历史
+history = list(graph.get_state_history(config))
+
+# 获取检查点历史
+checkpoints = list(checkpointer.list(config))
+</code></pre>
+<h3 id="_17">删除线程检查点<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">thread_id = &quot;1&quot;
+checkpointer.delete_thread(thread_id)
+</code></pre>
+<h2 id="_18">最佳实践<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>生产环境</strong>：始终使用数据库支持的检查点和存储</li>
+<li><strong>内存管理</strong>：根据对话长度选择合适的策略（修剪、删除或摘要）</li>
+<li><strong>错误处理</strong>：确保消息删除后的历史仍然有效</li>
+<li><strong>性能优化</strong>：使用语义搜索提高长期内存的检索效率</li>
+<li><strong>多租户</strong>：使用不同的命名空间隔离不同用户的数据</li>
+</ol>
+<h2 id="_19">预构建内存工具<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>LangMem是LangChain维护的库，提供了管理长期记忆的工具。参考<a href="https://langchain-ai.github.io/langmem/">LangMem文档</a>获取更多使用示例。</p>
+<p>通过合理配置短期和长期内存，可以构建出能够进行复杂多轮对话并保持上下文连贯性的AI应用。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2706,10 +3505,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/interviews/", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "/interviews/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="/interviews/assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -2717,7 +3516,7 @@
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="/interviews/styles/javascripts/katex.js"></script>
+        <script src="../../styles/javascripts/katex.js"></script>
       
     
   </body>
