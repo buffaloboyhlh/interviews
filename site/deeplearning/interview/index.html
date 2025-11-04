@@ -1,0 +1,5496 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Buffalo">
+      
+      
+        <link rel="canonical" href="https://github.com/buffaloboyhlh/interviews/deeplearning/interview/">
+      
+      
+        <link rel="prev" href="../../machine/interview/">
+      
+      
+        <link rel="next" href="../../nlp/chart01/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>深度学习 - 人工智能面试集合</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../styles/custom.css">
+    
+      <link rel="stylesheet" href="../../styles/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            人工智能面试集合
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              深度学习
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../machine/interview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../nlp/chart01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  从零开始学NLP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../llmapps/langchain/core-components/agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  大模型应用开发
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Vector%20Stores/Chroma/tutorial/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  向量数据库
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../llm/deploy/Streamlit/tutorial/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  大模型微调和部署
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../others/wsl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  其他
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    人工智能面试集合
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/buffaloboyhlh/interviews" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine/interview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    机器学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    深度学习
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    深度学习
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、神经网络
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、神经网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、神经网络原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 二、数学推导过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、实现代码（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、模型优化方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 六、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 七、优缺点总结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 八、学习建议与进阶路线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、CNN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、CNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cnn-convolutional-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、CNN 原理（Convolutional Neural Network）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 二、数学推导与损失函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、实现代码（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、模型优化技巧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 六、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 七、优缺点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 八、经典 CNN 架构发展
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 九、学习与进阶路线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、RNN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、RNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rnn-recurrent-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、RNN 原理（Recurrent Neural Network）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 二、数学推导过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、实现代码（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rnn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、RNN 的常见变体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 六、模型优化方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 七、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 八、优缺点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 九、典型应用场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 十、学习路线建议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、LSTM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、LSTM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lstm-long-short-term-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、LSTM 原理（Long Short-Term Memory）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lstm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 二、LSTM 数学推导过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、PyTorch 实现代码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lstm-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、LSTM 与 RNN 的区别
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 六、模型优化策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 七、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 八、优缺点总结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 九、典型应用场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 十、学习拓展路径
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、GAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、GAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gan-generative-adversarial-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、GAN 原理（Generative Adversarial Network）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 二、数学推导过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、PyTorch 实现代码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、常见 GAN 变体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 六、模型优化技巧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 七、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 八、优缺点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 九、典型应用场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 十、学习拓展路线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    从零开始学NLP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            从零开始学NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/chart01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 1 章：文本表示与词向量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/chart02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 2 章：RNN/LSTM 序列模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/chart03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 3 章：Transformer 与 Self-Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/chart04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 4 章：BERT / GPT 原理与微调
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/chart05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第 5 章：NLP 实战与部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/nltk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    nltk库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/peft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    peft库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型应用开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            大模型应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain核心组件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain核心组件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/core-components/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    智能体（Agents）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/core-components/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型（Models）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/core-components/messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    消息（Messages）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/core-components/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    工具（Tools）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/core-components/short-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    短期记忆（Short-term memory）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/core-components/streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    流（Streaming）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/core-components/middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    中间件（Middleware）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/core-components/structured-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    结构化输出（Structured output）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain进阶用法
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain进阶用法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/advanced-usage/Guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guardrails
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/advanced-usage/Runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Runtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/advanced-usage/context-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context-engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/advanced-usage/MCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Context Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/advanced-usage/Human-in-the-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Human-in-the-loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/advanced-usage/Multi-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/advanced-usage/Retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieval
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langchain/advanced-usage/Long-term%20memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Long-term memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangChain应用开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            LangChain应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/apps/langchain/semantic%20search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    相似搜索
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/apps/langchain/RAG%20agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/apps/langchain/humain_middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    人工审核
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LangGraph
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            LangGraph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/Local%20server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/thinking%20in%20Langgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thinking in LangGraph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/workflows%2Bagents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflows+agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/persistence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Persistence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/durable%20execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Durable execution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Streaming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/interrupts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interrupts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/time%20travel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time travel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/Subgraphs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraphs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/application%20structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_14" id="__nav_4_4_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Graph API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_14">
+            <span class="md-nav__icon md-icon"></span>
+            Graph API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/graph%20api%20overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graph API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llmapps/langgraph/use%20the%20graph%20api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use the graph API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    向量数据库
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            向量数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vector%20Stores/Chroma/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chroma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vector%20Stores/Milvus/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Milvus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vector%20Stores/FAISS/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAISS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型微调和部署
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            大模型微调和部署
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型部署
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            大模型部署
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm/deploy/Streamlit/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Streamlit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm/deploy/Gradio/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gradio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型微调
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            大模型微调
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_1" id="__nav_6_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Transformers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Transformers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm/tunning/transformers/quick%20start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_2" id="__nav_6_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PEFT
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            PEFT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm/tunning/peft/quick%20start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm/tunning/peft/chinese%20peft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    中文PEFT微调实战
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    大模型推理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            大模型推理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_1" id="__nav_6_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    vLLM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            vLLM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm/inference/vLLM/quick%20start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    其他
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            其他
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/wsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、神经网络
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、神经网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、神经网络原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 二、数学推导过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、实现代码（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、模型优化方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 六、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 七、优缺点总结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 八、学习建议与进阶路线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、CNN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、CNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cnn-convolutional-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、CNN 原理（Convolutional Neural Network）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 二、数学推导与损失函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、实现代码（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、模型优化技巧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 六、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 七、优缺点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 八、经典 CNN 架构发展
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 九、学习与进阶路线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、RNN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、RNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rnn-recurrent-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、RNN 原理（Recurrent Neural Network）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 二、数学推导过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、实现代码（PyTorch）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rnn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、RNN 的常见变体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 六、模型优化方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 七、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 八、优缺点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 九、典型应用场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 十、学习路线建议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、LSTM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、LSTM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lstm-long-short-term-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、LSTM 原理（Long Short-Term Memory）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lstm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 二、LSTM 数学推导过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、PyTorch 实现代码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lstm-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、LSTM 与 RNN 的区别
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 六、模型优化策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 七、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 八、优缺点总结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 九、典型应用场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 十、学习拓展路径
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、GAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、GAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gan-generative-adversarial-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 一、GAN 原理（Generative Adversarial Network）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 二、数学推导过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 三、评估指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 四、PyTorch 实现代码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 五、常见 GAN 变体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 六、模型优化技巧
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 七、注意事项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 八、优缺点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 九、典型应用场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 十、学习拓展路线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">深度学习<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">一、神经网络<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><img alt="神经网络.png" src="../../imgs/deeplearning/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png" /></p>
+<h3 id="_3">🧠 一、神经网络原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>神经网络是一种<strong>模拟人脑神经元结构</strong>的机器学习模型。
+核心思想是：</p>
+<blockquote>
+<p>通过多层非线性变换，将输入特征映射到输出结果。</p>
+</blockquote>
+<hr />
+<h4 id="1-perceptron">1️⃣ 神经元模型（Perceptron）<a class="headerlink" href="#1-perceptron" title="Permanent link">&para;</a></h4>
+<p>每个神经元接受输入 <span class="arithmatex">\(x_1, x_2, \dots, x_n\)</span>，计算加权和再加上偏置：</p>
+<div class="arithmatex">\[
+z = \sum_{i=1}^n w_i x_i + b
+\]</div>
+<p>然后通过<strong>激活函数</strong> <span class="arithmatex">\(f(z)\)</span> 得到输出：</p>
+<div class="arithmatex">\[
+a = f(z)
+\]</div>
+<p>常见激活函数：</p>
+<table>
+<thead>
+<tr>
+<th>激活函数</th>
+<th>表达式</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sigmoid</td>
+<td><span class="arithmatex">\(f(z) = \frac{1}{1+e^{-z}}\)</span></td>
+<td>平滑、适合二分类，但可能梯度消失</td>
+</tr>
+<tr>
+<td>ReLU</td>
+<td><span class="arithmatex">\(f(z) = \max(0, z)\)</span></td>
+<td>常用、收敛快</td>
+</tr>
+<tr>
+<td>Tanh</td>
+<td><span class="arithmatex">\(f(z) = \tanh(z)\)</span></td>
+<td>输出范围 <span class="arithmatex">\((-1,1)\)</span>，对称性好</td>
+</tr>
+<tr>
+<td>Softmax</td>
+<td><span class="arithmatex">\(f_i(z) = \frac{e^{z_i}}{\sum_j e^{z_j}}\)</span></td>
+<td>多分类输出</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="2-network-architecture">2️⃣ 网络结构（Network Architecture）<a class="headerlink" href="#2-network-architecture" title="Permanent link">&para;</a></h4>
+<p>典型前馈神经网络结构：</p>
+<div class="arithmatex">\[
+\text{Input} \rightarrow \text{Hidden Layers} \rightarrow \text{Output}
+\]</div>
+<p>每一层的输出作为下一层的输入。</p>
+<p>例如一个两层神经网络：</p>
+<ul>
+<li>输入层：<span class="arithmatex">\(x \in \mathbb{R}^n\)</span></li>
+<li>隐藏层：<span class="arithmatex">\(h = f(W_1 x + b_1)\)</span></li>
+<li>输出层：<span class="arithmatex">\(\hat{y} = g(W_2 h + b_2)\)</span></li>
+</ul>
+<hr />
+<h3 id="_4">⚙️ 二、数学推导过程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="1-forward-propagation">1️⃣ 前向传播（Forward Propagation）<a class="headerlink" href="#1-forward-propagation" title="Permanent link">&para;</a></h4>
+<p>输入 <span class="arithmatex">\(x\)</span> 经各层线性变换 + 激活函数：
+$$
+z^{(l)} = W^{(l)} a^{(l-1)} + b^{(l)} \
+a^{(l)} = f^{(l)}(z^{(l)})
+$$</p>
+<p>最终输出预测：
+$$
+\hat{y} = a^{(L)}
+$$
+其中 <span class="arithmatex">\(L\)</span> 是网络的层数。</p>
+<hr />
+<h4 id="2-loss-function">2️⃣ 损失函数（Loss Function）<a class="headerlink" href="#2-loss-function" title="Permanent link">&para;</a></h4>
+<h5 id="1">（1）回归问题<a class="headerlink" href="#1" title="Permanent link">&para;</a></h5>
+<p>常用均方误差（MSE）：
+$$
+L = \frac{1}{2m}\sum_{i=1}^{m} (\hat{y}_i - y_i)^2
+$$</p>
+<h5 id="2">（2）分类问题<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
+<p>常用交叉熵损失（Cross-Entropy）：
+$$
+L = -\frac{1}{m} \sum_{i=1}^{m} \sum_{k=1}^{K} y_{ik} \log(\hat{y}_{ik})
+$$</p>
+<hr />
+<h4 id="3-backpropagation">3️⃣ 反向传播（Backpropagation）<a class="headerlink" href="#3-backpropagation" title="Permanent link">&para;</a></h4>
+<p>目标：最小化损失函数 <span class="arithmatex">\(L\)</span>。
+使用 <strong>梯度下降法（Gradient Descent）</strong> 更新参数。</p>
+<p>对权重求导：
+$$
+\frac{\partial L}{\partial W^{(l)}} = \frac{\partial L}{\partial a^{(l)}} \cdot \frac{\partial a^{(l)}}{\partial z^{(l)}} \cdot \frac{\partial z^{(l)}}{\partial W^{(l)}}
+$$</p>
+<p>更新参数：
+$$
+W^{(l)} := W^{(l)} - \eta \frac{\partial L}{\partial W^{(l)}}, \quad
+b^{(l)} := b^{(l)} - \eta \frac{\partial L}{\partial b^{(l)}}
+$$</p>
+<p>其中 <span class="arithmatex">\(\eta\)</span> 为学习率（learning rate）。</p>
+<hr />
+<h3 id="_5">📊 三、评估指标<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>指标</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分类</td>
+<td>准确率（Accuracy）</td>
+<td><span class="arithmatex">\(\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}\)</span></td>
+</tr>
+<tr>
+<td>分类</td>
+<td>精确率（Precision）</td>
+<td><span class="arithmatex">\(\text{Precision} = \frac{TP}{TP + FP}\)</span></td>
+</tr>
+<tr>
+<td>分类</td>
+<td>召回率（Recall）</td>
+<td><span class="arithmatex">\(\text{Recall} = \frac{TP}{TP + FN}\)</span></td>
+</tr>
+<tr>
+<td>分类</td>
+<td>F1 分数</td>
+<td><span class="arithmatex">\(F1 = 2 \times \frac{P \times R}{P + R}\)</span></td>
+</tr>
+<tr>
+<td>回归</td>
+<td>均方误差（MSE）</td>
+<td><span class="arithmatex">\(\text{MSE} = \frac{1}{n}\sum(\hat{y} - y)^2\)</span></td>
+</tr>
+<tr>
+<td>回归</td>
+<td><span class="arithmatex">\(R^2\)</span></td>
+<td><span class="arithmatex">\(R^2 = 1 - \frac{\sum(\hat{y}-y)^2}{\sum(y-\bar{y})^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="pytorch">💻 四、实现代码（PyTorch）<a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h3>
+<p>以下示例是一个简单的<strong>两层神经网络</strong>实现二分类任务。</p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+import torch.optim as optim
+from sklearn.datasets import make_moons
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+# 1. 数据准备
+X, y = make_moons(n_samples=1000, noise=0.2, random_state=42)
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+X_train = torch.FloatTensor(X_train)
+y_train = torch.LongTensor(y_train)
+X_test = torch.FloatTensor(X_test)
+y_test = torch.LongTensor(y_test)
+
+# 2. 模型定义
+class NeuralNetwork(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim):
+        super(NeuralNetwork, self).__init__()
+        self.fc1 = nn.Linear(input_dim, hidden_dim)
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(hidden_dim, output_dim)
+
+    def forward(self, x):
+        x = self.fc1(x)
+        x = self.relu(x)
+        x = self.fc2(x)
+        return x
+
+model = NeuralNetwork(2, 16, 2)
+
+# 3. 损失函数与优化器
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+# 4. 训练过程
+for epoch in range(200):
+    outputs = model(X_train)
+    loss = criterion(outputs, y_train)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    if (epoch+1) % 20 == 0:
+        print(f&quot;Epoch [{epoch+1}/200], Loss: {loss.item():.4f}&quot;)
+
+# 5. 评估
+with torch.no_grad():
+    y_pred = model(X_test)
+    acc = (y_pred.argmax(1) == y_test).float().mean()
+    print(f&quot;Test Accuracy: {acc:.4f}&quot;)
+</code></pre>
+<hr />
+<h3 id="_6">🧩 五、模型优化方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>学习率调整（LR Scheduler）</strong></td>
+<td>控制学习率衰减</td>
+</tr>
+<tr>
+<td><strong>权重初始化</strong></td>
+<td>Xavier、He 初始化能改善收敛</td>
+</tr>
+<tr>
+<td><strong>正则化</strong></td>
+<td>L2 正则、Dropout 防止过拟合</td>
+</tr>
+<tr>
+<td><strong>Batch Normalization</strong></td>
+<td>稳定分布，加速训练</td>
+</tr>
+<tr>
+<td><strong>早停法（Early Stopping）</strong></td>
+<td>防止过拟合</td>
+</tr>
+<tr>
+<td><strong>数据增强（Data Augmentation）</strong></td>
+<td>扩充样本集，提高泛化性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_7">⚠️ 六、注意事项<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>输入数据需<strong>标准化或归一化</strong>；</li>
+<li>避免学习率过大或过小；</li>
+<li>ReLU 可解决梯度消失，但注意 “ReLU 死亡” 问题；</li>
+<li>网络层数过多可能导致过拟合；</li>
+<li>使用 GPU 可显著加速训练；</li>
+<li>合理选择批大小（batch size）。</li>
+</ol>
+<hr />
+<h3 id="_8">⚖️ 七、优缺点总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能学习复杂非线性关系</td>
+<td>需要大量数据和计算资源</td>
+</tr>
+<tr>
+<td>泛化能力强</td>
+<td>不易解释（黑箱）</td>
+</tr>
+<tr>
+<td>适用范围广（分类、回归、生成）</td>
+<td>超参数调节困难</td>
+</tr>
+<tr>
+<td>可端到端学习</td>
+<td>容易过拟合</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_9">🧭 八、学习建议与进阶路线<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>学习内容</th>
+<th>工具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>入门</td>
+<td>感知机、前向传播、激活函数</td>
+<td>Numpy</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td>反向传播、优化器、正则化</td>
+<td>PyTorch</td>
+</tr>
+<tr>
+<td>提升</td>
+<td>CNN、RNN、LSTM</td>
+<td>PyTorch / TensorFlow</td>
+</tr>
+<tr>
+<td>高阶</td>
+<td>Transformer、预训练模型</td>
+<td>HuggingFace Transformers</td>
+</tr>
+<tr>
+<td>部署</td>
+<td>ONNX、TensorRT、Triton</td>
+<td>深度学习部署框架</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cnn">二、CNN<a class="headerlink" href="#cnn" title="Permanent link">&para;</a></h2>
+<p><img alt="卷积神经网络.png" src="../../imgs/deeplearning/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png" /></p>
+<h3 id="cnn-convolutional-neural-network">🧠 一、CNN 原理（Convolutional Neural Network）<a class="headerlink" href="#cnn-convolutional-neural-network" title="Permanent link">&para;</a></h3>
+<p>卷积神经网络（CNN）是一类<strong>专为处理具有网格结构数据（如图像）</strong>设计的神经网络。
+传统神经网络对输入特征完全连接，而 CNN 通过 <strong>局部感受野（local receptive field）</strong> 和 <strong>权值共享（weight sharing）</strong>，显著减少参数数量并提升特征提取能力。</p>
+<hr />
+<h4 id="1-cnn">1️⃣ CNN 的核心思想<a class="headerlink" href="#1-cnn" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>卷积层（Convolution Layer）</strong>：提取局部特征</li>
+<li><strong>池化层（Pooling Layer）</strong>：降维与防止过拟合</li>
+<li><strong>全连接层（Fully Connected Layer）</strong>：整合特征进行分类或回归</li>
+</ol>
+<p>典型结构：</p>
+<div class="arithmatex">\[
+\text{Input} \rightarrow [\text{Conv + ReLU + Pool}]^n \rightarrow \text{FC} \rightarrow \text{Output}
+\]</div>
+<hr />
+<h4 id="2-convolution-operation">2️⃣ 卷积操作（Convolution Operation）<a class="headerlink" href="#2-convolution-operation" title="Permanent link">&para;</a></h4>
+<p>以二维卷积为例，给定输入矩阵 <span class="arithmatex">\(X\)</span> 和卷积核（权重矩阵）<span class="arithmatex">\(K\)</span>：</p>
+<div class="arithmatex">\[
+Y(i,j) = \sum_m \sum_n X(i+m, j+n) \cdot K(m,n)
+\]</div>
+<p>该操作称为<strong>卷积（Convolution）</strong>。
+卷积层通过滑动卷积核在输入上提取局部特征，如边缘、纹理等。</p>
+<hr />
+<h4 id="3-feature-map">3️⃣ 特征图（Feature Map）<a class="headerlink" href="#3-feature-map" title="Permanent link">&para;</a></h4>
+<p>每个卷积核可学习一种特征模式。
+一个卷积层可以包含多个卷积核，从而生成多个特征图（Feature Map）。</p>
+<p>例如输入大小为 <span class="arithmatex">\((H, W, C_{\text{in}})\)</span>，卷积核大小为 <span class="arithmatex">\((k, k, C_{\text{in}}, C_{\text{out}})\)</span>，则输出特征图大小为：</p>
+<div class="arithmatex">\[
+H_{\text{out}} = \frac{H - k + 2p}{s} + 1, \quad
+W_{\text{out}} = \frac{W - k + 2p}{s} + 1
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(p\)</span>：padding（填充）</li>
+<li><span class="arithmatex">\(s\)</span>：stride（步幅）</li>
+</ul>
+<hr />
+<h4 id="4-pooling-layer">4️⃣ 池化层（Pooling Layer）<a class="headerlink" href="#4-pooling-layer" title="Permanent link">&para;</a></h4>
+<p>用于<strong>降维</strong>与<strong>特征不变性提取</strong>。</p>
+<p>常见池化方式：</p>
+<ul>
+<li><strong>最大池化（Max Pooling）</strong>：取窗口内最大值</li>
+<li><strong>平均池化（Average Pooling）</strong>：取窗口内均值</li>
+</ul>
+<p>公式：</p>
+<div class="arithmatex">\[
+Y(i,j) = \max_{m,n} X(i+m, j+n)
+\]</div>
+<hr />
+<h4 id="5">5️⃣ 激活函数<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<p>卷积层输出后通常接 <strong>ReLU</strong>：
+$$
+f(z) = \max(0, z)
+$$</p>
+<p>ReLU 解决了梯度消失问题，加快网络收敛。</p>
+<hr />
+<h4 id="6-fully-connected-layer">6️⃣ 全连接层（Fully Connected Layer）<a class="headerlink" href="#6-fully-connected-layer" title="Permanent link">&para;</a></h4>
+<p>卷积层输出的特征展平后输入全连接层进行分类：
+$$
+z = W \cdot a + b, \quad
+\hat{y} = \text{Softmax}(z)
+$$</p>
+<hr />
+<h3 id="_10">🧮 二、数学推导与损失函数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h5 id="1-forward-propagation_1">1️⃣ 前向传播（Forward Propagation）<a class="headerlink" href="#1-forward-propagation_1" title="Permanent link">&para;</a></h5>
+<p>对于卷积层：
+$$
+z_{i,j}^{(l)} = \sum_{m,n,c} a_{m+i, n+j, c}^{(l-1)} \cdot w_{m,n,c}^{(l)} + b^{(l)}
+$$
+$$
+a_{i,j}^{(l)} = f(z_{i,j}^{(l)})
+$$</p>
+<p>对于全连接层：
+$$
+a^{(L)} = f(W^{(L)}a^{(L-1)} + b^{(L)})
+$$</p>
+<hr />
+<h5 id="2-loss-function_1">2️⃣ 损失函数（Loss Function）<a class="headerlink" href="#2-loss-function_1" title="Permanent link">&para;</a></h5>
+<p><strong>分类任务</strong>常用交叉熵损失：
+$$
+L = -\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{K}y_{ik}\log(\hat{y}_{ik})
+$$</p>
+<hr />
+<h5 id="3-backpropagation_1">3️⃣ 反向传播（Backpropagation）<a class="headerlink" href="#3-backpropagation_1" title="Permanent link">&para;</a></h5>
+<p>反向传播通过链式法则计算梯度。
+对于卷积层中的权重梯度：</p>
+<div class="arithmatex">\[
+\frac{\partial L}{\partial w_{m,n,c}} = \sum_{i,j} \frac{\partial L}{\partial z_{i,j}} \cdot a_{i+m, j+n, c}^{(l-1)}
+\]</div>
+<p>对于偏置：
+$$
+\frac{\partial L}{\partial b} = \sum_{i,j} \frac{\partial L}{\partial z_{i,j}}
+$$</p>
+<hr />
+<h3 id="_11">📊 三、评估指标<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>任务类型</th>
+<th>常用指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分类</td>
+<td>Accuracy, Precision, Recall, F1, AUC</td>
+</tr>
+<tr>
+<td>回归</td>
+<td>MSE, RMSE, MAE, <span class="arithmatex">\(R^2\)</span></td>
+</tr>
+<tr>
+<td>目标检测</td>
+<td>mAP（mean Average Precision）</td>
+</tr>
+<tr>
+<td>图像分割</td>
+<td>IoU（Intersection over Union）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="pytorch_1">💻 四、实现代码（PyTorch）<a class="headerlink" href="#pytorch_1" title="Permanent link">&para;</a></h3>
+<p>以下是一个经典的 CNN 图像分类示例（使用 MNIST 数据集）：</p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+
+# 1. 数据准备
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))
+])
+train_data = datasets.MNIST(root='./data', train=True, transform=transform, download=True)
+test_data = datasets.MNIST(root='./data', train=False, transform=transform)
+train_loader = DataLoader(train_data, batch_size=64, shuffle=True)
+test_loader = DataLoader(test_data, batch_size=1000, shuffle=False)
+
+# 2. 模型定义
+class CNN(nn.Module):
+    def __init__(self):
+        super(CNN, self).__init__()
+        self.conv1 = nn.Conv2d(1, 32, 3, 1)   # 28x28 -&gt; 26x26
+        self.conv2 = nn.Conv2d(32, 64, 3, 1)  # 26x26 -&gt; 24x24
+        self.pool = nn.MaxPool2d(2)           # 24x24 -&gt; 12x12
+        self.fc1 = nn.Linear(64*12*12, 128)
+        self.fc2 = nn.Linear(128, 10)
+        self.relu = nn.ReLU()
+
+    def forward(self, x):
+        x = self.relu(self.conv1(x))
+        x = self.relu(self.conv2(x))
+        x = self.pool(x)
+        x = torch.flatten(x, 1)
+        x = self.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+
+model = CNN()
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+# 3. 训练过程
+for epoch in range(5):
+    for data, target in train_loader:
+        optimizer.zero_grad()
+        output = model(data)
+        loss = criterion(output, target)
+        loss.backward()
+        optimizer.step()
+    print(f&quot;Epoch [{epoch+1}/5], Loss: {loss.item():.4f}&quot;)
+
+# 4. 测试评估
+correct = 0
+total = 0
+with torch.no_grad():
+    for data, target in test_loader:
+        output = model(data)
+        _, pred = torch.max(output.data, 1)
+        total += target.size(0)
+        correct += (pred == target).sum().item()
+
+print(f&quot;Test Accuracy: {100 * correct / total:.2f}%&quot;)
+</code></pre>
+<hr />
+<h3 id="_12">🧩 五、模型优化技巧<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>优化方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>数据增强</strong></td>
+<td>翻转、旋转、裁剪等方式扩充数据</td>
+</tr>
+<tr>
+<td><strong>Dropout</strong></td>
+<td>随机丢弃神经元，防止过拟合</td>
+</tr>
+<tr>
+<td><strong>Batch Normalization</strong></td>
+<td>稳定训练，提高收敛速度</td>
+</tr>
+<tr>
+<td><strong>学习率调整</strong></td>
+<td>使用调度器（如 StepLR、ReduceLROnPlateau）</td>
+</tr>
+<tr>
+<td><strong>权重初始化</strong></td>
+<td>He 初始化常用于 ReLU</td>
+</tr>
+<tr>
+<td><strong>迁移学习</strong></td>
+<td>使用预训练模型（如 ResNet、VGG）微调</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_13">⚠️ 六、注意事项<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ol>
+<li>输入数据需 <strong>归一化</strong>（Normalization）；</li>
+<li>小卷积核（如 3×3）通常效果更好；</li>
+<li>增加卷积层数可提取更抽象的特征；</li>
+<li>避免卷积核数量过大导致计算量暴增；</li>
+<li>尽量使用 GPU 加速训练；</li>
+<li>使用 Dropout 和 BN 防止过拟合。</li>
+</ol>
+<hr />
+<h3 id="_14">⚖️ 七、优缺点<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自动提取特征，无需手工设计</td>
+<td>训练时间长</td>
+</tr>
+<tr>
+<td>参数共享，减少参数量</td>
+<td>对小数据集易过拟合</td>
+</tr>
+<tr>
+<td>对平移、缩放等具有鲁棒性</td>
+<td>不易解释（黑箱）</td>
+</tr>
+<tr>
+<td>适合图像、语音、视频任务</td>
+<td>结构设计依赖经验</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="cnn_1">📈 八、经典 CNN 架构发展<a class="headerlink" href="#cnn_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>年份</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LeNet-5</td>
+<td>1998</td>
+<td>最早的 CNN，手写数字识别</td>
+</tr>
+<tr>
+<td>AlexNet</td>
+<td>2012</td>
+<td>ReLU + Dropout + GPU 训练</td>
+</tr>
+<tr>
+<td>VGG</td>
+<td>2014</td>
+<td>使用小卷积核堆叠</td>
+</tr>
+<tr>
+<td>GoogLeNet</td>
+<td>2014</td>
+<td>引入 Inception 模块</td>
+</tr>
+<tr>
+<td>ResNet</td>
+<td>2015</td>
+<td>残差连接解决梯度消失</td>
+</tr>
+<tr>
+<td>DenseNet</td>
+<td>2017</td>
+<td>特征复用，提高梯度流</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_15">🧭 九、学习与进阶路线<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>学习内容</th>
+<th>实践方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>入门</td>
+<td>卷积、池化、激活函数</td>
+<td>MNIST 手写识别</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td>BatchNorm、Dropout、优化器</td>
+<td>CIFAR-10 分类</td>
+</tr>
+<tr>
+<td>提升</td>
+<td>ResNet、VGG、迁移学习</td>
+<td>ImageNet</td>
+</tr>
+<tr>
+<td>高阶</td>
+<td>Faster R-CNN、YOLO、U-Net</td>
+<td>检测与分割</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rnn">三、RNN<a class="headerlink" href="#rnn" title="Permanent link">&para;</a></h2>
+<p><img alt="RNN.png" src="../../imgs/deeplearning/RNN.png" /></p>
+<h3 id="rnn-recurrent-neural-network">🧠 一、RNN 原理（Recurrent Neural Network）<a class="headerlink" href="#rnn-recurrent-neural-network" title="Permanent link">&para;</a></h3>
+<h4 id="1_1">1️⃣ 基本思想<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<p>传统前馈神经网络（如 MLP、CNN）<strong>输入与输出独立</strong>，但对于序列数据（如文本、语音、时间序列）：</p>
+<blockquote>
+<p>当前时刻的输出不仅取决于当前输入，还依赖于前面时刻的状态。</p>
+</blockquote>
+<p>因此，RNN 引入了<strong>循环结构（Recurrent Structure）</strong>，能够“记住”前一时刻的信息。</p>
+<hr />
+<h4 id="2_1">2️⃣ 结构图（核心概念）<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
+<p>RNN 的基本单元可表示为：</p>
+<div class="arithmatex">\[
+h_t = f(W_{xh}x_t + W_{hh}h_{t-1} + b_h)
+\]</div>
+<div class="arithmatex">\[
+\hat{y}*t = g(W*{hy}h_t + b_y)
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(x_t\)</span>：时刻 <span class="arithmatex">\(t\)</span> 的输入</li>
+<li><span class="arithmatex">\(h_t\)</span>：隐藏状态（隐含记忆）</li>
+<li><span class="arithmatex">\(\hat{y}_t\)</span>：输出</li>
+<li><span class="arithmatex">\(W_{xh}\)</span>：输入到隐藏层的权重</li>
+<li><span class="arithmatex">\(W_{hh}\)</span>：隐藏层到隐藏层的权重（循环）</li>
+<li><span class="arithmatex">\(W_{hy}\)</span>：隐藏层到输出层的权重</li>
+</ul>
+<hr />
+<h3 id="_16">⚙️ 二、数学推导过程<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<h4 id="1-forward-propagation_2">1️⃣ 前向传播（Forward Propagation）<a class="headerlink" href="#1-forward-propagation_2" title="Permanent link">&para;</a></h4>
+<p>输入序列 <span class="arithmatex">\(x = [x_1, x_2, ..., x_T]\)</span>：</p>
+<p>隐藏状态更新：
+$$
+h_t = f(W_{xh}x_t + W_{hh}h_{t-1} + b_h)
+$$</p>
+<p>输出：
+$$
+\hat{y}<em>t = g(W</em>{hy}h_t + b_y)
+$$</p>
+<p>其中 <span class="arithmatex">\(f\)</span> 通常为 <span class="arithmatex">\(\tanh\)</span> 或 <span class="arithmatex">\(\text{ReLU}\)</span>，<span class="arithmatex">\(g\)</span> 常为 <span class="arithmatex">\(\text{Softmax}\)</span>。</p>
+<hr />
+<h4 id="2-loss-function_2">2️⃣ 损失函数（Loss Function）<a class="headerlink" href="#2-loss-function_2" title="Permanent link">&para;</a></h4>
+<p>对于分类任务，通常使用 <strong>交叉熵损失</strong>：</p>
+<div class="arithmatex">\[
+L = -\frac{1}{T}\sum_{t=1}^{T} y_t \log(\hat{y}_t)
+\]</div>
+<hr />
+<h4 id="3-backpropagation-through-time-bptt">3️⃣ 反向传播（Backpropagation Through Time, BPTT）<a class="headerlink" href="#3-backpropagation-through-time-bptt" title="Permanent link">&para;</a></h4>
+<p>RNN 的梯度要沿时间展开，反向传播到每个时间步。</p>
+<p>梯度计算公式：</p>
+<div class="arithmatex">\[
+\frac{\partial L}{\partial W_{hh}} = \sum_{t=1}^{T} \frac{\partial L_t}{\partial h_t} \cdot \frac{\partial h_t}{\partial W_{hh}}
+\]</div>
+<p>而由于隐藏状态间存在依赖关系：</p>
+<div class="arithmatex">\[
+\frac{\partial h_t}{\partial W_{hh}} = \frac{\partial h_t}{\partial h_{t-1}} \cdot \frac{\partial h_{t-1}}{\partial W_{hh}} + \frac{\partial h_t}{\partial W_{hh}}
+\]</div>
+<p>因此，会出现 <strong>梯度消失 / 梯度爆炸</strong> 问题。
+解决方案：梯度裁剪（Gradient Clipping）、LSTM、GRU。</p>
+<hr />
+<h3 id="_17">📊 三、评估指标<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>任务类型</th>
+<th>常用指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分类任务</td>
+<td>Accuracy, Precision, Recall, F1-score</td>
+</tr>
+<tr>
+<td>序列生成</td>
+<td>Perplexity (困惑度)</td>
+</tr>
+<tr>
+<td>回归任务</td>
+<td>MSE, RMSE</td>
+</tr>
+<tr>
+<td>语言模型</td>
+<td>BLEU, ROUGE（自然语言生成）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="pytorch_2">💻 四、实现代码（PyTorch）<a class="headerlink" href="#pytorch_2" title="Permanent link">&para;</a></h3>
+<p>以一个字符序列分类任务为例（RNN 基本结构）：</p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# 模型定义
+class RNNModel(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim, num_layers=1):
+        super(RNNModel, self).__init__()
+        self.rnn = nn.RNN(input_dim, hidden_dim, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, output_dim)
+
+    def forward(self, x):
+        out, _ = self.rnn(x)
+        out = out[:, -1, :]  # 取最后时刻的输出
+        out = self.fc(out)
+        return out
+
+# 模拟数据
+X = torch.randn(100, 10, 8)  # (batch, seq_len, input_dim)
+y = torch.randint(0, 2, (100,))
+
+# 超参数
+input_dim = 8
+hidden_dim = 32
+output_dim = 2
+
+model = RNNModel(input_dim, hidden_dim, output_dim)
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+# 训练
+for epoch in range(50):
+    optimizer.zero_grad()
+    outputs = model(X)
+    loss = criterion(outputs, y)
+    loss.backward()
+    optimizer.step()
+
+    if (epoch + 1) % 10 == 0:
+        print(f&quot;Epoch [{epoch+1}/50], Loss: {loss.item():.4f}&quot;)
+</code></pre>
+<hr />
+<h3 id="rnn_1">🧩 五、RNN 的常见变体<a class="headerlink" href="#rnn_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>特点</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LSTM（长短期记忆）</strong></td>
+<td>引入“门控机制”防止梯度消失</td>
+<td><span class="arithmatex">\(f_t, i_t, o_t, c_t\)</span></td>
+</tr>
+<tr>
+<td><strong>GRU（门控循环单元）</strong></td>
+<td>简化 LSTM 结构，参数更少</td>
+<td><span class="arithmatex">\(z_t, r_t\)</span></td>
+</tr>
+<tr>
+<td><strong>Bi-RNN（双向 RNN）</strong></td>
+<td>同时考虑前后信息</td>
+<td><span class="arithmatex">\(h_t = [\overrightarrow{h_t}, \overleftarrow{h_t}]\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_18">🧮 六、模型优化方法<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>优化手段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>梯度裁剪（Gradient Clipping）</strong></td>
+<td>限制梯度范数，防止梯度爆炸</td>
+</tr>
+<tr>
+<td><strong>使用 LSTM / GRU</strong></td>
+<td>解决长期依赖与梯度消失问题</td>
+</tr>
+<tr>
+<td><strong>Batch Normalization</strong></td>
+<td>加速收敛</td>
+</tr>
+<tr>
+<td><strong>Dropout</strong></td>
+<td>防止过拟合</td>
+</tr>
+<tr>
+<td><strong>学习率调整（LR Scheduler）</strong></td>
+<td>动态调整学习率</td>
+</tr>
+<tr>
+<td><strong>Embedding 层</strong></td>
+<td>对离散输入（如词）做稠密表示</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_19">⚠️ 七、注意事项<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ol>
+<li>输入序列需统一长度，可使用 <strong>padding</strong>；</li>
+<li>训练时可使用 <strong>PackedSequence</strong> 提升效率；</li>
+<li>避免时间步过长，否则梯度传播困难；</li>
+<li>适当使用 <strong>Dropout / LayerNorm</strong>；</li>
+<li>若是文本任务，推荐使用 <strong>LSTM / GRU</strong>；</li>
+<li>建议使用 GPU（CUDA）加速。</li>
+</ol>
+<hr />
+<h3 id="_20">⚖️ 八、优缺点<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能捕获序列依赖关系</td>
+<td>长序列中梯度消失</td>
+</tr>
+<tr>
+<td>参数共享，模型规模较小</td>
+<td>训练时间长</td>
+</tr>
+<tr>
+<td>能处理变长输入</td>
+<td>无法并行计算</td>
+</tr>
+<tr>
+<td>对时序任务效果好</td>
+<td>对长依赖建模有限（需 LSTM/GRU 改进）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_21">📈 九、典型应用场景<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>应用</th>
+<th>任务类型</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语言建模</td>
+<td>序列预测</td>
+<td>下一个词预测</td>
+</tr>
+<tr>
+<td>文本分类</td>
+<td>分类</td>
+<td>情感分析</td>
+</tr>
+<tr>
+<td>序列标注</td>
+<td>标注</td>
+<td>命名实体识别（NER）</td>
+</tr>
+<tr>
+<td>语音识别</td>
+<td>序列到序列</td>
+<td>音频转文字</td>
+</tr>
+<tr>
+<td>时间序列预测</td>
+<td>回归</td>
+<td>股票/天气预测</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_22">🧭 十、学习路线建议<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>内容</th>
+<th>实践任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>入门</td>
+<td>基本 RNN 理论与结构</td>
+<td>简单序列分类</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td>LSTM、GRU 理解与实现</td>
+<td>文本分类</td>
+</tr>
+<tr>
+<td>提升</td>
+<td>双向 RNN、Seq2Seq</td>
+<td>机器翻译</td>
+</tr>
+<tr>
+<td>高阶</td>
+<td>Attention、Transformer</td>
+<td>高级 NLP 任务</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lstm">四、LSTM<a class="headerlink" href="#lstm" title="Permanent link">&para;</a></h2>
+<p><img alt="LSTM.png" src="../../imgs/deeplearning/LSTM.png" /></p>
+<h3 id="lstm-long-short-term-memory">🧠 一、LSTM 原理（Long Short-Term Memory）<a class="headerlink" href="#lstm-long-short-term-memory" title="Permanent link">&para;</a></h3>
+<h4 id="1-lstm">1️⃣ 为什么需要 LSTM？<a class="headerlink" href="#1-lstm" title="Permanent link">&para;</a></h4>
+<p>在普通 RNN 中：
+$$
+h_t = f(W_{xh}x_t + W_{hh}h_{t-1})
+$$</p>
+<p>梯度在时间上传递时容易：</p>
+<ul>
+<li><strong>梯度消失</strong>（长期依赖信息无法保留）</li>
+<li><strong>梯度爆炸</strong>（训练不稳定）</li>
+</ul>
+<p>🔹 <strong>LSTM</strong> 通过引入“门控机制（Gating Mechanism）”来解决这一问题，
+使得网络能够“决定”哪些信息保留、哪些遗忘。</p>
+<hr />
+<h4 id="2-lstm">2️⃣ LSTM 结构图<a class="headerlink" href="#2-lstm" title="Permanent link">&para;</a></h4>
+<p>LSTM 的每个单元由三个门（Gate）和一个记忆单元（Cell State）组成：</p>
+<pre><code>            ┌──────────────┐
+x_t ───────▶│ 输入门 i_t   │
+h_{t-1} ───▶│ 遗忘门 f_t   │───┐
+            └──────────────┘   │
+                               ▼
+                          c_{t-1}
+                               │
+                               ▼
+                        ┌─────────────┐
+                        │ 细胞状态 c_t│
+                        └─────────────┘
+                               │
+                               ▼
+                        ┌─────────────┐
+                        │ 输出门 o_t  │
+                        └─────────────┘
+                               │
+                               ▼
+                              h_t
+</code></pre>
+<hr />
+<h3 id="lstm_1">⚙️ 二、LSTM 数学推导过程<a class="headerlink" href="#lstm_1" title="Permanent link">&para;</a></h3>
+<p>在时间步 <span class="arithmatex">\(t\)</span>：</p>
+<p>输入：<span class="arithmatex">\(x_t\)</span>、前一隐藏状态 <span class="arithmatex">\(h_{t-1}\)</span>、前一细胞状态 <span class="arithmatex">\(c_{t-1}\)</span>。</p>
+<hr />
+<h4 id="1_2">1️⃣ 门控机制公式<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
+<h5 id="1forget-gate">（1）遗忘门（Forget Gate）<a class="headerlink" href="#1forget-gate" title="Permanent link">&para;</a></h5>
+<p>决定要“忘记”多少旧信息：</p>
+<div class="arithmatex">\[
+f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)
+\]</div>
+<hr />
+<h5 id="2input-gate">（2）输入门（Input Gate）<a class="headerlink" href="#2input-gate" title="Permanent link">&para;</a></h5>
+<p>决定要添加多少新信息：</p>
+<div class="arithmatex">\[
+i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)
+\]</div>
+<h5 id="3candidate-cell">（3）候选状态（Candidate Cell）<a class="headerlink" href="#3candidate-cell" title="Permanent link">&para;</a></h5>
+<p>计算当前输入的候选记忆：</p>
+<div class="arithmatex">\[
+\tilde{c}*t = \tanh(W_c \cdot [h*{t-1}, x_t] + b_c)
+\]</div>
+<hr />
+<h4 id="2_2">2️⃣ 状态更新<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h4>
+<h5 id="4cell-state">（4）更新细胞状态（Cell State）<a class="headerlink" href="#4cell-state" title="Permanent link">&para;</a></h5>
+<p>将旧记忆与新记忆结合：</p>
+<div class="arithmatex">\[
+c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t
+\]</div>
+<hr />
+<h5 id="5output-gate">（5）输出门（Output Gate）<a class="headerlink" href="#5output-gate" title="Permanent link">&para;</a></h5>
+<p>决定输出多少内部记忆：</p>
+<div class="arithmatex">\[
+o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)
+\]</div>
+<hr />
+<h5 id="6hidden-state">（6）计算隐藏状态（Hidden State）<a class="headerlink" href="#6hidden-state" title="Permanent link">&para;</a></h5>
+<div class="arithmatex">\[
+h_t = o_t \odot \tanh(c_t)
+\]</div>
+<hr />
+<h4 id="3">3️⃣ 损失函数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p>对于分类任务（如文本分类），常使用交叉熵损失：</p>
+<div class="arithmatex">\[
+L = -\sum_{t=1}^{T} y_t \log(\hat{y}_t)
+\]</div>
+<p>若输出为连续值（回归任务），则使用 MSE：</p>
+<div class="arithmatex">\[
+L = \frac{1}{T} \sum_{t=1}^{T} (y_t - \hat{y}_t)^2
+\]</div>
+<hr />
+<h4 id="4-bptt">4️⃣ 梯度传播（BPTT）<a class="headerlink" href="#4-bptt" title="Permanent link">&para;</a></h4>
+<p>LSTM 仍通过“时间反向传播（Backpropagation Through Time, BPTT）”训练。
+不同于 RNN 的梯度连乘，LSTM 的 <strong>细胞状态 <span class="arithmatex">\(c_t\)</span></strong> 能通过“恒等传递”部分梯度，因此缓解梯度消失。</p>
+<hr />
+<h3 id="_23">📊 三、评估指标<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>任务类型</th>
+<th>常用指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分类任务</td>
+<td>Accuracy, Precision, Recall, F1-score</td>
+</tr>
+<tr>
+<td>回归任务</td>
+<td>MSE, MAE, RMSE</td>
+</tr>
+<tr>
+<td>序列预测</td>
+<td>Perplexity, BLEU, ROUGE</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="pytorch_3">💻 四、PyTorch 实现代码<a class="headerlink" href="#pytorch_3" title="Permanent link">&para;</a></h3>
+<p>以下是一个 <strong>LSTM 文本分类示例</strong>：</p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# LSTM 模型定义
+class LSTMModel(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim, num_layers=1):
+        super(LSTMModel, self).__init__()
+        self.lstm = nn.LSTM(input_dim, hidden_dim, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, output_dim)
+
+    def forward(self, x):
+        out, (h_n, c_n) = self.lstm(x)
+        out = self.fc(out[:, -1, :])  # 取最后时刻输出
+        return out
+
+# 模拟数据
+X = torch.randn(64, 10, 8)  # (batch, seq_len, input_dim)
+y = torch.randint(0, 2, (64,))
+
+# 超参数
+model = LSTMModel(input_dim=8, hidden_dim=32, output_dim=2)
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+# 训练循环
+for epoch in range(30):
+    optimizer.zero_grad()
+    outputs = model(X)
+    loss = criterion(outputs, y)
+    loss.backward()
+    optimizer.step()
+
+    if (epoch + 1) % 5 == 0:
+        print(f&quot;Epoch [{epoch+1}/30], Loss: {loss.item():.4f}&quot;)
+</code></pre>
+<hr />
+<h3 id="lstm-rnn">🧩 五、LSTM 与 RNN 的区别<a class="headerlink" href="#lstm-rnn" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>RNN</th>
+<th>LSTM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>记忆机制</td>
+<td>单一隐藏状态 <span class="arithmatex">\(h_t\)</span></td>
+<td>拥有细胞状态 <span class="arithmatex">\(c_t\)</span> 与隐藏状态 <span class="arithmatex">\(h_t\)</span></td>
+</tr>
+<tr>
+<td>长期依赖能力</td>
+<td>差（梯度消失）</td>
+<td>强（通过门控机制控制）</td>
+</tr>
+<tr>
+<td>参数量</td>
+<td>少</td>
+<td>多</td>
+</tr>
+<tr>
+<td>计算开销</td>
+<td>小</td>
+<td>大</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>短序列、简单关系</td>
+<td>长序列、复杂依赖</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_24">🧮 六、模型优化策略<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>梯度裁剪</strong></td>
+<td>限制梯度范数，防止梯度爆炸</td>
+</tr>
+<tr>
+<td><strong>Dropout</strong></td>
+<td>避免过拟合（LSTM 内置支持）</td>
+</tr>
+<tr>
+<td><strong>双向 LSTM</strong></td>
+<td>同时捕获前后文信息</td>
+</tr>
+<tr>
+<td><strong>多层 LSTM</strong></td>
+<td>提高特征表达能力</td>
+</tr>
+<tr>
+<td><strong>BatchNorm / LayerNorm</strong></td>
+<td>加速收敛、稳定训练</td>
+</tr>
+<tr>
+<td><strong>学习率调度</strong></td>
+<td>使用 CosineAnnealing / StepLR 等策略</td>
+</tr>
+<tr>
+<td><strong>预训练词向量</strong></td>
+<td>使用 Word2Vec、GloVe、BERT Embedding</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_25">⚠️ 七、注意事项<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>序列长度过长</strong> 时训练困难，可使用截断 BPTT；</li>
+<li><strong>Batch 内序列长度不一</strong> 时，用 <code>pack_padded_sequence</code>；</li>
+<li>若任务需要双向信息，用 <code>bidirectional=True</code>；</li>
+<li>输出维度要匹配任务（分类 vs 回归）；</li>
+<li>尽量使用 GPU；</li>
+<li>避免学习率过大；</li>
+<li>Dropout 不宜过高（一般 0.3～0.5）。</li>
+</ol>
+<hr />
+<h3 id="_26">⚖️ 八、优缺点总结<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能捕捉长距离依赖</td>
+<td>训练慢，参数多</td>
+</tr>
+<tr>
+<td>解决梯度消失问题</td>
+<td>对长序列仍有限制</td>
+</tr>
+<tr>
+<td>泛化能力强</td>
+<td>不支持并行计算（相较 Transformer）</td>
+</tr>
+<tr>
+<td>表达能力高</td>
+<td>调参较复杂</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_27">📈 九、典型应用场景<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>领域</th>
+<th>任务</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NLP</td>
+<td>文本分类</td>
+<td>情感分析</td>
+</tr>
+<tr>
+<td>NLP</td>
+<td>序列生成</td>
+<td>机器翻译</td>
+</tr>
+<tr>
+<td>语音</td>
+<td>语音识别</td>
+<td>ASR</td>
+</tr>
+<tr>
+<td>时间序列</td>
+<td>预测</td>
+<td>股票、天气、传感器</td>
+</tr>
+<tr>
+<td>医疗</td>
+<td>生理信号分析</td>
+<td>ECG 心电图预测</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_28">🧭 十、学习拓展路径<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>内容</th>
+<th>推荐学习</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>入门</td>
+<td>LSTM 理论与结构</td>
+<td>理解三门机制</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td>多层 / 双向 LSTM</td>
+<td>文本分类任务</td>
+</tr>
+<tr>
+<td>提升</td>
+<td>Seq2Seq + LSTM</td>
+<td>机器翻译</td>
+</tr>
+<tr>
+<td>高阶</td>
+<td>Attention + LSTM</td>
+<td>文本生成 / 对话系统</td>
+</tr>
+<tr>
+<td>拓展</td>
+<td>Transformer</td>
+<td>超越 LSTM 的序列建模</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gan">五、GAN<a class="headerlink" href="#gan" title="Permanent link">&para;</a></h2>
+<p><img alt="GAN.png" src="../../imgs/deeplearning/GAN.png" /></p>
+<h3 id="gan-generative-adversarial-network">🧠 一、GAN 原理（Generative Adversarial Network）<a class="headerlink" href="#gan-generative-adversarial-network" title="Permanent link">&para;</a></h3>
+<h4 id="1_3">1️⃣ 基本思想<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h4>
+<p>GAN 由 <strong>生成器（Generator, G）</strong> 和 <strong>判别器（Discriminator, D）</strong> 组成。</p>
+<ul>
+<li><strong>生成器 G</strong>：试图从噪声中生成逼真的样本，欺骗判别器；</li>
+<li><strong>判别器 D</strong>：试图区分输入样本是真实数据还是生成数据。</li>
+</ul>
+<p>两者形成一个 <strong>对抗博弈（minimax game）</strong>：</p>
+<blockquote>
+<p>G 想“骗过” D，而 D 想“识破” G。
+最终达到一个纳什平衡：G 生成的样本与真实数据几乎无法区分。</p>
+</blockquote>
+<hr />
+<h4 id="2-gan">2️⃣ GAN 结构示意图<a class="headerlink" href="#2-gan" title="Permanent link">&para;</a></h4>
+<pre><code>      随机噪声 z ~ p(z)
+               │
+               ▼
+         ┌─────────────┐
+         │  生成器 G   │───▶ 生成样本 G(z)
+         └─────────────┘
+                 │
+     ┌───────────────────────────┐
+     │         判别器 D          │
+     │  输出：P(真实 or 伪造)   │
+     └───────────────────────────┘
+                 ▲
+         真实样本 x ~ p_data(x)
+</code></pre>
+<hr />
+<h3 id="_29">⚙️ 二、数学推导过程<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<h4 id="1-minimax">1️⃣ 目标函数（Minimax 对抗）<a class="headerlink" href="#1-minimax" title="Permanent link">&para;</a></h4>
+<p>GAN 的核心优化目标为：</p>
+<div class="arithmatex">\[
+\min_G \max_D V(D, G) = \mathbb{E}*{x \sim p*{\text{data}}(x)}[\log D(x)] +
+\mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(D(x)\)</span> 表示输入为真实样本的概率；</li>
+<li><span class="arithmatex">\(G(z)\)</span> 表示生成的伪样本；</li>
+<li><span class="arithmatex">\(p_{\text{data}}\)</span> 是真实数据分布；</li>
+<li><span class="arithmatex">\(p_z\)</span> 是噪声分布（如高斯分布）。</li>
+</ul>
+<hr />
+<h4 id="2_3">2️⃣ 判别器目标<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h4>
+<p>固定生成器 <span class="arithmatex">\(G\)</span> 时，判别器 <span class="arithmatex">\(D\)</span> 的最优解为：</p>
+<div class="arithmatex">\[
+D^*(x) = \frac{p_{\text{data}}(x)}{p_{\text{data}}(x) + p_g(x)}
+\]</div>
+<p>其中 <span class="arithmatex">\(p_g(x)\)</span> 是生成器分布。</p>
+<hr />
+<h4 id="3_1">3️⃣ 最优情况下的目标值<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
+<p>将 <span class="arithmatex">\(D^*(x)\)</span> 代入目标函数，有：</p>
+<div class="arithmatex">\[
+V(G, D^*) = -\log 4 + 2 \cdot \text{JSD}(p_{\text{data}} \parallel p_g)
+\]</div>
+<p>即，GAN 的训练等价于 <strong>最小化数据分布与生成分布的 Jensen–Shannon 散度（JSD）</strong>。</p>
+<hr />
+<h4 id="4">4️⃣ 损失函数形式<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<p>训练中通常使用两个损失函数：</p>
+<ul>
+<li>
+<p>判别器损失：
+  $$
+  L_D = -\mathbb{E}<em>{x \sim p</em>{\text{data}}}[\log D(x)] - \mathbb{E}_{z \sim p_z}[\log(1 - D(G(z)))]
+  $$</p>
+</li>
+<li>
+<p>生成器损失（原始形式）：
+  $$
+  L_G = -\mathbb{E}_{z \sim p_z}[\log(1 - D(G(z)))]
+  $$</p>
+</li>
+</ul>
+<blockquote>
+<p>但实践中常用 <strong>非饱和形式</strong>：
+$$
+L_G = -\mathbb{E}_{z \sim p_z}[\log D(G(z))]
+$$
+这样可以缓解梯度消失问题。</p>
+</blockquote>
+<hr />
+<h3 id="_30">📊 三、评估指标<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>含义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FID (Fréchet Inception Distance)</strong></td>
+<td>衡量生成图像与真实图像的特征分布差距</td>
+<td>越低越好</td>
+</tr>
+<tr>
+<td><strong>IS (Inception Score)</strong></td>
+<td>衡量生成样本的多样性与质量</td>
+<td>越高越好</td>
+</tr>
+<tr>
+<td><strong>Precision / Recall for GANs</strong></td>
+<td>衡量真实性与多样性</td>
+<td>平衡指标</td>
+</tr>
+<tr>
+<td><strong>视觉评估</strong></td>
+<td>人工主观质量</td>
+<td>常用于图像任务</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="pytorch_4">💻 四、PyTorch 实现代码<a class="headerlink" href="#pytorch_4" title="Permanent link">&para;</a></h3>
+<p>以下为一个最小可运行的 <strong>GAN 实例</strong>（MNIST 数据集）：</p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import datasets, transforms
+
+# 1. 定义生成器
+class Generator(nn.Module):
+    def __init__(self, noise_dim=100, output_dim=784):
+        super(Generator, self).__init__()
+        self.net = nn.Sequential(
+            nn.Linear(noise_dim, 256),
+            nn.ReLU(),
+            nn.Linear(256, 512),
+            nn.ReLU(),
+            nn.Linear(512, output_dim),
+            nn.Tanh()
+        )
+
+    def forward(self, z):
+        return self.net(z)
+
+# 2. 定义判别器
+class Discriminator(nn.Module):
+    def __init__(self, input_dim=784):
+        super(Discriminator, self).__init__()
+        self.net = nn.Sequential(
+            nn.Linear(input_dim, 512),
+            nn.LeakyReLU(0.2),
+            nn.Linear(512, 256),
+            nn.LeakyReLU(0.2),
+            nn.Linear(256, 1),
+            nn.Sigmoid()
+        )
+
+    def forward(self, x):
+        return self.net(x)
+
+# 3. 初始化模型与优化器
+G = Generator()
+D = Discriminator()
+criterion = nn.BCELoss()
+optimizer_G = optim.Adam(G.parameters(), lr=0.0002)
+optimizer_D = optim.Adam(D.parameters(), lr=0.0002)
+
+# 4. 数据加载
+transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
+data_loader = torch.utils.data.DataLoader(
+    datasets.MNIST('.', train=True, download=True, transform=transform),
+    batch_size=64, shuffle=True
+)
+
+# 5. 训练循环
+for epoch in range(10):
+    for real_imgs, _ in data_loader:
+        bs = real_imgs.size(0)
+        real_imgs = real_imgs.view(bs, -1)
+        z = torch.randn(bs, 100)
+        fake_imgs = G(z)
+
+        # 标签
+        real_label = torch.ones(bs, 1)
+        fake_label = torch.zeros(bs, 1)
+
+        # --- 判别器训练 ---
+        optimizer_D.zero_grad()
+        real_loss = criterion(D(real_imgs), real_label)
+        fake_loss = criterion(D(fake_imgs.detach()), fake_label)
+        d_loss = real_loss + fake_loss
+        d_loss.backward()
+        optimizer_D.step()
+
+        # --- 生成器训练 ---
+        optimizer_G.zero_grad()
+        g_loss = criterion(D(fake_imgs), real_label)
+        g_loss.backward()
+        optimizer_G.step()
+
+    print(f&quot;Epoch [{epoch+1}/10]  D Loss: {d_loss.item():.4f}  G Loss: {g_loss.item():.4f}&quot;)
+</code></pre>
+<hr />
+<h3 id="gan_1">🧩 五、常见 GAN 变体<a class="headerlink" href="#gan_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>特点</th>
+<th>损失函数改进</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DCGAN</strong></td>
+<td>卷积结构（图像生成）</td>
+<td>稳定训练</td>
+</tr>
+<tr>
+<td><strong>WGAN</strong></td>
+<td>使用 Wasserstein 距离</td>
+<td>改善模式崩溃</td>
+</tr>
+<tr>
+<td><strong>WGAN-GP</strong></td>
+<td>加入梯度惩罚</td>
+<td>收敛更稳定</td>
+</tr>
+<tr>
+<td><strong>Conditional GAN (cGAN)</strong></td>
+<td>条件生成</td>
+<td><span class="arithmatex">\(G(z, y), D(x, y)\)</span></td>
+</tr>
+<tr>
+<td><strong>CycleGAN</strong></td>
+<td>无需配对样本的图像转换</td>
+<td>用循环一致性损失</td>
+</tr>
+<tr>
+<td><strong>StyleGAN</strong></td>
+<td>控制生成图像风格</td>
+<td>高质量图像生成</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_31">🧮 六、模型优化技巧<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>标签平滑（Label Smoothing）</strong></td>
+<td>将真实标签从 1 改为 0.9，稳定训练</td>
+</tr>
+<tr>
+<td><strong>特征匹配（Feature Matching）</strong></td>
+<td>用中间特征层训练生成器</td>
+</tr>
+<tr>
+<td><strong>使用 Wasserstein 损失</strong></td>
+<td>缓解梯度消失、模式崩溃</td>
+</tr>
+<tr>
+<td><strong>梯度惩罚（Gradient Penalty）</strong></td>
+<td>保证 1-Lipschitz 条件</td>
+</tr>
+<tr>
+<td><strong>谱归一化（Spectral Norm）</strong></td>
+<td>限制权重范数</td>
+</tr>
+<tr>
+<td><strong>学习率分离</strong></td>
+<td>G 的学习率略高于 D</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_32">⚠️ 七、注意事项<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<ol>
+<li>GAN 训练 <strong>极不稳定</strong>；</li>
+<li>D 太强 ⇒ G 无梯度；D 太弱 ⇒ G 欺骗容易；</li>
+<li>初始学习率需小；</li>
+<li>需同时监控 D 与 G 的损失；</li>
+<li>建议使用 <strong>WGAN / WGAN-GP</strong>；</li>
+<li>对图像生成任务，推荐 <strong>DCGAN 架构</strong>；</li>
+<li>训练中可动态调整判别器训练次数。</li>
+</ol>
+<hr />
+<h3 id="_33">⚖️ 八、优缺点<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成质量高</td>
+<td>训练不稳定</td>
+</tr>
+<tr>
+<td>无需显式建模概率密度</td>
+<td>模式崩溃（生成样本单一）</td>
+</tr>
+<tr>
+<td>理论上可生成任意分布</td>
+<td>评价指标不完美</td>
+</tr>
+<tr>
+<td>应用广泛</td>
+<td>对超参数敏感</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_34">📈 九、典型应用场景<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>领域</th>
+<th>应用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图像生成</td>
+<td>手写数字、人脸生成</td>
+<td>DCGAN, StyleGAN</td>
+</tr>
+<tr>
+<td>图像到图像转换</td>
+<td>马↔斑马、夏↔冬</td>
+<td>CycleGAN</td>
+</tr>
+<tr>
+<td>超分辨率重建</td>
+<td>SRGAN</td>
+<td>图像清晰化</td>
+</tr>
+<tr>
+<td>数据增强</td>
+<td>医学影像、语音生成</td>
+<td>cGAN</td>
+</tr>
+<tr>
+<td>文本到图像</td>
+<td>Text2Image GAN</td>
+<td>文本生成图像</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_35">🧭 十、学习拓展路线<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>学习目标</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>入门</td>
+<td>理解 GAN 对抗机制</td>
+<td>训练原始 GAN</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td>DCGAN / WGAN-GP 理解</td>
+<td>图像生成任务</td>
+</tr>
+<tr>
+<td>提升</td>
+<td>条件生成、CycleGAN</td>
+<td>风格迁移</td>
+</tr>
+<tr>
+<td>高阶</td>
+<td>StyleGAN, Diffusion</td>
+<td>高分辨率人脸生成</td>
+</tr>
+<tr>
+<td>研究方向</td>
+<td>理论稳定性、对抗鲁棒性</td>
+<td>GAN 理论分析</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+      
+        <script src="../../styles/javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>
