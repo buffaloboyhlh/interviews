@@ -38,6 +38,12 @@ theme:
 plugins:
   - search
   - macros
+  - redirects
+
+# 重定向配置
+extra:
+  redirects:
+    "index.html": "machine/interview.html"
 
 extra_css:
   - styles/custom.css
