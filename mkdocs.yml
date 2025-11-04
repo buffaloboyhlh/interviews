@@ -40,11 +40,6 @@ plugins:
   - macros
   - redirects
 
-# 重定向配置
-extra:
-  redirects:
-    "index.html": "machine/interview.html"
-
 extra_css:
   - styles/custom.css
   - styles/extra.css
@@ -65,6 +60,11 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 2-3
+
+# 重定向配置
+extra:
+  redirects:
+    "index.html": "machine/interview.html"
 
 nav:
   - 机器学习: machine/interview.md
