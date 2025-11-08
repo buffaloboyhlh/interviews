@@ -2,218 +2,230 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/index.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/Vector%20Stores/Chroma/tutorial.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/Vector%20Stores/FAISS/tutorial.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/Vector%20Stores/Milvus/tutorial.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/deeplearning/interview.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
+    </url>
+    <url>
+         <loc>https://buffaloboyhlh.github.io/interviews/llm/basic/activate.html</loc>
+         <lastmod>2025-11-08</lastmod>
+    </url>
+    <url>
+         <loc>https://buffaloboyhlh.github.io/interviews/llm/basic/optim.html</loc>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llm/deploy/Gradio/tutorial.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llm/deploy/Streamlit/tutorial.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
+    </url>
+    <url>
+         <loc>https://buffaloboyhlh.github.io/interviews/llm/inference/basic.html</loc>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llm/inference/vLLM/quick%20start.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llm/tunning/peft/chinese%20peft.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llm/tunning/peft/quick%20start.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llm/tunning/transformers/quick%20start.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/apps/langchain/RAG%20agent.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/apps/langchain/humain_middleware.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/apps/langchain/semantic%20search.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/advanced-usage/Guardrails.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/advanced-usage/Human-in-the-loop.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/advanced-usage/Long-term%20memory.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/advanced-usage/MCP.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/advanced-usage/Multi-agent.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/advanced-usage/Retrieval.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/advanced-usage/Runtime.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/advanced-usage/context-engineering.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/core-components/agents.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/core-components/messages.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/core-components/middleware.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/core-components/models.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/core-components/short-term%20memory.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/core-components/streaming.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/core-components/structured-output.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langchain/core-components/tools.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/Local%20server.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/Subgraphs.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/application%20structure.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/durable%20execution.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/graph%20api%20overview.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/interrupts.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/memory.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/overview.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/persistence.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/quickstart.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/streaming.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/thinking%20in%20Langgraph.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/time%20travel.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/use%20the%20graph%20api.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/llmapps/langgraph/workflows%2Bagents.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/machine/interview.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/nlp/chart01.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/nlp/chart02.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/nlp/chart03.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/nlp/chart04.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/nlp/chart05.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/nlp/nltk.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/nlp/peft.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://buffaloboyhlh.github.io/interviews/others/wsl.html</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
 </urlset>

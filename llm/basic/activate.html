@@ -10,28 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/nlp/chart04.html">
+        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/llm/basic/activate.html">
       
       
-        <link rel="prev" href="chart03.html">
+        <link rel="prev" href="optim.html">
       
       
-        <link rel="next" href="chart05.html">
+        <link rel="next" href="../inference/basic.html">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>第 4 章：BERT / GPT 原理与微调 - 人工智能面试集合</title>
+        <title>激活函数 - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../styles/custom.css">
+      <link rel="stylesheet" href="../../styles/custom.css">
     
-      <link rel="stylesheet" href="../styles/extra.css">
+      <link rel="stylesheet" href="../../styles/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#41" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第 4 章：BERT / GPT 原理与微调
+              激活函数
             
           </span>
         </div>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../machine/interview.html" class="md-tabs__link">
+      <a href="../../machine/interview.html" class="md-tabs__link">
         
   
   
@@ -246,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../deeplearning/interview.html" class="md-tabs__link">
+      <a href="../../deeplearning/interview.html" class="md-tabs__link">
         
   
   
@@ -263,13 +263,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="chart01.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../nlp/chart01.html" class="md-tabs__link">
           
   
   
@@ -298,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../llmapps/langchain/core-components/agents.html" class="md-tabs__link">
+        <a href="../../llmapps/langchain/core-components/agents.html" class="md-tabs__link">
           
   
   
@@ -323,7 +321,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
+        <a href="../../Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
           
   
   
@@ -341,6 +339,8 @@
   
   
   
+    
+  
   
     
     
@@ -348,11 +348,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../llm/basic/optim.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="optim.html" class="md-tabs__link">
           
   
   
@@ -377,7 +379,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../others/wsl.html" class="md-tabs__link">
+        <a href="../../others/wsl.html" class="md-tabs__link">
           
   
   
@@ -413,7 +415,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -443,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../machine/interview.html" class="md-nav__link">
+      <a href="../../machine/interview.html" class="md-nav__link">
         
   
   
@@ -465,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deeplearning/interview.html" class="md-nav__link">
+      <a href="../../deeplearning/interview.html" class="md-nav__link">
         
   
   
@@ -484,10 +486,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -509,22 +509,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -537,7 +536,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             从零开始学NLP
@@ -551,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chart01.html" class="md-nav__link">
+      <a href="../../nlp/chart01.html" class="md-nav__link">
         
   
   
@@ -574,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chart02.html" class="md-nav__link">
+      <a href="../../nlp/chart02.html" class="md-nav__link">
         
   
   
@@ -597,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chart03.html" class="md-nav__link">
+      <a href="../../nlp/chart03.html" class="md-nav__link">
         
   
   
@@ -617,30 +616,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    第 4 章：BERT / GPT 原理与微调
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="chart04.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../nlp/chart04.html" class="md-nav__link">
         
   
   
@@ -651,135 +630,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 学习目标
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#42-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 BERT 概念
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2 BERT 概念">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#421-masked-language-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2.1 Masked Language Model 示例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#43-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.3 GPT 概念
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#44-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 BERT 与 GPT 的差异
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#45-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5 BERT / GPT 的微调
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#451" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.1 微调原理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#452-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.2 文本分类微调（BERT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#453-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.3 文本生成微调（GPT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#46-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.6 BERT / GPT 的核心原理总结
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#47" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.7 本章小结
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -792,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chart05.html" class="md-nav__link">
+      <a href="../../nlp/chart05.html" class="md-nav__link">
         
   
   
@@ -815,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nltk.html" class="md-nav__link">
+      <a href="../../nlp/nltk.html" class="md-nav__link">
         
   
   
@@ -838,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="peft.html" class="md-nav__link">
+      <a href="../../nlp/peft.html" class="md-nav__link">
         
   
   
@@ -986,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/agents.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/agents.html" class="md-nav__link">
         
   
   
@@ -1009,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/models.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/models.html" class="md-nav__link">
         
   
   
@@ -1032,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/messages.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/messages.html" class="md-nav__link">
         
   
   
@@ -1055,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/tools.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/tools.html" class="md-nav__link">
         
   
   
@@ -1078,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
         
   
   
@@ -1101,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/streaming.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/streaming.html" class="md-nav__link">
         
   
   
@@ -1124,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/middleware.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/middleware.html" class="md-nav__link">
         
   
   
@@ -1147,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
         
   
   
@@ -1241,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
         
   
   
@@ -1264,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
         
   
   
@@ -1287,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
         
   
   
@@ -1310,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
         
   
   
@@ -1333,7 +1183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
         
   
   
@@ -1356,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
         
   
   
@@ -1379,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
         
   
   
@@ -1402,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
         
   
   
@@ -1486,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
+      <a href="../../llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
         
   
   
@@ -1509,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
+      <a href="../../llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
         
   
   
@@ -1532,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
+      <a href="../../llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
         
   
   
@@ -1638,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/overview.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/overview.html" class="md-nav__link">
         
   
   
@@ -1661,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/quickstart.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/quickstart.html" class="md-nav__link">
         
   
   
@@ -1684,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/Local%20server.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/Local%20server.html" class="md-nav__link">
         
   
   
@@ -1707,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
         
   
   
@@ -1730,7 +1580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
         
   
   
@@ -1753,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/persistence.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/persistence.html" class="md-nav__link">
         
   
   
@@ -1776,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/durable%20execution.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/durable%20execution.html" class="md-nav__link">
         
   
   
@@ -1799,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/streaming.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/streaming.html" class="md-nav__link">
         
   
   
@@ -1822,7 +1672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/interrupts.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/interrupts.html" class="md-nav__link">
         
   
   
@@ -1845,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/time%20travel.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/time%20travel.html" class="md-nav__link">
         
   
   
@@ -1868,7 +1718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/memory.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/memory.html" class="md-nav__link">
         
   
   
@@ -1891,7 +1741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/Subgraphs.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/Subgraphs.html" class="md-nav__link">
         
   
   
@@ -1914,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/application%20structure.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/application%20structure.html" class="md-nav__link">
         
   
   
@@ -1988,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
         
   
   
@@ -2011,7 +1861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
         
   
   
@@ -2110,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
+      <a href="../../Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
         
   
   
@@ -2133,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
+      <a href="../../Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
         
   
   
@@ -2156,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
+      <a href="../../Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
         
   
   
@@ -2183,8 +2033,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2202,21 +2054,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2229,7 +2082,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             大模型
@@ -2240,8 +2093,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2254,20 +2109,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
             
   
   
@@ -2280,7 +2136,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             大模型基础知识
@@ -2294,7 +2150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/basic/optim.html" class="md-nav__link">
+      <a href="optim.html" class="md-nav__link">
         
   
   
@@ -2314,10 +2170,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../llm/basic/activate.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    激活函数
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="activate.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2328,6 +2204,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔮 激活函数的作用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ 常用激活函数详解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 总结与选择指南
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2348,7 +2269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/inference/basic.html" class="md-nav__link">
+      <a href="../inference/basic.html" class="md-nav__link">
         
   
   
@@ -2383,10 +2304,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2395,7 +2319,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
             
   
   
@@ -2422,7 +2346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
+      <a href="../deploy/Streamlit/tutorial.html" class="md-nav__link">
         
   
   
@@ -2445,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/deploy/Gradio/tutorial.html" class="md-nav__link">
+      <a href="../deploy/Gradio/tutorial.html" class="md-nav__link">
         
   
   
@@ -2488,10 +2412,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2500,7 +2427,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
             
   
   
@@ -2576,7 +2503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/tunning/transformers/quick%20start.html" class="md-nav__link">
+      <a href="../tunning/transformers/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2658,7 +2585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/tunning/peft/quick%20start.html" class="md-nav__link">
+      <a href="../tunning/peft/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2681,7 +2608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
+      <a href="../tunning/peft/chinese%20peft.html" class="md-nav__link">
         
   
   
@@ -2730,10 +2657,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2742,7 +2672,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
         
           
-          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
             
   
   
@@ -2818,7 +2748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/inference/vLLM/quick%20start.html" class="md-nav__link">
+      <a href="../inference/vLLM/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2913,7 +2843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../others/wsl.html" class="md-nav__link">
+      <a href="../../others/wsl.html" class="md-nav__link">
         
   
   
@@ -2961,111 +2891,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 学习目标
+      🔮 激活函数的作用
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#42-bert" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 BERT 概念
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2 BERT 概念">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#421-masked-language-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2.1 Masked Language Model 示例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#43-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.3 GPT 概念
+      ✨ 常用激活函数详解
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#44-bert-gpt" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4 BERT 与 GPT 的差异
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#45-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5 BERT / GPT 的微调
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#451" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.1 微调原理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#452-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.2 文本分类微调（BERT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#453-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.3 文本生成微调（GPT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#46-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.6 BERT / GPT 的核心原理总结
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#47" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.7 本章小结
+      📊 总结与选择指南
     </span>
   </a>
   
@@ -3090,183 +2936,210 @@
   
 
 
-<h1 id="4-bert-gpt">第 4 章 : BERT / GPT 原理与微调<a class="headerlink" href="#4-bert-gpt" title="Permanent link">&para;</a></h1>
-<p>BERT 与 GPT 是现代 NLP 中最经典的预训练语言模型。它们都基于 Transformer，但在任务设计、训练方式和应用场景上有明显区别。本章将详细讲解它们的原理，并演示如何微调它们进行下游任务。</p>
-<hr />
-<h2 id="41">4.1 学习目标<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
-<p>完成本章后，你将能够：</p>
-<ol>
-<li>理解 BERT 和 GPT 的基本原理与差异</li>
-<li>掌握预训练任务：Masked Language Model (BERT) 与 Autoregressive LM (GPT)</li>
-<li>理解 Transformer 在 BERT/GPT 中的作用</li>
-<li>学会在 Python 中加载预训练模型并进行微调</li>
-<li>理解如何将预训练模型应用于文本分类、文本生成等任务</li>
-</ol>
-<hr />
-<h2 id="42-bert">4.2 BERT 概念<a class="headerlink" href="#42-bert" title="Permanent link">&para;</a></h2>
-<p>BERT（Bidirectional Encoder Representations from Transformers）是<strong>双向 Transformer Encoder</strong>：</p>
+<p>好的，这是一份关于深度学习激活函数的详细教程。它将从核心原理出发，系统地介绍各类常用激活函数，并辅以数学公式、代码实现和对比总结，帮助你建立全面的理解。</p>
+<h3 id="_1">🔮 激活函数的作用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>在深入了解具体的激活函数之前，我们首先要明白它为何如此重要。你可以将激活函数理解为神经网络的“灵魂”。如果没有它，无论你的神经网络有多少层，它都仅仅是一个<strong>线性回归</strong>模型，无法学习任何复杂、非线性的数据模式（比如图像识别或自然语言理解）。</p>
+<p>它的核心作用是为网络引入<strong>非线性变换</strong>，使得神经网络具备分层的非线性映射学习能力，从而能够拟合极其复杂的现实问题。</p>
+<p>下图清晰地展示了激活函数家族的演进与分类，帮助你建立一个宏观的认识：</p>
+<p><img alt="activate.png" src="../../imgs/llm/activate.png" /></p>
+<h3 id="_2">✨ 常用激活函数详解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><img alt="BHGCFIHGEGICG-IJxqr2PMNu.png" src="../../imgs/llm/BHGCFIHGEGICG-IJxqr2PMNu.png" /></p>
+<p>下面我们依据上图的分类，详细解析其中最核心和常用的几种激活函数。</p>
+<h4 id="1-sigmoid">1. Sigmoid 函数<a class="headerlink" href="#1-sigmoid" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>双向</strong>：同时考虑上下文的左侧和右侧信息</li>
-<li>
-<p><strong>预训练任务</strong>：</p>
-<ol>
-<li><strong>Masked Language Model (MLM)</strong>：随机遮盖一些词，预测被遮盖的词
-     $$
-     P(x_{\text{masked}} | x_{\text{context}})
-     $$</li>
-<li><strong>Next Sentence Prediction (NSP)</strong>：预测句子 B 是否紧跟句子 A</li>
-</ol>
+<li><strong>原理与公式</strong>：这是一个经典的激活函数，能将任何输入值“挤压”到 (0,1) 区间内。其公式和导数为：
+    <span class="arithmatex">\( f(x) = \frac{1}{1 + e^{-x}} \)</span>，<span class="arithmatex">\( f'(x) = f(x)(1 - f(x)) \)</span> 。</li>
+<li><strong>优点</strong>：输出范围固定，适合表示概率，常用于<strong>二分类问题的输出层</strong> 。</li>
+<li><strong>缺点</strong>：<ul>
+<li><strong>梯度消失</strong>：当输入值的绝对值很大时，梯度接近于0，导致深层网络训练困难。</li>
+<li><strong>非零中心</strong>：输出恒为正，会导致权重更新呈“Z”字形路径，降低收敛效率。</li>
+<li>涉及指数运算，<strong>计算成本较高</strong> 。</li>
+</ul>
 </li>
 <li>
-<p><strong>应用</strong>：文本分类、问答、命名实体识别等理解任务</p>
+<p><strong>代码实现</strong>：
+    ```python
+    import numpy as np
+    import matplotlib.pyplot as plt</p>
+<p>def sigmoid(x):
+    return 1 / (1 + np.exp(-x))</p>
+<h1 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<p>x = np.linspace(-10, 10, 100)
+y = sigmoid(x)
+plt.plot(x, y)
+plt.title('Sigmoid Function')
+plt.grid(True)
+plt.show()
+```</p>
 </li>
 </ul>
-<blockquote>
-<p>BERT 是 Encoder-only 结构，不用于文本生成。</p>
-</blockquote>
-<hr />
-<h3 id="421-masked-language-model">4.2.1 Masked Language Model 示例<a class="headerlink" href="#421-masked-language-model" title="Permanent link">&para;</a></h3>
-<p>句子：<strong>"The cat sat on the mat"</strong></p>
+<h4 id="2-tanh">2. Tanh 函数（双曲正切函数）<a class="headerlink" href="#2-tanh" title="Permanent link">&para;</a></h4>
 <ul>
-<li>随机遮盖词："The cat [MASK] on the mat"</li>
-<li>BERT 学习预测 <code>[MASK]</code> 对应的词 <code>"sat"</code></li>
+<li><strong>原理与公式</strong>：Sigmoid 的改进版，将输出范围变为 (-1, 1)，是<strong>零中心</strong>的。其公式和导数为：
+    <span class="arithmatex">\( f(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} \)</span>，<span class="arithmatex">\( f'(x) = 1 - [f(x)]^2 \)</span> 。</li>
+<li><strong>优点</strong>：零中心特性使得其收敛速度通常<strong>快于 Sigmoid</strong> 。</li>
+<li><strong>缺点</strong>：依然存在<strong>梯度消失</strong>问题。</li>
+<li>
+<p><strong>代码实现</strong>：
+    ```python
+    def tanh(x):
+        return np.tanh(x)  # 或 2/(1+np.exp(-2*x)) - 1</p>
+<h1 id="_4">示例使用同上<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<p>```</p>
+</li>
 </ul>
-<hr />
-<h2 id="43-gpt">4.3 GPT 概念<a class="headerlink" href="#43-gpt" title="Permanent link">&para;</a></h2>
-<p>GPT（Generative Pre-trained Transformer）是<strong>单向 Transformer Decoder</strong>：</p>
+<h4 id="3-relu">3. ReLU 函数（修正线性单元）<a class="headerlink" href="#3-relu" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>单向</strong>：从左到右生成文本</li>
-<li><strong>预训练任务</strong>：Autoregressive Language Model (自回归语言模型)
-  $$
-  P(x_t | x_1, x_2, ..., x_{t-1})
-  $$</li>
-<li><strong>应用</strong>：文本生成、对话生成、代码生成等任务</li>
+<li><strong>原理与公式</strong>：这是目前最流行的激活函数。它非常简单：<span class="arithmatex">\( f(x) = \max(0, x) \)</span> 。当输入为正时，直接输出；为负时，输出为零。</li>
+<li><strong>优点</strong>：<ul>
+<li><strong>计算效率极高</strong>。</li>
+<li>在正区间内<strong>解决了梯度消失问题</strong>（梯度恒为1）。</li>
 </ul>
-<blockquote>
-<p>GPT 是 Decoder-only 结构，适合生成任务。</p>
-</blockquote>
-<hr />
-<h2 id="44-bert-gpt">4.4 BERT 与 GPT 的差异<a class="headerlink" href="#44-bert-gpt" title="Permanent link">&para;</a></h2>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li><strong>Dead ReLU 问题</strong>：一旦输入为负，梯度为0，导致神经元可能“死亡”且无法恢复。</li>
+<li>输出<strong>不是零中心</strong>的。</li>
+</ul>
+</li>
+<li><strong>代码实现</strong>：
+    <code>python
+    def relu(x):
+        return np.maximum(0, x)</code></li>
+</ul>
+<h4 id="4-relu">4. ReLU 的改进家族<a class="headerlink" href="#4-relu" title="Permanent link">&para;</a></h4>
+<p>为了解决 ReLU 的缺陷，研究者们提出了一系列变体。</p>
+<ul>
+<li>
+<p><strong>Leaky ReLU</strong>：</p>
+<ul>
+<li><strong>公式</strong>：<span class="arithmatex">\( f(x) = \max(\alpha x, x) \)</span>，其中 <span class="arithmatex">\( \alpha \)</span> 是一个很小的常数（如0.01）。</li>
+<li><strong>优点</strong>：在负半轴引入一个小的斜率，<strong>避免了神经元完全死亡</strong>。</li>
+<li><strong>缺点</strong>：<span class="arithmatex">\( \alpha \)</span> 需要手动设定。</li>
+</ul>
+</li>
+<li>
+<p><strong>PReLU</strong>：</p>
+<ul>
+<li><strong>公式</strong>：与 Leaky ReLU 类似，但斜率 <span class="arithmatex">\( \alpha \)</span> 是一个<strong>可学习的参数</strong>，能从数据中自动训练得到。</li>
+<li><strong>优点</strong>：比 Leaky ReLU 更灵活，性能通常更好。</li>
+</ul>
+</li>
+<li>
+<p><strong>ELU</strong>：</p>
+<ul>
+<li><strong>公式</strong>：<span class="arithmatex">\( f(x) = \begin{cases} x, &amp; \text{if } x \ge 0 \\ \alpha(e^x - 1), &amp; \text{if } x &lt; 0 \end{cases} \)</span> 。</li>
+<li><strong>优点</strong>：负半轴是平滑的指数曲线，使得输出均值更接近0，<strong>加速收敛</strong>，且缓解了 Dead ReLU 问题。</li>
+<li><strong>缺点</strong>：涉及指数运算，计算量稍大。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-softmax">5. Softmax 函数<a class="headerlink" href="#5-softmax" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>原理与公式</strong>：专为<strong>多分类问题</strong>的输出层设计。它将所有输出值转化为一个概率分布，每个类别的概率在 (0,1) 之间，且所有概率之和为1。
+    <span class="arithmatex">\( \sigma(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}} \)</span> 。</li>
+<li><strong>优点</strong>：输出解释性极强，直接对应每个类别的预测概率。</li>
+<li><strong>缺点</strong>：计算成本高，且需要注意数值稳定性（实现时通常减去最大值）。</li>
+<li>
+<p><strong>代码实现（带数值稳定）</strong>：
+    ```python
+    def softmax(x):
+        # 减去最大值，防止指数运算时数值溢出
+        exp_x = np.exp(x - np.max(x, axis=-1, keepdims=True))
+        return exp_x / np.sum(exp_x, axis=-1, keepdims=True)</p>
+<h1 id="_5">示例：三分类输出<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<p>logits = np.array([2.0, 1.0, 0.1])
+probabilities = softmax(logits)
+print(probabilities)  # 输出如 [0.659, 0.242, 0.099]，和为1
+```</p>
+</li>
+</ul>
+<h4 id="6-gelu-swish">6. 前沿激活函数：GELU 与 Swish<a class="headerlink" href="#6-gelu-swish" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>GELU</strong>：</p>
+<ul>
+<li><strong>原理</strong>：基于概率思想，根据输入的大小“随机地”决定是否激活神经元，比 ReLU 的硬阈值更平滑。在 <strong>Transformer</strong>（如BERT、GPT）等先进模型中广泛应用。</li>
+<li><strong>公式</strong>：<span class="arithmatex">\( \text{GELU}(x) = x \Phi(x) \)</span>，其中 <span class="arithmatex">\( \Phi(x) \)</span> 是标准高斯分布的累积分布函数。常用近似公式：<span class="arithmatex">\( 0.5x(1+\tanh[\sqrt{2/\pi}(x+0.044715x^3)]) \)</span> 。</li>
+<li><strong>优点</strong>：<strong>平滑、非单调</strong>，在高精度任务上表现优异。</li>
+</ul>
+</li>
+<li>
+<p><strong>Swish</strong>：</p>
+<ul>
+<li><strong>公式</strong>：<span class="arithmatex">\( f(x) = x \cdot \text{sigmoid}(\beta x) \)</span>，通常 <span class="arithmatex">\( \beta=1 \)</span>（即 SiLU 函数）。</li>
+<li><strong>优点</strong>：由谷歌提出，在许多深层模型上表现<strong>优于 ReLU</strong>，兼具平滑性和非单调性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="_6">📊 总结与选择指南<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>下表总结了各激活函数的特性，并为你的选择提供实践性建议：</p>
 <table>
 <thead>
 <tr>
-<th>特性</th>
-<th>BERT</th>
-<th>GPT</th>
+<th style="text-align: left;">激活函数</th>
+<th style="text-align: left;">优点</th>
+<th style="text-align: left;">缺点</th>
+<th style="text-align: left;">适用场景</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Transformer 部分</td>
-<td>Encoder</td>
-<td>Decoder</td>
+<td style="text-align: left;"><strong>Sigmoid</strong></td>
+<td style="text-align: left;">输出概率，易于理解</td>
+<td style="text-align: left;">梯度消失，非零中心，计算慢</td>
+<td style="text-align: left;"><strong>二分类输出层</strong>，基本不再用于隐藏层</td>
 </tr>
 <tr>
-<td>上下文方向</td>
-<td>双向</td>
-<td>单向</td>
+<td style="text-align: left;"><strong>Tanh</strong></td>
+<td style="text-align: left;">零中心，收敛快于Sigmoid</td>
+<td style="text-align: left;">梯度消失问题仍在</td>
+<td style="text-align: left;"><strong>RNN</strong> 等网络的隐藏层</td>
 </tr>
 <tr>
-<td>预训练任务</td>
-<td>MLM + NSP</td>
-<td>Autoregressive LM</td>
+<td style="text-align: left;"><strong>ReLU</strong></td>
+<td style="text-align: left;"><strong>计算高效</strong>，缓解梯度消失</td>
+<td style="text-align: left;">Dead ReLU问题，非零中心</td>
+<td style="text-align: left;"><strong>最通用的隐藏层</strong>默认选择（CNN、全连接网）</td>
 </tr>
 <tr>
-<td>适用任务</td>
-<td>理解任务</td>
-<td>生成任务</td>
+<td style="text-align: left;"><strong>Leaky ReLU/PReLU</strong></td>
+<td style="text-align: left;">解决 Dead ReLU 问题</td>
+<td style="text-align: left;">引入超参数</td>
+<td style="text-align: left;">担心神经元死亡时的 ReLU 替代品</td>
 </tr>
 <tr>
-<td>典型应用</td>
-<td>文本分类、问答</td>
-<td>文本生成、对话、代码生成</td>
+<td style="text-align: left;"><strong>ELU</strong></td>
+<td style="text-align: left;">输出近零中心，收敛可能更快</td>
+<td style="text-align: left;">计算量稍大</td>
+<td style="text-align: left;">对收敛质量要求高的任务</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GELU/Swish</strong></td>
+<td style="text-align: left;"><strong>平滑、高性能</strong>，先进模型使用</td>
+<td style="text-align: left;">计算相对复杂</td>
+<td style="text-align: left;"><strong>Transformer、BERT</strong> 等前沿模型</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Softmax</strong></td>
+<td style="text-align: left;">输出多类概率分布</td>
+<td style="text-align: left;">仅用于输出层，计算成本高</td>
+<td style="text-align: left;"><strong>多分类问题的输出层</strong></td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="45-bert-gpt">4.5 BERT / GPT 的微调<a class="headerlink" href="#45-bert-gpt" title="Permanent link">&para;</a></h2>
-<h3 id="451">4.5.1 微调原理<a class="headerlink" href="#451" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>预训练</strong>：在大规模语料上学习通用语言表示</li>
-<li><strong>微调</strong>：在下游任务上训练少量参数，使模型适应特定任务</li>
-</ul>
-<blockquote>
-<p>微调通常比从零训练效果好，且数据需求更少。</p>
-</blockquote>
-<hr />
-<h3 id="452-bert">4.5.2 文本分类微调（BERT 示例）<a class="headerlink" href="#452-bert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from transformers import BertTokenizer, BertForSequenceClassification
-from transformers import Trainer, TrainingArguments
-import torch
-
-# 加载预训练模型和分词器
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
-
-# 示例文本
-texts = [&quot;I love NLP&quot;, &quot;I hate bugs&quot;]
-labels = torch.tensor([1,0])
-
-# 编码
-encodings = tokenizer(texts, padding=True, truncation=True, return_tensors='pt')
-dataset = torch.utils.data.TensorDataset(encodings['input_ids'], encodings['attention_mask'], labels)
-
-# Trainer 简单训练示例
-training_args = TrainingArguments(output_dir='./results', num_train_epochs=1, per_device_train_batch_size=2)
-trainer = Trainer(model=model, args=training_args, train_dataset=dataset)
-trainer.train()
-</code></pre>
-<hr />
-<h3 id="453-gpt">4.5.3 文本生成微调（GPT 示例）<a class="headerlink" href="#453-gpt" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from transformers import GPT2Tokenizer, GPT2LMHeadModel
-
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-model = GPT2LMHeadModel.from_pretrained('gpt2')
-
-text = &quot;Once upon a time&quot;
-inputs = tokenizer(text, return_tensors='pt')
-
-# 生成文本
-outputs = model.generate(**inputs, max_length=20)
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-</code></pre>
-<hr />
-<h2 id="46-bert-gpt">4.6 BERT / GPT 的核心原理总结<a class="headerlink" href="#46-bert-gpt" title="Permanent link">&para;</a></h2>
+<p><strong>核心选择策略：</strong></p>
 <ol>
-<li>
-<p><strong>Transformer</strong> 是底层架构</p>
-<ul>
-<li>BERT 用 Encoder</li>
-<li>GPT 用 Decoder</li>
-</ul>
-</li>
-<li>
-<p><strong>预训练任务</strong>学习语言知识</p>
-<ul>
-<li>BERT：Masked LM + NSP</li>
-<li>GPT：自回归 LM</li>
-</ul>
-</li>
-<li>
-<p><strong>微调</strong>在下游任务上少量训练即可获得高性能</p>
-</li>
-<li>
-<p><strong>应用广泛</strong>：</p>
-<ul>
-<li>BERT：分类、问答、命名实体识别</li>
-<li>GPT：文本生成、对话、代码生成</li>
+<li><strong>隐藏层默认选择</strong>：优先尝试 <strong>ReLU</strong>，它是目前最通用、最稳定的选择。</li>
+<li><strong>应对潜在问题</strong>：如果训练中出现大量神经元“死亡”，可换用 <strong>Leaky ReLU、PReLU 或 ELU</strong>。</li>
+<li><strong>追求最先进性能</strong>：在 Transformer 等模型或资源充足时，大胆使用 <strong>GELU</strong> 或 <strong>Swish</strong>。</li>
+<li><strong>输出层选择</strong>：<ul>
+<li><strong>二分类</strong>：输出层使用 <strong>Sigmoid</strong>。</li>
+<li><strong>多分类</strong>：输出层使用 <strong>Softmax</strong>。</li>
+<li><strong>回归问题</strong>：通常使用<strong>线性激活函数</strong>（即恒等映射）。</li>
 </ul>
 </li>
 </ol>
-<hr />
-<h2 id="47">4.7 本章小结<a class="headerlink" href="#47" title="Permanent link">&para;</a></h2>
-<ul>
-<li>BERT 强调语言理解，利用双向上下文</li>
-<li>GPT 强调文本生成，利用左到右预测</li>
-<li>预训练 + 微调是现代 NLP 的主流方法</li>
-<li>PyTorch + Transformers 库提供便捷工具，快速微调和应用</li>
-</ul>
-<hr />
+<p>希望这份详细的教程能帮助你透彻理解激活函数，并在实践中做出明智的选择。如果你有特定的网络结构或任务场景，我们可以进一步探讨。</p>
 
 
 
@@ -3317,10 +3190,10 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -3328,7 +3201,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="../styles/javascripts/katex.js"></script>
+        <script src="../../styles/javascripts/katex.js"></script>
       
     
   </body>
