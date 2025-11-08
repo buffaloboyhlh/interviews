@@ -124,7 +124,7 @@ nav:
           - 优化器: llm/basic/optim.md
           - 激活函数: llm/basic/activate.md
       - 大模型推理优化技术:
-          - 概述: llm/inference/basic.md
+          - 一、概述: llm/inference/basic.md
       - 大模型部署:
           - Streamlit: llm/deploy/Streamlit/tutorial.md
           - Gradio: llm/deploy/Gradio/tutorial.md
