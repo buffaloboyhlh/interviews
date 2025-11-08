@@ -10,28 +10,28 @@
         <meta name="author" content="Buffalo">
       
       
-        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/nlp/chart04.html">
+        <link rel="canonical" href="https://buffaloboyhlh.github.io/interviews/llm/inference/basic.html">
       
       
-        <link rel="prev" href="chart03.html">
+        <link rel="prev" href="../basic/activate.html">
       
       
-        <link rel="next" href="chart05.html">
+        <link rel="next" href="../deploy/Streamlit/tutorial.html">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>第 4 章：BERT / GPT 原理与微调 - 人工智能面试集合</title>
+        <title>大模型推理优化技术 - 人工智能面试集合</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../styles/custom.css">
+      <link rel="stylesheet" href="../../styles/custom.css">
     
-      <link rel="stylesheet" href="../styles/extra.css">
+      <link rel="stylesheet" href="../../styles/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#41" class="md-skip">
+        <a href="#llm" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../.." title="人工智能面试集合" class="md-header__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第 4 章：BERT / GPT 原理与微调
+              大模型推理优化技术
             
           </span>
         </div>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../machine/interview.html" class="md-tabs__link">
+      <a href="../../machine/interview.html" class="md-tabs__link">
         
   
   
@@ -246,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../deeplearning/interview.html" class="md-tabs__link">
+      <a href="../../deeplearning/interview.html" class="md-tabs__link">
         
   
   
@@ -263,13 +263,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="chart01.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../nlp/chart01.html" class="md-tabs__link">
           
   
   
@@ -298,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../llmapps/langchain/core-components/agents.html" class="md-tabs__link">
+        <a href="../../llmapps/langchain/core-components/agents.html" class="md-tabs__link">
           
   
   
@@ -323,7 +321,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
+        <a href="../../Vector%20Stores/Chroma/tutorial.html" class="md-tabs__link">
           
   
   
@@ -341,6 +339,8 @@
   
   
   
+    
+  
   
     
     
@@ -348,11 +348,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../llm/basic/optim.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../basic/optim.html" class="md-tabs__link">
           
   
   
@@ -377,7 +379,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../others/wsl.html" class="md-tabs__link">
+        <a href="../../others/wsl.html" class="md-tabs__link">
           
   
   
@@ -413,7 +415,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
+    <a href="../.." title="人工智能面试集合" class="md-nav__button md-logo" aria-label="人工智能面试集合" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -443,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../machine/interview.html" class="md-nav__link">
+      <a href="../../machine/interview.html" class="md-nav__link">
         
   
   
@@ -465,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deeplearning/interview.html" class="md-nav__link">
+      <a href="../../deeplearning/interview.html" class="md-nav__link">
         
   
   
@@ -484,10 +486,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -509,22 +509,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -537,7 +536,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             从零开始学NLP
@@ -551,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chart01.html" class="md-nav__link">
+      <a href="../../nlp/chart01.html" class="md-nav__link">
         
   
   
@@ -574,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chart02.html" class="md-nav__link">
+      <a href="../../nlp/chart02.html" class="md-nav__link">
         
   
   
@@ -597,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chart03.html" class="md-nav__link">
+      <a href="../../nlp/chart03.html" class="md-nav__link">
         
   
   
@@ -617,30 +616,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    第 4 章：BERT / GPT 原理与微调
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="chart04.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../nlp/chart04.html" class="md-nav__link">
         
   
   
@@ -651,135 +630,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 学习目标
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#42-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 BERT 概念
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2 BERT 概念">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#421-masked-language-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2.1 Masked Language Model 示例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#43-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.3 GPT 概念
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#44-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 BERT 与 GPT 的差异
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#45-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5 BERT / GPT 的微调
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#451" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.1 微调原理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#452-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.2 文本分类微调（BERT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#453-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5.3 文本生成微调（GPT 示例）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#46-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.6 BERT / GPT 的核心原理总结
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#47" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.7 本章小结
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -792,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chart05.html" class="md-nav__link">
+      <a href="../../nlp/chart05.html" class="md-nav__link">
         
   
   
@@ -815,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nltk.html" class="md-nav__link">
+      <a href="../../nlp/nltk.html" class="md-nav__link">
         
   
   
@@ -838,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="peft.html" class="md-nav__link">
+      <a href="../../nlp/peft.html" class="md-nav__link">
         
   
   
@@ -986,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/agents.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/agents.html" class="md-nav__link">
         
   
   
@@ -1009,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/models.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/models.html" class="md-nav__link">
         
   
   
@@ -1032,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/messages.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/messages.html" class="md-nav__link">
         
   
   
@@ -1055,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/tools.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/tools.html" class="md-nav__link">
         
   
   
@@ -1078,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/short-term%20memory.html" class="md-nav__link">
         
   
   
@@ -1101,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/streaming.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/streaming.html" class="md-nav__link">
         
   
   
@@ -1124,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/middleware.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/middleware.html" class="md-nav__link">
         
   
   
@@ -1147,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/core-components/structured-output.html" class="md-nav__link">
         
   
   
@@ -1241,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Guardrails.html" class="md-nav__link">
         
   
   
@@ -1264,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Runtime.html" class="md-nav__link">
         
   
   
@@ -1287,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/context-engineering.html" class="md-nav__link">
         
   
   
@@ -1310,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/MCP.html" class="md-nav__link">
         
   
   
@@ -1333,7 +1183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Human-in-the-loop.html" class="md-nav__link">
         
   
   
@@ -1356,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Multi-agent.html" class="md-nav__link">
         
   
   
@@ -1379,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Retrieval.html" class="md-nav__link">
         
   
   
@@ -1402,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
+      <a href="../../llmapps/langchain/advanced-usage/Long-term%20memory.html" class="md-nav__link">
         
   
   
@@ -1486,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
+      <a href="../../llmapps/apps/langchain/semantic%20search.html" class="md-nav__link">
         
   
   
@@ -1509,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
+      <a href="../../llmapps/apps/langchain/RAG%20agent.html" class="md-nav__link">
         
   
   
@@ -1532,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
+      <a href="../../llmapps/apps/langchain/humain_middleware.html" class="md-nav__link">
         
   
   
@@ -1638,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/overview.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/overview.html" class="md-nav__link">
         
   
   
@@ -1661,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/quickstart.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/quickstart.html" class="md-nav__link">
         
   
   
@@ -1684,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/Local%20server.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/Local%20server.html" class="md-nav__link">
         
   
   
@@ -1707,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/thinking%20in%20Langgraph.html" class="md-nav__link">
         
   
   
@@ -1730,7 +1580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/workflows%2Bagents.html" class="md-nav__link">
         
   
   
@@ -1753,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/persistence.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/persistence.html" class="md-nav__link">
         
   
   
@@ -1776,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/durable%20execution.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/durable%20execution.html" class="md-nav__link">
         
   
   
@@ -1799,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/streaming.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/streaming.html" class="md-nav__link">
         
   
   
@@ -1822,7 +1672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/interrupts.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/interrupts.html" class="md-nav__link">
         
   
   
@@ -1845,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/time%20travel.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/time%20travel.html" class="md-nav__link">
         
   
   
@@ -1868,7 +1718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/memory.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/memory.html" class="md-nav__link">
         
   
   
@@ -1891,7 +1741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/Subgraphs.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/Subgraphs.html" class="md-nav__link">
         
   
   
@@ -1914,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/application%20structure.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/application%20structure.html" class="md-nav__link">
         
   
   
@@ -1988,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/graph%20api%20overview.html" class="md-nav__link">
         
   
   
@@ -2011,7 +1861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
+      <a href="../../llmapps/langgraph/use%20the%20graph%20api.html" class="md-nav__link">
         
   
   
@@ -2110,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
+      <a href="../../Vector%20Stores/Chroma/tutorial.html" class="md-nav__link">
         
   
   
@@ -2133,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
+      <a href="../../Vector%20Stores/Milvus/tutorial.html" class="md-nav__link">
         
   
   
@@ -2156,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
+      <a href="../../Vector%20Stores/FAISS/tutorial.html" class="md-nav__link">
         
   
   
@@ -2183,8 +2033,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2202,21 +2054,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2229,7 +2082,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             大模型
@@ -2255,10 +2108,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2267,7 +2123,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
         
           
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
             
   
   
@@ -2294,7 +2150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/basic/optim.html" class="md-nav__link">
+      <a href="../basic/optim.html" class="md-nav__link">
         
   
   
@@ -2317,7 +2173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/basic/activate.html" class="md-nav__link">
+      <a href="../basic/activate.html" class="md-nav__link">
         
   
   
@@ -2345,10 +2201,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../llm/inference/basic.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    大模型推理优化技术
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="basic.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2359,6 +2235,159 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、LLM推理基础：了解核心过程与瓶颈
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、LLM推理基础：了解核心过程与瓶颈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kv" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心性能瓶颈：KV缓存
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、关键性能指标：如何衡量优化效果
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、核心优化技术详解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、核心优化技术详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 模型层面的“瘦身”技术：量化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 计算与内存优化：注意力机制革新
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 系统级调度优化：让GPU保持忙碌
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 利用多GPU的规模化推理：模型并行
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、实践指南：从入门到精通的学习路径
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、实践指南：从入门到精通的学习路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶段一：基础入门
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶段二：核心技术深入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶段三：高级专题与源码级优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶段四：融会贯通与工程实践
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2383,10 +2412,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2395,7 +2427,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
             
   
   
@@ -2422,7 +2454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/deploy/Streamlit/tutorial.html" class="md-nav__link">
+      <a href="../deploy/Streamlit/tutorial.html" class="md-nav__link">
         
   
   
@@ -2445,7 +2477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/deploy/Gradio/tutorial.html" class="md-nav__link">
+      <a href="../deploy/Gradio/tutorial.html" class="md-nav__link">
         
   
   
@@ -2488,10 +2520,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2500,7 +2535,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
             
   
   
@@ -2576,7 +2611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/tunning/transformers/quick%20start.html" class="md-nav__link">
+      <a href="../tunning/transformers/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2658,7 +2693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/tunning/peft/quick%20start.html" class="md-nav__link">
+      <a href="../tunning/peft/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2681,7 +2716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/tunning/peft/chinese%20peft.html" class="md-nav__link">
+      <a href="../tunning/peft/chinese%20peft.html" class="md-nav__link">
         
   
   
@@ -2730,10 +2765,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2742,7 +2780,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
         
           
-          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
             
   
   
@@ -2818,7 +2856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm/inference/vLLM/quick%20start.html" class="md-nav__link">
+      <a href="vLLM/quick%20start.html" class="md-nav__link">
         
   
   
@@ -2913,7 +2951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../others/wsl.html" class="md-nav__link">
+      <a href="../../others/wsl.html" class="md-nav__link">
         
   
   
@@ -2961,28 +2999,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
+  <a href="#llm" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 学习目标
+      一、LLM推理基础：了解核心过程与瓶颈
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#42-bert" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 BERT 概念
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2 BERT 概念">
+    <nav class="md-nav" aria-label="一、LLM推理基础：了解核心过程与瓶颈">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#421-masked-language-model" class="md-nav__link">
+  <a href="#kv" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2.1 Masked Language Model 示例
+      核心性能瓶颈：KV缓存
     </span>
   </a>
   
@@ -2994,55 +3023,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#43-gpt" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 GPT 概念
+      二、关键性能指标：如何衡量优化效果
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#44-bert-gpt" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4 BERT 与 GPT 的差异
+      三、核心优化技术详解
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#45-bert-gpt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.5 BERT / GPT 的微调
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 BERT / GPT 的微调">
+    <nav class="md-nav" aria-label="三、核心优化技术详解">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#451" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.1 微调原理
+      1. 模型层面的“瘦身”技术：量化
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#452-bert" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.2 文本分类微调（BERT 示例）
+      2. 计算与内存优化：注意力机制革新
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#453-gpt" class="md-nav__link">
+  <a href="#3-gpu" class="md-nav__link">
     <span class="md-ellipsis">
-      4.5.3 文本生成微调（GPT 示例）
+      3. 系统级调度优化：让GPU保持忙碌
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 利用多GPU的规模化推理：模型并行
     </span>
   </a>
   
@@ -3054,20 +3083,53 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#46-bert-gpt" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      4.6 BERT / GPT 的核心原理总结
+      四、实践指南：从入门到精通的学习路径
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、实践指南：从入门到精通的学习路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶段一：基础入门
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#47" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      4.7 本章小结
+      阶段二：核心技术深入
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶段三：高级专题与源码级优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶段四：融会贯通与工程实践
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3090,183 +3152,119 @@
   
 
 
-<h1 id="4-bert-gpt">第 4 章 : BERT / GPT 原理与微调<a class="headerlink" href="#4-bert-gpt" title="Permanent link">&para;</a></h1>
-<p>BERT 与 GPT 是现代 NLP 中最经典的预训练语言模型。它们都基于 Transformer，但在任务设计、训练方式和应用场景上有明显区别。本章将详细讲解它们的原理，并演示如何微调它们进行下游任务。</p>
-<hr />
-<h2 id="41">4.1 学习目标<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
-<p>完成本章后，你将能够：</p>
-<ol>
-<li>理解 BERT 和 GPT 的基本原理与差异</li>
-<li>掌握预训练任务：Masked Language Model (BERT) 与 Autoregressive LM (GPT)</li>
-<li>理解 Transformer 在 BERT/GPT 中的作用</li>
-<li>学会在 Python 中加载预训练模型并进行微调</li>
-<li>理解如何将预训练模型应用于文本分类、文本生成等任务</li>
-</ol>
-<hr />
-<h2 id="42-bert">4.2 BERT 概念<a class="headerlink" href="#42-bert" title="Permanent link">&para;</a></h2>
-<p>BERT（Bidirectional Encoder Representations from Transformers）是<strong>双向 Transformer Encoder</strong>：</p>
+<p>理解了您想系统学习大模型推理优化技术的需求。下面我将为您梳理一个从基础概念到核心技术与实践案例的完整学习路径，帮助您构建起该领域的知识体系。</p>
+<h1 id="_1">🚀 大模型推理优化技术：从入门到精通<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="llm">一、LLM推理基础：了解核心过程与瓶颈<a class="headerlink" href="#llm" title="Permanent link">&para;</a></h2>
+<p>大型语言模型的推理过程主要分为两个关键阶段，理解它们是后续学习所有优化技术的基础。</p>
 <ul>
-<li><strong>双向</strong>：同时考虑上下文的左侧和右侧信息</li>
-<li>
-<p><strong>预训练任务</strong>：</p>
-<ol>
-<li><strong>Masked Language Model (MLM)</strong>：随机遮盖一些词，预测被遮盖的词
-     $$
-     P(x_{\text{masked}} | x_{\text{context}})
-     $$</li>
-<li><strong>Next Sentence Prediction (NSP)</strong>：预测句子 B 是否紧跟句子 A</li>
-</ol>
-</li>
-<li>
-<p><strong>应用</strong>：文本分类、问答、命名实体识别等理解任务</p>
-</li>
+<li><strong>预填充阶段</strong>：这是处理用户输入的过程。模型会<strong>并行处理</strong>整个输入序列（prompt），计算每个token的键值（Key-Value，简称KV）并缓存起来。这个阶段计算密度高，能充分利用GPU的并行计算能力。</li>
+<li><strong>解码阶段</strong>：这是模型生成回答的过程。基于预填充的KV缓存和已生成的token，<strong>自回归地</strong>逐个生成新token。此阶段计算量小但访存频繁，性能主要受限于GPU的<strong>内存带宽</strong>，而非计算能力。</li>
 </ul>
-<blockquote>
-<p>BERT 是 Encoder-only 结构，不用于文本生成。</p>
-</blockquote>
-<hr />
-<h3 id="421-masked-language-model">4.2.1 Masked Language Model 示例<a class="headerlink" href="#421-masked-language-model" title="Permanent link">&para;</a></h3>
-<p>句子：<strong>"The cat sat on the mat"</strong></p>
-<ul>
-<li>随机遮盖词："The cat [MASK] on the mat"</li>
-<li>BERT 学习预测 <code>[MASK]</code> 对应的词 <code>"sat"</code></li>
-</ul>
-<hr />
-<h2 id="43-gpt">4.3 GPT 概念<a class="headerlink" href="#43-gpt" title="Permanent link">&para;</a></h2>
-<p>GPT（Generative Pre-trained Transformer）是<strong>单向 Transformer Decoder</strong>：</p>
-<ul>
-<li><strong>单向</strong>：从左到右生成文本</li>
-<li><strong>预训练任务</strong>：Autoregressive Language Model (自回归语言模型)
-  $$
-  P(x_t | x_1, x_2, ..., x_{t-1})
-  $$</li>
-<li><strong>应用</strong>：文本生成、对话生成、代码生成等任务</li>
-</ul>
-<blockquote>
-<p>GPT 是 Decoder-only 结构，适合生成任务。</p>
-</blockquote>
-<hr />
-<h2 id="44-bert-gpt">4.4 BERT 与 GPT 的差异<a class="headerlink" href="#44-bert-gpt" title="Permanent link">&para;</a></h2>
+<h3 id="kv">核心性能瓶颈：KV缓存<a class="headerlink" href="#kv" title="Permanent link">&para;</a></h3>
+<p>在自回归生成过程中，为了避免为每个新token都重新计算之前所有token的键值，模型会将它们缓存起来，这就是<strong>KV缓存</strong>。它是内存消耗的主要来源之一。例如，一个7B参数的模型，在序列长度为4096时，KV缓存可能占用约2GB显存。当处理多个并发请求时，KV缓存会急剧消耗显存，成为主要瓶颈。</p>
+<h2 id="_2">二、关键性能指标：如何衡量优化效果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在深入技术前，需明确优化的目标。以下是评估推理性能的四个核心指标：</p>
 <table>
 <thead>
 <tr>
-<th>特性</th>
-<th>BERT</th>
-<th>GPT</th>
+<th style="text-align: left;">指标</th>
+<th style="text-align: left;">定义</th>
+<th style="text-align: left;">适用场景</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Transformer 部分</td>
-<td>Encoder</td>
-<td>Decoder</td>
+<td style="text-align: left;"><strong>首 Token 延迟（TTFT）</strong></td>
+<td style="text-align: left;">从输入提交到收到第一个输出token的时间。</td>
+<td style="text-align: left;"><strong>流式应用</strong>（如ChatGPT），影响用户体验的响应速度。</td>
 </tr>
 <tr>
-<td>上下文方向</td>
-<td>双向</td>
-<td>单向</td>
+<td style="text-align: left;"><strong>每个输出 Token 延迟（TPOT）</strong></td>
+<td style="text-align: left;">生成第一个token后，每个后续token的平均时间。</td>
+<td style="text-align: left;"><strong>批处理应用</strong>，影响总体生成效率。</td>
 </tr>
 <tr>
-<td>预训练任务</td>
-<td>MLM + NSP</td>
-<td>Autoregressive LM</td>
+<td style="text-align: left;"><strong>吞吐量（Throughput）</strong></td>
+<td style="text-align: left;">单位时间内系统能处理的所有请求生成的token总数（tokens/s）。</td>
+<td style="text-align: left;">离线生成场景，关心总体资源利用率。</td>
 </tr>
 <tr>
-<td>适用任务</td>
-<td>理解任务</td>
-<td>生成任务</td>
-</tr>
-<tr>
-<td>典型应用</td>
-<td>文本分类、问答</td>
-<td>文本生成、对话、代码生成</td>
+<td style="text-align: left;"><strong>延迟（Latency）</strong></td>
+<td style="text-align: left;">从输入开始到输出结束的总时间。</td>
+<td style="text-align: left;">综合衡量单次请求的总体验。</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="45-bert-gpt">4.5 BERT / GPT 的微调<a class="headerlink" href="#45-bert-gpt" title="Permanent link">&para;</a></h2>
-<h3 id="451">4.5.1 微调原理<a class="headerlink" href="#451" title="Permanent link">&para;</a></h3>
+<h2 id="_3">三、核心优化技术详解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>优化技术主要围绕如何高效利用GPU的<strong>计算单元</strong>和<strong>内存带宽</strong>展开，目标是在保证模型质量的同时，提升速度（降低延迟）和效率（提高吞吐量）。</p>
+<h3 id="1">1. 模型层面的“瘦身”技术：量化<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p><strong>量化</strong>是降低模型权重和激活值数值精度的过程，是效果最显著的优化技术之一。
+-   <strong>原理</strong>：将模型参数从FP16（16位浮点数）转换为INT8或INT4（8/4位整数），显著减少模型体积和内存占用。
+-   <strong>好处</strong>：更小的模型体积意味着在推理时，从显存加载权重到计算核心的数据传输量更小，从而缓解内存带宽瓶颈，提高速度。
+-   <strong>常用方法</strong>：
+    -   <strong>GPTQ</strong>：一种流行的训练后量化方法，尤其适合减少权重精度。
+    -   <strong>AWQ</strong>：一种更先进的量化方法，试图保留对模型性能影响最大的权重，在更低精度下保持模型质量。</p>
+<h3 id="2">2. 计算与内存优化：注意力机制革新<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>注意力机制是Transformer的核心，也是优化的重点。</p>
 <ul>
-<li><strong>预训练</strong>：在大规模语料上学习通用语言表示</li>
-<li><strong>微调</strong>：在下游任务上训练少量参数，使模型适应特定任务</li>
-</ul>
-<blockquote>
-<p>微调通常比从零训练效果好，且数据需求更少。</p>
-</blockquote>
-<hr />
-<h3 id="452-bert">4.5.2 文本分类微调（BERT 示例）<a class="headerlink" href="#452-bert" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from transformers import BertTokenizer, BertForSequenceClassification
-from transformers import Trainer, TrainingArguments
-import torch
-
-# 加载预训练模型和分词器
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
-
-# 示例文本
-texts = [&quot;I love NLP&quot;, &quot;I hate bugs&quot;]
-labels = torch.tensor([1,0])
-
-# 编码
-encodings = tokenizer(texts, padding=True, truncation=True, return_tensors='pt')
-dataset = torch.utils.data.TensorDataset(encodings['input_ids'], encodings['attention_mask'], labels)
-
-# Trainer 简单训练示例
-training_args = TrainingArguments(output_dir='./results', num_train_epochs=1, per_device_train_batch_size=2)
-trainer = Trainer(model=model, args=training_args, train_dataset=dataset)
-trainer.train()
-</code></pre>
-<hr />
-<h3 id="453-gpt">4.5.3 文本生成微调（GPT 示例）<a class="headerlink" href="#453-gpt" title="Permanent link">&para;</a></h3>
-<pre><code class="language-python">from transformers import GPT2Tokenizer, GPT2LMHeadModel
-
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-model = GPT2LMHeadModel.from_pretrained('gpt2')
-
-text = &quot;Once upon a time&quot;
-inputs = tokenizer(text, return_tensors='pt')
-
-# 生成文本
-outputs = model.generate(**inputs, max_length=20)
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-</code></pre>
-<hr />
-<h2 id="46-bert-gpt">4.6 BERT / GPT 的核心原理总结<a class="headerlink" href="#46-bert-gpt" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>Transformer</strong> 是底层架构</p>
-<ul>
-<li>BERT 用 Encoder</li>
-<li>GPT 用 Decoder</li>
+<li><strong>FlashAttention</strong>：通过<strong>算子融合</strong>和<strong>智能分块</strong>计算策略，避免在高速显存（HBM）和片上共享内存（SRAM）间频繁读写庞大的中间注意力矩阵，从而显著加快注意力计算速度并降低内存占用。</li>
+<li><strong>多查询注意力与分组查询注意力</strong>：<ul>
+<li><strong>MHA</strong>：是标准的多头注意力，每个头都有独立的K、V向量，缓存开销大。</li>
+<li><strong>MQA</strong>：所有头<strong>共享</strong>一份K、V向量，极大减少了KV缓存，但可能牺牲模型质量。</li>
+<li><strong>GQA</strong>：在MHA和MQA间取得平衡，将查询头分组，<strong>组内共享</strong>一份K、V向量。它在显著减少缓存的同时，能更好地保持模型性能。Llama 2 70B等模型便采用了GQA。</li>
 </ul>
 </li>
-<li>
-<p><strong>预训练任务</strong>学习语言知识</p>
-<ul>
-<li>BERT：Masked LM + NSP</li>
-<li>GPT：自回归 LM</li>
 </ul>
-</li>
-<li>
-<p><strong>微调</strong>在下游任务上少量训练即可获得高性能</p>
-</li>
-<li>
-<p><strong>应用广泛</strong>：</p>
+<h3 id="3-gpu">3. 系统级调度优化：让GPU保持忙碌<a class="headerlink" href="#3-gpu" title="Permanent link">&para;</a></h3>
 <ul>
-<li>BERT：分类、问答、命名实体识别</li>
-<li>GPT：文本生成、对话、代码生成</li>
+<li><strong>动态批处理/持续批处理</strong>：传统静态批处理需等一批请求全部完成后才处理下一批，效率低下。<strong>持续批处理</strong>会在某个请求生成结束后，<strong>立即</strong>将等待队列中的新请求加入该“空位”，动态更新批次组合，极大提高了GPU利用率，是实现高吞吐的关键。</li>
+<li><strong>PagedAttention</strong>：受操作系统虚拟内存分页思想启发，解决了KV缓存管理中的显存<strong>碎片化</strong>和<strong>过度预留</strong>问题。它将每个序列的KV缓存划分为固定大小的块，允许不连续存储。这套机制是<strong>vLLM</strong>推理引擎的核心，在生产环境中常带来数倍的吞吐量提升。</li>
 </ul>
-</li>
+<h3 id="4-gpu">4. 利用多GPU的规模化推理：模型并行<a class="headerlink" href="#4-gpu" title="Permanent link">&para;</a></h3>
+<p>当模型过大，单个GPU无法加载时，需将模型拆分到多个设备上。
+-   <strong>张量并行</strong>：将模型单个层的权重矩阵<strong>水平拆分</strong>到多个GPU上。例如，一个大的线性层可以被分成两半，分别在两个GPU上计算。这是目前最主流的推理并行方式。
+-   <strong>流水线并行</strong>：将模型按<strong>层深度</strong>拆分，不同层放在不同GPU上。一个输入依次经过各个GPU完成计算。这种方式可能因设备间通信等待而产生“气泡”，降低效率。</p>
+<h2 id="_4">四、实践指南：从入门到精通的学习路径<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>为了帮助您更好地规划学习过程，下面提供一个循序渐进的学习路径。</p>
+<p><img alt="大模型推理优化技术.png" src="../../imgs/llm/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96%E6%8A%80%E6%9C%AF.png" /></p>
+<h3 id="_5">阶段一：基础入门<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>目标</strong>：建立直观理解。</li>
+<li><strong>行动</strong>：<ol>
+<li>使用 <strong>Hugging Face Transformers</strong> 库运行一个中小模型（如 Llama-2-7B），观察预填充和解码过程。</li>
+<li>学习使用 <strong>模型量化（如bitsandbytes库的8位量化）</strong>，感受显存占用和速度的变化。</li>
 </ol>
-<hr />
-<h2 id="47">4.7 本章小结<a class="headerlink" href="#47" title="Permanent link">&para;</a></h2>
-<ul>
-<li>BERT 强调语言理解，利用双向上下文</li>
-<li>GPT 强调文本生成，利用左到右预测</li>
-<li>预训练 + 微调是现代 NLP 的主流方法</li>
-<li>PyTorch + Transformers 库提供便捷工具，快速微调和应用</li>
+</li>
 </ul>
-<hr />
+<h3 id="_6">阶段二：核心技术深入<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>目标</strong>：掌握核心优化技术。</li>
+<li><strong>行动</strong>：<ol>
+<li>学习并使用集成多种优化的推理引擎，如 <strong>vLLM</strong>。它开箱即用地支持了PagedAttention和持续批处理，很容易体验到性能提升。</li>
+<li>深入研究 <strong>TensorRT-LLM</strong> 。这是一个由NVIDIA推出的高性能推理框架，提供了详细的官方示例。尝试将一个小模型（如Baichuan2-7B）转换为优化的TensorRT引擎，并运行基准测试，对比优化前后的性能指标（吞吐量、延迟）。</li>
+</ol>
+</li>
+</ul>
+<h3 id="_7">阶段三：高级专题与源码级优化<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>目标</strong>：理解技术细节，能进行定制化优化。</li>
+<li><strong>行动</strong>：<ol>
+<li>阅读 <strong>FlashAttention</strong>、<strong>GQA</strong> 等关键技术的原始论文。</li>
+<li>尝试阅读 <strong>vLLM</strong> 或 <strong>TensorRT-LLM</strong> 的部分核心源码，理解其实现机制。</li>
+<li>了解 <strong>推测解码</strong> 等更前沿的优化思想。</li>
+</ol>
+</li>
+</ul>
+<h3 id="_8">阶段四：融会贯通与工程实践<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>目标</strong>：针对复杂场景进行综合优化。</li>
+<li><strong>行动</strong>：<ol>
+<li>参与开源项目的社区讨论，尝试解决实际的Issue。</li>
+<li>在真实的业务场景（如部署一个需要长上下文对话的应用）中，根据指标要求（是TTFT优先还是吞吐量优先）选择和组合不同的优化技术，进行端到端的性能调优。</li>
+</ol>
+</li>
+</ul>
+<p>希望这份指南能为您的学习提供清晰的地图。如果您对某个具体技术点特别感兴趣，我可以为您提供更深入的资料。</p>
 
 
 
@@ -3317,10 +3315,10 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.code.copy", "content.tabs.link", "content.code.annotate", "math", "diagrams"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
       
@@ -3328,7 +3326,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
       
         <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
-        <script src="../styles/javascripts/katex.js"></script>
+        <script src="../../styles/javascripts/katex.js"></script>
       
     
   </body>
